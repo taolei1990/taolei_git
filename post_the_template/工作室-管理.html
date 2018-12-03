@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+</head>
+
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <!--<a  class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>-->
+    <h1 class="mui-title">管理我的工作室</h1>
+</header>
+
+<div class="mui-content">
+<div class="y-gzssh">
+        <div class="y-gzsshim"><img src="img/20180515094223.jpg" ></div>
+        <div class="y-gzsmc">名师工作室作室名称<span class="y-shtg">审核通过</span></div>
+        <div class="y-yul"><button type="button" class="mui-btn mui-btn-primary">预览</button></div>
+</div>
+    <div class="h-msfxb">
+        <h5><span><i class="iconfont">&#xe64b;</i>工作室设置</span></h5>
+        <ul class="mui-table-view mui-grid-view mui-grid-9">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+
+                <div class="mui-media-body">上传头像</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+
+                <div class="mui-media-body">基本信息</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+
+                <div class="mui-media-body">研究领域</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+
+                <div class="mui-media-body">成员管理</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+
+                <div class="mui-media-body">粉丝管理</div></a></li>
+        </ul>
+
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">允许自由加入
+                <div class="mui-switch mui-switch-blue">
+                <div class="mui-switch-handle"></div>
+            </div></li>
+            <li class="mui-table-view-cell">允许发布课程
+                <div class="mui-switch mui-switch-blue">
+                <div class="mui-switch-handle"></div>
+            </div></li>
+        </ul>
+    </div>
+    <div class="h-msfxb">
+        <h5><span><i class="iconfont">&#xe64b;</i>工作室内容维护</span></h5>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">培训引领 <span class="mui-badge">共50条培训活动</span></li>
+            <li class="mui-table-view-cell">备课磨课 <span class="mui-badge">共20条研修活动</span></li>
+            <li class="mui-table-view-cell">团队课程 <span class="mui-badge">共10门课程，2门待审核</span></li>
+            <li class="mui-table-view-cell">课题研究 <span class="mui-badge">共5个课题</span></li>
+            <li class="mui-table-view-cell">名师诊断 <span class="mui-badge">共100个，5个待诊断</span></li>
+            <li class="mui-table-view-cell">成果展示 <span class="mui-badge">共100份成果</span></li>
+        </ul>
+    </div>
+    <div class="h-msfxb">
+        <h5><span><i class="iconfont">&#xe64b;</i>数据统计</span></h5>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script>
+    mui('.y-yul').on('tap','.mui-btn-primary',function(e){
+        mui.openWindow({
+            url:'工作室-介绍.html',
+            id:'工作室-介绍.html'
+        });
+    });
+</script>
+</body>
+</html>

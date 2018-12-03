@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="57a4f78f-f5ca-4fbb-a7c8-38731bba092c" name="默认" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>$</find>
+      <find>gz-myg-bj</find>
+      <find>gz-synopsis</find>
+      <find>gz-atelier-dt</find>
+      <find>gz-topteacher</find>
+      <find>gz-atelier</find>
+      <find>gz-topteacher-name</find>
+      <find>gz-achievement-tiet</find>
+      <find>gz-statistics</find>
+      <find>gz-even-more</find>
+      <find>gz-author-img</find>
+      <find>gz-author-name</find>
+      <find>gz-author-date</find>
+      <find>gzState</find>
+      <find>.gz-blogroll-name</find>
+      <find>swiper-wrapper1</find>
+      <find>resultsStatistical</find>
+      <find>callback</find>
+      <find>gz-hdcg-tba</find>
+      <find>tablink</find>
+      <find>getApiData()</find>
+      <find>addClass</find>
+      <find>http</find>
+      <find>discussion</find>
+      <find>vcard</find>
+      <find>getGzlook</find>
+      <find>console</find>
+      <find>itemsactivit</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>jq</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/css/gz-custom.html" />
+        <option value="$PROJECT_DIR$/html/ajxj.html" />
+        <option value="$PROJECT_DIR$/../nginx-1.15.3/nginx-1.15.3/conf/nginx.conf" />
+        <option value="C:/Windows/System32/drivers/etc/hosts" />
+        <option value="$PROJECT_DIR$/js/common.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="F:/apache-tomcat-7.0.53/apache-tomcat-7.0.53/webapps/ROOT/activity_list.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/gz-custom.css" />
+        <option value="$PROJECT_DIR$/index-vue.html" />
+        <option value="$PROJECT_DIR$/js/main-vue.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
+    <option name="width" value="1732" />
+    <option name="height" value="1041" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="guizhou_workshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="guizhou_workshop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="guizhou_workshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="guizhou_workshop" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="guizhou_workshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="guizhou_workshop" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="guizhou_workshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="guizhou_workshop" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\guizhou_workshop\js" />
+      <recent name="C:\Users\Administrator\Desktop\guizhou_workshop\css" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57a4f78f-f5ca-4fbb-a7c8-38731bba092c" name="默认" comment="" />
+      <created>1535950877258</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1535950877258</updated>
+      <workItem from="1535950878446" duration="13652000" />
+      <workItem from="1535966396963" duration="1182000" />
+      <workItem from="1536022987283" duration="27021000" />
+      <workItem from="1536110430647" duration="19788000" />
+      <workItem from="1536196807365" duration="11994000" />
+      <workItem from="1536215989989" duration="6169000" />
+      <workItem from="1536284135612" duration="1005000" />
+      <workItem from="1536288844811" duration="734000" />
+      <workItem from="1536291792808" duration="254000" />
+      <workItem from="1536292646155" duration="16699000" />
+      <workItem from="1536547596224" duration="1515000" />
+      <workItem from="1536564636858" duration="13400000" />
+      <workItem from="1536628237879" duration="10804000" />
+      <workItem from="1536646355662" duration="16202000" />
+      <workItem from="1536715536358" duration="10883000" />
+      <workItem from="1536801554470" duration="14700000" />
+      <workItem from="1536823030726" duration="7838000" />
+      <workItem from="1536895018118" duration="19846000" />
+      <workItem from="1537146668766" duration="10583000" />
+      <workItem from="1537233974223" duration="10157000" />
+      <workItem from="1537320199824" duration="9211000" />
+      <workItem from="1537338887815" duration="8912000" />
+      <workItem from="1537404712696" duration="1664000" />
+      <workItem from="1537410647093" duration="6445000" />
+      <workItem from="1537932312095" duration="1288000" />
+      <workItem from="1538010493647" duration="604000" />
+      <workItem from="1539320163770" duration="132000" />
+      <workItem from="1540200558878" duration="90000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="242772000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1050" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14699684" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="调试" order="7" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/ajxj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10824">
+          <caret line="451" column="6" selection-start-line="451" selection-start-column="6" selection-end-line="451" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10944">
+          <caret line="456" column="4" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/ajxj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3048">
+          <caret line="127" column="43" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10944">
+          <caret line="456" column="4" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5568">
+          <caret line="232" column="3" lean-forward="true" selection-start-line="232" selection-start-column="3" selection-end-line="232" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10944">
+          <caret line="456" column="4" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8328">
+          <caret line="347" column="29" selection-start-line="347" selection-start-column="29" selection-end-line="347" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2064">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10944">
+          <caret line="456" column="4" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3120">
+          <caret line="130" column="31" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2064">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10944">
+          <caret line="456" column="4" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3816">
+          <caret line="159" column="76" selection-start-line="159" selection-start-column="76" selection-end-line="159" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2064">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8664">
+          <caret line="361" column="31" selection-start-line="361" selection-start-column="31" selection-end-line="361" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2064">
+          <caret line="86" column="54" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6000">
+          <caret line="250" column="21" selection-start-line="250" selection-start-column="21" selection-end-line="250" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="75" column="105" lean-forward="true" selection-start-line="75" selection-start-column="79" selection-end-line="75" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8784">
+          <caret line="366" selection-start-line="366" selection-end-line="366" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6360">
+          <caret line="265" column="10" selection-start-line="265" selection-start-column="10" selection-end-line="265" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1416">
+          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5616">
+          <caret line="234" column="21" lean-forward="true" selection-start-line="234" selection-start-column="21" selection-end-line="234" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="43" column="125" lean-forward="true" selection-start-line="43" selection-start-column="125" selection-end-line="43" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4704">
+          <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.html" />
+    <entry file="file://$PROJECT_DIR$/css/main.css" />
+    <entry file="file://F:/测试服/trunk/taolei_test/guizhou_workshop/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-3.1.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="3" column="17314" selection-start-line="3" selection-start-column="17314" selection-end-line="3" selection-end-column="17314" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/ajxj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Windows/System32/drivers/etc/hosts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../nginx-1.15.3/nginx-1.15.3/conf/nginx.conf" />
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/layer.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/layer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../layer.mobile-v2.0/layer.mobile-v2.0/demo.url" />
+    <entry file="file://F:/apache-tomcat-7.0.53/apache-tomcat-7.0.53/webapps/ROOT/activity_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7656">
+          <caret line="319" column="24" selection-start-line="319" selection-start-column="24" selection-end-line="319" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../post_activity/js/plupload.min.js" />
+    <entry file="file://$PROJECT_DIR$/js/main-vue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/gz-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index-vue.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="302" column="13" selection-start-line="302" selection-start-column="13" selection-end-line="302" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

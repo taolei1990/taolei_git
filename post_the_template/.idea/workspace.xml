@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="ffb85fb5-ee83-446c-857e-d2ed492b1934" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/h-studio.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/h-studio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/培训引领-项目主页.html" beforeDir="false" afterPath="$PROJECT_DIR$/培训引领-项目主页.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="工作室-查看.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/工作室-查看.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="培训引领-列表页.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/培训引领-列表页.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5880">
+              <caret line="245" column="22" selection-start-line="245" selection-start-column="22" selection-end-line="246" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="名师荟.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/名师荟.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="课题研究-列表页.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/课题研究-列表页.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6504">
+              <caret line="271" selection-start-line="271" selection-end-line="271" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="成果展示-列表页.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/成果展示-列表页.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8304">
+              <caret line="346" column="9" selection-start-line="346" selection-start-column="9" selection-end-line="346" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="培训引领-项目主页.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/培训引领-项目主页.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/template.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="培训引领-发起项目.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/培训引领-发起项目.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="399" column="13" lean-forward="true" selection-start-line="399" selection-start-column="13" selection-end-line="399" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="工作室-管理.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/工作室-管理.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1824">
+              <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="考核设置.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/考核设置.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>y-fbsj</find>
+      <find>y-sqjrhd</find>
+      <find>y-card</find>
+      <find>培训</find>
+      <find>showUserPicker1</find>
+      <find>y-remocy</find>
+      <find>y-weicyury</find>
+      <find>y-plunsck</find>
+      <find>y-textdiv</find>
+      <find>.y-quexiao</find>
+      <find>y-fabiao</find>
+      <find>y-inputframe</find>
+      <find>cgzs-tjfj</find>
+      <find>inputframe</find>
+      <find>username</find>
+      <find>htt</find>
+      <find>#picker</find>
+      <find>w-pxsx</find>
+      <find>y-crdtsxqu</find>
+      <find>pullupRefresh()</find>
+      <find>offCanvasContentScroll</find>
+      <find>pullupRefresh</find>
+      <find>.w-icoleix</find>
+      <find>h-famousteacher</find>
+      <find>.y-gzsjs p</find>
+      <find>w-wenzhism</find>
+      <find>.y-gzsxq</find>
+      <find>w-fengleilist</find>
+      <find>popover</find>
+      <find>keypress()</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>y-kcst</replace>
+      <replace>#c8c7cc</replace>
+      <replace>#f2f2f2</replace>
+      <replace>y-hdlbxg</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/课题研究-新增课题.html" />
+        <option value="$PROJECT_DIR$/VR-Video.html" />
+        <option value="$PROJECT_DIR$/工作室.html" />
+        <option value="$USER_HOME$/Desktop/index.html" />
+        <option value="$PROJECT_DIR$/下载图片.html" />
+        <option value="$PROJECT_DIR$/团队课程.html" />
+        <option value="$PROJECT_DIR$/与我相关.html" />
+        <option value="$PROJECT_DIR$/培训引领-选择研修社群.html" />
+        <option value="$PROJECT_DIR$/定位地址.html" />
+        <option value="$PROJECT_DIR$/成果展示-列表页.html" />
+        <option value="$PROJECT_DIR$/课题研究-列表页.html" />
+        <option value="$PROJECT_DIR$/测试bg.html" />
+        <option value="$PROJECT_DIR$/pdfjs-1.10.88-dist/web/pdf.html" />
+        <option value="$PROJECT_DIR$/pdfjs-1.10.88-dist/web/viewer.css" />
+        <option value="$PROJECT_DIR$/pdfjs-1.10.88-dist/web/viewer.js" />
+        <option value="$PROJECT_DIR$/pdfjs-1.10.88-dist/web/viewer.html" />
+        <option value="$PROJECT_DIR$/generic/web/viewer.js" />
+        <option value="$PROJECT_DIR$/generic/web/viewer.css" />
+        <option value="$PROJECT_DIR$/generic/web/viewer.html" />
+        <option value="$PROJECT_DIR$/pdfjs-1.10.88-dist/web/word.html" />
+        <option value="$PROJECT_DIR$/成员风采.html" />
+        <option value="$PROJECT_DIR$/审核成员.html" />
+        <option value="$PROJECT_DIR$/培训引领-发起项目.html" />
+        <option value="$PROJECT_DIR$/培训引领-列表页（第二版）备用.html" />
+        <option value="$PROJECT_DIR$/培训引领-选择参与人员2.html" />
+        <option value="$PROJECT_DIR$/培训引领-选择参与人员3.html" />
+        <option value="$PROJECT_DIR$/培训引领-项目主页.html" />
+        <option value="$PROJECT_DIR$/培训引领-选择参与人员.html" />
+        <option value="$PROJECT_DIR$/考核设置.html" />
+        <option value="$PROJECT_DIR$/培训引领-详情页.html" />
+        <option value="$PROJECT_DIR$/课题研究-内容页.html" />
+        <option value="$PROJECT_DIR$/删除成员.html" />
+        <option value="$PROJECT_DIR$/成果展示-上传课程.html" />
+        <option value="$PROJECT_DIR$/工作室-管理.html" />
+        <option value="$PROJECT_DIR$/工作室-介绍.html" />
+        <option value="$PROJECT_DIR$/工作室-查看.html" />
+        <option value="$PROJECT_DIR$/字数限制.html" />
+        <option value="$PROJECT_DIR$/培训引领-列表页.html" />
+        <option value="$PROJECT_DIR$/名师动态.html" />
+        <option value="$PROJECT_DIR$/../msgzs/download_center.html" />
+        <option value="$PROJECT_DIR$/名师荟.html" />
+        <option value="$PROJECT_DIR$/css/h-studio.css" />
+        <option value="$USER_HOME$/Desktop/h-studio(1).css" />
+        <option value="$USER_HOME$/Desktop/h-studio.css" />
+        <option value="$PROJECT_DIR$/名师荟-工作室列表.html" />
+        <option value="$PROJECT_DIR$/../msgzs/js/test.js" />
+        <option value="$PROJECT_DIR$/../Peppa_Pig.html" />
+        <option value="$PROJECT_DIR$/成果展示-内容页.html" />
+        <option value="$PROJECT_DIR$/培训引领-列表页（第二版）.html" />
+        <option value="$PROJECT_DIR$/课程详情页面.html" />
+        <option value="$PROJECT_DIR$/css/mui.min.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="18" />
+    <option name="y" value="39" />
+    <option name="width" value="1805" />
+    <option name="height" value="1049" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="名师工作室" type="b2602c69:ProjectViewProjectNode" />
+              <item name="名师工作室" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="名师工作室" type="b2602c69:ProjectViewProjectNode" />
+              <item name="名师工作室" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="名师工作室" type="b2602c69:ProjectViewProjectNode" />
+              <item name="名师工作室" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="KB&#9;FILE&#9;file://F:/测试服/trunk/taolei_test/名师工作室/generic/web/cmaps/Katakana.bcmap&#10;来自&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\测试服\trunk\taolei_test\名师工作室" />
+      <recent name="F:\测试服\trunk\taolei_test\名师工作室\generic\web" />
+      <recent name="F:\测试服\trunk\taolei_test\名师工作室\js" />
+      <recent name="F:\测试服\trunk\taolei_test\名师工作室\img" />
+      <recent name="F:\测试服\trunk\taolei_test\名师工作室\web" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ffb85fb5-ee83-446c-857e-d2ed492b1934" name="默认的" comment="" />
+      <created>1521787260364</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521787260364</updated>
+      <workItem from="1521787261509" duration="1557000" />
+      <workItem from="1521790628534" duration="7287000" />
+      <workItem from="1522026725453" duration="26588000" />
+      <workItem from="1522113273830" duration="26793000" />
+      <workItem from="1522227911551" duration="2374000" />
+      <workItem from="1522285736612" duration="26245000" />
+      <workItem from="1522372951027" duration="16505000" />
+      <workItem from="1522397027729" duration="5699000" />
+      <workItem from="1522631200478" duration="18515000" />
+      <workItem from="1522736303903" duration="7340000" />
+      <workItem from="1522803628723" duration="20059000" />
+      <workItem from="1523149472010" duration="15844000" />
+      <workItem from="1523239701683" duration="3545000" />
+      <workItem from="1523347139263" duration="5724000" />
+      <workItem from="1523409328404" duration="9489000" />
+      <workItem from="1523495888591" duration="36000" />
+      <workItem from="1523496619350" duration="797000" />
+      <workItem from="1523868693904" duration="180000" />
+      <workItem from="1524640029992" duration="3300000" />
+      <workItem from="1524704630543" duration="21095000" />
+      <workItem from="1524792324045" duration="1082000" />
+      <workItem from="1524881650862" duration="1014000" />
+      <workItem from="1525424619604" duration="875000" />
+      <workItem from="1525656467127" duration="4569000" />
+      <workItem from="1525742340656" duration="723000" />
+      <workItem from="1525766982075" duration="11000" />
+      <workItem from="1526027283074" duration="13991000" />
+      <workItem from="1526259947745" duration="116000" />
+      <workItem from="1526286326710" duration="4116000" />
+      <workItem from="1526348064431" duration="16126000" />
+      <workItem from="1526432831431" duration="5516000" />
+      <workItem from="1526438940443" duration="21348000" />
+      <workItem from="1526521043170" duration="22246000" />
+      <workItem from="1526605468370" duration="1244000" />
+      <workItem from="1526607593595" duration="3627000" />
+      <workItem from="1526613475060" duration="10648000" />
+      <workItem from="1526866113613" duration="24811000" />
+      <workItem from="1526951752973" duration="1454000" />
+      <workItem from="1527213999803" duration="8055000" />
+      <workItem from="1527470149952" duration="16824000" />
+      <workItem from="1527558429547" duration="15700000" />
+      <workItem from="1527641921668" duration="14094000" />
+      <workItem from="1527730321334" duration="16663000" />
+      <workItem from="1527814783014" duration="24419000" />
+      <workItem from="1528338556981" duration="819000" />
+      <workItem from="1528339446114" duration="3627000" />
+      <workItem from="1528350079376" duration="10249000" />
+      <workItem from="1528365099537" duration="632000" />
+      <workItem from="1528419428289" duration="3046000" />
+      <workItem from="1528424321444" duration="22326000" />
+      <workItem from="1528506391654" duration="278000" />
+      <workItem from="1528525691647" duration="4239000" />
+      <workItem from="1528594186826" duration="21868000" />
+      <workItem from="1528681746122" duration="16948000" />
+      <workItem from="1528767228345" duration="18652000" />
+      <workItem from="1528853352338" duration="20437000" />
+      <workItem from="1528941160799" duration="2957000" />
+      <workItem from="1528946044842" duration="24924000" />
+      <workItem from="1529025311659" duration="23367000" />
+      <workItem from="1529370497032" duration="14034000" />
+      <workItem from="1529457102516" duration="1848000" />
+      <workItem from="1529487000296" duration="432000" />
+      <workItem from="1529632010136" duration="14157000" />
+      <workItem from="1529653084768" duration="5708000" />
+      <workItem from="1529889986966" duration="5653000" />
+      <workItem from="1529911218491" duration="253000" />
+      <workItem from="1529985354601" duration="8103000" />
+      <workItem from="1530161858238" duration="4658000" />
+      <workItem from="1530676587072" duration="14905000" />
+      <workItem from="1530752961362" duration="23798000" />
+      <workItem from="1530839351453" duration="25229000" />
+      <workItem from="1531115091150" duration="6205000" />
+      <workItem from="1531214475316" duration="640000" />
+      <workItem from="1531280164123" duration="3095000" />
+      <workItem from="1531357708776" duration="267000" />
+      <workItem from="1531446162555" duration="7892000" />
+      <workItem from="1531704657632" duration="628000" />
+      <workItem from="1531711764122" duration="3975000" />
+      <workItem from="1531817394588" duration="1366000" />
+      <workItem from="1531876703264" duration="2142000" />
+      <workItem from="1531963379439" duration="3000" />
+      <workItem from="1531972156065" duration="666000" />
+      <workItem from="1531988801756" duration="1829000" />
+      <workItem from="1532049091495" duration="593000" />
+      <workItem from="1532054064657" duration="599000" />
+      <workItem from="1532069803446" duration="1935000" />
+      <workItem from="1532311622557" duration="1540000" />
+      <workItem from="1532327772995" duration="6310000" />
+      <workItem from="1532416849955" duration="2383000" />
+      <workItem from="1532480580890" duration="58000" />
+      <workItem from="1532585870365" duration="2601000" />
+      <workItem from="1532657556730" duration="2364000" />
+      <workItem from="1532675246748" duration="3718000" />
+      <workItem from="1532912119821" duration="4873000" />
+      <workItem from="1532999865540" duration="1626000" />
+      <workItem from="1533104957361" duration="635000" />
+      <workItem from="1533171507861" duration="188000" />
+      <workItem from="1533191700576" duration="5498000" />
+      <workItem from="1533548588597" duration="665000" />
+      <workItem from="1533604741462" duration="183000" />
+      <workItem from="1533629114895" duration="3252000" />
+      <workItem from="1533637538747" duration="599000" />
+      <workItem from="1533691645227" duration="4000" />
+      <workItem from="1533703523312" duration="4383000" />
+      <workItem from="1533776952122" duration="2060000" />
+      <workItem from="1533795941793" duration="918000" />
+      <workItem from="1534472440515" duration="20565000" />
+      <workItem from="1534729138955" duration="15000" />
+      <workItem from="1534733062105" duration="282000" />
+      <workItem from="1534919115674" duration="630000" />
+      <workItem from="1535017920367" duration="950000" />
+      <workItem from="1535072643237" duration="207000" />
+      <workItem from="1535077839556" duration="85000" />
+      <workItem from="1535077937410" duration="11000" />
+      <workItem from="1535079048801" duration="620000" />
+      <workItem from="1535080949661" duration="1344000" />
+      <workItem from="1536566059457" duration="642000" />
+      <workItem from="1537256741819" duration="702000" />
+      <workItem from="1537512272734" duration="4054000" />
+      <workItem from="1537837207949" duration="135000" />
+      <workItem from="1537858065050" duration="2331000" />
+      <workItem from="1537924740323" duration="1984000" />
+      <workItem from="1538010493459" duration="591000" />
+      <workItem from="1538013918535" duration="599000" />
+      <workItem from="1538291191545" duration="843000" />
+      <workItem from="1538962483417" duration="71000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="853745000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="18" y="39" width="1805" height="1049" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17317487" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="调试" order="7" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="找到" order="8" weight="0.32929516" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="运行" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.16008772" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="找到" order="13" weight="0.32929516" />
+      <window_info anchor="bottom" id="运行" order="8" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17104527" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="调试" order="12" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.16008772" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pdfjs-1.10.88-dist/build/pdf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128501">
+          <caret line="5600" column="36" selection-start-line="5600" selection-start-column="36" selection-end-line="5600" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdfjs-1.10.88-dist/web/viewer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdfjs-1.10.88-dist/web/viewer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22678">
+          <caret line="986" selection-start-line="986" selection-end-line="986" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdfjs-1.10.88-dist/web/viewer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="42" selection-start-line="42" selection-end-line="45" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdfjs-1.10.88-dist/web/word.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generic/web/viewer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4334">
+          <caret line="2027" column="35" lean-forward="true" selection-start-line="2027" selection-start-column="35" selection-end-line="2027" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generic/web/viewer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-736">
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generic/web/viewer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/搜索名师工作室.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-选择参与人员3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/审核成员.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3528">
+          <caret line="147" column="53" selection-start-line="147" selection-start-column="53" selection-end-line="147" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-列表页（第二版）备用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="76" column="59" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/删除成员.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/QQ浏览器下载/syw-h5-10.1.2/syw-h5-10.1.2/html/活动环节-通用列表-新增加描述上传等.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1968">
+          <caret line="82" column="134" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-选择研修社群.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/工作室-介绍.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1128">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/字数限制.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/名师动态.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2256">
+          <caret line="209" column="17" selection-start-line="209" selection-start-column="17" selection-end-line="209" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/团队课程.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../msgzs/download_center.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-详情页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="92" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/h-studio(1).css" />
+    <entry file="file://$USER_HOME$/Desktop/h-studio.css" />
+    <entry file="file://$PROJECT_DIR$/名师荟-工作室列表.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/h-studio.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1378" column="1" selection-start-line="1378" selection-start-column="1" selection-end-line="1378" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/我的工作室.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3240">
+          <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../msgzs/ysy_detail_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23064">
+          <caret line="961" column="19" selection-start-line="961" selection-start-column="19" selection-end-line="961" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../msgzs/js/test.js" />
+    <entry file="file://$PROJECT_DIR$/../Peppa_Pig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2064">
+          <caret line="738" column="7" selection-start-line="738" selection-start-column="7" selection-end-line="738" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/课题研究-新增课题.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1752">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/成员风采.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/工作室.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2496">
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/课题研究-内容页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4800">
+          <caret line="200" selection-start-line="200" selection-end-line="200" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-列表页（第二版）.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4632">
+          <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mui.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-选择参与人员.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-选择参与人员2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2712">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/课程详情页面.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/工作室-基本信息管理.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/成果展示-上传课程.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1824">
+          <caret line="76" column="53" selection-start-line="76" selection-start-column="53" selection-end-line="76" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/成果展示-内容页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="155" column="37" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/考核设置.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/工作室-管理.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1824">
+          <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/工作室-查看.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-列表页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5880">
+          <caret line="245" column="22" selection-start-line="245" selection-start-column="22" selection-end-line="246" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/名师荟.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/课题研究-列表页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6504">
+          <caret line="271" selection-start-line="271" selection-end-line="271" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/成果展示-列表页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8304">
+          <caret line="346" column="9" selection-start-line="346" selection-start-column="9" selection-end-line="346" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-项目主页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/培训引领-发起项目.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="399" column="13" lean-forward="true" selection-start-line="399" selection-start-column="13" selection-end-line="399" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

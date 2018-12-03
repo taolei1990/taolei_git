@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+</head>
+
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <!--<a  class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>-->
+    <h1 class="mui-title">考核设置</h1>
+</header>
+
+<div class="mui-content">
+
+    <div class="h-msfxb">
+        <h5><span><i class="iconfont">&#xe64b;</i>情景导入</span></h5>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">开启考核
+                <div class="mui-switch mui-switch-blue">
+                <div class="mui-switch-handle"></div>
+            </div>
+            </li>
+            <li id='showUserPicker0' class="mui-table-view-cell showUserPicker">合格 <span class="mui-badge"><var>0分</var></span></li>
+            <li id='showUserPicker1' class="mui-table-view-cell showUserPicker">发表评论 <span class="mui-badge"><var>0分</var>/篇</span></li>
+        </ul>
+    </div>
+    <div class="h-msfxb">
+        <h5><span><i class="iconfont">&#xe64b;</i>活动成果</span></h5>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">开启考核
+                <div class="mui-switch mui-switch-blue">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </li>
+            <li id='showUserPicker2' class="mui-table-view-cell showUserPicker">合格 <span class="mui-badge"><var>0</var></span></li>
+            <li id='showUserPicker3' class="mui-table-view-cell showUserPicker">提交成果<span class="mui-badge"><var>0分</var>/篇</span></li>
+        </ul>
+    </div>
+    <div class="h-msfxb">
+        <h5><span><i class="iconfont">&#xe64b;</i>活动成果</span></h5>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">开启考核
+                <div class="mui-switch mui-switch-blue">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </li>
+            <li id='showUserPicker4' class="mui-table-view-cell showUserPicker">合格 <span class="mui-badge"><var>0分</var></span></li>
+            <li id='showUserPicker5' class="mui-table-view-cell showUserPicker">最高<span class="mui-badge"><var>0分</var></span></li>
+            <li id='showUserPicker6' class="mui-table-view-cell showUserPicker">提交新发帖<span class="mui-badge"><var>0分</var>/篇</span></li>
+            <li id='showUserPicker7' class="mui-table-view-cell showUserPicker">回复他人帖子<span class="mui-badge"><var>0分</var>/篇</span></li>
+            <li id='showUserPicker8' class="mui-table-view-cell showUserPicker">发帖被评为精华<span class="mui-badge"><var>0分</var>/篇</span></li>
+        </ul>
+    </div>
+    <div class="y-khsm">
+        <p><span style="color: #dd524d">考核说明：</span><br/>
+            1、您可以把下面的活动环节设置为是否考核，如果开启考核，
+            则该环节是必须完成环节，
+            且所有成员必须按要求完成；反之则为不考核，对成员没有要求。<br/>
+            2、如所有成员完成考核要求，则活动整体标记为考核通过，系统自动生成印章。</p>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.min.js"></script>
+<script>
+    //新增考核设置 是否开放 2018/7/5
+    mui(".mui-content").on("toggle",'.mui-switch',function(event){
+        if(event.detail.isActive){
+            //console.log("你启动了开关");
+          $(this).parent('.mui-table-view-cell').nextAll().addClass('active');
+        }else{
+           // console.log("你关闭了开关");
+          $(this).parent('.mui-table-view-cell').nextAll().removeClass('active');
+        }
+    });
+
+
+    (function(mu, doc) {
+        mu.init();
+        mu.ready(function() {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+            //一级选择
+            //-----------------------------------------
+            var userPicker = new mu.PopPicker();
+            userPicker.setData( [
+                {
+                    text: '1分'
+                }, {
+                    text: '2分'
+                }, {
+                    text: '3分'
+                }, {
+                    text: '4分'
+                }, {
+                    text: '5分'
+                }, {
+                    text: '6分'
+                }, {
+                    text: '7分'
+                }, {
+                    text: '8分'
+                }, {
+                    text: '9分'
+                }, {
+                    text: '10分'
+                },
+            ]);
+
+
+            //  showUserPickerButton.addEventListener('tap', function() {
+              mui(".mui-content").on('tap','.active',function(){
+                     var myvar=$('.showUserPicker').index(this);
+                     console.log(myvar)
+                     var showUserPickerButton = doc.getElementById('showUserPicker'+myvar);
+                     userPicker.show(function(items) {
+                     showUserPickerButton.children[0].children[0].innerText=items[0].text;
+               });
+            }, false);
+        });
+    })(mui, document);
+
+</script>
+</body>
+</html>

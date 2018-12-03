@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <link href="css/webuploader.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body >
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <a id="input_check" class="y-tijiao active mui-pull-right">提交</a><!--active 类用于判断输入了内容才能成为能发布状态-->
+    <h1 class="mui-title">发起项目</h1>
+</header>
+    <div class="mui-content">
+        <div class="y-xzktym">
+        <div  class="mui-input-group input-form">
+            <div class="y-ktyjfm">
+                <!--dom结构部分-->
+                <div id="uploader-demo">
+                    <!--用来存放item-->
+                    <div id="fileList" class="uploader-list"></div>
+                    <div class="filePicker">
+                        <div id="filePicker">
+                        <span class="y-xzmfan">
+                            <i class="iconfont">&#xe668;</i>
+                            <p>添加封面图片</p>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="input_example">
+            <div class="mui-input-row">
+                <label>名称<span class="y-bt">*</span></label>
+                <input id="username" type="text" class="mui-input-clear " placeholder="请输入用户名" >
+            </div>
+            <div class="mui-input-row active">
+                <label>参与人员<span class="y-bt">*</span></label>
+                <input type="text" class="mui-input-clear" style="font-size: 12px;color: #f5b948" readonly  unselectable="on"
+                       placeholder="点击头像可以快速删除" value="点击头像可以快速删除">
+                <i class="iconfont y-icon-right">&#xe611;</i>
+            </div>
+            <div class="y-xzdtoux">
+                <a><span><img src="http://hk.yunjy.com.cn/files/default/2018/03-30/091524c6c83d199078.png"></span>陶老师</a>
+                <a><span>老师</span>陶老师</a>
+                <a><span><img src="http://hk.yunjy.com.cn/files/default/2018/03-30/091524c6c83d199078.png"></span>陶老师</a>
+                <a><span>老师</span>陶老师</a>
+                <a><span>老师</span>陶老师</a>
+                <a><span>老师</span>陶老师</a>
+                <a><span>老师</span>陶老师</a>
+                <a class="active"><span><i class="iconfont">&#xe61f;</i></span>自定义用户</a>
+            </div>
+            <div class="y-xzyxsq">
+                <a><span>某某研修社群</span></a>
+                <a><span>某某研修社群</span></a>
+                <a class="active"><span><i class="iconfont">&#xe61f;</i></span>研修社群</a>
+            </div>
+            <div class="mui-input-row">
+                <label>活动形式<span class="y-bt">*</span></label>
+                <input type="text" id='showUserPicker' class="mui-input-clear" placeholder="请选择活动形式">
+                <i class="iconfont y-icon-right">&#xe611;</i>
+            </div>
+            <div class="mui-input-row">
+                <label>学段学科<span class="y-bt">*</span></label>
+                <input type="text" id='showUserPicker2' class="mui-input-clear" placeholder="请选择学段学科">
+                <i class="iconfont y-icon-right">&#xe611;</i>
+            </div>
+            <div class="mui-input-row">
+                <label>开始时间<span class="y-bt">*</span></label>
+                <input id='result0'  type="text" class="mui-input-clear result" placeholder="请选择开始时间">
+                <i class="iconfont y-icon-right">&#xe611;</i>
+            </div>
+            <div class="mui-input-row">
+                <label>结束时间<span class="y-bt">*</span></label>
+                <input id='result1'  type="text" class="mui-input-clear result" placeholder="请选择结束时间">
+                <i class="iconfont y-icon-right">&#xe611;</i>
+            </div>
+            <!--新增是否开放-->
+            <div class="mui-input-row">
+                    <label>是否开放:<span class="y-bt">*</span></label>
+                    <input type="text" id='showUserPicker1' class="mui-input-clear" placeholder="请选择开放形式">
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+            <div class="mui-input-row active">
+                    <label>选择附件<span class="y-bt">*</span></label>
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+            <div class="y-xzwjqu">
+                    <div id="uploadfile">
+                        <!--用来存放文件信息-->
+                        <div id="thelist" class="uploader-list"></div>
+                        <div class="form-group form-inline" style="overflow: hidden">
+                            <div id="picker" style="float:left"><i class="iconfont">&#xe61f;</i><br/>上传附件</div> &nbsp;
+                        </div>
+                    </div>
+                </div>
+            <div class="y-ktjsxq">
+                <textarea name="message" rows="4"  placeholder="详细介绍（选填）"></textarea>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.min.js"></script>
+<script src="js/webuploader.min.js"></script>
+<script src="js/city.data.js"></script><!--二级城市-->
+<script src="js/city.data-3.js"></script><!--三级城市-->
+<script>
+    //点击头像删除
+    mui('.y-xzdtoux').on('tap', 'a', function () {
+if($(this).hasClass('active')){
+//选择参与人员
+    mui.openWindow({
+        url:'培训引领-选择参与人员.html',
+        id:''
+    });
+}else {
+    //点击头像删除人员
+    $(this).remove();
+}
+    })
+    //删除研修社群
+    mui('.y-xzyxsq').on('tap', 'a', function () {
+        if($(this).hasClass('active')){
+//选择研修社群
+            mui.openWindow({
+                url:'培训引领-选择研修社群.html',
+                id:''
+            });
+        }else {
+            //点击头像删除人员
+            $(this).remove();
+        }
+    })
+</script>
+<script>
+//选择图片
+// 初始化Web Uploader
+var $list=$('#fileList');
+// 初始化Web Uploader
+var uploader = WebUploader.create({
+
+    // 选完文件后，是否自动上传。
+    auto: true,
+
+    // swf文件路径
+    swf:'js/Uploader.swf',
+
+    // 文件接收服务端。
+    server: 'preview.php',
+
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+    pick: '#filePicker',
+
+    // 只允许选择图片文件。
+    accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/*'
+    }
+});
+// 当有文件添加进来的时候
+uploader.on( 'fileQueued', function( file ) {
+    var $li = $(
+        '<div id="' + file.id + '" class="file-item thumbnail">' +
+        '<img src>' +
+        '</div>'
+        ),
+        $img = $li.find('img');
+
+    // $list为容器jQuery实例
+    $list.html( $li );
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploader.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    }, 900, 500);
+       $('.y-xzmfan').hide();
+});
+
+</script>
+<script>
+    (function($) {
+        $.init(); //初始化
+        //设置开始时间
+        var result0 = $('.result')[0];
+        var result = $('#result0' );
+        result.each(function(i, result) {
+            result.addEventListener('tap', function() {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var picker = new $.DtPicker(options);
+                picker.show(function(rs) {
+                    result0.value =  rs.text;
+                    picker.dispose();
+                });
+            }, false);
+        });
+        //设置结束时间
+        var result1 = $('.result')[1];
+        var result = $('#result1' );
+        result.each(function(i, result) {
+            result.addEventListener('tap', function() {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var picker = new $.DtPicker(options);
+                picker.show(function(rs) {
+                    result1.value =  rs.text;
+                    picker.dispose();
+                });
+            }, false);
+        });
+    })(mui);
+
+</script>
+<!--联动选择器-->
+<script>
+    //选择活动形式
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+
+            //二级连选
+            //-----------------------------------------
+            var cityPicker = new $.PopPicker({
+                layer: 2
+            });
+            cityPicker.setData(cityData);
+            var showUserPickerButton = doc.getElementById('showUserPicker');
+
+            showUserPickerButton.addEventListener('tap', function(event) {
+                cityPicker.show(function(items) {
+                    showUserPickerButton.value =items[0].text + " " + items[1].text;
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                });
+            }, false);
+            //-----------------------------------------
+
+        });
+    })(mui, document);
+</script>
+<script>
+    //选择学段学科
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+
+            //二级连选
+            //-----------------------------------------
+            var cityPicker = new $.PopPicker({
+                layer: 2
+            });
+            cityPicker.setData(cityData);
+            var showUserPickerButton = doc.getElementById('showUserPicker2');
+
+            showUserPickerButton.addEventListener('tap', function(event) {
+                cityPicker.show(function(items) {
+                    showUserPickerButton.value =items[0].text + " " + items[1].text;
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                });
+            }, false);
+            //-----------------------------------------
+            // 3级连选
+            /*
+                        var cityPicker3 = new $.PopPicker({
+                            layer: 3
+                        });
+                        cityPicker3.setData(cityData3);
+                        var showUserPickerButton = doc.getElementById('showUserPicker');
+                        var userResult = doc.getElementById('userResult');
+                        showUserPickerButton.addEventListener('tap', function(event) {
+                            cityPicker3.show(function(items) {
+                                userResult.innerText =   _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+                                //返回 false 可以阻止选择框的关闭
+                                //return false;
+                            });
+                        }, false);
+            */
+        });
+    })(mui, document);
+</script>
+<script>
+    //新增是否开放 2018/7/5
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+            //一级选择
+            //-----------------------------------------
+          var userPicker = new $.PopPicker();
+             userPicker.setData( [
+                 {
+
+                     text: '允许申请'
+                 }, {
+
+                     text: '不允许申请'
+                 },
+             ]);
+             var showUserPickerButton = doc.getElementById('showUserPicker1');
+             showUserPickerButton.addEventListener('tap', function(event) {
+                 userPicker.show(function(items) {
+                     showUserPickerButton.value = items[0].text;
+                     //JSON.stringify(test);
+                     //items[0].text
+                     //返回 false 可以阻止选择框的关闭
+                     //return false;
+                 });
+             }, false);
+        });
+    })(mui, document);
+</script>
+<!--上传附件-->
+<script>
+    $(function(){
+        var $list = $('#thelist'),//存放文件
+            $btn = $('#ctlBtn'),//开始上传
+            $lia= $('#ctlBtnz');//删除
+        var uploader = WebUploader.create({
+            resize: false, // 不压缩image
+            swf: 'js/uploader.swf', // swf文件路径
+            server: 'upload.php', // 文件接收服务端。
+            pick: '#picker', // 选择文件的按钮。可选
+            chunked: true, //是否要分片处理大文件上传
+            chunkSize:2*1024*1024, //分片上传，每片2M，默认是5M
+          //  auto: true ,//选择文件后是否自动上传
+             chunkRetry : 2, //如果某个分片由于网络问题出错，允许自动重传次数
+            runtimeOrder: 'html5,flash',
+             accept: {
+               title: 'txt',
+               extensions: 'txt,doc,docx,xls,xlsx,pdf,ppt,pptx,wps',
+              mimeTypes: 'text/plain,application/msword,' +
+              'application/vnd.openxmlformats-officedocument.wordprocessingml.document,' +
+              'application/vnd.ms-excel,' +
+              'application/vnd.ms-powerpoint,' +
+              'application/pdf,' +
+              'application/vnd.ms-powerpoint,' +
+              'application/vnd.openxmlformats-officedocument.presentationml.presentation,' +
+              'application/vnd.ms-works'}
+        });
+        // 当有文件被添加进队列的时候
+        uploader.on( 'fileQueued', function( file ) {
+            var sai = file.size;
+            if (sai < 1024) {
+                sai = sai + 'b';
+            }
+            else if (sai > 1024 * 1024 * 1024) {
+                sai = (file.size / 1024 / 1024 / 1024).toFixed(2) + 'G';
+            } else if (sai > 1024 * 1024) {
+                sai = (file.size / 1024 / 1024).toFixed(0) + 'M';
+            } else if (sai >= 1024) {
+                sai = (file.size / 1024).toFixed(0) + 'k';
+            }
+            $list.append( '<div id="' + file.id + '" class="item y-tjkc">' +
+                '<div class="y-fjlx-img" style="background-color: #f44c4c">pdf</div>'+
+                '<div class="info">' +
+                '<h5>'+ file.name +'</h5>' +
+                '<p>'+ sai +'</p>' +
+                '</div>' +
+                '<div class="y-rome" id="ctlBtnz"><i class="iconfont">&#xe747;</i></div>' +
+                '</div>' );
+
+            $('#picker').hide();
+            //删除上传的文件
+            $list.on('click', '.y-rome', function () {
+                if ($(this).parent().attr('id') == file.id) {
+                    uploader.removeFile(file);
+                    $(this).parent().remove();
+                }
+                $('#picker').show();
+            })
+        });
+
+    });
+
+</script>
+<!--判断是否可以发表-->
+<script>
+    <!--简单的判断了是否可以发表-->
+    $('.y-tijiao').removeClass('active');//初始化表单选择状态
+    $("input:text").bind("input propertychange",function(){
+        var wz=$(this).val().length;//打印输入框字符长度
+        console.log(wz);
+        if(wz==0){
+            $('.y-tijiao').removeClass('active');
+        }else {
+            $('.y-tijiao').addClass('active');
+        }
+
+    });
+
+    //简单判断是否存在值
+    document.getElementById("input_check").addEventListener('click', function() {
+        var check = true;
+        mui("#input_example input").each(function() {
+            //若当前input为空，则alert提醒
+            if(!this.value || this.value.trim() == "") {
+                var label = this.previousElementSibling;
+                mui.alert(label.innerText + "不允许为空");
+                check = false;
+                return false;
+            }
+        }); //校验通过，继续执行业务逻辑
+        check && mui.alert('验证通过!')
+    })
+
+</script>
+</body>
+</html>

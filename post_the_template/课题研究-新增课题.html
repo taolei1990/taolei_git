@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <link href="css/webuploader.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+</head>
+<body >
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <a class="mui-icon mui-icon-gear  mui-pull-right"></a>
+    <h1 class="mui-title">新增课题</h1>
+</header>
+    <div class="mui-content">
+        <div class="y-xzktym">
+        <form class="mui-input-group">
+            <div class="y-ktyjfm">
+                <!--dom结构部分-->
+                <div id="uploader-demo">
+                    <!--用来存放item-->
+                    <div id="fileList" class="uploader-list"></div>
+                    <div class="filePicker">
+                        <div id="filePicker">
+                        <span class="y-xzmfan">
+                            <i class="iconfont">&#xe668;</i>
+                            <p>添加封面图片</p>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mui-input-row">
+                <label>标题</label>
+                <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+            </div>
+            <div class="mui-input-row">
+                <label>时间</label>
+                <input id='result'  type="text" class="mui-input-clear result" placeholder="请选择时间">
+            </div>
+            <div class="mui-input-row">
+                <label>活动地点</label>
+                <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+            </div>
+            <div class="mui-input-row">
+                <label>最大人数</label>
+                <input type='number' pattern="[0-9]*" class="mui-input-clear"  placeholder="请输入人数">
+            </div>
+            <div class="y-ktjsxq">
+                <textarea name="message" rows="4"  placeholder="详细介绍"></textarea>
+            </div>
+            <div class="mui-button-row y-ktyjtj">
+                <button type="button" class="mui-btn mui-btn-primary" >确认</button>
+                <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+            </div>
+        </form>
+    </div>
+    </div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.min.js"></script>
+<script src="js/webuploader.min.js"></script>
+<script>
+//选择图片
+// 初始化Web Uploader
+var $list=$('#fileList');
+// 初始化Web Uploader
+var uploader = WebUploader.create({
+
+    // 选完文件后，是否自动上传。
+    auto: true,
+
+    // swf文件路径
+    swf:'js/Uploader.swf',
+
+    // 文件接收服务端。
+    server: 'preview.php',
+
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+    pick: '#filePicker',
+
+    // 只允许选择图片文件。
+    accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/*'
+    }
+});
+// 当有文件添加进来的时候
+uploader.on( 'fileQueued', function( file ) {
+    var $li = $(
+        '<div id="' + file.id + '" class="file-item thumbnail">' +
+        '<img src>' +
+        '</div>'
+        ),
+        $img = $li.find('img');
+
+
+    // $list为容器jQuery实例
+    $list.html( $li );
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploader.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    });
+       $('.y-xzmfan').hide();
+});
+
+</script>
+
+    <script>
+    (function($) {
+        $.init();
+        var result0 = $('.result')[0];
+        var result = $('#result');
+        result.each(function(i, result) {
+            result.addEventListener('tap', function() {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var id = this.getAttribute('id');
+                var picker = new $.DtPicker(options);
+                picker.show(function(rs) {
+                    result0.value =  rs.text;
+                    picker.dispose();
+                });
+            }, false);
+
+        });
+
+    })(mui);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="y-fff">
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+
+    <h1 class="mui-title">选择参与人员</h1>
+</header>
+    <div class="mui-content">
+       <div class="y-lxrsos">
+           <div class="mui-input-row mui-search">
+           <input type="search" class="mui-input-clear" placeholder="收索">
+       </div>
+       </div>
+        <p class="y-lxrbt"><a>选择参与人员</a> > <a>区域用户</a> ><span>重庆</span> </p>
+<div class="y-y-lxrxzqx">
+        <div class="mui-input-row mui-checkbox mui-left">
+            <label>全选</label>
+
+            <input name="checkbox" class="y-quanx" value="Item 1" type="checkbox">
+        </div>
+</div>
+        <div class="y-lxrxzdx">
+    <ul class="y-lxrxzlist y-mingzhj">
+        <li class="mui-input-row mui-checkbox mui-left">
+        <input name="checkbox1" value="1" type="checkbox">
+        <label><span class="y-mingztx"><img src="img/Qzone.png"> </span>陶老师</label>
+    </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="1" type="checkbox">
+            <label><span class="y-mingztx"><b>老师</b></span>陶老师</label>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="1" type="checkbox">
+            <label><span class="y-mingztx"><img src="img/Qzone.png"> </span>陶老师</label>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="1" type="checkbox">
+            <label><span  class="y-mingztx" ><b>老师</b></span>陶老师</label>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="1" type="checkbox">
+            <label><span class="y-mingztx"><img src="img/Qzone.png"> </span>陶老师</label>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="1" type="checkbox">
+            <label><span class="y-mingztx"><b>老师</b></span>陶老师</label>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="1" type="checkbox">
+            <label><span class="y-mingztx"><img src="img/Qzone.png"> </span>陶老师</label>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="1" type="checkbox">
+            <label><span  class="y-mingztx" ><b>老师</b></span>陶老师</label>
+        </li>
+
+    </ul>
+        </div>
+    </div>
+<div>
+    <nav class="mui-bar mui-bar-tab">
+    <div class="y-lxrbar">
+        <div class="y-lxr-xzrs">已选择：<span>651人</span> </div>
+        <div class="y-lxr-qereng"><span>确定</span></div>
+    </div>
+    </nav>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+
+<script>
+    var numArr = []; // 定义一个空数组
+    var txt = $("[name='checkbox1']:checked"); // 获取所选中的值
+    if(txt.length==0){
+        $('.y-lxr-xzrs span').text('0');//清空
+        $('.y-lxr-qereng').removeClass('active');
+    }else {
+        for (var i = 0; i < txt.length; i++) {
+            numArr.push(txt.eq(i).val()); // 将值添加到数组中
+        }
+        var he=eval(numArr.join('+'));//将值求和
+        $('.y-lxr-xzrs span').text(he+'人');
+        $('.y-lxr-qereng').addClass('active');
+    }
+
+    function fz( ) {
+        var numArr = []; // 定义一个空数组
+        var txt = $("[name='checkbox1']:checked"); // 获取所选中的值
+        for (var i = 0; i < txt.length; i++) {
+            numArr.push(txt.eq(i).val()); // 将值添加到数组中
+        }
+        var he=eval(numArr.join('+'));//将值求和
+        //console.info(numArr);
+        return he;//返回求和值
+    }
+
+    $(".y-quanx").click(function(){//全选
+        var allCheckNum = $("input[name='checkbox1']").length;
+        var checkedNum = $("input[name='checkbox1']:checked").length;
+        if (allCheckNum == checkedNum){
+            $("input[name='checkbox1']").prop("checked",false);
+            $('.y-lxr-xzrs span').text("0");
+            $('.y-lxr-qereng').removeClass('active');
+        } else {
+            $("input[name='checkbox1']").prop("checked",true);
+           var he= fz();
+            $('.y-lxr-xzrs span').text(he+'人');
+            $('.y-lxr-qereng').addClass('active');
+        }
+    });
+    $("input[name='checkbox1']").click(function(){//选中
+        var allCheckNum = $("input[name='checkbox1']").length;
+        var checkedNum = $("input[name='checkbox1']:checked").length;
+        if (allCheckNum == checkedNum){
+            $(".y-quanx").prop("checked",true);
+        } else {
+            $(".y-quanx").prop("checked",false);
+        }
+        var he= fz();
+        $('.y-lxr-xzrs span').text(he+'人');
+        $('.y-lxr-qereng').addClass('active');
+    });
+</script>
+<script>
+    mui.init({
+        gestureConfig:{
+            tap: true, //默认为true
+            doubletap: true, //默认为false
+        }
+    });
+    mui(".mui-bar-nav").on('doubletap','.mui-title',function(){
+        mui.scrollTo(0,100)
+    })
+
+</script>
+</body>
+</html>

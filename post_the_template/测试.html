@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>include-demo</title>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/template-web.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+</head>
+
+<body>
+<div id="content">
+
+</div>
+<div id="per">
+
+</div>
+
+<script id="test" type="text/html">
+    <h1>{{title}}</h1>
+    {{include 'list'}}
+</script>
+<script id="list" type="text/html">
+    <ul>
+        {{each list as value i}}
+        <li>索引 {{i + 1}} ：{{value}}</li>
+        {{/each}}
+    </ul>
+</script>
+
+<script>
+    var data = {
+        title: '嵌入子模板',
+        list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+    };
+    var html = template('test', data);
+    document.getElementById('content').innerHTML = html;
+</script>
+
+
+<!--定义模板-->
+<script type="text/html" id="personTemplate">
+    <ul>
+        <li>姓名：{{name}}</li>
+        <li>性别：{{sex}}</li>
+        <li>年龄：{{age}}</li>
+    </ul>
+</script>
+
+<script type="text/javascript">
+
+    //定义数据
+    var personData = {
+        name:"刘强",
+        sex:"男",
+        age:23
+    };
+
+    /**
+     * 利用模板引擎 引用数据填充到模板中
+     *
+     * 参数一：模板id
+     * 参数二：数据
+     */
+    var result =  template("personTemplate",personData);
+
+    //将返回的模板结果添加到界面中
+    document.getElementById('per').innerHTML = result;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="y-fff">
+<header class="mui-bar mui-bar-nav ">
+    <a class=" mui-icon mui-icon-arrowleft mui-pull-left"></a>
+
+    <h1 class="mui-title">选择参与人员</h1>
+</header>
+    <div class="mui-content">
+       <div class="y-lxrsos">
+           <div class="mui-input-row mui-search">
+           <input type="search" class="mui-input-clear" placeholder="收索">
+       </div>
+       </div>
+        <div class="y-lxrxzdx">
+            <p class="y-lxrbt">选择参与人员</p>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">区域用户</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">自定义用户</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+<div id="div1">
+
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+
+<script>
+    //列表切换
+   mui(".y-lxrxzdx .mui-table-view").on('tap', 'a.mui-navigate-right', function () {
+        mui.openWindow({
+            url:'培训引领-选择参与人员2.html',
+            id:''
+        });
+    });
+
+    mui('.mui-bar-nav').on('tap', '.mui-icon-arrowleft', function () {
+        mui.openWindow({
+            url:'培训引领-项目主页.html?myxz=2',//链接带参数2018/7/6
+            id:''
+        });
+    });
+
+</script>
+</body>
+</html>
