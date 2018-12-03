@@ -604,6 +604,9 @@ margin: 0 30px;
 .tl-nav a.active{
     border-bottom: 2px solid #fff;
 }
+.tl-newstyle.isStuck{
+    border-bottom: 1px solid #fff;
+}
 .tl-newstyle.isStuck a{
 
     padding-bottom: 10px;
