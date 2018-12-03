@@ -581,18 +581,17 @@ margin: 0 30px;
 }
 .tl-nav a{
      position:relative;
-     margin: 0 15px;
      color: #fff;
-     padding: 10px 0;
+     padding: 15px;
  }
 .tl-nav a span{
     position: absolute;
     width: 22px;
     height: 22px;
     background-repeat: no-repeat;
-
+    z-index: 2;
     top: 0px;
-    right: -20px;
+    right: -0px;
 }
 .tl-ico-zuixin{
     background-size: 100%;
@@ -603,12 +602,25 @@ margin: 0 30px;
     background-image: url("../img/zuire.png");
 }
 .tl-nav a.active{
-    border-bottom: 1px solid #fff;
+    border-bottom: 2px solid #fff;
 }
-
+.tl-newstyle.isStuck a:nth-of-type(1).active{
+    border-bottom: 5px solid #1ab9f3;
+    border-radius: 0 0 5px 5px;
+    padding-bottom: 10px
+}
+.tl-newstyle.isStuck a:nth-of-type(2).active{
+    border-bottom: 5px solid #ff6a4a;
+    border-radius: 0 0 5px 5px;
+    padding-bottom: 10px
+}
+.tl-newstyle.isStuck a:nth-of-type(3).active{
+    border-bottom: 5px solid #40e2bd;
+    border-radius: 0 0 5px 5px;
+    padding-bottom: 10px
+}
 .mui-bar-transparent+.mui-content .tl-xszy-assemble{
    padding-top: 40px;
-
 }
 .tl-zuoye-titl a{
     padding: 5px 20px;
@@ -616,14 +628,22 @@ margin: 0 30px;
     color: #fff;
     border-radius: 0 55px 55px 0;
 }
-
-
 .tl-zuoye-span{
     padding: 5px 20px;
     background-color: #ff6a4a;
     color: #fff;
     border-radius: 0 55px 55px 0;
 }
+.tl-leibiao:nth-of-type(2) .tl-newstyle{
+    background-color:#1ab9f3;
+}
+.tl-leibiao:nth-of-type(3) .tl-newstyle{
+    background-color:#ff6a4a;
+}
+.tl-leibiao:nth-of-type(4) .tl-newstyle{
+    background-color:#40e2bd;
+}
+
 .menuItem{
 display: none;
 }
@@ -634,11 +654,18 @@ display: none;
 }
 .tl-zuoye-span.active{
     position: fixed;
-    top: 44px;
+    top: 54px;
     left: 0;
     z-index: 99;
 }
-.tl-leibiao{
+.tl-leibiao-box{
     padding-top: 10px;
     background-color: #9bbcff;
+}
+
+.tl-leibiao-box{
+    display: none;
+}
+.tl-leibiao-box.active{
+    display: block;
 }
