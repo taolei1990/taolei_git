@@ -262,14 +262,17 @@ color: #fff
 margin: 0 -15px;
 }
 .tl-video-box{
-margin: 0 30px;
-    padding-bottom: 20px;
-}
-.tl-video-box video {
-    padding:15px;
+    margin: 0 30px;
     background-image: url("../img/758fd97f724b2f31e7ede8b3b7fb753af355efd152b2-asbHtx.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    margin-bottom: 20px;
+}
+.tl-video-box video {
+   padding: 15px 15px 10px 15px;
+}
+.tl-video-iframe{
+    padding: 15px 15px 10px 15px;
 }
 .tl-lubfb .swiper-container{
 
@@ -487,6 +490,7 @@ margin: 0 30px;
     font-size: 13px;
     background-size: 15px;
     background-repeat: no-repeat;
+    margin-right: 5px;
 }
 .tl-xszy-like{
     background-image: url("../img/dianzan.png");

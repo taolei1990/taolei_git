@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>video</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+<body>
+<div id="video" ></div>
+<script type="text/javascript" src="js/chplayer.min.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+    var videoObject = {
+        container: '#video', //容器的ID或className
+        // poster: 'img/video.png', //封面图片地址
+        variable: 'player',
+        autoplay: false, //是否自动播放
+        html5m3u8:true,
+        video: [
+            ['video/video-1.mp4', 'video/mp4'],
+        ]
+    };
+    var player = new chplayer(videoObject);
+
+    }
+</script>
+</body>
+
+</html>

@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="css/swiper.min.css" type="text/css">
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <style>
-        video::-webkit-media-controls-panel{
-            background-color: rgba(255, 253, 253, 0.31);
-        }
-    </style>
 </head>
 <body>
 <!--<header id="header" class="mui-bar  mui-bar-transparent">-->
@@ -33,7 +28,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="tl-video-box">
-                            <video class="tl-video-pause" src="video/video-1.mp4"  width="100%" webkit-playsinline="" playsinline="" x5-playsinline="" x-webkit-airplay="allow" controls="controls" ></video>
+                             <iframe id="tl-video-iframe" class="tl-video-iframe" src="video.html" width="100%"  frameborder="0"></iframe>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -304,6 +299,12 @@
         mui.alert('点击了：'+v)
     })
 
+    window.onload = function () {
+        setTimeout(function(){
+            var iframeHeight = $(".tl-video-iframe").contents().find("body").height();
+            $(".tl-video-iframe").css('height',iframeHeight+25)
+        }, 2000);//需要延迟2s获取iframe高度
+    }
 </script>
 
 </body>
