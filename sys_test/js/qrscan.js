@@ -59,8 +59,7 @@ function cdata(){
                 var vd = doc.createElement('video');
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
-                    var p = "<p>调用摄像头成功</p>";
-                    $("#result").append(p);
+               mui.toast('调摄像头成功')
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
@@ -78,20 +77,18 @@ function cdata(){
         },
         // 截图上传
         getImgDecode: function (func) {
-            var p = "<p>开始截图</p>";
-            $("#result").append(p);
+          mui.toast('截图')
             var self = this;
             var video = doc.getElementById('video_id');
             var canvas = doc.createElement('canvas');
-            canvas.width = 340;
-            canvas.height = 305;
+            canvas.width = 300;
+            canvas.height = 300;
             var ctx = canvas.getContext('2d');
-            ctx.drawImage(video, 0, 0, 340, 305);
+            ctx.drawImage(video, 0, 0, 300, 300);
             if (canvas.toBlob === undefined) {
                 var base64 = canvas.toDataURL();
                 var blob = self.Base64ToBlob(base64);
                 self.sendBlob(blob, func);
-
             } else {
                 canvas.toBlob(function (blob) {
                     self.sendBlob(canvas.toDataURL(), func);
@@ -102,25 +99,20 @@ function cdata(){
         },
 
         sendBlob: function (blob, func) {
-            var p = "<p>准备上传</p>";
-            $("#result").append(p);
+            mui.toast("请求")
             var fd = new FormData();
-            // alert(blob+func)
             fd.append('auth', 'lkl123456');
             fd.append('base64', blob);
-            // console.log("截图",blob);
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = cdata();
             xhr.open('post', 'https://px.dev.yunjy.com.cn/api/test/qcode', true);
-            var p3 = "<p>请求</p>";
-            $("#result").append(p3);
             xhr.onload = function () {
-
                 var data = JSON.parse(xhr.responseText);
                 if(data.resultCode == 200){
                     console.log("识别到内容：" + data.resultMsg);
                     // scan.closeScan();
                     // $('#close,.box-1').hide();
+                    mui.toast(data.resultMsg)
                     window.location.href=data.resultMsg;
                 }else {
 

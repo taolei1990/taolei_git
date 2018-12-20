@@ -129,17 +129,19 @@
         window.clearInterval(ds);
     });
 
-    var re_div = document.getElementById('result');
+    // var re_div = document.getElementById('result');
     function startScan() {
         scan.getImgDecode(function (data) {
-            console.log(data);
-            var p = document.createElement('p');
+            // console.log(data);
+            // var p = document.createElement('p');
             if (data.success) {
-                p.innerHTML = 'RESULT: ' + data.payload;
+                // p.innerHTML = 'RESULT: ' + data.payload;
+                mui.toast('RESULT: ' + data.payload)
             } else {
-                p.innerHTML = 'ERROR: ' + data.msg;
+                // p.innerHTML = 'ERROR: ' + data.msg;
+                mui.toast('ERROR: ' + data.msg)
             }
-            re_div.appendChild(p);
+            // re_div.appendChild(p);
         });
     };
 </script>
