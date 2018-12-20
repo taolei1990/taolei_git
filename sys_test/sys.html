@@ -117,6 +117,7 @@
     $('.mui-bar').on('tap', '#open', function () {
       // mui.toast('请求调用摄像头')
         scan.openScan();
+        $('#close,.box-1').show()
         ds = window.setInterval(function () {
             startScan();
         }, 1500);
