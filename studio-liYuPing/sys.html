@@ -96,8 +96,9 @@
 </header>
 <div class="mui-content">
 <div id="video">
-    <span id="close">X</span>
+
 </div>
+    <span id="close">X</span>
 <div class="box-1" >
  <div class="box-2">
 
@@ -127,6 +128,7 @@
     // document.getElementById('close').onclick = function () {
     $('.mui-content').on('tap', '#close', function () {
         scan.closeScan();
+        $('#close,.box-1').hide()
         window.clearInterval(ds);
     });
 
