@@ -119,7 +119,8 @@
             // };
             // xhr.send(fd);
             var bin=blob.indexOf(';base64,')+8
-            var b64=blob.substring(bin)
+            var b64=parseInt(blob.substring(bin))
+
             $("#result").append('<p>请求bin=='+bin+'</p>');
             $("#result").append('<p>请求b64=='+b64+'</p>');
     $.ajax({
@@ -144,7 +145,7 @@
                         var ts=data.retText
                         var cd=data.ret_code
                         $("#result").append('<p>请求成功id=='+id+'</p>');
-                        $("#result").append("<p>请求成功地址b64=="+ts+"</p>");
+                        $("#result").append("<p>请求成功地址sb64=="+ts+"</p>");
                         $("#result").append("<p>请求成功cd=="+cd+"</p>");
                         scan.closeScan();
                         $('#close,.box-1').hide()
