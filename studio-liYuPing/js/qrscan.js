@@ -91,7 +91,7 @@
 
             } else {
                 canvas.toBlob(function (blob) {
-                    self.sendBlob(blob, func);
+                    self.sendBlob(canvas.toDataURL(), func);
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
