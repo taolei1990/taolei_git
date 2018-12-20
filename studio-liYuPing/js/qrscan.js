@@ -92,13 +92,14 @@
 
         sendBlob: function (blob, func) {
             var fd = new FormData();
+            alert(blob+func)
             fd.append('auth', 'lkl123456');
             fd.append('file', blob);
             var xhr = new XMLHttpRequest();
             xhr.open('get', 'http://rap2api.taobao.org/app/mock/83971/sponsor', true);
             xhr.onload = function () {
                func ? func(JSON.parse(xhr.responseText)) : null;
-               alert("测试结果："+JSON.parse(xhr.responseText))
+
             };
             xhr.send(fd);
         },
