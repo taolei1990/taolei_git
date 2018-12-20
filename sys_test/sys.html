@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>扫一扫</title>
+    <link rel="stylesheet" href="css/mui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <style>
+        video {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border-radius: 5px;
+            z-index: 99998;
+        }
+        #close{
+            display: none;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-left: -20px;
+            border-radius: 55px;
+            border: 1px solid #fff;
+            background-color: #fff;
+            height: 40px;
+            width: 40px;
+            z-index: 99999;
+        }
+        #open{
+            position: fixed;
+            top: 5px;
+            right: 10px;
+        }
+        .box-1{
+            display: none;
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -150px;
+            z-index: 99999;
+            box-shadow: rgba(0,0,0,.3) 0 0 0 9999px;
+        }
+        .box-2{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border: 1px solid #fff;
+            overflow: hidden;
+        }
+        .box-2::after{
+            content: '';
+            animation:myfirst 4s  infinite;
+            -moz-animation:myfirst 4s  infinite; /* Firefox */
+            -webkit-animation:myfirst 4s  infinite; /* Safari and Chrome */
+            -o-animation:myfirst 4s  infinite; /* Opera */
+            position: absolute;
+            left: 0px;
+            right: 0px;
+
+        }
+
+        @keyframes myfirst
+        {
+            0%    {top: 0px; border-bottom: 1px solid rgb(39, 182, 254);border-top: none; background: linear-gradient(to bottom, rgba(39, 182, 254, 0.1), rgba(39, 182, 254, 0.9));  height: 0px;}
+            49%   {top:  300px; border-bottom: 1px solid rgb(39, 182, 254);border-top: none; background: linear-gradient(to bottom, rgba(39, 182, 254, 0.1), rgba(39, 182, 254, 0.9));height: 150px;}
+            50%   {top:  300px; border-bottom: none; border-top: 1px solid rgb(39, 182, 254);background: linear-gradient(to bottom, rgba(39, 182, 254, 0.9), rgba(39, 182, 254, 0.1));  height: 0px;}
+            99%   {top: -150px; border-bottom: none; border-top: 1px solid rgb(39, 182, 254);background: linear-gradient(to bottom, rgba(39, 182, 254, 0.9), rgba(39, 182, 254, 0.1));height: 150px;}
+            100%  {top: 0px; border-bottom: 1px solid rgb(39, 182, 254);border-top: none;background: linear-gradient(to bottom, rgba(39, 182, 254, 0.1), rgba(39, 182, 254, 0.9));  height: 0px;}
+        }
+
+
+    </style>
+</head>
+<body>
+<header class="mui-bar  mui-bar-transparent tl-bar">
+    <a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">
+      扫一扫
+    </h1>
+    <a id="open" class="mui-icon mui-icon-ewm mui-pull-right"></a>
+</header>
+<div class="mui-content">
+<div id="video">
+    <span id="close">X</span>
+</div>
+<div class="box-1" >
+ <div class="box-2">
+
+ </div>
+</div>
+
+    <div id="result"></div>
+</div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/qrscan.js"></script>
+<script>
+
+    var ds = null;
+    var scan = new QRScan('video');
+
+    // document.getElementById('open').onclick = function () {
+    $('.mui-bar').on('tap', '#open', function () {
+        var p = "<p>准备调用摄像头</p>";
+        $("#result").append(p);
+        scan.openScan();
+        $('#close,.box-1').show()
+        ds = window.setInterval(function () {
+            startScan();
+        }, 1500);
+    });
+    // document.getElementById('close').onclick = function () {
+    $('.mui-content').on('tap', '#close', function () {
+        scan.closeScan();
+        window.clearInterval(ds);
+    });
+
+    var re_div = document.getElementById('result');
+    function startScan() {
+        scan.getImgDecode(function (data) {
+            console.log(data);
+            var p = document.createElement('p');
+            if (data.success) {
+                p.innerHTML = 'RESULT: ' + data.payload;
+            } else {
+                p.innerHTML = 'ERROR: ' + data.msg;
+            }
+            re_div.appendChild(p);
+        });
+    };
+</script>
+</html>
+
+
