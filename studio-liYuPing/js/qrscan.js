@@ -77,47 +77,67 @@
             var p = "<p>开始截图</p>";
             $("#result").append(p);
             var self = this;
-            var video = doc.getElementById('video_id');
+            var video1 = doc.getElementById('result');
             var canvas = doc.createElement('canvas');
-            canvas.width = 340;
-            canvas.height = 305;
+            canvas.width = 300;
+            canvas.height = 300;
             var ctx = canvas.getContext('2d');
-            ctx.drawImage(video, 0, 0, 340, 305);
+            ctx.drawImage(video1, 0, 0, 300, 300);
+
             if (canvas.toBlob === undefined) {
                 var base64 = canvas.toDataURL();
                 var blob = self.Base64ToBlob(base64);
                 self.sendBlob(blob, func);
-             
+
             } else {
                 canvas.toBlob(function (blob) {
                     self.sendBlob(blob, func);
                 });
-                var img="<img src='"+canvas.toDataURL()+"' />"
-                $("#result").append(img);
+                // var img="<img src='"+canvas.toDataURL()+"' />"
+                // $("#result").append(img);
             }
         },
 
         sendBlob: function (blob, func) {
-            var p = "<p>准备上传</p>";
-            $("#result").append(p);
-            var fd = new FormData();
-            // alert(blob+func)
-            fd.append('auth', 'lkl123456');
-            fd.append('file', blob);
-            console.log("截图",blob);
-            var xhr = new XMLHttpRequest();
-            xhr.open('get', 'http://rap2api.taobao.org/app/mock/83971/sponsor', true);
-            var p3 = "<p>p3"+JSON.parse(xhr.responseText)+"</p>";
-            $("#result").append(p3);
-            xhr.onload = function () {
-                var p1 = "<p>上传成功</p>";
-                $("#result").append(p1);
-                var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
-                $("#result").append(p2);
-               func ? func(JSON.parse(xhr.responseText)) : null;
+            // var p = "<p>准备上传</p>";
+            // $("#result").append(p);
+            // var fd = new FormData();
+            // // alert(blob+func)
+            // fd.append('auth', 'lkl123456');
+            // fd.append('file', blob);
+            // console.log("截图",blob);
+            // var xhr = new XMLHttpRequest();
+            // xhr.open('post', 'http//:127.0.0.1:7009/dd/qcode', true);
+            // var p3 = "<p>p3"+JSON.parse(xhr.responseText)+"</p>";
+            // $("#result").append(p3);
+            // xhr.onload = function () {
+            //     var p1 = "<p>上传成功</p>";
+            //     $("#result").append(p1);
+            //     var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
+            //     $("#result").append(p2);
+            //    func ? func(JSON.parse(xhr.responseText)) : null;
+            //
+            // };
+            // xhr.send(fd);
+            $.ajax({
+                type: 'post',
+                url: 'http://route.showapi.com/887-4',
+                dataType: 'json',
+                data: {
+                    "showapi_appid": '83515', //这里需要改成自己的appid
+                    "showapi_sign": 'cdf60a58375f4402a6c12754d5dea221',  //这里需要改成自己的应用的密钥secret
+                    "imgData":blob,
+                    "handleImg":""
+                },
 
-            };
-            xhr.send(fd);
+                error: function(XmlHttpRequest, textStatus, errorThrown) {
+                    alert("操作失败!");
+                },
+                success: function(result) {
+                    console.log(result) //console变量在ie低版本下不能用
+                    alert(result)
+                }
+            });
         },
 
         Base64ToBlob: function (base64) {
@@ -133,3 +153,8 @@
 
     win.QRScan = QRScan;
 }(window, document));
+
+//以下代码仅为演示用,具体传入参数请参看接口描述详情页.
+//需要引用jquery库
+
+
