@@ -140,7 +140,7 @@
                     $("#result").append("<p>请求成功da"+result+"</p>");
                     var data=JSON.parse(result)
                     console.log(result) //console变量在ie低版本下不能用
-                    $("#result").append("<p>请求成功1js"+data+"</p>");
+                    $("#result").append("<p>请求成功1js"+result.showapi_res_code+"</p>");
                     $("#result").append("<p>请求成功2js"+data.showapi_res_body+"</p>");
                     $("#result").append("<p>请求成功3js"+data.showapi_res_body.retText+"</p>");
                 }
