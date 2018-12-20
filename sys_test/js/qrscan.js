@@ -60,7 +60,8 @@ function cdata(){
                 var vd = doc.createElement('video');
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
-                mui.toast('调摄像头成功')
+                     mui.toast('调摄像头成功')
+                    $('#close,.box-1').show()
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
