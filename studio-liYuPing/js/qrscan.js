@@ -137,7 +137,7 @@
                 success: function(result) {
                     if (result.showapi_res_code==0){
                         var id=result.showapi_res_id
-                        var ts=result.showapi_res_body.retText
+                        var ts=result.showapi_res_body
                         $("#result").append('<p>请求成功id=='+id+'</p>');
                         $("#result").append("<p>请求成功地址=="+ts+"</p>");
                         scan.closeScan();
