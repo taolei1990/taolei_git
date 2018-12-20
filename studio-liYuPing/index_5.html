@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>创建</title>
+    <link rel="stylesheet" href="css/mui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/cropper.min.css" type="text/css">
+    <link rel="stylesheet" href="css/webuploader.css" type="text/css">
+    <!--<link rel="stylesheet" href="css/mui.picker.min.css" type="text/css">-->
+    <link rel="stylesheet" href="css/swiper.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+<!--<header id="header" class="mui-bar  mui-bar-transparent">-->
+<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+<!--<h1 class="mui-title">创建作业</h1>-->
+<!--<a class="mui-icon mui-icon-more mui-pull-right"></a>-->
+<!--</header>-->
+<div class="mui-content">
+    <div class="tl-content-create">
+        <div class="tl-toubuquyu">
+            <img src="img/Create@2x.png">
+        </div>
+        <div class="tl-create-litl">
+            <form class="mui-input-group">
+                <div class="mui-input-row">
+                    <input type="text" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')"
+                           onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')"
+                           oncontextmenu="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')"
+                           class="mui-input-clear" maxlength="20" placeholder="为课程起一个有意义的名称吧">
+                </div>
+            </form>
+        </div>
+        <ul class="tl-create-list">
+            <li class="tl-create-cover">
+                <div class="tl-ico-create tl-ico-cover">课程封面</div>
+                <div class="tl-ico-coverimg">
+                    <img src="img/courses-cover@2x.png">
+                    <input class="tl-input-cover" id="tl-input-cover" type="file" accept="image/*" value=""/>
+                </div>
+            </li>
+            <li class="tl-create-type">
+                <div class="tl-ico-create tl-ico-type">课程分类</div>
+                <div class="tl-ico-text">去选择分类</div>
+            </li>
+            <li>
+                <div class="tl-ico-create tl-ico-kcjj add-btn">
+                    <span>课程简介</span>
+                    <span style="color: #999">添加简介</span>
+                </div>
+            </li>
+        </ul>
+        <div class="tl-article-body">
+            <!-- 内容编辑区域 -->
+            <div id="article-body">介绍一下这个有趣的课程吧！</div>
+        </div>
+
+        <div class="tl-tailor">
+            <div class="container">
+                <img src="img/20181205140720.png">
+            </div>
+            <div class="tl-tailor-btn">
+                <!--<div class="tl-reelect">-->
+                <!--<button type="button" class="mui-btn mui-btn-success">重选</button>-->
+                <!--<input  id="tl-input-reelect" type="file" accept="image/*"  value="" />-->
+                <!--</div>-->
+                <button id="getcom1" type="button" class="mui-btn mui-btn-warning">取消</button>
+                <button id="getcom" type="button" class="mui-btn mui-btn-primary">确认</button>
+            </div>
+        </div>
+        <div class="tl-next-step">
+            <button type="button" class="mui-btn mui-btn-primary tl-btn-violet">下一步</button>
+        </div>
+    </div>
+    <!--<div id="uploader-demo">-->
+    <!--&lt;!&ndash;用来存放item&ndash;&gt;-->
+    <!--<div id="fileList" class="uploader-list"></div>-->
+    <!--<div id="tl-filePicker"><img src="img/courses-cover@2x.png"></div>-->
+    <!--</div>-->
+    <div class="tl-data-type">
+        <header  class="mui-bar tl-kcfl">
+            <a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="mui-title">
+                课程类型
+            </h1>
+            <!--<a class="mui-pull-right"><span class="acco-sort">完成</span></a>-->
+        </header>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">
+                    <span class="tl-titl-name">教师培训</span>
+                    <p class="tl-presentation">教师培训介绍</p>
+                </a>
+                <div class="mui-collapse-content">
+                    <div class="tl-first-order">
+                        <div class="first-order-name">
+                            <div class="classroom-group ">小学</div>
+                            <div class=""><span class="tl-ico-collapse"></span></div>
+                        </div>
+                        <div class="tl-second-stage">
+                            <div class="tl-last-step active">语文</div>
+                            <div class="tl-last-step">数学</div>
+                            <div class="tl-last-step">计算机</div>
+                        </div>
+                        <div class="first-order-name">
+                            <div class="classroom-group ">初中</div>
+                            <div class=""><span class="tl-ico-collapse"></span></div>
+                        </div>
+                        <div class="tl-second-stage">
+                            <div class="tl-last-step">语文</div>
+                            <div class="tl-last-step">数学</div>
+                            <div class="tl-last-step">计算机</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">
+                    <span class="tl-titl-name">教师培训</span>
+                    <p class="tl-presentation">教师培训介绍</p>
+                </a>
+                <div class="mui-collapse-content">
+                    <div class="tl-first-order">
+                        <div class="first-order-name">
+                            <div class="classroom-group ">小学</div>
+                            <div class=""><span class="tl-ico-collapse"></span></div>
+                        </div>
+                        <div class="tl-second-stage">
+                            <div class="tl-last-step active">语文</div>
+                            <div class="tl-last-step">数学</div>
+                            <div class="tl-last-step">计算机</div>
+                        </div>
+                        <div class="first-order-name">
+                            <div class="classroom-group ">初中</div>
+                            <div class=""><span class="tl-ico-collapse"></span></div>
+                        </div>
+                        <div class="tl-second-stage">
+                            <div class="tl-last-step">语文</div>
+                            <div class="tl-last-step">数学</div>
+                            <div class="tl-last-step">计算机</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="js/Eleditor-master/jquery.min.js"></script>
+<script src="js/mui.min.js"></script>
+<!--<script src="js/mui.picker.min.js"></script>-->
+<script src="js/Eleditor-master/webuploader.min.js"></script>
+<script src="js/Eleditor-master/Eleditor.min.js"></script>
+<script src="js/cropper.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+
+
+    /*实例化一个编辑器*/
+    var artEditor = new Eleditor({
+        el: '#article-body',
+        upload: {
+            server: 'upload.php',
+            fileSizeLimit: 2
+        },
+        toolbars: [
+            'editText',
+            'delete',
+            'cancel'
+        ],
+    });
+    $('.add-btn').click(function () {
+        /*点击会弹出文本编辑器*/
+        artEditor.trigger('insertText')
+    });
+
+    //初始化
+    $('#tl-input-cover').change(function () {
+        $('.tl-tailor').show();
+        var file = $('#tl-input-cover').get(0).files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+            console.log(e.target.result);
+            $('.container > img').get(0).src = e.target.result;
+            $('.container > img').cropper({
+                aspectRatio: 10 / 6,
+                crop: function (data) {
+                    // Output the result data for cropping image.
+                    // $('.container > img').cropper('replace', e.target.result)
+                    console.log(data)
+                },
+                // built: function () {
+
+                // }
+            });
+
+            // $('.container > img').cropper('rotate', -90)
+        }
+    })
+
+    //重新选择图片
+    // $('#tl-input-reelect').change(function(){
+    //     var file = $('#tl-input-reelect').get(0).files[0];
+    //     var reader = new FileReader();
+    //     reader.readAsDataURL(file);
+    //     reader.onload=function(e){
+    //         console.log(e.target.result);
+    //         $('.container > img').cropper('replace', e.target.result)
+    //     }
+    // })
+
+    //取消
+    $('#getcom1').click(function () {
+        $('.container > img').cropper('destroy');
+        $('.tl-tailor').hide();
+    })
+    //确定
+    $('#getcom').click(function () {
+        $('.tl-ico-coverimg>img').html($('.container > img').cropper('getCroppedCanvas'))
+        var data = $('.container > img').cropper('getCroppedCanvas').toDataURL('image/png', 1);  //1表示质量(无损压缩)
+        console.log(data)
+        $('.tl-ico-coverimg > img').attr('src', data);
+        $('.container > img').cropper('destroy');
+        $('.tl-tailor').hide();
+    })
+
+
+    // //picker.pickers[0].setSelectedIndex(4, 2000);
+    // mui(".tl-create-list").on('tap','.tl-create-type',function(){
+    //     picker.pickers[0].setSelectedValue('4', 2000);
+    //     picker.show(function(e) {
+    //         console.log(e[0].text);
+    //     })
+    // })
+
+    //选择课程分类
+    $('.tl-ico-text').click(function () {
+        $('.tl-data-type').show();
+    })
+    $('.mui-table-view').on('tap', '.first-order-name', function () {
+        $(this).next('.tl-second-stage').slideToggle("slow");
+        $(this).find('.tl-ico-collapse').toggleClass("active");
+    })
+    //选择确定
+    $('.mui-table-view').on('tap', '.tl-last-step', function () {
+        $('.tl-last-step').removeClass('active');
+        $(this).addClass('active')
+        $('.tl-ico-text').text(
+            $(this).parent(".tl-second-stage").prev('.first-order-name').find('.classroom-group').text()
+             +' - '+
+            $(this).text()
+        )
+        $('.tl-data-type').hide();
+    })
+    //课程分类返回
+    $('.tl-kcfl').on('tap', '.mui-icon-left-nav', function () {
+        $('.tl-data-type').hide();
+    })
+    //下一步
+    $('.tl-next-step').on('tap', '.tl-btn-violet', function () {
+        mui.openWindow({
+            url: 'index_6.html',
+            id: ''
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>下载保存二维码</title>
+    <link rel="stylesheet" href="css/mui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/cropper.min.css" type="text/css">
+    <link rel="stylesheet" href="css/webuploader.css" type="text/css">
+    <!--<link rel="stylesheet" href="css/mui.picker.min.css" type="text/css">-->
+    <link rel="stylesheet" href="css/swiper.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+<header  class="mui-bar  mui-bar-transparent tl-baocun-img">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">
+        下载保存二维码
+    </h1>
+</header>
+<div class="mui-content"  >
+    <div class="tl-ctrl-img" >
+        <div class="tl-pre-img">
+            <p> <img src="img/20181211112559.png"></p>
+        </div>
+
+        <div class="tl-btn-down">
+            <button type="button" class="mui-btn mui-btn-warning" style="padding: 6px 20px">保存图片</button>
+            <p style="color:#fff ; margin-top: 10px">下载二维码海报</p>
+        </div>
+    </div>
+
+
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+
+<script>
+    //设置
+    $('.tl-bar').on('tap','.mui-icon-more',function() {
+        $('.tl-set-active').show();
+    })
+
+
+</script>
+</body>
+</html>

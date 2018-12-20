@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>jQuery UI 拖动（Draggable） + 排序（Sortable）</title>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+    <style>
+
+    </style>
+    <script>
+            $(function() {
+                $( "#sortable1, #sortable2,#sortable3" ).sortable({
+                    revert: true,
+                    connectWith: ".connectedSortable"
+                }).disableSelection();
+
+                // $( ".sad" ).draggable({
+                //     connectToSortable: ".connectedSortable",
+                //     helper: "clone",
+                //     // stop: function( event, ui ) {
+                //     //     console.log(event, ui.helper.get([0]))
+                //     // }
+                // });
+            });
+
+    </script>
+
+</head>
+<body>
+
+<div class="container">
+    <div id="sortable1" class="connectedSortable">
+        <div class="ui-state-default">Item 1</div>
+        <div class="ui-state-default">Item 2</div>
+        <div class="ui-state-default">Item 3</div>
+        <div class="ui-state-default">Item 4</div>
+        <div class="ui-state-default">Item 5</div>
+    </div>
+
+    <div id="sortable2" class="connectedSortable">
+        <div class="ui-state-highlight">Item 1</div>
+        <div class="ui-state-highlight">Item 2</div>
+        <div class="ui-state-highlight">Item 3</div>
+        <div class="ui-state-highlight">Item 4</div>
+        <div class="ui-state-highlight">Item 5</div>
+    </div>
+</div>
+<div id="sortable3" class="tl-ico-wfb">
+<p class="sad">外面的</p>
+<p class="sad">外面的</p>
+<p class="sad">外面的</p>
+<p class="sad">外面的</p>
+</div>
+</body>
+</html>

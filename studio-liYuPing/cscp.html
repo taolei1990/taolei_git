@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>target-div</title>
+</head>
+<body>
+<!-- 1. Define some markup -->
+<div id="as">hello</div>
+<button class="btn" >Copy</button>
+
+<!-- 2. Include library -->
+<script src="js/clipboard.min.js"></script>
+
+<!-- 3. Instantiate clipboard -->
+<script>
+    var clipboard = new ClipboardJS('.btn', {
+        text: function() {
+            return 'to be or not to be';
+        }
+    });
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+        alert(1)
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+        alert(2)
+    });
+</script>
+</body>
+</html>
+

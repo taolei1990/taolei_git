@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>如何写好作文</title>
+    <link rel="stylesheet" href="css/mui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <style type="text/css">
+.sys-img{
+    padding: 10px;
+}
+        .sys-img img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body style="background-color: #fff">
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">长按识别二维码DOM</h1>
+</header>
+<div class="mui-content" style="background-color: #fff">
+<div class="sys-img">
+
+    <img id="showImg" src="img/20181217142938.png">
+    <p style="text-align: center;line-height: 40px">长按上方图片识别图中二维码</p>
+</div>
+    <div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+        <!-- 可选择菜单 -->
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell" onclick="alertChange(1)" >
+                <a href="#">识别图中二维码</a>
+            </li>
+            <li class="mui-table-view-cell" onclick="alertChange(2)">
+                <a href="#">保存图片到手机</a>
+            </li>
+        </ul>
+        <!-- 取消菜单 -->
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#sheet1"><b>取消</b></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/llqrcode.js" type="text/javascript" ></script>
+<script src="js/analyticCode.js" type="text/javascript" ></script>
+<script>
+    //设置
+    mui.init({
+        gestureConfig:{
+            longtap: true,
+        }
+    });
+
+    $('.sys-img').on('longtap','img',function() {
+        mui('#sheet1').popover('toggle');
+    });
+
+    function alertChange(param){
+        if(param === 1){
+            analyticCode.getUrl('img-url',document.getElementById('showImg'),function(url){window.location.href = url;});
+        }else if(param === 2){
+            getUrl(document.getElementById('showImg'),'img-url');
+        }
+    }
+
+    function getUrl(e,param){
+        analyticCode.getUrl(param,e,function(url,url_2){
+            console.log('把图片拿到传给移动端让移动端app完成保存图片到相册')
+            mui.toast('图片地址:'+url_2)
+        });
+    }
+</script>
+</body>
+</html>
