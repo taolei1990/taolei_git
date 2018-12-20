@@ -137,7 +137,8 @@
                     $("#result").append("<p>请求失败</p>");
                 },
                 success: function(result) {
-                    var data=JSON.parse(result.responseText)
+                    $("#result").append("<p>请求成功js"+result+"</p>");
+                    var data=JSON.parse(result.showapi_res_body)
                     console.log(result) //console变量在ie低版本下不能用
                     $("#result").append("<p>请求成功1js"+data+"</p>");
                     $("#result").append("<p>请求成功2js"+data.showapi_res_body+"</p>");
