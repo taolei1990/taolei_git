@@ -87,12 +87,13 @@
                 var base64 = canvas.toDataURL();
                 var blob = self.Base64ToBlob(base64);
                 self.sendBlob(blob, func);
-                var img="<img src='"+base64+"' />"
-                $("#result").append(img);
+             
             } else {
                 canvas.toBlob(function (blob) {
                     self.sendBlob(blob, func);
                 });
+                var img="<img src='"+canvas.toDataURL()+"' />"
+                $("#result").append(img);
             }
         },
 

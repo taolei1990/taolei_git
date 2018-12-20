@@ -117,6 +117,8 @@
 
     // document.getElementById('open').onclick = function () {
     $('.mui-bar').on('tap', '#open', function () {
+        var p = "<p>准备调用摄像头</p>";
+        $("#result").append(p);
         scan.openScan();
         $('#close,.box-1').show()
         ds = window.setInterval(function () {
