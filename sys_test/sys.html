@@ -111,6 +111,8 @@
 <script src="js/mui.min.js"></script>
 <script src="js/qrscan.js"></script>
 <script>
+    var ds = null;
+    var scan = new QRScan('video');
     // document.getElementById('open').onclick = function () {
     $('.mui-bar').on('tap', '#open', function () {
         var p = "<p>准备调用摄像头</p>";
