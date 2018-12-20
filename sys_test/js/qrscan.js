@@ -60,7 +60,7 @@ function cdata(){
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
                      mui.toast('调摄像头成功')
-
+                    $('#close,.box-1').show()
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
@@ -75,6 +75,7 @@ function cdata(){
 
         closeScan: function () {
             this.div_can.innerHTML = '';
+            $('#close,.box-1').hide()
         },
         // 截图上传
         getImgDecode: function (func) {

@@ -115,9 +115,8 @@
     var scan = new QRScan('video');
     // document.getElementById('open').onclick = function () {
     $('.mui-bar').on('tap', '#open', function () {
-      // mui.toast('请求调用摄像头')
+        mui.toast('请求调用摄像头')
         scan.openScan();
-        $('#close,.box-1').show()
         ds = window.setInterval(function () {
             startScan();
         }, 1500);
@@ -125,7 +124,6 @@
     // document.getElementById('close').onclick = function () {
     $('.mui-content').on('tap', '#close', function () {
         scan.closeScan();
-        $('#close,.box-1').hide()
         window.clearInterval(ds);
     });
 
