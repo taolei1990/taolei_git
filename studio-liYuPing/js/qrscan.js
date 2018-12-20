@@ -98,9 +98,10 @@
             var p = "<p>准备上传</p>";
             $("#result").append(p);
             var fd = new FormData();
-            alert(blob+func)
+            // alert(blob+func)
             fd.append('auth', 'lkl123456');
             fd.append('file', blob);
+            console.log("截图",blob);
             var xhr = new XMLHttpRequest();
             xhr.open('get', 'http://rap2api.taobao.org/app/mock/83971/sponsor', true);
             var p3 = "<p>p3"+JSON.parse(xhr.responseText)+"</p>";
