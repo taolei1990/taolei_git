@@ -136,10 +136,13 @@
                 },
                 success: function(result) {
                     if (result.showapi_res_code==0){
+                        var data=result.showapi_res_body
                         var id=result.showapi_res_id
-                        var ts=result.showapi_res_body
+                        var ts=data.retText
+                        var cd=data.ret_code
                         $("#result").append('<p>请求成功id=='+id+'</p>');
                         $("#result").append("<p>请求成功地址=="+ts+"</p>");
+                        $("#result").append("<p>请求成功cd=="+cd+"</p>");
                         scan.closeScan();
                         $('#close,.box-1').hide()
                     }
