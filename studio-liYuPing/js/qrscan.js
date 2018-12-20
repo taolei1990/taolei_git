@@ -98,6 +98,7 @@
             xhr.open('get', 'http://rap2api.taobao.org/app/mock/83971/sponsor', true);
             xhr.onload = function () {
                func ? func(JSON.parse(xhr.responseText)) : null;
+               alert("测试结果："+JSON.parse(xhr.responseText))
             };
             xhr.send(fd);
         },
