@@ -88,8 +88,8 @@
                 self.sendBlob(blob, func);
 
             } else {
-                canvas.toBlob(function (blob) {
-                    self.sendBlob(blob, func);
+                canvas.toBlob(function (base64) {
+                    self.sendBlob(base64, func);
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
@@ -118,7 +118,8 @@
             //
             // };
             // xhr.send(fd);
-var cr="iVBORw0KGgoAAAANSUhEUgAAAGwAAABsCAIAAAAABMCaAAABoUlEQVR42u3a0Q3DIAwFwOy/dLtCqP0IcY9PlNJwkbBlc32M8rgQQIQ4EvEKjMr6d357a5PpfUGECHE8YumgLayzCpp+nzvrQIQI8b8QK0Fg+YXCgSWxL4gQIUJMHfwJXIgQIUKcgLj6vwILRIgQdyAmChAnJNuvr+JAhAhxG2K6UfXU/KhuH0SIEKOI8Ys/i8GhEky27gsiRIgjEbsuFlWS7UoAOTrZhggR4hjEpxpJkQJqoAAMESLE+YhdDaauZLvrmcglLIgQIY5HTDTsE0lv14d5rLINESLEYxHTiW66Gd91AaoUWCBChDgGcWczKF1E6CrWxgsQECFCfAViV3EhkYS3FVNPuBUGESLEVyAmDuadza90QIMIESLE6mGcKIhGAkW6eQ8RIsRXIO4sOiSaWUcUICBChDgG8QqMrsZTev6xC00QIUJ8BWI6gCRAE4EFIkSIEKtNqHQz/gqP5Q8PESJEiI0NphOwKoELIkSIEH95oUSyXVm/bb8QIUL8K8TTINIFC4gQIULc0ag6bb7rGYgQIc5ENH4MbgggQpwyvlFyqHYsCUgcAAAAAElFTkSuQmCC"
+var bin=blob.indexOf(';base64,')+8
+            var b64=blob.substring(bin)
     $.ajax({
                 type: 'post',
                 url: 'http://route.showapi.com/887-4',
@@ -126,7 +127,7 @@ var cr="iVBORw0KGgoAAAANSUhEUgAAAGwAAABsCAIAAAAABMCaAAABoUlEQVR42u3a0Q3DIAwFwOy/
                 data: {
                     "showapi_appid": '83515', //这里需要改成自己的appid
                     "showapi_sign": 'cdf60a58375f4402a6c12754d5dea221',  //这里需要改成自己的应用的密钥secret
-                    "imgData":cr,
+                    "imgData":b64,
                     "handleImg":""
                 },
 
@@ -141,7 +142,7 @@ var cr="iVBORw0KGgoAAAANSUhEUgAAAGwAAABsCAIAAAAABMCaAAABoUlEQVR42u3a0Q3DIAwFwOy/
                         var ts=data.retText
                         var cd=data.ret_code
                         $("#result").append('<p>请求成功id=='+id+'</p>');
-                        $("#result").append("<p>请求成功地址s=="+ts+"</p>");
+                        $("#result").append("<p>请求成功地址b64=="+ts+"</p>");
                         $("#result").append("<p>请求成功cd=="+cd+"</p>");
                         scan.closeScan();
                         $('#close,.box-1').hide()
