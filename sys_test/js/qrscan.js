@@ -115,9 +115,9 @@ function cdata(){
             xhr.open('post', 'https://px.dev.yunjy.com.cn/api/test/qcode', true);
             var p3 = "<p>请求</p>";
             $("#result").append(p3);
-            xhr.onload = function (result) {
+            xhr.onload = function () {
                 //64位编码
-                console.log("======" + result);
+                console.log("======" + JSON.parse(xhr.responseText));
                // var p1 = "<p>上传成功</p>";
               //  $("#result").append(p1);
             //    var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
