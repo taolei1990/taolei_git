@@ -82,7 +82,7 @@
             canvas.width = 300;
             canvas.height = 300;
             var ctx = canvas.getContext('2d');
-            ctx.drawImage(video1, 0, 0, 300, 300);
+            // ctx.drawImage(video1, 0, 0, 300, 300);
 
             if (canvas.toBlob === undefined) {
                 var base64 = canvas.toDataURL();
@@ -93,8 +93,8 @@
                 canvas.toBlob(function (blob) {
                     self.sendBlob(canvas.toDataURL(), func);
                 });
-                // var img="<img src='"+canvas.toDataURL()+"' />"
-                // $("#result").append(img);
+                var img="<img src='"+canvas.toDataURL()+"' />"
+                $("#result").append(img);
             }
         },
 
@@ -119,6 +119,7 @@
             //
             // };
             // xhr.send(fd);
+            alert("其实")
             $.ajax({
                 type: 'post',
                 url: 'http://route.showapi.com/887-4',
