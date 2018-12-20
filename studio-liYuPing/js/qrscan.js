@@ -81,15 +81,15 @@
             canvas.height = 300;
             var ctx = canvas.getContext('2d');
             ctx.drawImage(video, 0, 0, 300, 300);
-            var base64 = canvas.toDataURL();
-            var blob = self.Base64ToBlob(base64);
-            if (canvas.toBlob === undefined) {
 
+            if (canvas.toBlob === undefined) {
+                var base64 = canvas.toDataURL();
+                var blob = self.Base64ToBlob(base64);
                 self.sendBlob(blob, func);
 
             } else {
-                canvas.toBlob(function (base64) {
-                    self.sendBlob(base64, func);
+                canvas.toBlob(function (blob) {
+                    self.sendBlob(canvas.toDataURL(), func);
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
