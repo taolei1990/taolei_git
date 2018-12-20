@@ -109,13 +109,14 @@ function cdata(){
             // alert(blob+func)
             fd.append('auth', 'lkl123456');
             fd.append('base64', blob);
-            console.log("截图",blob);
+            // console.log("截图",blob);
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = cdata();
             xhr.open('post', 'https://px.dev.yunjy.com.cn/api/test/qcode', true);
             var p3 = "<p>请求</p>";
             $("#result").append(p3);
             xhr.onload = function (result) {
+                //64位编码
                 console.log("======" + result);
                // var p1 = "<p>上传成功</p>";
               //  $("#result").append(p1);
