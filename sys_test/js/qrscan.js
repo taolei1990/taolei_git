@@ -60,7 +60,7 @@ function cdata(){
                 var vd = doc.createElement('video');
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
-               mui.toast('调摄像头成功')
+                mui.toast('调摄像头成功')
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
@@ -116,6 +116,7 @@ function cdata(){
                     mui.toast(data.resultMsg)
                     window.location.href=data.resultMsg;
                     scan.closeScan();
+                    $('#close,.box-1').hide()
                 }else {
 
                 }
