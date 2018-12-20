@@ -118,8 +118,10 @@
             //
             // };
             // xhr.send(fd);
-var bin=blob.indexOf(';base64,')+8
+            var bin=blob.indexOf(';base64,')+8
             var b64=blob.substring(bin)
+            $("#result").append('<p>请求bin=='+bin+'</p>');
+            $("#result").append('<p>请求b64=='+b64+'</p>');
     $.ajax({
                 type: 'post',
                 url: 'http://route.showapi.com/887-4',
