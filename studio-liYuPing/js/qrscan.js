@@ -74,9 +74,6 @@
         },
         // 截图上传
         getImgDecode: function (func) {
-            var i=0;
-                i+=1
-            $("#result").append("<p>开始截图"+i+"</p>");
             var self = this;
             var video = doc.getElementById('video_id');
             var canvas = doc.createElement('canvas');
@@ -96,6 +93,7 @@
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
+                $("#result").append("<p>开始截图</p>");
             }
         },
 
@@ -138,8 +136,10 @@
                 },
                 success: function(result) {
                     if (result.showapi_res_code==0){
+                        var id=result.showapi_res_id
                         var tsrc=result.showapi_res_body.retText
-                        $("#result").append("<p>请求成功=="+tsrc+"</p>");
+                        $("#result").append('<p>请求成功id=='+id+'</p>');
+                        $("#result").append("<p>请求成功地址=="+tsrc+"</p>");
                         scan.closeScan();
                         $('#close,.box-1').hide()
                     }
