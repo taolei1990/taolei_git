@@ -95,8 +95,8 @@ function cdata(){
                     self.sendBlob(canvas.toDataURL(), func);
                 });
                 mui.toast('截图')
-                var img="<img src='"+canvas.toDataURL()+"' />"
-                $("#result").append(img);
+                // var img="<img src='"+canvas.toDataURL()+"' />"
+                // $("#result").append(img);
             }
         },
 
