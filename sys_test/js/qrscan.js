@@ -78,7 +78,6 @@ function cdata(){
         },
         // 截图上传
         getImgDecode: function (func) {
-          mui.toast('截图')
             var self = this;
             var video = doc.getElementById('video_id');
             var canvas = doc.createElement('canvas');
@@ -94,8 +93,9 @@ function cdata(){
                 canvas.toBlob(function (blob) {
                     self.sendBlob(canvas.toDataURL(), func);
                 });
+                mui.toast('截图')
                 var img="<img src='"+canvas.toDataURL()+"' />"
-                $("#result").html(img);
+                $("#result").append(img);
             }
         },
 
