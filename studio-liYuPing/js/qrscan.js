@@ -77,12 +77,12 @@
             var p = "<p>开始截图</p>";
             $("#result").append(p);
             var self = this;
-            var video1 = doc.getElementById('result');
+            var video = doc.getElementById('video_id');
             var canvas = doc.createElement('canvas');
             canvas.width = 300;
             canvas.height = 300;
             var ctx = canvas.getContext('2d');
-            // ctx.drawImage(video1, 0, 0, 300, 300);
+            ctx.drawImage(video, 0, 0, 300, 300);
 
             if (canvas.toBlob === undefined) {
                 var base64 = canvas.toDataURL();
