@@ -119,8 +119,8 @@ function cdata(){
                 var data = JSON.parse(xhr.responseText);
                 if(data.resultCode == 200){
                     console.log("识别到内容：" + data.resultMsg);
-                    scan.closeScan();
-                    $('#close,.box-1').hide();
+                    // scan.closeScan();
+                    // $('#close,.box-1').hide();
                     window.location.href=data.resultMsg;
                 }else {
 
