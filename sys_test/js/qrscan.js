@@ -117,7 +117,10 @@ function cdata(){
             $("#result").append(p3);
             xhr.onload = function () {
                 //64位编码
-                console.log("======" + JSON.parse(xhr.responseText));
+                var data = JSON.parse(xhr.responseText);
+                if(data.resultCode == 200){
+                    alert("识别到内容：" + data.resultMsg);
+                }
                // var p1 = "<p>上传成功</p>";
               //  $("#result").append(p1);
             //    var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
