@@ -119,7 +119,7 @@
             //
             // };
             // xhr.send(fd);
-            alert("其实")
+
             $.ajax({
                 type: 'post',
                 url: 'http://route.showapi.com/887-4',
@@ -136,7 +136,8 @@
                 },
                 success: function(result) {
                     console.log(result) //console变量在ie低版本下不能用
-                    alert(result)
+                    mui.toast('成功')
+                    mui.toast(result)
                 }
             });
         },
