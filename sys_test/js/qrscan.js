@@ -1,7 +1,8 @@
 /**
  * html5调用摄像头扫码
  */
-
+var ds = null;
+var scan = new QRScan('video');
 function cdata(){
 
 };
@@ -114,6 +115,7 @@ function cdata(){
                     // $('#close,.box-1').hide();
                     mui.toast(data.resultMsg)
                     window.location.href=data.resultMsg;
+                    scan.closeScan();
                 }else {
 
                 }
