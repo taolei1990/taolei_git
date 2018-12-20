@@ -55,8 +55,7 @@
                 var vd = doc.createElement('video');
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
-                    var p = "<p>调用摄像头成功</p>";
-                    $("#result").append(p);
+                    $("#result").append("<p>调用摄像头成功</p>");
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
@@ -71,11 +70,13 @@
 
         closeScan: function () {
             this.div_can.innerHTML = '';
+            $("#result").append("<p>关闭扫一扫</p>");
         },
         // 截图上传
         getImgDecode: function (func) {
-            var p = "<p>开始截图</p>";
-            $("#result").append(p);
+            var i=0;
+                i+=1
+            $("#result").append("<p>开始截图"+i+"</p>");
             var self = this;
             var video = doc.getElementById('video_id');
             var canvas = doc.createElement('canvas');
@@ -93,8 +94,8 @@
                 canvas.toBlob(function (blob) {
                     self.sendBlob(canvas.toDataURL(), func);
                 });
-                var img="<img src='"+canvas.toDataURL()+"' />"
-                $("#result").append(img);
+                // var img="<img src='"+canvas.toDataURL()+"' />"
+                // $("#result").append(img);
             }
         },
 
@@ -132,12 +133,12 @@
                 },
 
                 error: function(XmlHttpRequest, textStatus, errorThrown) {
-                    alert("操作失败!");
+                    // alert("操作失败!");
+                    $("#result").append("<p>请求失败</p>");
                 },
                 success: function(result) {
                     console.log(result) //console变量在ie低版本下不能用
-                    mui.toast('成功')
-                    mui.toast(result)
+                    $("#result").append("<p>请求成功"+result+"</p>");
                 }
             });
         },
@@ -156,7 +157,6 @@
     win.QRScan = QRScan;
 }(window, document));
 
-//以下代码仅为演示用,具体传入参数请参看接口描述详情页.
-//需要引用jquery库
+
 
 
