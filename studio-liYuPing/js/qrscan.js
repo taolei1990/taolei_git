@@ -55,6 +55,8 @@
                 var vd = doc.createElement('video');
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
+                    var p = "<p>调用摄像头成功</p>";
+                    $("#result").append(p);
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
@@ -72,6 +74,8 @@
         },
         // 截图上传
         getImgDecode: function (func) {
+            var p = "<p>开始截图</p>";
+            $("#result").append(p);
             var self = this;
             var video = doc.getElementById('video_id');
             var canvas = doc.createElement('canvas');
@@ -91,13 +95,21 @@
         },
 
         sendBlob: function (blob, func) {
+            var p = "<p>准备上传</p>";
+            $("#result").append(p);
             var fd = new FormData();
             alert(blob+func)
             fd.append('auth', 'lkl123456');
             fd.append('file', blob);
             var xhr = new XMLHttpRequest();
             xhr.open('get', 'http://rap2api.taobao.org/app/mock/83971/sponsor', true);
+            var p3 = "<p>p3"+JSON.parse(xhr.responseText)+"</p>";
+            $("#result").append(p3);
             xhr.onload = function () {
+                var p1 = "<p>上传成功</p>";
+                $("#result").append(p1);
+                var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
+                $("#result").append(p2);
                func ? func(JSON.parse(xhr.responseText)) : null;
 
             };
