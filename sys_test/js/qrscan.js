@@ -94,7 +94,7 @@ function cdata(){
                     self.sendBlob(canvas.toDataURL(), func);
                 });
                 var img="<img src='"+canvas.toDataURL()+"' />"
-                $("#result").append(img);
+                $("#result").html(img);
             }
         },
 
