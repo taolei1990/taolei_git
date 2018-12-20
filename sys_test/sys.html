@@ -114,9 +114,8 @@
 
     // document.getElementById('open').onclick = function () {
     $('.mui-bar').on('tap', '#open', function () {
-      mui.toast('请求调用摄像头')
+      // mui.toast('请求调用摄像头')
         scan.openScan();
-
         ds = window.setInterval(function () {
             startScan();
         }, 1500);
