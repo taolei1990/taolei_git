@@ -1,12 +1,12 @@
 /**
  * html5调用摄像头扫码
  */
+var ds = null;
+var scan = new QRScan('video');
 function cdata(){
 
-}
-
-
-;(function (win, doc) {
+};
+(function (win, doc) {
     function QRScan(div_id) {
         this.div_id = div_id;
         this.div_can = null;
@@ -116,14 +116,19 @@ function cdata(){
             var p3 = "<p>请求</p>";
             $("#result").append(p3);
             xhr.onload = function () {
-                //64位编码
+
                 var data = JSON.parse(xhr.responseText);
                 if(data.resultCode == 200){
-                    alert("识别到内容：" + data.resultMsg);
+                    console.log("识别到内容：" + data.resultMsg);
+                    scan.closeScan();
+                    $('#close,.box-1').hide();
+                    window.location.href=data.resultMsg;
+                }else {
+
                 }
                // var p1 = "<p>上传成功</p>";
               //  $("#result").append(p1);
-            //    var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
+              //    var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
               //  $("#result").append(p2);
               // func ? func(JSON.parse(xhr.responseText)) : null;
 
