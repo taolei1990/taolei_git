@@ -140,6 +140,7 @@
                     if (result.showapi_res_code==0){
                         var tsrc=result.showapi_res_body.retText
                         $("#result").append("<p>请求成功=="+tsrc+"</p>");
+                        scan.closeScan();
                         $('#close,.box-1').hide()
                     }
                 }
