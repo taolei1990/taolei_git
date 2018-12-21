@@ -29,7 +29,9 @@ function cdata(){
                 });
             };
             if(navigator.mediaDevices === undefined) {
-                navigator.mediaDevices = {};
+                navigator.mediaDevices = {
+
+                };
             }
             if(navigator.mediaDevices.getUserMedia === undefined) {
                 navigator.mediaDevices.getUserMedia = promisifiedOldGUM;

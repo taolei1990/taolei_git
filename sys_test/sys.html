@@ -92,7 +92,7 @@
     <h1 class="mui-title">
       扫一扫
     </h1>
-    <a id="open" class="mui-icon mui-icon-ewm mui-pull-right"></a>
+    <span id="open" class="mui-icon mui-icon-ewm mui-pull-right"></span>
 </header>
 <div class="mui-content">
 <div id="video">
@@ -114,14 +114,14 @@
 <script>
     var ds = null;
     var scan = new QRScan('video');
-    document.getElementById('open').onclick = function () {
-    // $('.mui-bar').on('tap', '#open', function () {
+    // document.getElementById('open').onclick = function () {
+    $('.mui-bar').on('tap', '#open', function () {
         $('#result').append('<p>请求调用摄像头</p>')
         scan.openScan();
         ds = window.setInterval(function () {
             startScan();
         }, 1500);
-    };
+    });
     // document.getElementById('close').onclick = function () {
     $('.mui-content').on('tap', '#close', function () {
         scan.closeScan();
