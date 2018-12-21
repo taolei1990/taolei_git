@@ -83,13 +83,15 @@
             ctx.drawImage(video, 0, 0, 300, 300);
             var base64 = canvas.toDataURL();
             var blob = self.Base64ToBlob(base64);
+            $("#result").append("<p>截图base64+"+base64+"</p>");
+            $("#result").append("<p>截图blob+"+blob+"</p>");
             if (canvas.toBlob === undefined) {
-        
+
                 self.sendBlob(blob, func);
 
             } else {
                 canvas.toBlob(function (blob) {
-                    $("#result").append("<p>截图b4+"+blob+"</p>");
+
                     self.sendBlob(blob, func);
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
