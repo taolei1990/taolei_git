@@ -101,7 +101,16 @@
 </div>
     <span id="close">X</span>
     <div id="result"></div>
-    <input type="file" >
+    <div style="position: fixed;bottom: 30px;left: 0;right: 0">
+    <div style="position: relative;width: 80px; height: 30px;margin:0 auto">
+        <label style="
+        display:block;width: 80px; height: 30px;
+        position: absolute;top: 0;left: 0;
+        background-color: #28b8d5;color: #fff;
+        text-align: center;line-height: 30px;border-radius: 4px;z-index: -1">选择文件</label>
+        <input type="file" style="width: 80px; height: 30px;opacity: 0">
+    </div>
+    </div>
 </div>
 </body>
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -113,10 +122,10 @@
     // document.getElementById('open').onclick = function () {
     $('.mui-bar').on('tap', '.open', function () {
         $('#result').append('<p>请求调用摄像头</p>')
-        // scan.openScan();
-        // ds = window.setInterval(function () {
-        //     startScan();
-        // }, 1500);
+        scan.openScan();
+        ds = window.setInterval(function () {
+            startScan();
+        }, 1500);
     });
     // document.getElementById('close').onclick = function () {
     $('.mui-content').on('tap', '#close', function () {
