@@ -59,14 +59,15 @@ function cdata(){
                 var vd = doc.createElement('video');
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
-                     mui.toast('调摄像头成功')
+                    $('#result').append('<p>摄像头允许调用</p>')
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
-                    var p = doc.createElement('p');
-                    p.innerHTML = 'ERROR: ' + err.name +
-                                  '<br>该浏览器不支持调用摄像头';
-                    self.div_can.appendChild(p);
+                    // var p = doc.createElement('p');
+                    // p.innerHTML = 'ERROR: ' + err.name +
+                    //               '<br>该浏览器不支持调用摄像头';
+                    // self.div_can.appendChild(p);
+                    $('#result').append('<p>该手机浏览器没权限调用摄像头'+err.name+'</p>')
                 });
                 vd.play();
             }
@@ -94,14 +95,14 @@ function cdata(){
                 canvas.toBlob(function (blob) {
                     self.sendBlob(canvas.toDataURL(), func);
                 });
-                mui.toast('截图')
+                $('#result').append('<p>获取图片二维码</p>')
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
             }
         },
 
         sendBlob: function (blob, func) {
-            mui.toast("请求")
+            $('#result').append('<p>开始请求</p>')
             var fd = new FormData();
             fd.append('auth', 'lkl123456');
             fd.append('base64', blob);
@@ -111,10 +112,10 @@ function cdata(){
             xhr.onload = function () {
                 var data = JSON.parse(xhr.responseText);
                 if(data.resultCode == 200){
-                    console.log("识别到内容：" + data.resultMsg);
+                    $('#result').append('<p>请求成功</p>')
+                    $('#result').append('<p>解析内容：'+data.resultMsg+'</p>')
                     // scan.closeScan();
                     // $('#close,.box-1').hide();
-                    mui.toast(data.resultMsg)
                     window.location.href=data.resultMsg;
                     scan.closeScan();
                     $('#close,.box-1').hide()

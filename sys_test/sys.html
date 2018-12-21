@@ -116,7 +116,7 @@
     var scan = new QRScan('video');
     // document.getElementById('open').onclick = function () {
     $('.mui-bar').on('tap', '#open', function () {
-        mui.toast('请求调用摄像头')
+        $('#result').append('<p>请求调用摄像头</p>')
         scan.openScan();
         ds = window.setInterval(function () {
             startScan();
@@ -135,10 +135,12 @@
             // var p = document.createElement('p');
             if (data.success) {
                 // p.innerHTML = 'RESULT: ' + data.payload;
-                mui.toast('RESULT: ' + data.payload)
+                // mui.toast('RESULT: ' + data.payload)
+                $('#result').append('<p>RESULT:'+data.payload+'</p>')
             } else {
                 // p.innerHTML = 'ERROR: ' + data.msg;
-                mui.toast('ERROR: ' + data.msg)
+                // mui.toast('ERROR: ' + data.msg)
+                $('#result').append('<p>ERROR:'+data.msg+'</p>')
             }
             // re_div.appendChild(p);
         });
