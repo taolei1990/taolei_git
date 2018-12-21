@@ -81,17 +81,16 @@
             canvas.height = 300;
             var ctx = canvas.getContext('2d');
             ctx.drawImage(video, 0, 0, 300, 300);
-            var base64 = canvas.toDataURL();
-            var blob = self.Base64ToBlob(base64);
-            if (canvas.toBlob === undefined) {
 
+            if (canvas.toBlob === undefined) {
+                var base64 = canvas.toDataURL();
+                var blob = self.Base64ToBlob(base64);
                 self.sendBlob(blob, func);
 
             } else {
-                $("#result").append('<p>请求bin=='+canvas.toDataURL()+'</p>');
-                $("#result").append('<p>请求b64=='+self.Base64ToBlob(base64)+'</p>');
                 canvas.toBlob(function (blob) {
-                    self.sendBlob(self.Base64ToBlob(base64), func);
+                    self.sendBlob(blob, func);
+                    $("#result").append("<p>截图b4+"+blob+"</p>");
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
@@ -147,7 +146,7 @@
                         var ts=data.retText
                         var cd=data.ret_code
                         $("#result").append('<p>请求成功id=='+id+'</p>');
-                        $("#result").append("<p>请求成功地址b64=="+ts+"</p>");
+                        $("#result").append("<p>请求成功地址b6=="+ts+"</p>");
                         $("#result").append("<p>请求成功cd=="+cd+"</p>");
                         scan.closeScan();
                         $('#close,.box-1').hide()
@@ -162,7 +161,7 @@
             for (var i = 0; i < len; i++) {
                 as[i] = code.charCodeAt(i);
             }
-            return new Blob([as], {type: 'image/jpg'});
+            return new Blob([as], {type: 'image/png'});
         }
     }
 
