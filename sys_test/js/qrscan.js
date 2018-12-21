@@ -71,6 +71,7 @@ function cdata(){
                     //               '<br>该浏览器不支持调用摄像头';
                     // self.div_can.appendChild(p);
                     $('#result').append('<p>该手机浏览器没权限调用摄像头'+err.name+'</p>')
+                    $('#close,.box-1').hide()
                 });
                 vd.play();
             }
