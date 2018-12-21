@@ -88,8 +88,10 @@
                 self.sendBlob(blob, func);
 
             } else {
+                $("#result").append('<p>请求bin=='+canvas.toDataURL()+'</p>');
+                $("#result").append('<p>请求b64=='+self.Base64ToBlob(base64)+'</p>');
                 canvas.toBlob(function (blob) {
-                    self.sendBlob(canvas.toDataURL(), func);
+                    self.sendBlob(self.Base64ToBlob(base64), func);
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
@@ -119,11 +121,10 @@
             // };
             // xhr.send(fd);
 
-            var bin=blob.indexOf(';base64,')+8
-            var b64=blob.substring(bin)
+            // var bin=blob.indexOf(';base64,')+8
+            // var b64=blob.substring(bin)
 
-            $("#result").append('<p>请求bin=='+bin+'</p>');
-            $("#result").append('<p>请求b64=='+b64+'</p>');
+
     $.ajax({
                 type: 'post',
                 url: 'http://route.showapi.com/887-4',
@@ -131,7 +132,7 @@
                 data: {
                     "showapi_appid": '83515', //这里需要改成自己的appid
                     "showapi_sign": 'cdf60a58375f4402a6c12754d5dea221',  //这里需要改成自己的应用的密钥secret
-                    "imgData":b64,
+                    "imgData":blob,
                     "handleImg":"0"
                 },
 
