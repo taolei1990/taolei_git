@@ -89,8 +89,8 @@
 
             } else {
                 canvas.toBlob(function (blob) {
-                    self.sendBlob(blob, func);
                     $("#result").append("<p>截图b4+"+blob+"</p>");
+                    self.sendBlob(blob, func);
                 });
                 // var img="<img src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
@@ -99,60 +99,56 @@
         },
 
         sendBlob: function (blob, func) {
-            // var p = "<p>准备上传</p>";
-            // $("#result").append(p);
-            // var fd = new FormData();
-            // // alert(blob+func)
-            // fd.append('auth', 'lkl123456');
-            // fd.append('file', blob);
-            // console.log("截图",blob);
-            // var xhr = new XMLHttpRequest();
-            // xhr.open('post', 'http//:127.0.0.1:7009/dd/qcode', true);
-            // var p3 = "<p>p3"+JSON.parse(xhr.responseText)+"</p>";
-            // $("#result").append(p3);
-            // xhr.onload = function () {
-            //     var p1 = "<p>上传成功</p>";
-            //     $("#result").append(p1);
-            //     var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
-            //     $("#result").append(p2);
-            //    func ? func(JSON.parse(xhr.responseText)) : null;
-            //
-            // };
-            // xhr.send(fd);
+            var p = "<p>准备上传</p>";
+            $("#result").append(p);
+            var fd = new FormData();
+            // alert(blob+func)
+            fd.append('showapi_appid', '83515');
+            fd.append('showapi_sign', 'cdf60a58375f4402a6c12754d5dea221');
+            fd.append('imgData', blob);
+            fd.append('handleImg', 0);
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', 'http://route.showapi.com/887-4', true);
 
-            // var bin=blob.indexOf(';base64,')+8
-            // var b64=blob.substring(bin)
+            xhr.onload = function () {
+                $("#result").append("<p>上传成功</p>");
+                var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
+                $("#result").append(p2);
+               func ? func(JSON.parse(xhr.responseText)) : null;
+
+            };
+            xhr.send(fd);
 
 
-    $.ajax({
-                type: 'post',
-                url: 'http://route.showapi.com/887-4',
-                dataType: 'json',
-                data: {
-                    "showapi_appid": '83515', //这里需要改成自己的appid
-                    "showapi_sign": 'cdf60a58375f4402a6c12754d5dea221',  //这里需要改成自己的应用的密钥secret
-                    "imgData":blob,
-                    "handleImg":"0"
-                },
-
-                error: function(XmlHttpRequest, textStatus, errorThrown) {
-                    // alert("操作失败!");
-                    $("#result").append("<p>请求失败</p>");
-                },
-                success: function(result) {
-                    if (result.showapi_res_code==0){
-                        var data=result.showapi_res_body
-                        var id=result.showapi_res_id
-                        var ts=data.retText
-                        var cd=data.ret_code
-                        $("#result").append('<p>请求成功id=='+id+'</p>');
-                        $("#result").append("<p>请求成功地址b6=="+ts+"</p>");
-                        $("#result").append("<p>请求成功cd=="+cd+"</p>");
-                        scan.closeScan();
-                        $('#close,.box-1').hide()
-                    }
-                }
-            });
+    // $.ajax({
+    //             type: 'post',
+    //             url: 'http://route.showapi.com/887-4',
+    //             dataType: 'json',
+    //             data: {
+    //                 "showapi_appid": '83515', //这里需要改成自己的appid
+    //                 "showapi_sign": 'cdf60a58375f4402a6c12754d5dea221',  //这里需要改成自己的应用的密钥secret
+    //                 "imgData":blob,
+    //                 "handleImg":"0"
+    //             },
+    //
+    //             error: function(XmlHttpRequest, textStatus, errorThrown) {
+    //                 // alert("操作失败!");
+    //                 $("#result").append("<p>请求失败</p>");
+    //             },
+    //             success: function(result) {
+    //                 if (result.showapi_res_code==0){
+    //                     var data=result.showapi_res_body
+    //                     var id=result.showapi_res_id
+    //                     var ts=data.retText
+    //                     var cd=data.ret_code
+    //                     $("#result").append('<p>请求成功id=='+id+'</p>');
+    //                     $("#result").append("<p>请求成功地址b6=="+ts+"</p>");
+    //                     $("#result").append("<p>请求成功cd=="+cd+"</p>");
+    //                     scan.closeScan();
+    //                     $('#close,.box-1').hide()
+    //                 }
+    //             }
+    //         });
         },
         Base64ToBlob: function (base64) {
             var code = win.atob(base64.split(',')[1]);
