@@ -161,7 +161,7 @@
             for (var i = 0; i < len; i++) {
                 as[i] = code.charCodeAt(i);
             }
-            return new Blob([as], {type: 'image/png'});
+            return new Blob([as], {type: 'image/jpg'});
         }
     }
 
