@@ -60,6 +60,7 @@ function cdata(){
                 vd.setAttribute('id', 'video_id');
                 navigator.mediaDevices.getUserMedia(self.medioConfig).then(function (stream) {
                     $('#result').append('<p>摄像头允许调用</p>')
+                    $('#close,.box-1').show()
                     vd.src = win.URL.createObjectURL(stream);
                     self.div_can.appendChild(vd);
                 }).catch(function (err) {
@@ -71,7 +72,7 @@ function cdata(){
                 });
                 vd.play();
             }
-            $('#close,.box-1').show()
+
         },
 
         closeScan: function () {
