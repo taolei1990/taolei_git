@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>下拉刷新</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css" />
+    <link href="../css/w-custom.css" rel="stylesheet" />
+
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>
+
+    <h1 class="mui-title">上传</h1>
+</header>
+<div class="mui-content">
+    <div class="ys-card">
+        <form class="mui-input-group" id="input_example">
+            <div class="mui-input-row">
+                <label>标题:</label>
+                <input type="text"  class="mui-input-clear ys-input" autofocus="autofocus" placeholder="请输入标题">
+            </div>
+            <div class="mui-input-row">
+                <label>内容:</label>
+                <textarea class="ys-input" id="textarea" oninput="autosize(this)"  placeholder="请输入内容..."></textarea>
+            </div>
+            <div class="mui-input-row">
+                <label>选择组:</label>
+                <h1 id='showUserPicker'  class="mui-title"><span id='userResult' class="w-act-title">
+                    请选择</span><i class="iconfont ">&#xe656;</i></h1>
+            </div>
+            <div class="mui-input-row">
+                <label>资源分类:</label>
+                <h1 id='showUserPicker-1'  class="mui-title"><span id='userResult-1' class="w-act-title">
+                    请选择</span><i class="iconfont ">&#xe656;</i></h1>
+            </div>
+            <div class="mui-input-row w-row-file">
+                <label>上传附件:</label>
+                <span class="w-inupt-file"><input type="file" >+</span>
+            </div>
+            <ul class="mui-table-view w-file-list">
+                <li class="mui-table-view-cell">莫名我就喜欢你.png
+                    <span class="mui-badge mui-badge-warning">X</span>
+                </li>
+                <li class="mui-table-view-cell">莫名我就喜欢你.wod
+                    <span class="mui-badge mui-badge-warning">X</span>
+                </li>
+                <li class="mui-table-view-cell">莫名我就喜欢你.text
+                    <span class="mui-badge mui-badge-warning">X</span>
+                </li>
+            </ul>
+            <div class="mui-input-row">
+                <label>特殊贡献:</label>
+                <h1 id='showUserPicker-2'  class="mui-title"><span id='userResult-2' class="w-act-title">
+                    请选择</span><i class="iconfont ">&#xe656;</i></h1>
+            </div>
+            <div class="mui-button-row">
+                <button type="button" id="input_check" class="mui-btn mui-btn-primary" >确认</button>
+                <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script>
+    // 兼容自适应高度textarea
+   /*
+    *
+   function autosize(obj) {
+        var el = obj;
+        setTimeout(function() {
+            el.style.cssText = 'height:auto; padding:0';
+            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+        }, 0);
+    }
+    **/
+</script>
+
+<script type="text/javascript">
+        //判断当前input为空，则alert提醒
+        document.addEventListener('DOMContentLoaded', function() {
+            //			if(String.prototype.trim === undefined) { // fix for iOS 3.2
+            //				String.prototype.trim = function() {
+            //					return this.replace(/^\s+|\s+$/g, '');
+            //				};
+            //			}
+            document.getElementById("input_check").addEventListener('click', function() {
+                var check = true;
+                mui("#input_example .ys-input").each(function() {
+                    //若当前input为空，则alert提醒
+                    if(!this.value || this.value.trim() == "") {
+                        var label = this.previousElementSibling;
+                        mui.alert(label.innerText + "不允许为空");
+                        check = false;
+                        return false;
+                    }
+                }); //校验通过，继续执行业务逻辑
+                check && mui.alert('已提交 ')
+            })
+
+        })
+
+</script>
+
+<script>
+    //选择组
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+            //一级选择
+            var userPicker = new $.PopPicker();
+            userPicker.setData( [
+                {
+                    value: "1",
+                    text: '组1'
+                }, {
+                    value: "2",
+                    text: '组1'
+                }, {
+                    value: "3",
+                    text: '组1'
+                }, {
+                    value: "4",
+                    text: '组1'
+                }
+            ]);
+            var showUserPickerButton = doc.getElementById('showUserPicker');
+            var userResult = doc.getElementById('userResult');
+            showUserPickerButton.addEventListener('tap', function(event) {
+                userPicker.show(function(items) {
+                    userResult.innerText = items[0].text;
+                });
+            }, false);
+
+
+            //-----------------------------------------
+        });
+    })(mui, document);
+    //选择资源分类
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+            //一级选择
+            var userPicker = new $.PopPicker();
+            userPicker.setData( [
+                {
+
+                    text: '学科'
+                }, {
+
+                    text: '教案'
+                }, {
+
+                    text: '教案'
+                }, {
+
+                    text: '教学设计'
+                }
+            ]);
+            var showUserPickerButton = doc.getElementById('showUserPicker-1');
+            var userResult = doc.getElementById('userResult-1');
+            showUserPickerButton.addEventListener('tap', function(event) {
+                userPicker.show(function(items) {
+                    userResult.innerText = items[0].text;
+                });
+            }, false);
+            //-----------------------------------------
+        });
+    })(mui, document);
+    //特殊贡献
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function(obj, param) {
+                return obj[param] || '';
+            };
+            //一级选择
+            var userPicker = new $.PopPicker();
+            userPicker.setData( [
+                {
+
+                    text: '3分'
+                }, {
+
+                    text: '5分'
+                }, {
+
+                    text: '8分'
+                }, {
+
+                    text: '10分'
+                }
+            ]);
+            var showUserPickerButton = doc.getElementById('showUserPicker-2');
+            var userResult = doc.getElementById('userResult-2');
+            showUserPickerButton.addEventListener('tap', function(event) {
+                userPicker.show(function(items) {
+                    userResult.innerText = items[0].text;
+                });
+            }, false);
+            //-----------------------------------------
+        });
+    })(mui, document);
+</script>
+<script>
+    //删除附件
+    mui(".mui-table-view-cell").on('tap','.mui-badge',function(e){
+        $(this).parent(".mui-table-view-cell").remove();
+    });
+
+</script>
+</body>
+</html>

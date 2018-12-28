@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>给学员点评</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css"/>
+    <link href="../css/w-custom.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--菜单部分-->
+    <aside id="offCanvasSide" class="mui-off-canvas-right">
+        <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="ysy-coursesearch">
+                    <div class="ysy-mui-coursesearch">
+                        <div class="mui-input-row mui-search">
+                            <input type="search" class="mui-input-clear" placeholder="输入资源名称">
+                        </div>
+                    </div>
+                    <div class="ysy-coursetype">
+                        <h6>资源类型</h6>
+                        <ul>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+
+                        </ul>
+
+
+                    </div>
+                    <div class="ysy-coursetype">
+                        <h6>学段学科</h6>
+                        <ul class="ysy-xd">
+                            <li><a>幼儿</a></li>
+                            <li><a>小学</a></li>
+                            <li><a>初中</a></li>
+                            <li><a>高中</a></li>
+
+
+                        </ul>
+                        <ul class="ysy-xd">
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                            <li><a>学科一</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="ysy-coursetype">
+                        <h6>上传时间</h6>
+                        <div class="ysy-coursetype-time">
+                            <div class="start-time-4">
+                                <button id="start-time" data-options='{"type":"date"}' class="btn mui-btn ">开始时间
+                                    <div id='start-time-text' class="ui-alert"></div>
+                                </button>
+                            </div>
+                            <div class="start-time-2"><span>--</span></div>
+                            <div class="start-time-4">
+                                <button id="end-time" data-options='{"type":"date"}' class="btn mui-btn ">结束时间
+                                    <div id='end-time-text' class="ui-alert"></div>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <ul class="ysy-submitsearch">
+                <li>
+                    <button id="offCanvasHide" type="button" class="mui-btn mui-btn-danger">取消</button>
+                </li>
+                <li>
+                    <button type="button" class="mui-btn mui-btn-primary">查询</button>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="mui-inner-wrap">
+        <!--<header class="mui-bar mui-bar-nav">-->
+        <!--<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>-->
+        <!--<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>-->
+        <!--<h1 class="mui-title">学员点评</h1>-->
+        <!--</header>-->
+        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <p class="ys-reminder"><i class="iconfont">&#xe6a0;</i>抱歉没有搜索到你要的内容 我们推荐了以下内容!</p><!--如果查询结果没有内容就显示这个提示 反之则不显示提示-->
+                <div class="mui-content-padded w-sort">
+                    <ul class="mui-pagination mui-pagination-sm">
+                        <li>
+                            <a class="wm-sort remarkon wm-active" show="my" data-id="1">
+                                已选择
+                            </a>
+                        </li>
+                        <li>
+                            <a class="wm-sort remarkon" show="other" id="nochecked" data-id="0">
+                                未选择
+                            </a>
+                        </li>
+                        <li>
+                            <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon  wm-sort mui-icon-search"></a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="mui-table-view y-curriculumstable">
+                    <!--<li class="mui-table-view-cell">
+                        <a >
+                            <div class="y-checkbox">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <label> </label>
+                                    <input name="checkbox1" value="Item 1" type="checkbox" checked="checked">
+                                </div>
+                            </div>
+                            <h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>
+                            <div class="y-numbox" >
+                                <span class="y-xsx">师源网</span>
+                                <span class="y-xrs">2018-03-21</span>
+                                <div class="y-yxs">
+                                    <div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" value="5"/>
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div>
+                                    <em class="c54">564 <i class="iconfont">&#xe86f;</i></em>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a >
+                            <div class="y-checkbox">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <label> </label>
+                                    <input name="checkbox1" value="Item 1" type="checkbox" checked="checked">
+                                </div>
+                            </div>
+                            <h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>
+                            <div class="y-numbox" >
+                                <span class="y-xsx">师源网</span>
+                                <span class="y-xrs">2018-03-21</span>
+                                <div class="y-yxs">
+                                    <div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" value="5"/>
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div>
+                                    <em class="c54">564 <i class="iconfont">&#xe86f;</i></em>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a >
+                            <div class="y-checkbox">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <label> </label>
+                                    <input name="checkbox1" value="Item 1" type="checkbox" checked="checked">
+                                </div>
+                            </div>
+                            <h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>
+                            <div class="y-numbox" >
+                                <span class="y-xsx">师源网</span>
+                                <span class="y-xrs">2018-03-21</span>
+                                <div class="y-yxs">
+                                    <div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" value="5"/>
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div>
+                                    <em class="c54">564 <i class="iconfont">&#xe86f;</i></em>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a >
+                            <div class="y-checkbox">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <label> </label>
+                                    <input name="checkbox1" value="Item 1" type="checkbox" checked="checked">
+                                </div>
+                            </div>
+                            <h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>
+                            <div class="y-numbox" >
+                                <span class="y-xsx">师源网</span>
+                                <span class="y-xrs">2018-03-21</span>
+                                <div class="y-yxs">
+                                    <div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" value="5"/>
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div>
+                                    <em class="c54">564 <i class="iconfont">&#xe86f;</i></em>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a >
+                            <div class="y-checkbox">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <label> </label>
+                                    <input name="checkbox1" value="Item 1" type="checkbox" checked="checked">
+                                </div>
+                            </div>
+                            <h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>
+                            <div class="y-numbox" >
+                                <span class="y-xsx">师源网</span>
+                                <span class="y-xrs">2018-03-21</span>
+                                <div class="y-yxs">
+                                    <div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" value="5"/>
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div>
+                                    <em class="c54">564 <i class="iconfont">&#xe86f;</i></em>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a >
+                            <div class="y-checkbox">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <label> </label>
+                                    <input name="checkbox1" value="Item 1" type="checkbox" checked="checked">
+                                </div>
+                            </div>
+                            <h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>
+                            <div class="y-numbox" >
+                                <span class="y-xsx">师源网</span>
+                                <span class="y-xrs">2018-03-21</span>
+                                <div class="y-yxs">
+                                    <div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" value="5"/>
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div>
+                                    <em class="c54">564 <i class="iconfont">&#xe86f;</i></em>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a >
+                            <div class="y-checkbox">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <label> </label>
+                                    <input name="checkbox1" value="Item 1" type="checkbox" checked="checked">
+                                </div>
+                            </div>
+                            <h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>
+                            <div class="y-numbox" >
+                                <span class="y-xsx">师源网</span>
+                                <span class="y-xrs">2018-03-21</span>
+                                <div class="y-yxs">
+                                    <div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;
+                                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                        <input class="mui-numbox-input" type="number" value="5"/>
+                                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                                    </div>
+                                    <em class="c54">564 <i class="iconfont">&#xe86f;</i></em>
+                                </div>
+                            </div>
+                        </a>
+                    </li>-->
+                </ul>
+
+            </div>
+            <div class="y-selective">
+                <div class="y-checkbox">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label>全选</label>
+                        <input name="checkbox" class="y-quanx" value="Item 1" type="checkbox" checked="checked">
+                    </div>
+                </div>
+                已选择数量 <b>2</b>
+                <span class="y-quxz">提交</span>
+            </div>
+        </div>
+        <!-- off-canvas backdrop -->
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+
+    $(function () {
+        get("/activity/discussion/commentList?activityId=" + getUrlParamValue("activityId") + "&type=0" + "&tacheType=" + getUrlParamValue("tacheType") + "&status=0", function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                if (Object_filter(data)) {
+                    var ul = '';
+                    for (var i = 0; i < data.resourceList.length; i++) {
+                        ul += '<li class="mui-table-view-cell"><a ><div class="y-checkbox"> <div class="mui-input-row mui-checkbox mui-left"> <label> </label> <input name="checkbox1" value="Item 1" type="checkbox" checked="checked" data-id="'+data.resourceList[i].id+'"> </div> </div><h5>' + data.resourceList[i].title + '</h5> <div class="y-numbox" > <span class="y-xsx">' + data.resourceList[i].userName + '</span> <span class="y-xrs">' + data.resourceList[i].createDate + '</span> <div class="y-yxs"> <div class="mui-numbox" data-numbox-min="5" data-numbox-max="40"><button class="mui-btn mui-numbox-btn-minus" type="button">-</button> <input class="mui-numbox-input" type="number" value="5"/> <button class="mui-btn mui-numbox-btn-plus" type="button">+</button> </div> <em class="c54">' + data.resourceList[i].commentNum + '<i class="iconfont">&#xe86f;</i></em></div></div></a></li>';
+                    }
+                    $(".y-curriculumstable").append(ul);
+                }
+            }
+        });
+    });
+</script>
+<script>
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    //显示侧滑菜单
+    mui(".ysy-submitsearch啊").on('tap', '.mui-btn', function () {
+        mui('.mui-off-canvas-wrap').offCanvas('show');
+    });
+    //隐藏侧滑菜单
+    mui(".ysy-submitsearch").on('tap', '.mui-btn', function () {
+        mui('.mui-off-canvas-wrap').offCanvas('close');
+    });
+</script>
+<script>
+
+    (function ($) {
+        //选择开始时间
+        $.init();
+        var result = $('#start-time-text')[0];
+        var btns = $('#start-time');
+        btns.each(function (i, btn) {
+            btn.addEventListener('tap', function () {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var id = this.getAttribute('id');
+                /*
+                 * 首次显示时实例化组件
+                 * 示例为了简洁，将 options 放在了按钮的 dom 上
+                 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+                 */
+                var picker = new $.DtPicker(options);
+                picker.show(function (rs) {
+                    /*
+                     * rs.value 拼合后的 value
+                     * rs.text 拼合后的 text
+                     * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+                     * rs.m 月，用法同年
+                     * rs.d 日，用法同年
+                     * rs.h 时，用法同年
+                     * rs.i 分（minutes 的第二个字母），用法同年
+                     */
+                    result.innerText = '' + rs.text;
+                    /*
+                     * 返回 false 可以阻止选择框的关闭
+                     * return false;
+                     */
+                    /*
+                     * 释放组件资源，释放后将将不能再操作组件
+                     * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+                     * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+                     * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+                     */
+                    picker.dispose();
+                });
+            }, false);
+        });
+    })(mui);
+
+    (function ($) {
+        //选择结束时间
+        $.init();
+        var result = $('#end-time-text')[0];
+        var btns = $('#end-time');
+        btns.each(function (i, btn) {
+            btn.addEventListener('tap', function () {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var id = this.getAttribute('id');
+                /*
+                 * 首次显示时实例化组件
+                 * 示例为了简洁，将 options 放在了按钮的 dom 上
+                 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+                 */
+                var picker = new $.DtPicker(options);
+                picker.show(function (rs) {
+                    /*
+                     * rs.value 拼合后的 value
+                     * rs.text 拼合后的 text
+                     * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+                     * rs.m 月，用法同年
+                     * rs.d 日，用法同年
+                     * rs.h 时，用法同年
+                     * rs.i 分（minutes 的第二个字母），用法同年
+                     */
+                    result.innerText = '' + rs.text;
+                    /*
+                     * 返回 false 可以阻止选择框的关闭
+                     * return false;
+                     */
+                    /*
+                     * 释放组件资源，释放后将将不能再操作组件
+                     * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+                     * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+                     * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+                     */
+                    picker.dispose();
+                });
+            }, false);
+        });
+    })(mui);
+</script>
+<script>
+    //全选
+    var checkedNum = $("input[name='checkbox1']").length;
+    $('.y-selective b').text(checkedNum);
+    $(".y-quanx").click(function () {
+        var allCheckNum = $("input[name='checkbox1']").length;
+        var checkedNum = $("input[name='checkbox1']:checked").length;
+        if (allCheckNum == checkedNum) {
+            $("input[name='checkbox1']").prop("checked", false);
+            $('.y-selective b').text("0");
+        } else {
+            $("input[name='checkbox1']").prop("checked", true);
+            $('.y-selective b').text(allCheckNum);
+        }
+    });
+    $("input[name='checkbox1']").click(function () {
+        var allCheckNum = $("input[name='checkbox1']").length;
+        var checkedNum = $("input[name='checkbox1']:checked").length;
+        if (allCheckNum == checkedNum) {
+            $(".y-quanx").prop("checked", true);
+        } else {
+            $(".y-quanx").prop("checked", false);
+        }
+        $('.y-selective b').text(checkedNum);
+    });
+</script>
+<script>
+    //按钮切换效果
+    $(document).ready(function () {
+        $(".remarkon").on("tap", function () {
+            if ($(this).attr("data-id") == 0) {
+                get("/activity/discussion/getSelectList?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"), function (res) {
+                    if (res.code == 200) {
+                        var data = res.data;
+                        if (Object_filter(data)) {
+                            var ul = '';
+                            for (var i = 0; i < data.resourceList.length; i++) {
+                                ul += '<li class="mui-table-view-cell"><a ><div class="y-checkbox"> <div class="mui-input-row mui-checkbox mui-left"> <label> </label> <input name="checkbox1" value="Item 1" type="checkbox" data-id="' +data.resourceList[i].id + '"> </div> </div><h5>' + data.resourceList[i].title + '</h5> <div class="y-numbox"><span class="y-xsx">' + data.resourceList[i].userName + '</span> <span class="y-xrs">' + data.resourceList[i].createDate + '</span> <div class="y-yxs"> <div class="mui-numbox" data-numbox-min="5" data-numbox-max="40"><button class="mui-btn mui-numbox-btn-minus" type="button">-</button> <input class="mui-numbox-input" type="number" value="5"/> <button class="mui-btn mui-numbox-btn-plus" type="button">+</button> </div> <em class="c54">' + data.resourceList[i].commentNum + '<i class="iconfont">&#xe86f;</i></em></div></div></a></li>';
+                            }
+                            $(".y-curriculumstable").empty();
+                            $(".y-curriculumstable").append(ul);
+                        }
+                    }
+                });
+            } else if ($(this).attr("data-id") == 1) {
+                get("/activity/discussion/commentList?activityId=" + getUrlParamValue("activityId") + "&type=0" + "&status=" + status + "&tacheType=" + getUrlParamValue("tacheType"), function (res) {
+                    if (res.code == 200) {
+                        var data = res.data;
+                        if (Object_filter(data)) {
+                            var ul = '';
+                            for (var i = 0; i < data.resourceList.length; i++) {
+                                ul += '<li class="mui-table-view-cell"><a ><div class="y-checkbox"> <div class="mui-input-row mui-checkbox mui-left"> <label> </label> <input name="checkbox1" value="Item 1" type="checkbox"  data-id="' + data.resourceList[i].id + '"> </div> </div><h5>' + data.resourceList[i].title + '</h5> <div class="y-numbox"><span class="y-xsx">' + data.resourceList[i].userName + '</span> <span class="y-xrs">' + data.resourceList[i].createDate + '</span> <div class="y-yxs"> <div class="mui-numbox" data-numbox-min="5" data-numbox-max="40"><button class="mui-btn mui-numbox-btn-minus" type="button">-</button> <input class="mui-numbox-input" type="number" value="5"/> <button class="mui-btn mui-numbox-btn-plus" type="button">+</button> </div> <em class="c54">' + data.resourceList[i].commentNum + '<i class="iconfont">&#xe86f;</i></em></div></div></a></li>';
+                            }
+                            $(".y-curriculumstable").empty();
+                            $(".y-curriculumstable").append(ul);
+                        }
+                    }
+                });
+            }
+            $(".remarkon").removeClass("wm-active");
+            $(this).addClass("wm-active");
+        });
+    });
+</script>
+<script>
+    mui(".ysy-coursetype").on('tap', 'a', function () {
+//选中状态
+        if ($(this).parents(".ysy-coursetype").find("ul").hasClass("ysy-xd")) {
+            var c = $(this).parents('.ysy-xd').index() - 1;
+            $(".ysy-xd").eq(c).find("a").removeClass("active");
+            $(".ysy-xd").eq(c).find(this).addClass("active");
+        }
+        else {
+            var c = $(this).parents('.ysy-coursetype').index() - 1;
+            $(".ysy-coursetype").eq(c).find("a").removeClass("active");
+            $(".ysy-coursetype").eq(c).find(this).addClass("active");
+        }
+
+    });
+
+    mui(".y-selective").on('tap','.y-quxz',function () {
+        var ids = "";
+        $("input[name=checkbox1]:checked").each(function () {
+            ids += $(this).attr("data-id") + ",";
+        });
+        console.log(ids);
+        var data = {
+            activityId : getUrlParamValue("activityId"),
+            tacheType : getUrlParamValue("tacheType"),
+            ids: ids
+        };
+        post("/activity/discussion/submitSelect",data,function (res) {
+            if (res.code == 200){
+                mui.toast("提交成功");
+            }else {
+                mui.toast(res.message);
+            }
+        })
+    })
+    // $(".y-quxz").click(function () {
+    //     var ids = "";
+    //     $("input[name=checkbox1]:checked").each(function () {
+    //         ids += $(this).attr("data-id") + ",";
+    //     });
+    //     console.log(ids);
+    //     var data = {
+    //         activityId : getUrlParamValue("activityId"),
+    //         tacheType : getUrlParamValue("tacheType"),
+    //         ids: ids
+    //     };
+    //     post("/activity/discussion/submitSelect",data,function (res) {
+    //         if (res.code == 200){
+    //             mui.toast("提交成功");
+    //         }else {
+    //             mui.toast(res.message);
+    //         }
+    //     })
+    // })
+</script>
+
+
+</body>
+
+
+</html>

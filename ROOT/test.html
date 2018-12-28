@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"  name="viewport" />
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .timecounter{
+            width: 100%;
+            background-color: #e5e5e5;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+        }
+        #txtTime{
+            color: #f52400;
+            padding: 0 10px;
+        }
+        .y-takenotes{
+            color: #fff;
+           background-color: #0f82fd;
+            padding: 0 10px;
+        }
+        .takenTime{
+            height: 44px;
+            line-height: 44px;
+            background-color: rgba(0, 0, 0, 0.15);
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+    </style>
+
+   <script src="js/jquery.min.js"></script>
+</head>
+<body onload="startTime()">
+<iframe src="test1.html"  scrolling="no"  frameBorder=0 style="height: 100vh" width="100%"></iframe>
+<div class="timecounter">
+    <div class="takenTime">
+    <div id="txtTime">已学习时间 ：00:00:00</div>
+    <div class="y-takenotes">写笔记</div>
+    </div>
+    <!--<div class="y-takenotes-list">
+        <div>
+            <textarea>写点说明白</textarea>
+        </div>
+        <ul>
+            <li>第一期</li>
+            <li>第一期</li>
+            <li>第一期</li>
+        </ul>
+    </div> -->
+</div>
+<script>
+
+
+
+    function startTime() {
+        var seconds=addTime();
+        var hours=0;
+        var mins=0;
+    if (seconds < 60) {
+
+    } else if (seconds < 3600) {
+        mins = parseInt(seconds / 60);
+        seconds = seconds % 60;
+
+    } else {
+        mins = parseInt(seconds / 60)
+        seconds = seconds % 60
+        hours = parseInt(mins / 60)
+        mins = mins % 60
+
+    }
+   // add a zero in front of numbers<10
+        hours=checkTime(hours)
+        mins=checkTime(mins)
+        seconds=checkTime(seconds)
+        document.getElementById('txtTime').innerHTML='已学习时间 ：'+ hours+":"+mins+":"+seconds;
+        setTimeout('startTime()',1000);
+
+}
+    var seconds=97;//传入时间
+    function addTime() //在线时间
+    {
+        seconds+=1;
+        return seconds;
+    }
+
+    function checkTime(i)//数值转换函数
+    {
+        if (i<10)
+        {i="0" + i}
+        return i
+    }
+</script>
+    </body>
+</html>

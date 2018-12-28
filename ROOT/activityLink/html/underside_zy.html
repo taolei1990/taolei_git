@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title class="title_val"></title>
+    <link href="../css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/w-custom.css" rel="stylesheet" type="text/css">
+    <link href="../css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/mui.picker.min.js"></script>
+    <script src="../../js/common.js"></script>
+</head>
+<body class="mui-ios mui-ios-9 mui-ios-9-1">
+<!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top="0" data-offset="150"-->
+<!--data-duration="16" data-scrollby=".mui-scroll-wrapper">-->
+<!--<a class=" mui-icon mui-icon-arrowleft mui-pull-left shut-out"></a>-->
+<!--<h1 id="showUserPicker" class="mui-title"><span id="userResult" class="w-act-title">作业</span><i class="iconfont "></i>-->
+<!--</h1>-->
+<!--</header>-->
+<div style="margin-top:45px;"></div>
+<input type="hidden" id="sType" value="resource">
+<input type="hidden" id="mType" value="other">
+<!--新增描述-->
+<div class="w-describe">
+    <h5 class="title_val"><span id="describe_span" style="display: none">修改要求</span></h5>
+    <p class="w-description">作业内容</p>
+</div>
+<!--新增描述-->
+<div class="w-ineedall mui-row" id="mui-row" style="display: none">
+    <div class="mui-col-sm-12 mui-col-xs-12">
+        <div class="w-came w-kcgl">
+            <p class="w-bzizy">共布置了<span class="y-total">3</span>份作业
+                <button type="button" class="mui-btn mui-btn-warning">布置作业</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="w-performance" id="w-performance" style="display: none">
+    <ul class="mui-table-view w-table-view y-workList">
+        <!--<li class="mui-table-view-cell mui-media w-zybz">
+            <a href="javascript:;">
+                <div class="mui-media-body">
+                    作业名称
+                    <p class='mui-ellipsis'><em> 作业类型:<b>必做</b></em><em> 布置人:<b>陶老师</b></em></p>
+                    <p class='mui-ellipsis'><em> 截止时间:<b>2018-03-15</b></em><em>已做人数:<b>156</b> </em></p>
+                </div>
+                <div class="w-kcxxbj">
+                    <button type="button" class="mui-btn mui-btn-warning">修改</button>
+                    <button type="button" class="mui-btn mui-btn-primary">批阅</button>
+                </div>
+                <i class="iconfont confirmbtn">&#xe6e3;</i>
+            </a>
+        </li>-->
+    </ul>
+</div>
+
+
+<!--新增上传结束-->
+
+<!--新增编辑描述-->
+<div class="w-desc-mask">
+
+</div>
+<!--新增编辑描述结束-->
+<script>
+
+    //获取描述
+    $(function () {
+
+        get("/activity/describe?tacheType=" + getUrlParamValue("tacheType") + "&activityId=" + getUrlParamValue("activityId"), function (res) {
+            //console.log(res);
+            if (res.code == 200) {
+                $('.w-description').html('');
+                var data = res.data;
+                if (Object_filter(data)) {
+                    $.each(data, function (i, v) {
+                        // addRow(data[i]);
+                        $('.w-description').html(data.describe);
+                    });
+                }
+            }
+            //先选出 textarea 和 统计字数 dom 节点
+            var wordCount = $(".w-describe-text"),
+                textArea = wordCount.find("textarea"),
+                word = wordCount.find("span"),
+                supa = wordCount.find("a");
+
+            textArea.val($(".w-description").text());
+            var textval = res.data.describe;
+            if (textval.length > 0) {
+                $('.w-describe-text a').addClass("active");
+            } else {
+                $('.w-describe-text a').removeClass("active");
+            }
+            //调用
+            statInputNum(textArea, word);
+
+            $(".w-describe-text a").click(function () {
+
+                $(".w-description").text(textval);
+                $(".w-desc-mask").hide();
+                $(".w-describe-text").hide();
+            });
+
+        });
+        getUserPower(getUrlParamValue("activityId"), function (role) {
+            if (role == 2) {
+                $("#mui-row").show();
+                $("#w-performance").show();
+            }
+        });
+    });
+
+    //提交描述
+    $(".w-desc-mask a").click(function () {
+        commitTacheDescribe($("#tacheDescribeTxt").val(), function (data) {
+            if (data.code == 200) {
+                $(".w-description").text($("#tacheDescribeTxt").val());
+            } else {
+                mui.toast(data.message);
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $(".title_val").prepend(getUrlParamValue("tacheName"));
+        get("/activity/workList?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"), function (res) {
+            if (res.code == 200) {
+                $('.y-total').html(res.data.total)
+                var data = res.data.workList;
+                if (Object_filter(data)) {
+                    $.each(data, function (i, v) {
+                        workList(data[i]);
+                    });
+                }
+            }
+        });
+    });
+
+    function workList(rowData) {
+        var zytype = '';
+
+        if (rowData.type == 0) {
+            zytype = "必做";
+        } else if (rowData.type == 1) {
+            zytype = '选做';
+        }
+        var table = document.body.querySelector('.y-workList');
+        var li = document.createElement('li');
+        li.className = 'mui-table-view-cell mui-media w-zybz';
+        li.innerHTML = '<a href="javascript:;">' +
+            '<div class="mui-media-body">' +
+            ' ' + rowData.name + ' ' +
+            '<p class="mui-ellipsis"><em> 作业类型:<b>' + zytype + '</b></em><em> 布置人:<b>' + rowData.assignMan + '</b></em></p>' +
+            '<p class="mui-ellipsis"><em> 截止时间:<b>' + rowData.endTime + '</b></em><em>已做人数:<b>' + rowData.finishNum + '</b> </em></p>' +
+            '</div>' +
+            '<div class="w-kcxxbj">' +
+            '<button type="button" class="mui-btn mui-btn-warning update" data-id="' + rowData.workId + '">修改</button>' +
+            '<button type="button" class="mui-btn mui-btn-primary" data-id="' + rowData.workId + '">批阅</button>' +
+            '</div>' +
+            '<i class="iconfont confirmbtn" data-id="' + rowData.workId + '">&#xe6e3;</i>' +
+            '</a>';
+        table.appendChild(li);
+    }
+</script>
+
+<script>
+    //删除作业
+    mui(".y-workList").on('tap', '.confirmbtn', function () {
+        $(this).addClass("remo");
+        var btnArray = ['取消', '删除'];
+        mui.confirm('你将要删除作业？', '提示', btnArray, function (e) {
+            if (e.index == 1) {
+                post("/activity/homework/del", {activityId: getUrlParamValue("activityId"), workId: $(".remo").attr("data-id")}, function (res) {
+
+                    if (res.code == 200) {
+                        mui.confirm('删除成功', '提示', ['确认'], function (e) {
+                            window.location.reload();
+                        })
+
+                    } else {
+                        mui.toast(res.message);
+                    }
+                });
+            } else {
+                //选择了取消
+            }
+        })
+    });
+</script>
+<script>
+    //编辑描述
+    $(function () {
+        $(".w-describe span").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+            $.ajax({
+                type: 'GET',
+                url: "underside_describe.html?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"),
+                success: function (data) {
+                    $(".w-desc-mask").html(data);
+                    $(".w-desc-mask").show();
+                    $(".w-describe-text").show();
+                    mui('.mui-switch')['switch']()
+                }
+            });
+
+        });
+        $(".w-describe-text").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        });
+
+        addDescribeButton(getUrlParamValue("activityId"));
+    })
+
+</script>
+<script>
+    /*
+     * 剩余字数统计
+     * 注意 最大字数只需要在放数字的节点哪里直接写好即可 如：<var class="word">200</var>
+     */
+    function statInputNum(textArea, numItem) {
+        var max = numItem.text(),
+            curLength;
+        textArea[0].setAttribute("maxlength", max);
+        curLength = textArea.val().length;
+        numItem.text(max - curLength);
+        textArea.on('input propertychange', function () {
+            var _value = $(this).val().replace(/\n/gi, "");
+            numItem.text(max - _value.length);
+            var textval = textArea.val();
+            if (textval.length > 0) {
+                $('.w-describe-text a').addClass("active");
+            } else {
+                $('.w-describe-text a').removeClass("active");
+            }
+            $(".w-describe-text a").click(function () {
+
+                $(".w-description").text(textval);
+            });
+        });
+    }
+
+</script>
+<script>
+    //布置作业
+    mui('.w-bzizy').on('tap', '.mui-btn-warning', function () {
+        mui.openWindow({
+            url: 'underside_bzzy.html?activityId=' + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"),
+
+            id: ''
+        });
+    });
+    //修改作业
+    mui('.y-workList').on('tap', '.mui-btn-warning', function () {
+
+        mui.openWindow({
+            url: 'underside_bzzy.html?activityId=' + getUrlParamValue("activityId") + '&id=' + $(this).attr("data-id") + "&tacheType=" + getUrlParamValue("tacheType"),
+            id: ''
+        });
+    });
+    //批阅作业
+    mui('.y-workList').on('tap', '.mui-btn-primary', function () {
+        mui.openWindow({
+            url: 'underside_pylist.html?id=' + $(this).attr("data-id"),
+            id: ''
+        });
+    });
+
+</script>
+</body>
+</html>

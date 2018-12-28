@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>创建项目</title>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body style="background-color: #fff">
+<div class="mui-content">
+    <div class="y-Programtoadd">
+        <form class="mui-input-group y-tjxmform">
+            <div class="y-project">
+                <div id="input_example" class="y-training-yards">
+                    <div class="mui-input-row">
+                        <input type="text" id="projectCode" class="mui-input-clear" placeholder="输入项目编号">
+                    </div>
+                </div>
+                <div id="input_check" class="y-verification"><span class="y-verification-btn">验证项目</span></div>
+            </div>
+            <div class="y-ckgzsqbxm">
+                <a>查看工作室全部项目>></a>
+            </div>
+            <div class="y-particulars-list">
+                <!--没有项目提示-->
+                <div class="y-Projectprompts">
+                    <div class="y-tstubiao"><span></span></div>
+                    <p class="y-tisip">提示：项目编号不正确，请重新输入</p>
+                </div>
+                <!--没有项目提示结束-->
+                <!--有项目提示-->
+                <p class="y-qprxmxinx">请确认项目信息：</p>
+                <!--项目样式1-->
+                <!--<div class="y-xm-particulars">-->
+                <!--<div class="y-xm-text">项目名称:</div>-->
+                <!--<div class="y-xm-details y-xm-name">【项目名称项目称】</div>-->
+                <!--</div>-->
+                <!--<div class="y-xm-particulars">-->
+                <!--<div class="y-xm-text">开始时间:</div>-->
+                <!--<div class="y-xm-details">2018/07/07 00:00:00</div>-->
+                <!--</div>-->
+                <!--<div class="y-xm-particulars">-->
+                <!--<div class="y-xm-text">结束时间:</div>-->
+                <!--<div class="y-xm-details">2018/08/07 23:59:59</div>-->
+                <!--</div>-->
+                <!--<div class="y-xm-particulars">-->
+                <!--<div class="y-xm-text">备注:</div>-->
+                <!--<div class="y-xm-details">-->
+                <!--当前年月日+自然序号4位数当前年月日+自然序号4位数当前年月日+自然序号4位数-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--项目样式1结束-->
+                <!--项目样式2-->
+                <div class="y-itemsxqnr">
+                    <!--<div class="y-ltems-headline">-->
+                    <!--<div class="y-ltems-particulars">-->
+                    <!--<p class="y-ltems-caption">西南子公司（重庆）新员工入职培训新员工入职培训新员工入职培训</p>-->
+                    <!--<p class="y-ltems-time"><span class="y-hudonzt y-hudonzt-wks">未开始</span> 2018-07-05 ~2018-07-13 </p>-->
+                    <!--</div>-->
+                    <!--<div class="y-ltems-tite">-->
+                    <!--<span class="y-ltems-name">项目</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <!--项目样式2结束-->
+            </div>
+            <div class="y-xmtj">
+                <a class="y-tijiao active">确认</a><!--active 类用于判断输入了内容才能成为能发布状态-->
+            </div>
+            <!--有项目提示结束-->
+        </form>
+
+    </div>
+</div>
+<div class="y-tishiyu">
+    <p>说明：</p>
+    <p> 1、培训编号由优师云管理员生成和发放，名师工作室如需开展项目，请致电400-833-8558，联系名师经纪人后再行创建项目</p>
+    <p> 2、培训编号规则：PX+项目创建时的年月日+自然序号4位，如PX201704310001</p>
+    </p>
+</div>
+
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    // $.ajax({
+    //     url:"http://rap.dev.yunjy.com.cn/mockjsdata/1/project/verify",    //请求的url地址
+    //     dataType:"json",   //返回格式为json
+    //     async:true,//请求是否异步，默认为异步，这也是ajax重要特性
+    //     data:{"projectCode":"20180414001","studioId":"20180414001"},    //参数值
+    //     type:"GET",   //请求方式
+    //     beforeSend:function(){
+    //         //请求前的处理
+    //     },
+    //     success:function(req){
+    //         //请求成功时处理
+    //         var data=req.data.project;
+    //         console.log(data.status)
+    //
+    //         projectVerify(data)
+    //     },
+    //     complete:function(){
+    //         //请求完成的处理
+    //     },
+    //     error:function(){
+    //         //请求出错处理
+    //     }
+    // });
+
+    var type = 0;
+    var projectId = 0;
+
+    function registerFlag() {
+        var studioId = getUrlParamValue("studioId");
+        var projectCode = $('#projectCode').val();
+        get("/project/verify?projectCode=" + projectCode + "&studioId=" + studioId, function (res) {
+            console.log(res.data.project);
+            if (res.code == 200) {
+                console.log('hasExist');
+                if (Object_filter(res.data.project)) {
+                    var project = res.data.project;
+                    var hasExist = res.data.hasExist;
+                    projectId = project.projectId;
+                    type = hasExist;
+                    projectVerify(project);
+                    if (hasExist == 0) {
+                        // console.log('不存在项目');
+                        $('.y-tijiao').addClass('active');
+                    } else if (hasExist == 1) {
+                        // console.log('存在项目')
+                        mui.toast('项目已发布');
+                        $('.y-tijiao').addClass('active');
+                        $(".y-tijiao").html("进入项目")
+                    }
+                    $('.y-qprxmxinx').show();
+                    $('.y-xmtj').show();
+                } else {
+                    $('.y-Projectprompts').show()
+                    $('.y-qprxmxinx').hide();
+                    $('.y-xmtj').hide();
+                    $('.y-itemsxqnr').html("");
+                }
+            }
+        });
+
+    }
+
+    function projectVerify(rowData) {
+        var projectzt = '';
+        if (rowData.status == 0) {
+            projectzt = '<span class="y-hudonzt y-hudonzt-wks">未开始</span>'
+        } else if (rowData.status == 1) {
+            projectzt = '<span class="y-hudonzt y-hudonzt-jxz">进行中</span>'
+        } else if (rowData.status == 2) {
+            projectzt = '<span class="y-hudonzt y-hudonzt-yjs">已结束</span>'
+        }
+        var itemsxqnr = '<div class="y-ltems-headline">' +
+            '<div class="y-ltems-particulars">' +
+            '<p class="y-ltems-caption">' + rowData.title + '</p>' +
+            '<p class="y-ltems-time">' + projectzt + '' + rowData.startTime + '~' + rowData.endTime + '</p>' +
+            '</div>' +
+            '<div class="y-ltems-tite">' +
+            '<span class="y-ltems-name">项目</span>' +
+            '</div>' +
+            '</div>';
+
+        $(".y-itemsxqnr").html(itemsxqnr).show();
+    }
+
+    function projectRelease() {
+        if (projectId == 0) {
+            mui.toast('项目不在')
+        }
+        var studioId = getUrlParamValue("studioId");
+        if (type == 0) {
+            post("/project/release?projectId=" + projectId + "&studioId=" + studioId, {}, function (res) {
+                if (res.code == 200) {
+                    mui.toast('发布成功')
+                }
+            })
+        }
+
+        //进入项目详情
+        mui.openWindow({
+            url: 'https://api.ceshi.yunjy.com.cn/project/detail/' + projectId,
+            id: ''
+        });
+    }
+
+    $(function () {
+        <!--简单的判断了是否可以发表-->
+        $('.y-tijiao').removeClass('active');//初始化表单选择状态
+        $("input:text").bind("input propertychange", function () {
+            var wz = $(this).val().length;//打印输入框字符长度
+            $(".y-tijiao").html("发布项目");
+            $('.y-Projectprompts').hide();
+            console.log(wz);
+            if (wz == 0) {
+                $('.y-tijiao').removeClass('active');//初始化表单选择状态
+                $('.y-project').removeClass('active');
+            } else {
+
+                $('.y-project').addClass('active');
+            }
+
+        });
+
+        //简单判断是否存在值
+        document.getElementById("input_check").addEventListener('click', function () {
+            var check = true;
+            var projectCode = $('#projectCode').val();
+            if (!Object_filter(projectCode)) {
+                mui.toast('请输入项目编号');
+            } else {
+                $('.y-project').addClass('active');
+
+                registerFlag();
+            }
+
+            // mui("#input_example input").each(function() {
+            //     //若当前input为空，则alert提醒
+            //     if(!this.value || this.value.trim() == "") {
+            //         mui.alert("请输入项目编号");
+            //         check = false;
+            //         return false;
+            //     }
+            //     else {//校验通过，继续执行业务逻辑
+            //         // mui.alert('编号校验正确');
+            //
+            //     }
+            // });
+
+        })
+        //查看工作室全部项目
+        mui('.y-ckgzsqbxm').on('tap', 'a', function () {
+            var studioId = getUrlParamValue("studioId");
+            mui.openWindow({
+                url: 'project_list.html?studioId=' + studioId,
+                id: ''
+            });
+        });
+        mui('.y-xmtj').on('tap', '.y-tijiao', function () {
+            projectRelease();
+        });
+    })
+    // token
+    var token = getUrlParamValue("ysy_token");
+    // 工作室ID
+    var studioId = getUrlParamValue("studioId");
+    if (Object_filter(token)) {
+        saveStorage("token", token);
+    }
+    if (Object_filter(studioId)) {
+        saveStorage("studioId", studioId);
+    }
+</script>
+
+
+</body>
+</html>

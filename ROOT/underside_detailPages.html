@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>活动详情页</title>
+    <!--分享描述-->
+    <meta itemprop="description" content="优师云详情页">
+    <!--分享图片如果没有图片content里面设为空-->
+    <meta itemprop="image" content="">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="isShare active">
+    <div class="is-logo">
+        <img src="img/logo.png">
+        <div class="is-tifle">
+            <b>优师云</b>
+            <p>智慧研修平台</p>
+        </div>
+    </div>
+    <div class="is-ljdk">
+        <a id="J-call-app" href="javascript:;" class="is-label">立即打开</a>
+    </div>
+    <div class="is-off"><i class="iconfont">&#xe65c;</i></div>
+</div>
+
+<div class="mui-content">
+    <div class="y-ktyjnr">
+        <div class="y-hdhj-xqy">
+            <div class="y-hdhj-tx">
+                <img src="#">
+            </div>
+            <div class="y-hdhj-cs">
+                <span class="y-ktyjmz"></span>
+                <!--<span class="y-cylx y-bzr">班主任</span>-->
+                <p><span class="y-ktyjtim"></span></p>
+                <a href="#y-popover" class="mui-icon mui-icon-gear"></a>
+            </div>
+        </div>
+        <div class="y-hdhj-xqjs">
+            <h1 class="titleFont"></h1>
+            <!--<div class="contentImg"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png" data-preview-src="" data-preview-group="1"></div>-->
+            <div class="contentText"></div>
+            <!--<p class="contentText ">在每年年末，《麻省理工科技评论》都会对当年的科技成果做阶段性总结，同时展望来年的技术发展趋势。</p>-->
+          <p class="y-laliang"> <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i><span id="commentNum"></span></span>
+          <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i><span id="viewNum"></span></span></p>
+        </div>
+
+        <div class="h-msfxb">
+            <h5><span><i class="iconfont">&#xe64b;</i>附件</span></h5>
+            <div class="y-ktyjnr-fj">
+                <!--<a class="y-fjlx">
+                <div class="y-fjlx-img" style="background-color: #f44c4c">pdf</div>
+                <div class="y-fjlx-xp">
+                <p>附件名字</p>
+                <p>1.5M</p>
+                </div>
+                    <div class="y-fjlx-cz"><button type="button" class="mui-btn mui-btn-primary mui-btn-pdf" >预览</button>
+                    </div>
+                </a>-->
+            </div>
+        </div>
+        <div class="h-msfxb">
+            <h5 id="divNode"><span><i class="iconfont">&#xe64b;</i>所有回复(<span class="total"></span>)</span></h5>
+            <div class="y-ktyjsyhf">
+                <!--<div class="y-ktyjsyhf-list">-->
+                <!--<div class="mui-card">-->
+                <!--&lt;!&ndash;页眉，放置标题&ndash;&gt;-->
+                <!--<div class="mui-card-header mui-card-media">-->
+                <!--<img src="img/500373494_wx.jpg"/>-->
+                <!--<div class="mui-media-body">-->
+                <!--陶老师-->
+                <!--<p><span class="y-ktyj-plsj">评论于 2018-06-30 15:30</span>-->
+                <!--<span class="y-ktyj-hfs">2回复</span>-->
+                <!--<span class="y-ktyj-dzs active"><i class="iconfont ">&#xe696;</i><em>566</em></span>-->
+                <!--</p>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;内容区&ndash;&gt;-->
+                <!--<div class="mui-card-content">评论评论评论</div>-->
+                <!--&lt;!&ndash;页脚，放置补充信息或支持的操作&ndash;&gt;-->
+                <!--<div class="y-ktyjhf-hf">-->
+                <!--<p><a>张老师</a>回复<a>陶老师</a> 回复回复</p>-->
+                <!--<p><a>李老师</a>回复<a>张老师</a> 回复回复阿斯顿</p>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="y-ktyjsyhf-list">-->
+                <!--<div class="mui-card">-->
+                <!--&lt;!&ndash;页眉，放置标题&ndash;&gt;-->
+                <!--<div class="mui-card-header mui-card-media">-->
+                <!--<img src="img/500373494_wx.jpg"/>-->
+                <!--<div class="mui-media-body">-->
+                <!--陶老师-->
+                <!--<p><span class="y-ktyj-plsj">评论于 2018-06-30 15:30</span>-->
+                <!--&lt;!&ndash;<span class="y-ktyj-hfs">2回复</span>&ndash;&gt;-->
+                <!--<span class="y-ktyj-dzs"><i class="iconfont">&#xe627;</i><em>566</em></span>-->
+                <!--</p>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;评论的内容区&ndash;&gt;-->
+                <!--<div class="mui-card-content">评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论</div>-->
+                <!--&lt;!&ndash;页脚，放置回复信息或支持的操作-->
+                <!--<div class="y-ktyjhf-hf">-->
+                <!--<p ><a>张老师</a>回复<a>陶老师</a> 回复回复</p>-->
+                <!--<p ><a>李老师</a>回复<a>张老师</a> 回复回复阿斯顿</p>-->
+                <!--</div>&ndash;&gt;-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--评论超过十条显示查看更多-->
+            <div class="see-more-comments"><a class="ysy-ckgd">查看更多评论<i class="iconfont">&#xe61b;</i></a></div>
+        </div>
+        <div class="y-jiewei">闻道有先后，术业有专攻</div>
+    </div>
+</div>
+<div class="y-ktyjcz">
+    <div class="y-ktyjbmes">
+        <a><i class="iconfont">&#xe673;</i>写评论...</a>
+    </div>
+    <div class="y-ckplwz"><i class="iconfont">&#xe616;</i> <span class="total">00</span></div>
+    <div class="ysy-share">
+        <i class="iconfont">&#xe6ac;</i>
+    </div>
+</div>
+<div class="y-plunsck">
+    <div class="y-textdiv">
+        <div class="y-textdivspan">
+            <span class="y-quexiao">取消</span>
+            <span>全部<span class="total">0</span>条评论</span>
+            <span class="y-fabiao">发表</span>
+        </div>
+        <div class="y-inputframe">
+            <div class="cgzs-tjfj"></div>
+            <textarea rows="5" id="username" class="inputframe" onKeyUp='keypress()' onblur='keypress()' placeholder="我来说两句"></textarea></div>
+    </div>
+
+</div>
+<div id="y-popover" class="mui-popover y-popover">
+    <ul class="mui-table-view">
+        <!--<li class="mui-table-view-cell"><a href="#"><i class="iconfont">&#xe6b9;</i>编辑</a></li>-->
+        <!--<li class="mui-table-view-cell"><a href="#"><i class="iconfont">&#xe65a;</i>置顶</a></li>-->
+        <li class="mui-table-view-cell"><a href="#"><i class="iconfont">&#xe674;</i>删除</a></li>
+        <li class="mui-table-view-cell addEssence" style="display: none"><a href="#"><i class="iconfont">&#xe656;</i>加精</a></li>
+        <li class="mui-table-view-cell cancelEssence" style="display: none"><a href="#"><i class="iconfont">&#xe674;</i>取消加精</a></li>
+    </ul>
+</div>
+<!--各端弹窗-->
+<div class="my-weixing">
+    <div id="triangle-left"></div>
+    <P class="my-weixing-1">1 点击右上方 "•••"</P>
+    <p class="my-weixing-2">2 选择分享给朋友或者朋友圈</p>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.zoom.js"></script>
+<script src="js/mui.previewimage.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $(function () {
+        // 附件
+        enclosure(getUrlParamValue("type"));
+
+        function enclosure(type) {
+            // 活动成果
+            if (type == 'hdcg') {
+                get("/activity/getResourceByOrigin?origin=" + getUrlParamValue("tacheType") + "&originId=" + getUrlParamValue("id") + "&isAttachment=true", function (res) {
+                    if (res.code == 200) {
+                        var attachmentList = res.data.attachmentList;
+                        var a = '';
+                        if (Object_filter(attachmentList)) {
+                            for (var i = 0; i < attachmentList.length; i++) {
+                                a += '<a class="y-fjlx"><div class="y-fjlx-img" style="background-color: #f44c4c">' + attachmentList[i].ext + '</div><div class="y-fjlx-xp"><p>' + attachmentList[i].name + '</p><p>' + attachmentList[i].size + 'M</p></div><div class="y-fjlx-cz"><button type="button" class="mui-btn mui-btn-primary mui-btn-pdf" >预览</button></div></a>';
+                            }
+                        }
+                        $(".y-ktyjnr-fj").empty();
+                        $(".y-ktyjnr-fj").append(a);
+                    }
+                })
+            }
+        }
+
+        // 详情
+        activityDetail(getUrlParamValue("id"), function (res) {
+            if (res.code == 200) {
+                $(".y-hdhj-tx img").attr("src", res.data.headImg);
+                $(".y-ktyjmz").html(res.data.userName);
+                $(".y-ktyjtim").html(res.data.createTime);
+                $("#commentNum").html(res.data.commentNum);
+                // $("#viewNum").html(res.data.viewNum);
+                $(".titleFont").html(res.data.title);
+                $(".contentText").html(res.data.content);
+                // todo 是否是加精
+                if (res.data.essence == 0)
+                    $(".addEssence").show();
+                else
+                    $(".cancelEssence").show();
+
+                var attachmentList = res.data.attachmentList;
+                var li = "";
+                var ext = '<div class="y-fjlx-img" style="background-color: #f44c4c">pdf</div>';
+                for (var i = 0; i < attachmentList.length; i++) {
+                    if (attachmentList[i].ext == 'docx') {
+                        ext = '<div class="y-fjlx-img" style="background-color: #00acda">docx</div>';
+                    }
+                    li += '<a class="y-fjlx" data-id="' + attachmentList[i].id + '">' + ext + '<div class="y-fjlx-xp"><p>' + attachmentList[i].name + '</p><p>' + attachmentList[i].size + 'M</p></div><div class="y-fjlx-cz"><button type="button" class="mui-btn mui-btn-primary">预览</button></div></a>';
+                }
+                $(".y-ktyjnr-fj").append(li);
+            }
+        });
+
+        // 评论列表
+        comment();
+
+        function comment() {
+            activityComment(getUrlParamValue("id"), function (res) {
+                if (res.code == 200) {
+                    $(".total").html(res.data.total);
+                    $("#viewNum").html(res.data.total);
+                    var list = res.data.list;
+                    var div = '';
+                    for (var i = 0; i < list.length; i++) {
+                        // var praiseNum = '<span class="y-ktyj-dzs"><i class="iconfont">&#xe627;</i><em>' + list[i].praiseNum + '</em></span>';
+                        var praiseNum = ''; // 暂时不要，要的时候打开上面的
+                        div += '<div class="y-ktyjsyhf-list"><div class="mui-card"><div class="mui-card-header mui-card-media"><img src="' + list[i].headImg + '"/><div class="mui-media-body">' + list[i].userName + '<p><span class="y-ktyj-plsj">评论于 ' + list[i].createDate + '</span>' + praiseNum + '</p></div></div><div class="mui-card-content">' + list[i].content + '</div></div></div>';
+                    }
+                    $(".y-ktyjsyhf").empty();
+                    $(".y-ktyjsyhf").append(div);
+                }
+            });
+        }
+
+        // 评论
+        $(".y-fabiao").click(function () {
+
+            post('/activity/discussion/resource/commit', {
+                resourceId: getUrlParamValue("id"),
+                activityId: getUrlParamValue("activityId"),
+                tacheType: getUrlParamValue("tacheType"),
+                content: $("#username").val()
+            }, function (res) {
+                if (res.code == 200) {
+                    mui.toast('评论成功');
+                    $("#username").val('');
+                    comment();
+                } else {
+                    mui.toast(res.message);
+                }
+                $('.y-plunsck').hide();
+                $('.y-ktyjcz').show();
+            })
+        })
+    })
+</script>
+<script>
+    mui.previewImage();
+</script>
+<script>
+
+    mui(".y-fjlx-cz").on('tap', '.mui-btn', function () {
+        mui.openWindow({
+            url: 'generic/web/viewer.html',
+            id: ''
+        });
+    })
+</script>
+<script>
+    //点赞
+    mui(".y-ktyjsyhf-list").on('tap', '.y-ktyj-dzs', function () {
+        if ($(this).hasClass('active')) {
+            var z = $(this).find('em').text();
+            $(this).removeClass('active').find('em').text(parseInt(z) - 1);
+            $(this).find('i').remove();
+            $(this).prepend("<i class='iconfont'>&#xe627;</i>");
+        }
+        else {
+            var z = $(this).find('em').text();
+            $(this).addClass('active').find('em').text(parseInt(z) + 1);
+            $(this).find('i').remove();
+            $(this).prepend("<i class='iconfont'>&#xe696;</i>");
+        }
+    });
+
+
+    //打开回复框
+    mui(".y-ktyjsyhf-list").on('tap', '.mui-card-content', function () {
+        $('.y-plunsck').show();
+        $('.y-ktyjcz').hide();
+        $('.inputframe').trigger("click").focus().attr('placeholder', "回复陶老师");
+    });
+    //再次回复框
+    mui(".y-ktyjhf-hf").on('tap', 'p', function () {
+        $('.y-plunsck').show();
+        $('.y-ktyjcz').hide();
+        $('.inputframe').trigger("click").focus().attr('placeholder', "回复陶老师");
+    });
+    //打开评论框
+    mui(".y-ktyjbmes").on('tap', 'a', function () {
+        $('.y-plunsck').show();
+        $('.y-ktyjcz').hide();
+        $('.inputframe').trigger("click").focus().attr('placeholder', "我来说两句");
+    });
+
+    //
+    mui(".y-textdivspan").on('tap', '.y-quexiao', function () {
+        $('.y-plunsck').hide();
+        $('.y-ktyjcz').show();
+    });
+    //跳入评论的内容
+    mui(".y-ktyjcz").on('tap', '.y-ckplwz', function () {
+        $('html,body').animate({scrollTop: $("#divNode").offset().top}, 500);
+    });
+    // 加精
+    mui(".mui-table-view").on('tap', '.addEssence', function () {
+        alert('加精');
+    });
+    // 取消加精
+    mui(".mui-table-view").on('tap', '.cancelEssence', function () {
+        alert('取消加精');
+    });
+
+</script>
+<script>
+    mui.init({
+        gestureConfig: {
+            tap: true, //默认为true
+            doubletap: true, //默认为false
+        }
+    });
+    mui(".mui-bar-nav").on('doubletap', '.mui-title', function () {
+        mui.scrollTo(0, 100);//回到屏幕顶部
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        var isShare = getUrlParamValue("isShare");
+        var isfrom = getUrlParamValue("from");
+        if (isShare == 1 || isfrom != null) {
+            $(".isShare").removeClass('active');
+            $('.y-ktyjcz').hide();
+            $('#content').css('padding-bottom', '50px');
+            $('body').css('padding-bottom', '0');
+            $('.see-more-comments a').addClass('ysy-wx-ckgd').removeClass('ysy-ckgd');
+        } else {
+            $('.see-more-comments a').addClass('ysy-ckgd').removeClass('ysy-wx-ckgd');
+        }
+
+        //安卓 ios 小程序 分享
+        $('.y-ktyjcz').on('click', '.ysy-share', function () {
+            if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+                document.addEventListener('WeixinJSBridgeReady', appletOfProject, false);
+                //不是微信
+                var ua = navigator.userAgent.toLowerCase();
+                if (/iphone|ipad|ipod/.test(ua)) {
+                    //是苹果
+                    $('#triangle-left').removeClass('active');
+                    $('.my-weixing').show();
+                    $('.my-weixing-1').html('1 点击右上方 "分享"');
+                    $('.my-weixing-2').html('2 选择"微信"或者"微信朋友圈"将文章推荐给好友吧');
+                    setTimeout(function () {
+                        $('.my-weixing').hide();
+                    }, 3000);
+                } else {
+                    //是安卓
+                    androidShare()
+                }
+            } else {
+                //微信
+                appletOfProject();
+            }
+        });
+    });
+
+    function androidShare() {
+        // var sharetitle=$(document).attr("title");
+        var sharetitle = $('.titleFont').text();
+        //var sharedesc=document.querySelector('meta[itemprop="description"]').getAttribute('content');
+        var sharedesc = $(".contentText").text();
+        var sharelink = window.location.href;
+        var shareimg = document.querySelector('meta[itemprop="image"]').getAttribute('content');
+        if (shareimg == null || shareimg == undefined || shareimg == "") {
+            shareimg = 'https://dev.yunjy.com.cn/activityhtml/img/logo512.png';
+        }
+        var sharejson = {
+            "text": "分享详情",
+            "data": {
+                "sharetitle": sharetitle,
+                "sharedesc": sharedesc,
+                "shareimg": shareimg,
+                "sharelink": sharelink
+            }
+        };
+        window.android.sharejson(JSON.stringify(sharejson))
+    }
+
+    function appletOfProject() {
+        if (window.__wxjs_environment === 'miniprogram') {
+            //微信小程序环境
+            $('#triangle-left').addClass('active');
+            $('.my-weixing').show();
+            $('.my-weixing-1').html('1 点击右上方 "•●•"')
+            $('.my-weixing-2').html('2 选择"转发"将文章推荐给好友吧');
+            setTimeout(function () {
+                $('.my-weixing').hide();
+            }, 3000);
+        } else {
+            //微信环境
+            $('#triangle-left').removeClass('active');
+            $('.my-weixing').show();
+            setTimeout(function () {
+                $('.my-weixing').hide();
+            }, 3000);
+        }
+    }
+
+    //关闭
+    mui(".isShare").on('tap', '.is-off', function () {
+        $(".isShare").addClass('active');
+    })
+    //打开下载页面
+    mui(".is-ljdk").on('tap', '.is-label', function () {
+        mui.openWindow({
+            url: 'https://dev.yunjy.com.cn/activityhtml/details_page_sharing.html',
+            id: ''
+        });
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>下拉刷新</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/mui.css">
+	<link rel="stylesheet" href="../css/mui.picker.min.css" />
+	<link href="../css/w-custom.css" rel="stylesheet" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top='0' data-offset='150' data-duration='16' data-scrollby=".mui-scroll-wrapper">
+		<a style="padding: 10px 0;" href="#get-back"><i class="iconfont w-back">&#xe652;</i></a>
+		<h1  class="mui-title">布置作业</h1>
+	</header>
+<div  class="mui-content">
+
+	<form class="mui-input-group w-input-group">
+		<div class="mui-input-row">
+			<label>作业名称:</label>
+			<input type="text" class="mui-input-clear" placeholder="请输入用户名">
+		</div>
+		<div class="mui-input-row">
+			<label>作业类型:</label>
+			<input type="text" id='showUserPicker' class="mui-input-clear" placeholder="请选择" >
+
+			<div id='userResult' class="ui-alert"></div>
+		</div>
+		<div class="mui-input-row">
+			<label>截止时间:</label>
+			<input type="text" id='start-time' data-options='{"type":"date"}' class="mui-input-clear start-time-text"  placeholder="请选择" >
+		</div>
+		<div class="mui-input-row y-zyeyq">
+			<label>作业要求:</label>
+		</div>
+		<div class="y-textarea">
+		<textarea  placeholder="填写作业要求"></textarea></div>
+		<div class="mui-input-row y-zyeyq">
+			<label>答案:</label>
+		</div>
+		<div class="y-textarea"><textarea class="y-textarea" placeholder="填写答案"></textarea></div>
+		<div class="mui-input-row w-row-file">
+			<label>上传附件:</label>
+			<span class="w-inupt-file"><input type="file" >+</span>
+		</div>
+
+		<ul class="mui-table-view w-file-list">
+			<li class="mui-table-view-cell">莫名我就喜欢你.png
+				<span class="mui-badge mui-badge-warning">X</span>
+			</li>
+			<li class="mui-table-view-cell">莫名我就喜欢你.wod
+				<span class="mui-badge mui-badge-warning">X</span>
+			</li>
+			<li class="mui-table-view-cell">莫名我就喜欢你.text
+				<span class="mui-badge mui-badge-warning">X</span>
+			</li>
+		</ul>
+		<div class="mui-button-row w-button-row">
+			<button type="button" class="mui-btn" >取消作业</button>
+			<button type="button" class="mui-btn mui-btn-primary" >布置作业</button>
+		</div>
+
+	</form>
+
+
+</div>
+
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min1.js"></script>
+
+<script>
+	//删除附件
+    mui(".mui-table-view-cell").on('tap','.mui-badge',function(e){
+        $(this).parent(".mui-table-view-cell").remove();
+	});
+
+</script>
+    <script>
+    (function($) {
+        //选择时间
+        $.init();
+        var result = $('.start-time-text')[0];
+        var btns = $('#start-time');
+        btns.each(function(i, btn) {
+            btn.addEventListener('tap', function() {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var id = this.getAttribute('id');
+                var picker = new $.DtPicker(options);
+                picker.show(function(rs) {
+                    result.value = '' + rs.text;
+                    picker.dispose();
+                });
+            }, false);
+        });
+    })(mui);
+
+</script>
+	<script>
+        (function($, doc) {
+            $.init();
+            $.ready(function() {
+                /**
+                 * 获取对象属性的值
+                 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+                 * @param {Object} obj 对象
+                 * @param {String} param 属性名
+                 */
+                var _getParam = function(obj, param) {
+                    return obj[param] || '';
+                };
+                //一级选择
+                var userPicker = new $.PopPicker();
+                userPicker.setData( [
+                    {
+
+                        text: '必做作业'
+                    }, {
+
+                        text: '选择做作业'
+                    }
+                ]);
+                var showUserPickerButton = doc.getElementById('showUserPicker');
+                var userResult = doc.getElementById('userResult');
+                showUserPickerButton.addEventListener('tap', function(event) {
+                    userPicker.show(function(items) {
+                        showUserPickerButton.value= items[0].text;
+                        //JSON.stringify(test);
+                        //items[0].text
+                        //返回 false 可以阻止选择框的关闭
+                        //return false;
+                    });
+                }, false);
+                //-----------------------------------------
+            });
+        })(mui, document);
+	</script>
+</body>
+
+
+</html>

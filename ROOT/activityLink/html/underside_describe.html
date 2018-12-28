@@ -1,0 +1,340 @@
+<link href="../../css/webuploader.css" rel="stylesheet" type="text/css">
+<style>
+    #imgs{ display: inline-block !important;}
+
+    #imgs .img{
+        width: 28%;
+        height: 100px;
+        float: left;
+        margin: 5px 5px;
+        position: relative
+    }
+    #imgs .img img{
+        width: 100%;
+        height: 100px;
+    }
+    .img .delete-icon{
+        width: 22px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        background-color: rgba(37, 37, 36, 0.38);
+        border-radius: 55px;
+        height: 22px;
+        text-align: center;
+        line-height: 22px;
+        color: #fff;
+    }
+</style>
+<div class="w-describe-text">
+    <div class="w-describe-title">环节描述</div>
+    <div class="w-describe-textarea">
+        <textarea id="textarea_val" maxlength="300" onKeyUp="keypress()" onblur="keypress()" placeholder="请详细描述一下本环节具体内容~"></textarea>
+        <span class="surplus">300</span>
+    </div>
+
+    <div class="w-describe-img">图片描述</div>
+    <div class="y-xzwjqu">
+        <div id="uploadfile">
+            <div class="form-group form-inline" style="overflow: hidden;padding: 10px">
+                <div id="picker" style="float:left"><span style="font-size: 40px;font-weight: 200">+</span><br/>上传图片</div>
+            </div>
+        </div>
+        <div id="imgs">
+        </div>
+    </div>
+    <div class="w-describe-shell active">
+        <div class="w-describe-content" style="display:none;">
+            <div>考核指标</div>
+            <div class="w-switch">
+                <div>开启考核</div>
+                <div class="w-switch-off">
+                    <div id="mySwitch" class="mui-switch mui-switch-blue mui-switch-mini">
+                        <div class="mui-switch-handle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        完成要求：
+        <!--讨论区-->
+        <div id="tlq" style="display: none">
+            <div class="w-wcyq">
+                <p>1、要求所有成员浏览查看本环节所有内容</p>
+                <p>2、每人提交<span class="perTopic">0</span>篇新发帖</p>
+                <p>3、回复他人帖子<span class="perReplyTopic">0</span>篇</p>
+                <p>4、发帖被评为精华<span class="perTopicElite">0</span>篇</p>
+            </div>
+        </div>
+        <!--讨论区结束-->
+        <!--活动成果-->
+        <div id="hdcg" style="display: none">
+            <div class="w-wcyq">
+                <p>1、要求所有成员浏览查看本环节所有内容</p>
+                <p>2、每人提交<span class="hdcgPerComment">0</span>篇成果</p>
+            </div>
+        </div>
+        <!--活动成果结束-->
+        <!--情景导入-->
+        <div id="qjdr" style="display: none">
+            <div class="w-wcyq">
+                <p>1、要求所有成员浏览查看本环节所有内容</p>
+                <p>2、每人提交<span class="qjdrPerComment">0</span>篇评论</p>
+            </div>
+        </div>
+        <!--情景导入结束-->
+        <!--讨论区选择-->
+        <div id="tlqxz" style="display: none">
+            <div class="w-describe-request">
+                <div class="w-describe-list">
+                    <div>提交新发帖</div>
+                    <div><span class="perTopic">0</span>篇<i class="iconfont">&#xe656;</i></div>
+                </div>
+                <div class="w-describe-list">
+                    <div>回复他人帖子</div>
+                    <div><span class="perReplyTopic">0</span>篇<i class="iconfont">&#xe656;</i></div>
+                </div>
+                <div class="w-describe-list">
+                    <div>发帖被评为精华</div>
+                    <div><span class="perTopicElite">0</span>篇<i class="iconfont">&#xe656;</i></div>
+                </div>
+            </div>
+        </div>
+        <!--讨论区选择结束-->
+        <!--活动成果选择-->
+        <div id="hdcgxz" style="display: none">
+            <div class="w-describe-request">
+                <div class="w-describe-list">
+                    <div>提交成果</div>
+                    <div><span class="hdcgPerComment">0</span>篇<i class="iconfont">&#xe656;</i></div>
+                </div>
+            </div>
+        </div>
+        <!--活动成果结束-->
+        <!--情景导入选择-->
+        <div id="qjdrxz" style="display: none">
+            <div class="w-describe-request">
+                <div class="w-describe-list">
+                    <div>提交评论</div>
+                    <div><span class="qjdrPerComment">0</span>篇<i class="iconfont">&#xe656;</i></div>
+                </div>
+            </div>
+        </div>
+        <!--情景导入选择结束-->
+    </div>
+
+    <div class="w-submit-cancel">
+        <a class="w-cancel" onclick="closeToDescribe()">取消</a>
+        <a class="w-submit" href="javascript:void(0);">提交</a>
+    </div>
+</div>
+<script src="../../js/webuploader.min.js"></script>
+<script>
+    var img = '';
+    get("/activity/getMyId", function (res) {
+        if (res.code == 200) {
+            initMoreUploader('img', res.data, function (file) {
+                $("#imgs").append('<div class="img"><img src="' + file.url + '" width="100%"><span class="delete-icon"><i class="iconfont">&#xe779;</i></span></div>');
+            });
+        }
+    });
+</script>
+<!--新增编辑描述结束-->
+
+<script>
+    function keypress() //textarea输入长度处理
+    {
+        var text1 = document.getElementById("textarea_val").value;
+        var len;//记录剩余字符串的长度
+        if (text1.length >= 300)//textarea控件不能用maxlength属性，就通过这样显示输入字符数了
+        {
+            document.getElementById("textarea_val").value = text1.substr(0, 300);
+            len = 0;
+        }
+        else {
+            len = 300 - text1.length;
+        }
+        $('.surplus').html(len)
+    }
+
+</script>
+
+<script>
+    var tacheType = getUrlParamValue("tacheType");
+    var tacheTypeOther = tacheType.substr(0, 2);
+    $(function () {
+        if (tacheTypeOther == 11 || tacheTypeOther == 16 || tacheTypeOther == 18) {
+            $(".w-describe-content").show();
+        }
+        if (tacheTypeOther == 11) {
+            // 情景导入
+            $("#qjdr").show();
+            $("#qjdrxz").show();
+        } else if (tacheTypeOther == 16) {
+            // 活动成果
+            $("#hdcg").show();
+            $("#hdcgxz").show();
+        } else if (tacheTypeOther == 18) {
+            // 讨论区
+            $("#tlq").show();
+            $("#tlqxz").show();
+        }
+
+        // 获取描述
+
+        get("/activity/describe?tacheType=" + tacheType + "&activityId=" + getUrlParamValue("activityId"), function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                if (Object_filter(data)) {
+                    var describe = data.describe;
+                    if (Object_filter(describe)) {
+                        var texts = describe.split("<!--s-->");
+                        if (Object_filter(texts[0])) {
+                            $('#textarea_val').val(texts[0].replace(/<br>/g, "\n"));
+                        }
+                        for (var i = 1; i < texts.length; i++) {
+                            $("#imgs").append('<div class="img">' + texts[i].replace("<br>", "") + '<span class="delete-icon"><i class="iconfont">&#xe779;</i></span></div>');
+                        }
+                    }
+                    var actRule = data.actRule;
+                    if (Object_filter(actRule)) {
+                        // 状态 1开启 2 关闭
+                        if (actRule.status == 1) {
+                            $('.w-describe-shell').removeClass('active');
+                            $('.w-describe-list').addClass('w-describe-active');
+                            $("#mySwitch").addClass("mui-active");
+                            // 情景导入和活动成果的 发表 是 perComment
+                            // 讨论区 发帖 perTopic 回帖 perReplyTopic 精华帖 perTopicElite
+                            if (tacheTypeOther == 18) {
+                                // 讨论区
+                                $(".perTopic").html(actRule.perTopic);                 // 发布数量
+                                $(".perReplyTopic").html(actRule.perReplyTopic);       // 回复数量
+                                $(".perTopicElite").html(actRule.perTopicElite);      // 加精资源
+                            } else if (tacheTypeOther == 11) {
+                                // 情景导入
+                                $(".qjdrPerComment").html(actRule.perComment);               // 发布数量
+                            } else if (tacheTypeOther == 16) {
+                                // 活动成果
+                                $(".hdcgPerComment").html(actRule.perComment);
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    });
+    // 移除图片
+    mui("#imgs").on('tap', '.delete-icon', function () {
+        $(this).parent().remove();
+    });
+    // 提交
+    mui(".w-submit-cancel").on('tap', '.w-submit', function () {
+        var imgs = '';
+        $("#imgs").find("img").each(function () {
+            imgs += '<!--s--><br>' + $(this)[0].outerHTML;
+        });
+        var data = {
+            activityId: getUrlParamValue("activityId"),
+            tacheType: tacheType,
+            describe: $("#textarea_val").val().replace(/\n/g, "<br>") + imgs,
+            status: $('.w-describe-list').hasClass("w-describe-active") ? 1 : 2
+        };
+        if (tacheTypeOther == 11) {
+            var perComment = $(".qjdrPerComment").html();
+            if (perComment == 0&&$("#mySwitch").hasClass("mui-active")==true) {
+                mui.toast("请设置完成要求！");
+                return;
+            }
+            data.perComment = perComment;
+        } else if (tacheTypeOther == 16) {
+            var perComment = $(".hdcgPerComment").html();
+            if (perComment == 0&&$("#mySwitch").hasClass("mui-active")==true) {
+                mui.toast("请设置完成要求！");
+                return;
+            }
+            data.perComment = perComment;
+        } else if (tacheTypeOther == 18) {
+            var perTopic = $(".perTopic").html();
+            var perReplyTopic = $(".perReplyTopic").html();
+            var perTopicElite = $(".perTopicElite").html();
+            if (perTopic == 0 && perReplyTopic == 0 && perTopicElite == 0&&$("#mySwitch").hasClass("mui-active")==true) {
+                mui.toast("请设置完成要求！");
+                return;
+            }
+            data.perTopic = perTopic;
+            data.perReplyTopic = perReplyTopic;
+            data.perTopicElite = perTopicElite;
+        }
+        post("/activity/describeSave", data, function (res) {
+            if (res.code == 200) {
+                // mui.toast("修改成功");
+                mui.alert('修改成功', '提示', function () {
+                    closeToDescribe();
+                    window.parent.parent.location.reload();
+                });
+            } else {
+                mui.toast(res.message);
+            }
+        })
+    });
+
+
+</script>
+<script>
+    (function (mu) {
+        mu.init();
+        mu.ready(function () {
+            //考核设置
+            //-----------------------------------------
+            var userPicker = new mu.PopPicker();
+            userPicker.setData([
+                {
+                    text: '0'
+                }, {
+                    text: '1'
+                }, {
+                    text: '2'
+                }, {
+                    text: '3'
+                }, {
+                    text: '4'
+                }, {
+                    text: '5'
+                }, {
+                    text: '6'
+                }, {
+                    text: '7'
+                }, {
+                    text: '8'
+                }, {
+                    text: '9'
+                }, {
+                    text: '10'
+                },
+            ]);
+            //  showUserPickerButton.addEventListener('tap', function() {
+            mui(".w-describe-request").on('tap', '.w-describe-active', function () {
+                var myvar = $('.w-describe-list').index(this);
+                userPicker.show(function (items) {
+                    var classVal = $('.w-describe-list').eq(myvar).find("div span").attr("class");
+                    $('.' + classVal + '').html(items[0].text);
+                    // $('.w-describe-list').eq(myvar).find('.w-val').html(items[0].text);
+                    // $('.w-wcyq').find('.w-val').eq(myvar).html(items[0].text);
+
+                });
+            }, false);
+        });
+    })(mui, document);
+
+    //开启考核
+
+    document.getElementById("mySwitch").addEventListener("toggle", function (event) {
+        if (event.detail.isActive) {
+            $('.w-describe-shell').removeClass('active');
+            $('.w-describe-list').addClass('w-describe-active')
+        } else {
+            $('.w-describe-shell').addClass('active')
+            $('.w-describe-list').removeClass('w-describe-active');
+        }
+    })
+</script>

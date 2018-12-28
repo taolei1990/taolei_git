@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<link href="../css/mui.min.css" rel="stylesheet" type="text/css">
+	<link href="../css/w-custom.css" rel="stylesheet" type="text/css">
+	<title>笔记</title>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../../js/common.js"></script>
+</head>
+<body class="mui-ios mui-ios-9 mui-ios-9-1">
+
+<div class="w-ineedall mui-row" style="border-bottom: 1px solid #f2f2f2">
+
+	<div class="mui-col-sm-6 mui-col-xs-6">
+		<div class="mui-content-padded w-sort" style="padding: 10px;text-align: left">
+			<ul class="mui-pagination mui-pagination-sm">
+				<li>
+					<a class="wm-sort wm-active" show="my">
+						全部笔记
+					</a>
+				</li>
+				<li>
+					<a class="wm-sort" show="other">
+						我的笔记
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="w-performance" id="topic_content_list">
+	<ul class="mui-table-view y-topicsDiscuList">
+		<li class="mui-table-view-cell mui-media">
+			<a  class="">
+				<img class="mui-media-object mui-pull-left" src="http://upload2.yunjy.com.cn/avatar/8500/6724.jpg">
+				<div class="mui-media-body">名称
+					<p class="mui-ellipsis">上传人</p>
+					<p>2018-03-22
+						<em><i class="iconfont">&#xe86f;</i>566</em>
+						<em><i class="iconfont">&#xe67d;</i>655</em>
+					</p>
+				</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell mui-media">
+			<a  class="">
+				<img class="mui-media-object mui-pull-left" src="http://upload2.yunjy.com.cn/avatar/8500/6724.jpg">
+				<div class="mui-media-body">名称
+					<p class="mui-ellipsis">上传人</p>
+					<p>2018-03-22
+						<em><i class="iconfont">&#xe86f;</i>566</em>
+						<em><i class="iconfont">&#xe67d;</i>655</em>
+					</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+<script>
+    //进入资源详情页
+    mui('.mui-table-view').on('tap', '.yopicsDiscuList', function () {
+        alert($(this).attr("id"));
+        mui.openWindow({
+            url:'../../underside_detailPages.html?id=',
+            id:''
+        });
+    });
+	var courseId = getUrlParamValue("courseId");
+	$(function(){
+		onloadList(0,0);
+	});
+	function onloadList(index,type){
+		get("/activity/course/noteList?index="+index+"&courseId="+courseId+"&type="+type, function (res){
+			if(res.code == 200){
+				$(".y-topicsDiscuList").html("");
+				$(".y-scroll").html("");
+				var data = res.data;
+                var list = data.list;
+                if(Object_filter(list)) {
+	                $.each(list,function(i,v){
+						addRow(list[i]);
+	                });
+	            }
+            }
+		});
+	}
+	function addRow(rowData){
+		var li = $('<li class="mui-table-view-cell mui-media" data-id="'+rowData.id+'"><a  class="">'+
+				'<img class="mui-media-object mui-pull-left" src="'+rowData.headImg+'">'+
+				'<div class="mui-media-body">'+rowData.title +
+				'<p class="mui-ellipsis">'+rowData.userName+'</p>'+
+				'<p>'+rowData.createDate+'<em><i class="iconfont">&#xe86f;</i>566</em>'+
+				'<em><i class="iconfont">&#xe67d;</i>655</em></p></div></a></li>');
+		$(".y-topicsDiscuList").append(li);
+	}
+</script>
+<script>
+    //选项卡切换对应上传评论按钮
+    $(".y-topicsDiscuList").on("tap",'li',function(){
+        mui.openWindow({
+            url:'../../underside_discussion_board.html?activityId='+$(this).attr("activityId"),
+            id:'22'
+        });
+    });
+
+
+</script>
+
+</body>
+</html>

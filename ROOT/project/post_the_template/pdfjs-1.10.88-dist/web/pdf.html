@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../../css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/h-studio.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body >
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <a href="#y-popover" class="mui-icon mui-icon-gear  mui-pull-right"></a>
+    <h1 class="mui-title">课题研究内容页</h1>
+
+</header>
+<div class="mui-content">
+ <iframe id="pfd" src="../../pdf/NextDocumen1t.pdf" width="100%" height="100%">
+        This browser does not support PDFs. Please download the PDF to view it:
+        <a href="../../pdf/NextDocumen1t.pdf">Download PDF</a>
+    </iframe>
+    <!--<embed id="pfd" src="../../pdf/NextDocumen1t.pdf" type="application/pdf" width="100%" height="100%">-->
+
+
+
+
+
+</div>
+<script src="../../js/jquery-3.1.0.min.js"></script>
+<script src="../../js/mui.min.js"></script>
+<script>
+    var h= $(window).height();
+    console.log(h);
+   $('#pfd1').css('height',h+'px');
+    $('#pfd2').css('height',h+'px');
+
+</script>
+</body>
+
+
+</html>
