@@ -177,10 +177,18 @@
             <div class="contentImg"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png" data-preview-src="" data-preview-group="1"></div>
             <p class="contentText">在每年年末，《</p>
             <p class="contentText ">在每年年末，《麻省理工科技评论》都会对当年的科技成果做阶段性总结，同时展望来年的技术发展趋势。</p>
-<form style="position: relative">
-    <label style="display: block;border-radius: 8px;width: 80px;height: 40px;text-align: center;line-height: 40px;background-color: #00a2d4;color: #fff">选择文件</label>
-    <input type="file" style="width: 80px;height: 40px;text-align: center;line-height: 40px ;position: absolute;top: 0;left: 0;opacity: 0">
-</form>
+            <div>
+                　<div id="test-image-preview"></div>
+                <p id="test-file-info"></p>
+                <div style="position: relative;width: 80px; height: 30px;margin:0 auto">
+                    <label style="
+        display:block;width: 80px; height: 30px;
+        position: absolute;top: 0;left: 0;
+        background-color: #28b8d5;color: #fff;
+        text-align: center;line-height: 30px;border-radius: 4px;">选择文件</label>
+                    <input type="file" id="test-image-file" style="width: 80px; height: 30px;opacity: 0">
+                </div>
+            </div>
         </div>
 
         <div class="h-msfxb">
@@ -492,9 +500,9 @@
 </script>
     <script>
         $(document).ready(function () {
-            var isShare = getUrlParamValue("isShare");
+            var isshare = getUrlParamValue("isshare");
             var isfrom = getUrlParamValue("from");
-            if (isShare == 1||isfrom != null) {
+            if (isshare == 1||isfrom != null) {
                 $('.y-span-sy').show()
                 $(".isShare").removeClass('active');
                 $('.y-ktyjcz').hide();
@@ -575,7 +583,46 @@
 
 
 
+        var fileInput = document.getElementById('test-image-file'),
+            info = document.getElementById('test-file-info'),
+            preview = document.getElementById('test-image-preview');
+        // 监听change事件:
+        fileInput.addEventListener('change', function() {
+            // 清除背景图片:
+            preview.style.backgroundImage = '';
+            // 检查文件是否选择:
+            if(!fileInput.value) {
+                info.innerHTML = '没有选择文件';
+                return;
+            }
+            // 获取File引用:
+            var file = fileInput.files[0];
+            //判断文件大小
+            var size = file.size;
+            if(size >= 10*1024*1024){
+                alert('文件大于10兆不行!');
+                return false;
+            }
+            // 获取File信息:
+            info.innerHTML = '文件名称: ' + file.name + '<br>' +
+                '大小: ' + file.size + '<br>' +
+                '修改: ' + file.lastModifiedDate;
+            // if(file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+                alert('不是有效的图片文件!');
+                return;
 
+                // 读取文件:
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var
+                        data = e.target.result; // 'data:image/jpeg;base64,/9j/4AAQSk...(base64编码)...}'
+                    preview.style.backgroundImage = 'url(' + data + ')';
+                };
+                // 以DataURL的形式读取文件:
+                reader.readAsDataURL(file);
+                console.log(file);
+            // }
+        });
     </script>
 </body>
 </html>
