@@ -295,26 +295,26 @@
     $(function () {
 
         function appletOfWeChat() {
+
             if (window.__wxjs_environment === 'miniprogram') {
                 //微信小程序环境
                 wx.miniProgram.navigateTo({
                     url: "/pages/index/index"
                 })
+                mui.toast('点击了返回首页')
             } else {
                 //不是小程序环境
             }
         }
 
         mui('.y-hsy').on('tap', '.y-span-sy', function () {
-            wx.miniProgram.navigateTo({
-                url: "/pages/index/index"
-            })
-            // if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
-            //     document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
-            //     mui.toast('报错')
-            // } else {
-            //     appletOfWeChat()
-            // }
+
+            if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+                document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
+                mui.toast('报错')
+            } else {
+                appletOfWeChat()
+            }
 
         });
         mui('.y-hsy').on('tap', '.y-span-db', function () {
