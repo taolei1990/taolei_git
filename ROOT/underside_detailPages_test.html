@@ -306,13 +306,15 @@
         }
 
         mui('.y-hsy').on('tap', '.y-span-sy', function () {
-            mui.alert('点击了返回首页')
-            if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
-                document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
-                mui.toast('报错')
-            } else {
-                appletOfWeChat()
-            }
+            wx.miniProgram.navigateTo({
+                url: "/pages/index/index"
+            })
+            // if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+            //     document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
+            //     mui.toast('报错')
+            // } else {
+            //     appletOfWeChat()
+            // }
 
         });
         mui('.y-hsy').on('tap', '.y-span-db', function () {
