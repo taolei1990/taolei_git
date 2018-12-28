@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>坊主小结</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+	<link rel="stylesheet" href="../css/mui.picker.min.css" />
+	<link href="../css/w-custom.css" rel="stylesheet" />
+</head>
+
+<body>
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--菜单部分-->
+    <aside id="offCanvasSide" class="mui-off-canvas-right">
+        <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+				<div class="ysy-coursesearch" >
+                    <div class="ysy-mui-coursesearch">
+                        <div class="mui-input-row mui-search">
+                            <input type="search" class="mui-input-clear" placeholder="提交人">
+                        </div>
+                    </div>
+                    <div class="ysy-coursetype">
+                        <h6>所属机构</h6>
+                        <ul class="ysy-xd">
+                            <li><a>重庆</a></li>
+                            <li><a>云南</a></li>
+                            <li><a>贵州</a></li>
+                            <li><a>广东</a></li>
+                            <li><a>海南</a></li>
+                        </ul>
+                        <ul class="ysy-xd">
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                            <li><a>热门一</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="ysy-coursetype">
+                        <h6>选择组</h6>
+                        <ul>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+                            <li><a>类型一</a></li>
+
+                        </ul>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <ul class="ysy-submitsearch">
+				<li><button id="offCanvasHide" type="button" class="mui-btn mui-btn-danger" >取消</button></li>
+			    <li><button type="button" class="mui-btn mui-btn-primary" >查询</button></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="mui-inner-wrap">
+        <!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color">-->
+            <!--<a class=" mui-icon mui-icon-arrowleft mui-pull-left shut-out"></a>-->
+            <!--<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>-->
+            <!--<h1 id="showUserPicker" class="mui-title"><span id="userResult" class="w-act-title">坊主小结</span><i class="iconfont "></i></h1>-->
+        <!--</header>-->
+        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <p class="ys-reminder"><i class="iconfont">&#xe6a0;</i>抱歉没有搜索到你要的内容 我们推荐了以下内容!</p><!--如果查询结果没有内容就显示这个提示 反之则不显示提示-->
+                <div class="mui-content-padded w-sort">
+                    <ul class="mui-pagination mui-pagination-sm">
+                        <li>
+                            <a class="wm-sort wm-active" show="my">
+                                全部
+                            </a>
+                        </li>
+                        <li>
+                            <a class="wm-sort" show="other">
+                                我上传的
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <ul class="mui-table-view ys-table">
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>1天前</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>数学组</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>1天前</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>数学组</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>3天前</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>(数学小组)</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>5天前</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>数学组</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>10天前</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>数学组</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>30天前</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>数学组</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>30天前</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>数学组</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em>2018-03&#45;&#45;20</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>数学组</em></a>-->
+                    <!--<span><i class="iconfont">&#xe86f;</i>566</span>-->
+                    <!--<span><i class="iconfont">&#xe67d;</i>655</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+
+                </ul>
+            </div>
+
+        </div>
+        <!-- off-canvas backdrop -->
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(function () {
+        summary(1);
+        mui('li').on('tap', 'a', function () {
+            var uploadType = 1;
+            if ($(this).attr("show") != 'my') {
+                uploadType = 2;
+            }
+            summary(uploadType);
+        });
+    });
+    function summary(uploadType) {
+        get("/activity/summary?activityId=" + getUrlParamValue("activityId") + "&tacheType=10&uploadType" + getUrlParamValue("uploadType"), function (res) {
+            if (res.code == 200) {
+                if (Object_filter(res.data)) {
+                    var summaryList = res.data.summaryList;
+                    var li = "";
+                    for (var i = 0; i < summaryList.length; i++) {
+                        li += '<li class="mui-table-view-cell" class="zzxj" data-id="' + summaryList[i].id + '"><div class="ys-part-box"><div class="ys-forum"><b>' + summaryList[i].title + '</b><em>' + summaryList[i].createTime + '</em></div><div class="ys-forum-portrait"><img src="' + summaryList[i].headImg + '"><a>' + summaryList[i].name + ' <em>' + summaryList[i].type + '</em></a><span><i class="iconfont">&#xe86f;</i>' + summaryList[i].commentNum + '</span><span><i class="iconfont">&#xe67d;</i>' + summaryList[i].browseQuantity + '</span></div></div></li>';
+                    }
+                    $(".mui-table-view").empty();
+                    $(".mui-table-view").append(li);
+                }
+            }
+        });
+    }
+</script>
+<script>
+    //按钮切换效果
+    $(document).ready(function () {
+        $(".wm-sort").on("tap", function () {
+            $(".wm-sort").removeClass("wm-active");
+            $(this).addClass("wm-active");
+        });
+    });
+</script>
+<script>
+    mui(".ysy-coursetype").on('tap','a',function(){
+//选中状态
+        if($(this).parents(".ysy-coursetype").find("ul").hasClass("ysy-xd")){
+            var c=  $(this).parents('.ysy-xd').index()-1;
+            $(".ysy-xd").eq(c).find("a").removeClass("active");
+            $(".ysy-xd").eq(c).find(this).addClass("active");
+        }
+		else
+        {
+            var c=  $(this).parents('.ysy-coursetype').index()-1;
+            $(".ysy-coursetype").eq(c).find("a").removeClass("active");
+            $(".ysy-coursetype").eq(c).find(this).addClass("active");
+        }
+
+    });
+</script>
+<script>
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    //隐藏侧滑菜单
+    mui(".ysy-submitsearch").on('tap','.mui-btn',function(){
+        mui('.mui-off-canvas-wrap').offCanvas('close');
+    });
+</script>
+<script>
+    //进入详情页
+    mui('.ys-table').on('tap', 'li', function () {
+        mui.openWindow({
+            url: '../../underside_detailPages.html?id=' + $(this).attr("data-id") + "&activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"),
+            id: ''
+        });
+    });
+</script>
+
+</body>
+
+
+</html>

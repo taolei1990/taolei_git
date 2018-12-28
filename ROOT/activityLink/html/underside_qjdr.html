@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title class="title_val"></title>
+    <link href="../css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/jquery.emoji.css" rel="stylesheet" type="text/css">
+    <link href="../css/w-custom.css" rel="stylesheet" type="text/css">
+    <link href="../css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="../js/jquery.emoji.js"></script>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/mui.picker.min.js"></script>
+    <script src="../../js/common.js"></script>
+</head>
+<body class="mui-ios mui-ios-9 mui-ios-9-1">
+<input type="hidden" id="pageIndex" value="1">
+<script>
+
+</script>
+
+<!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top="0" data-offset="150"-->
+<!--data-duration="16" data-scrollby=".mui-scroll-wrapper">-->
+<!--<a class="shut-out mui-icon mui-icon-arrowleft mui-pull-left"></a>-->
+<!--<h1 id="showUserPicker" class="mui-title"><span id="userResult" class="w-act-title">情景导入</span><i class="iconfont "></i>-->
+<!--</h1>-->
+
+<!--</header>-->
+
+<!--新增描述-->
+<div class="w-describe">
+    <h5 class="title_val"><span id="describe_span" style="display: none">修改要求</span></h5>
+    <div class="w-description"></div>
+    <div class="w-wcyq">
+        <p>1、要求所有成员浏览查看本环节所有内容</p>
+        <p>2、每人提交<span class="w-val qjdrPerComment">0</span>篇评论</p>
+    </div>
+</div>
+
+<div class="y-qjdrjl">
+    <div class="y-wdjl" id="y_wdjl_id" style="display: none;">
+        <h4>我的交流</h4>
+        <ul class="y-wodexchange">
+            <!--<li>
+                <div class="w-touxe"><img src="../img/qd-yqd.png"></div>
+                <div class="w-pjnr">
+                    <h5>陶老师</h5>
+                    <p class="pnxq">小时候只能吃到面和土豆长大了别的也吧爱吃</p>
+                    <p class="pnsjhf"><span>2018/7/9 15:31</span><span class='delete'>删除</span></p></div>
+            </li>-->
+        </ul>
+    </div>
+    <div class="y-wdjl">
+        <h4>全部交流 <span class="y-rowlist">(0)</span></h4>
+        <ul class="y-allexchange">
+            <!--<li>
+                <div class="w-touxe">
+                    <img src="../img/3c28af542f2d49f.jpg">
+                    <div class="y-zjtx">专家</div>
+                </div>
+                <div class="w-pjnr">
+                    <h5>陶老师 <span>发起人</span></h5>
+                    <p class="pnxq">小时候只能吃到面和土豆长大了别的也吧爱吃</p>
+                    <p class="pnsjhf"><span>2018/7/9 15:31</span><span><i class="iconfont">&#xe679;</i> 6</span></p>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+</div>
+<!--评论-->
+<div class="y-srpl" id="y_srpl" style="display: none">
+    <p>发表评论...</p>
+</div>
+<!--评论弹窗-->
+<div class="y-plunsck">
+    <div class="y-textdiv">
+        <div class="y-textdivspan">
+            <span class="y-quexiao">取消</span>
+            <span class="y-fabiao">发表</span>
+        </div>
+        <div class="y-inputframe">
+            <div class="cgzs-tjfj"></div>
+            <textarea rows="5" id="username" class="inputframe" autofocus onKeyUp='keypress()' onblur='keypress()' placeholder="我来说两句"></textarea>
+        </div>
+    </div>
+</div>
+
+<!--新增编辑描述-->
+<div class="w-desc-mask">
+</div>
+<!--新增编辑描述结束-->
+
+<script>
+    //编辑描述
+    var tacheType = getUrlParamValue("tacheType");
+    var activityId = getUrlParamValue("activityId");
+    var allNum = 0;
+    $(".y-fabiao").click(function () {
+        var pl=$.trim($(".y-inputframe textarea").val());
+        if(pl==""){
+            mui.toast("输入不能为空");
+        }else {
+            post("/activity/scene/comment", {activityId: activityId, tacheType: tacheType, content: $(".y-inputframe textarea").val()}, function (res) {
+
+                if (res.code == 200) {
+
+                    mui.confirm('评论成功', '提示', ['确认'], function (e) {
+                        window.location.reload();
+                    })
+                } else {
+                    mui.toast(res.message);
+                }
+
+            });
+        }
+    });
+
+    function commit() {
+        /*alert($(".w-describe-text textarea").val());*/
+        post("/activity/describeSave", {activityId: activityId, tacheType: tacheType, describe: $(".w-describe-text textarea").val()}, function (res) {
+            if (res.code == 200) {
+                mui.toast('修改成功');
+                $(".w-describe-text textarea").val("");
+                closeToDescribe();
+            } else {
+                mui.toast('修改失败');
+            }
+        });
+    }
+
+    //获取描述
+    $(function () {
+        $(".title_val").prepend(getUrlParamValue("tacheName"));
+        get("/activity/describe?tacheType=" + getUrlParamValue("tacheType") + "&activityId=" + getUrlParamValue("activityId"), function (res) {
+            // console.log('测试');
+            if (res.code == 200) {
+                $('.w-description').html('');
+                var data = res.data;
+                if (Object_filter(data)) {
+                    $.each(data, function (i, v) {
+                        // addRow(data[i]);
+                        $('.w-description').html(data.describe);
+                    });
+                    var actRule = data.actRule;
+                    if (actRule.status == 1) {
+                        if (Object_filter(actRule)) {
+                            $(".qjdrPerComment").html(actRule.perComment);
+                            // 为空或者等于0时隐藏
+                            if (!Object_filter(actRule.perComment) || actRule.perComment == 0) {
+                                $(".qjdrPerComment").parent().hide();
+                            }
+                        }
+                    } else {
+                        $(".w-wcyq").hide();
+                    }
+                }
+            }
+        
+
+            $(".w-describe-text a").click(function () {
+
+                $(".w-description").text(textval);
+                $(".w-desc-mask").hide();
+                $(".w-describe-text").hide();
+            });
+        });
+        getUserPower(getUrlParamValue("activityId"), function (role) {
+            if (role == 1 || role == 2) {
+                $("#y_wdjl_id").show();
+                $("#y_srpl").show();
+            }
+        });
+
+    });
+    //我的交流
+    get("/activity/scene/communication?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType") + "&is_my=1", function (res) {
+        if (res.code == 200) {
+            var data = res.data.list;
+            var li = "";
+            if (Object_filter(data)) {
+                for (var i = 0; i < data.length; i++) {
+                    li += '<li><div class="w-touxe"><img src="' + data[i].headImg + '"></div> <div class="w-pjnr"><h5>' + data[i].name + '</h5> <p class="pnxq">' + data[i].content + '</p><p class="pnsjhf"><span>' + data[i].createDate + '</span><span class="deleteM" onclick="deleteM(' + data[i].id + ',this)">删除</span></p></div></li>';
+                }
+                $(".y-wodexchange").empty();
+                $(".y-wodexchange").append(li);
+
+            }
+        }
+
+    });
+
+    function deleteM(obj, ele) {
+        var btnArray = ['确认', '取消'];
+        mui.confirm('确认刪除该条动态？', '提示', btnArray, function (e) {
+            if (e.index == 0) {
+                post("/activity/scene/communication/delete", {id: obj}, function (res) {
+                    if (res.code == 200) {
+                        mui.confirm('删除成功', '提示', ['确认'], function (e) {
+                            // 移除我的交流
+                            $(".y-wodexchange").find($(ele).parent().parent().parent()).remove();
+                            // 移除全部交流
+                            $(".y-allexchange").find("li").each(function () {
+                                if ($(this).attr("data-id") == obj) {
+                                    $(this).remove();
+                                }
+                            })
+                            // 减少数量
+                            $('.y-rowlist').html('(' + (allNum - 1) + ')');
+                        })
+                    }
+                });
+            } else {
+                mui.toast('你取消了删除');
+            }
+        });
+    }
+
+    function wodExchange(rowData) {
+        var table = document.body.querySelector('.y-wodexchange');
+        var li = document.createElement('li');
+        li.innerHTML = '<div class="w-touxe"><img src=' + rowData.headImg + '></div>' +
+            '<div class="w-pjnr">' +
+            '<h5>' + rowData.name + '</h5>' +
+            '<p class="pnxq">' + rowData.content + '</p>' +
+            '<p class="pnsjhf"><span>' + rowData.createDate + '</span><span>删除</span></p></div>';
+        table.appendChild(li);
+    }
+
+    //全部交流
+    $(function () {
+        get("/activity/scene/communication?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType") + "&is_my=0", function (res) {
+            if (res.code == 200) {
+                var data = res.data.list;
+                console.log(data);
+                if (Object_filter(data)) {
+                    $.each(data, function (i, v) {
+                        allExchange(data[i]);
+                        $('.y-rowlist').html('('+data.length+')');
+                        allNum = data.length;
+                    });
+                }
+            }
+        });
+    });
+
+    function allExchange(rowData) {
+        var admini = '';
+        var initiator = '';
+        if (rowData.rank == 1) {
+            admini = '<div class="y-zjtx">专家</div>'
+        } else if (rowData.rank == 2) {
+            admini = ''
+        }
+        if (rowData.initiator == 1) {
+            initiator = '<span>管理员</span>'
+        } else if (rowData.initiator == 2) {
+            initiator = '<span class="active">学员</span>'
+        }
+        var table = document.body.querySelector('.y-allexchange');
+        var li = document.createElement('li');
+        li.setAttribute("data-id", rowData.id);
+        li.innerHTML = '<div class="w-touxe">' +
+            '<img src=' + rowData.headImg + '>' +
+            ' ' + admini + ' ' +
+            '</div>' +
+            '<div class="w-pjnr">' +
+            '<h5>' + rowData.name + ' ' + initiator + '</h5>' +
+            '<p class="pnxq">' + rowData.content + '</p>' +
+            '<p class="pnsjhf"><span>' + rowData.createDate + '</span><!--<span><i class="iconfont">&#xe679;</i>' + rowData.replies + '</span>--></p>' +
+            '</div>';
+        table.appendChild(li);
+    }
+</script>
+
+<script>
+    //删除作业
+    mui(".w-zybz").on('tap', '.confirmbtn', function () {
+        $(this).addClass("remo");
+        var btnArray = ['取消', '删除'];
+        mui.confirm('你将要删除作业？', '提示', btnArray, function (e) {
+            if (e.index == 1) {
+                $('.remo').parents('.w-zybz').remove();
+
+            } else {
+                //选择了取消
+            }
+        })
+    });
+</script>
+<script>
+    //编辑描述
+    $(function () {
+        $(".w-describe span").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+
+            $.ajax({
+                type: 'GET',
+                url: "underside_describe.html?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"),
+                success: function (data) {
+                    $(".w-desc-mask").html(data);
+                    $(".w-desc-mask").show();
+                    $(".w-describe-text").show();
+                    mui('.mui-switch')['switch']()
+                }
+            });
+
+        });
+        $(".w-describe-text").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        });
+        addDescribeButton(getUrlParamValue("activityId"));
+    })
+
+</script>
+<script>
+
+
+</script>
+<script>
+
+    //打开回复框
+    mui(".y-srpl").on('tap', 'p', function () {
+        // $("#username").emoji({
+        //     showTab: true,
+        //     animation: 'fade',
+        //     icons: [{
+        //         path: "../img/qq/",
+        //         maxNum: 91,
+        //         excludeNums: [41, 45, 54],
+        //         file: ".gif",
+        //         placeholder: "#qq_{alias}#"
+        //     }]
+        // });
+        $('.y-plunsck').show();
+        $('.y-ktyjcz').hide();
+        $('.inputframe').trigger("click").focus().attr('placeholder', "发表评论...");
+    });
+    //取消
+    mui(".y-textdivspan").on('tap', '.y-quexiao', function () {
+        $('.y-plunsck').hide();
+        $('.y-ktyjcz').show();
+    });
+
+
+</script>
+
+</body>
+</html>

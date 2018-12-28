@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>成员风采</title>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="y-fff">
+<!--<header class="mui-bar mui-bar-nav y-bar-nav mui-active">-->
+    <!--<a class="shut-out mui-icon mui-icon-arrowleft mui-pull-left"></a>-->
+    <!--<a  class="mui-icon mui-icon-search mui-pull-right"></a>-->
+    <!--<h1 class="mui-title">成员风采</h1>-->
+<!--</header>-->
+    <div class="mui-content">
+        <div class="h-sqktgzs h-sqktgzs-act">
+            <em class="total"></em>
+            <span class="active"><i class="iconfont">&#xe663;</i></span>
+            <span><i class="iconfont">&#xe65e;</i></span>
+        </div>
+            <ul class="y-cyfc y-cyfc-list">
+            </ul>
+    </div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $(function(){
+        get("/activity/memberList?activityId=" + getUrlParamValue("activityId"), function (res) {
+            if (res.code == 200) {
+                if (Object_filter(res.data)) {
+                    $(".total").text("共" + res.data.total + "个成员");
+                    var memberList = res.data.memberList;
+                    var li = "";
+                    for (var i = 0; i < memberList.length; i++) {
+                        var state = "成员";
+                        if (memberList[i].state == 1) {
+                            state = "管理员";
+                        }
+                        li += '<li><img src="' + memberList[i].img + '"><p>' + memberList[i].name + '<span>' + state + '</span></p></li>';
+                    }
+                    $(".y-cyfc-list").append(li);
+                }
+            }
+        });
+    });
+
+    function addRow(rowData){
+
+        var table = document.body.querySelector('.y-cyfc-list');
+        var li = document.createElement('li');
+        li.innerHTML ='<img src='+rowData.img+'>' +
+                      '<p>'+rowData.name+' <span>'+rowData.state+'</span><span>'+ rowData.state +'</span></p>';
+        table.appendChild(li);
+    }
+
+</script>
+<script>
+    //列表切换
+    mui(".h-sqktgzs").on('tap', 'span', function () {
+        $(".h-sqktgzs span").removeClass("active");
+        $(this).addClass("active");
+        var inx = $(this).index();
+        if (inx == 1) {
+            $('.y-cyfc').removeClass('y-cyfc-view')
+            $('.y-cyfc').addClass('y-cyfc-list');
+        }
+        if (inx == 2) {
+            $('.y-cyfc').removeClass('y-cyfc-list')
+            $('.y-cyfc').addClass('y-cyfc-view');
+        }
+    })
+
+</script>
+<script>
+    mui.init({
+        gestureConfig:{
+            tap: true, //默认为true
+            doubletap: true, //默认为false
+        }
+    });
+    mui(".mui-bar-nav").on('doubletap','.mui-title',function(){
+        mui.scrollTo(0,100);//回到屏幕顶部
+    })
+</script>
+</body>
+</html>

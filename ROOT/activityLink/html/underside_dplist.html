@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>点评列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css"/>
+    <link href="../css/w-custom.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--菜单部分-->
+    <aside id="offCanvasSide" class="mui-off-canvas-right">
+        <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="ysy-coursesearch">
+                    <div class="ysy-mui-coursesearch">
+                        <div class="mui-input-row mui-search">
+                            <input type="search" class="mui-input-clear" id="title" placeholder="输入资源名称">
+                        </div>
+                    </div>
+                    <div class="ysy-coursetype">
+                        <h6>筛选</h6>
+                        <ul>
+                            <li><a data-id="0">活动成员上传的</a></li>
+                            <li><a data-id="1">活动发起人提供的</a></li>
+                            <li><a data-id="2">平台全部成员上传的</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="ysy-submitsearch">
+                <li>
+                    <button id="offCanvasHide" type="button" class="mui-btn mui-btn-danger">取消</button>
+                </li>
+                <li>
+                    <button type="button" class="mui-btn mui-btn-primary chaxun">查询</button>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="mui-inner-wrap">
+        <!--<header class="mui-bar mui-bar-nav">-->
+        <!--<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>-->
+        <!--<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>-->
+        <!--<h1 class="mui-title">我要点评</h1>-->
+        <!--</header>-->
+        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <p class="ys-reminder"><i class="iconfont">&#xe6a0;</i>抱歉没有搜索到你要的内容 我们推荐了以下内容!</p><!--如果查询结果没有内容就显示这个提示 反之则不显示提示-->
+                <div class="mui-content-padded w-sort">
+                    <ul class="mui-pagination mui-pagination-sm">
+                        <li>
+                            <a class="wm-sort remarkon wm-active" show="my" data-id="1">
+                                已点评
+                            </a>
+                        </li>
+                        <li>
+                            <a class="wm-sort remarkon" show="other" data-id="0">
+                                未点评
+                            </a>
+                        </li>
+                        <li>
+                            <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon  wm-sort mui-icon-search"></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <ul class="mui-table-view y-curriculumstable  ">
+
+                </ul>
+
+            </div>
+
+        </div>
+        <!-- off-canvas backdrop -->
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    //按钮切换效果
+    $(document).ready(function () {
+        $(".remarkon").on("tap", function () {
+            $(".remarkon").removeClass("wm-active");
+            $(this).addClass("wm-active");
+        });
+    });
+</script>
+<script>
+    var defaultType = 0, status = '';
+    mui(".ysy-coursetype").on('tap', 'a', function () {
+        defaultType = $(this).attr("data-id");
+        //选中状态
+        if ($(this).parents(".ysy-coursetype").find("ul").hasClass("ysy-xd")) {
+            var c = $(this).parents('.ysy-xd').index() - 1;
+            $(".ysy-xd").eq(c).find("a").removeClass("active");
+            $(".ysy-xd").eq(c).find(this).addClass("active");
+        } else {
+            var c = $(this).parents('.ysy-coursetype').index() - 1;
+            $(".ysy-coursetype").eq(c).find("a").removeClass("active");
+            $(".ysy-coursetype").eq(c).find(this).addClass("active");
+        }
+    });
+
+    mui(".mui-pagination-sm").on('tap', 'a', function () {
+        status = $(this).attr("data-id");
+        if (Object_filter(status)) {
+            commentList(defaultType, status, '');
+        } else {
+            status = '';
+        }
+    });
+    mui(".y-curriculumstable").on('tap', 'li', function () {
+
+        mui.openWindow({
+            url: '../../underside_detailPages.html?id=' + $(this).attr("data-id") + "&activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"),
+            id: '22'
+        });
+
+    });
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    //显示侧滑菜单
+    mui(".ysy-submitsearch").on('tap', '.mui-btn-danger', function () {
+        mui('.mui-off-canvas-wrap').offCanvas('show');
+    });
+    //隐藏侧滑菜单
+    mui(".ysy-submitsearch").on('tap', '.mui-btn-primary', function () {
+        var title = $("#title").val();
+        commentList(defaultType, status, title);
+        mui('.mui-off-canvas-wrap').offCanvas('close');
+    });
+    $(function () {
+        commentList(defaultType, status, '');
+    });
+
+    function commentList(type, status, title) {
+        get("/activity/discussion/commentList?activityId=" + getUrlParamValue("activityId") + "&type=" + type + "&status=" + status + "&tacheType=" + getUrlParamValue("tacheType") + "&title=" + title, function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                if (Object_filter(data)) {
+                    var li = '';
+                    for (var i = 0; i < res.data.resourceList.length; i++) {
+                        var myCommCount = '<span class="y-xsx">未点评</span>';
+                        if (data.resourceList[i].myCommCount != 0) {
+                            myCommCount = '<span class="y-xrs">已点评</span>';
+                        }
+                        li += '<li class="mui-table-view-cell"  data-id="' + data.resourceList[i].id + '"><a><h5>' + data.resourceList[i].title + '</h5><div class="y-numbox" ><span>' + data.resourceList[i].userName + '</span><span >' + data.resourceList[i].createDate + '</span>' + myCommCount + '<div class="y-yxs"><em class="c54">' + data.resourceList[i].commentNum + '<i class="iconfont">&#xe86f;</i></em></div></div></a></li>';
+                        // li+='<a><h5></h5><div class="y-numbox" ><span></span><span></span><span class="y-xrs"></span> <div class="y-yxs"> <em class="c54"><i class="iconfont">&#xe86f;</i></em></div></div></a>';
+                    }
+                    $(".y-curriculumstable").empty();
+                    $(".y-curriculumstable").append(li);
+
+                    // var type=$(".ysy-coursetype").attr("data-id");
+                }
+            }
+        });
+    }
+</script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>修改作业</title>
+
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/w-custom.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+
+		<!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top='0' data-offset='150' data-duration='16' data-scrollby=".mui-scroll-wrapper">-->
+			<!--<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>-->
+			<!--<h1 class="mui-title">修改作业</h1>-->
+		<!--</header>-->
+
+		<div class="mui-content ">
+			<div class="h-moderator">
+				<img src="../img/3c28af542f2d49f.jpg" />
+				<div class="h-momz">
+					<a>陶老师</a>
+					<em>普通老师(研修学员)</em>
+					<!--<p class="w-wz">未做</p>-->
+					<p class="w-yz">已做</p>
+				</div>
+
+			</div>
+			<div class="h-details">
+				<h1 class="w-zyyq">作业要求</h1>
+				<p><b>布置人：</b>师源网</p>
+				<p><b>开始时间：</b>2018-03-21 23:59:00</p>
+				<p><b>结束时间：</b>2018-03-22 23:59:00</p>
+				<p><b>作业题目：</b>打开蓝色大海</p>
+				<p><b>作业要求：</b>查看附件并按ppt上完成任务
+					查看附件并按ppt上完成任务
+					查看附件并按ppt上完成任务
+					查看附件
+					</p>
+
+				<div class="h-accessory">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="../img/3c28af542f2d49f.jpg">
+								<div class="mui-media-body">
+									夏天挫冰吃瓜，冬天围炉取暖.ppt
+									<p class='mui-ellipsis'>56kb</p>
+								</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="mui-row h-aiipageview">
+					<div class="mui-col-sm-4 mui-col-xs-4">
+						<!--  <i class="iconfont">&#xe6b1;</i> -->
+						<span class="mui-badge mui-badge-warning">类型:必做</span>
+					</div>
+					<div class="mui-col-sm-4 mui-col-xs-4">
+						<!-- <i class="iconfont">&#xe67d;</i>-->
+						<span class="mui-badge mui-badge-success">已做:102人</span>
+					</div>
+					<div class="mui-col-sm-4 mui-col-xs-4">
+						<!-- <i class="iconfont">&#xe6bc;</i>-->
+						<span class="mui-badge ">未做:123人</span>
+					</div>
+
+				</div>
+			</div>
+			<div class="h-discuss">
+				<h1>做作业（1）</h1>
+			<!--	<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<img class="mui-media-object mui-pull-left" src="../img/3c28af542f2d49f.jpg">
+						<div class="mui-media-body">
+							<a>磊哥哥</a>
+							<p class='mui-ellipsis'>
+								作业标题
+							</p>
+							<p class='mui-ellipsis'>
+								完成作业完成作业完成作业完成作业完成作业完成作业
+							</p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left w-wodre" src="../img/3c28af542f2d49f.jpg">
+							<div class="mui-media-body">
+								莫名我就喜欢你.wod
+								<p class='mui-ellipsis'>56kb</p>
+							</div>
+						</a>
+					</li>
+				</ul>-->
+				<div class="ys-card w-cadea">
+					<form class="mui-input-group" >
+						<div class="mui-input-row">
+							<label>标题:</label>
+							<input type="text"  class="mui-input-clear ys-input"  placeholder="请输入标题" value="作业标题">
+						</div>
+						<div class="mui-input-row">
+							<label>内容:</label>
+							<textarea class="ys-input" id="textarea"  placeholder="请输入内容...">完成作业完成作业完成作业完成作业</textarea>
+						</div>
+						<div class="mui-input-row w-row-file">
+							<label>上传附件:</label>
+							<span class="w-inupt-file"><input type="file" >+</span>
+						</div>
+						<ul class="mui-table-view w-file-list">
+
+							<li class="mui-table-view-cell">莫名我就喜欢你.wod
+								<span class="mui-badge mui-badge-warning">X</span>
+							</li>
+
+						</ul>
+
+						<div class="mui-button-row">
+							<button type="button" id="input_check" class="mui-btn mui-btn-primary" >修改</button>
+							<button type="button" class="mui-btn mui-btn-danger" >取消</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script>
+            //删除附件
+            mui(".mui-table-view-cell").on('tap','.mui-badge',function(e){
+                $(this).parent(".mui-table-view-cell").remove();
+            });
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>选择活动形式</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <!--自定义的css-->
+    <link rel="stylesheet" href="../css/activity_main.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body>
+<!--<header class="mui-bar mui-bar-nav">-->
+    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+    <!--<h1 class="mui-title">选择活动形式</h1>-->
+<!--</header>-->
+<nav class="mui-bar mui-bar-tab">
+    <div class="act-nav">
+        <p class="mui-pull-left"><a class="mui-tab-item act-preview" href="#tabbar-with-contact"><i class="iconfont">&#xe637;</i>预览模板</a></p>
+        <a id='act-publish' class="mui-pull-right mui-btn add-member ">确认选择</a>
+    </div>
+</nav>
+<div id="select-activity" class="mui-content">
+<div class="act-preview">
+
+</div>
+</div>
+</body>
+<script src="../js/mui.min.js"></script>
+<script src="../js/jquery-3.1.0.min.js"></script>
+<script src="../js/main.js"></script>
+<script>
+
+
+    function  getForms() {
+        $.axget(URL_ACTION+'/rest/activity/forms','',
+            //请求成功返回数据
+            function (res) {
+                console.log(res)
+                mui.toast('成功')
+                $.each(res,function (i,e) {
+                    getFormsRes(res[i])
+                })
+            },
+            //请求出错了
+            function (data) {
+
+                mui.toast("请求出错了515")
+            }
+        );
+    };
+function getFormsRes(s) {
+    $.each( s.children,function (i,e) {
+        var  res ='<div class="mui-card">' +
+            '<div class="mui-card-content act-card-activity">' +
+            '<div class="act-card-flex">' +
+            '<div class="act-card-name">' +
+            '<h4 class="act-card-name-h4">'+s.text+'</h4>' +
+            '<h3 class="act-card-name-h3">'+s.children[i].text+'</h3>' +
+            '</div>' +
+            '<div class="act-card-icon">' +
+            '<i class="iconfont">&#xe6a7;</i>' +
+            '</div>' +
+            '</div>' +
+            '<p>'+s.children[i].remark+'</p>' +
+            '</div>' +
+            '</div>'
+        $('#select-activity').append(res)
+    })
+}
+
+
+
+</script>
+</html>

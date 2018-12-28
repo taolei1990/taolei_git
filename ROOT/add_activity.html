@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>发起活动</title>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <link href="css/webuploader.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+    <link href="css/layer.css" rel="stylesheet" type="text/css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+</head>
+<body>
+<!--<header class="mui-bar mui-bar-nav">-->
+<!--<a class="shut-out mui-icon mui-icon-arrowleft mui-pull-left"></a>-->
+<!--<a id="input_check" class="y-tijiao active mui-pull-right">提交</a>&lt;!&ndash;active 类用于判断输入了内容才能成为能发布状态&ndash;&gt;-->
+<!--<h1 class="mui-title">发起活动</h1>-->
+<!--</header>-->
+<div class="mui-content">
+    <div class="y-xzktym">
+        <div class="mui-input-group input-form">
+            <div class="y-ktyjfm">
+                <!--dom结构部分-->
+                <div id="uploader-demo">
+                    <!--用来存放item-->
+                    <input type="hidden" id="img" name="img"/>
+                    <div id="fileList" class="uploader-list">
+                    </div>
+                    <div class="filePicker">
+                        <div id="filePicker">
+                        <span class="y-xzmfan">
+                            <i class="iconfont">&#xe668;</i>
+                            <p id="tjfmt">添加封面图片</p>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="input_example">
+                <input type="hidden" id="userId" name="userId"/>
+                <div class="mui-input-row">
+                    <label>名称<span class="y-bt">*</span></label>
+                    <input id="title" name="title" type="text" class="mui-input-clear" placeholder="请输入活动名称">
+                </div>
+                <div class="mui-input-row active">
+                    <label>参与人员<span class="y-bt">*</span></label>
+                    <input type="text" class="mui-input-clear" style="font-size: 12px;color: #f5b948" readonly unselectable="on"
+                           placeholder="点击头像可以快速删除" value="点击头像可以快速删除">
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+                <div class="y-xzdtoux">
+                </div>
+                <!-- 研修社群，暂时隐藏-->
+                <!-- <div class="y-xzyxsq">
+
+                 </div>-->
+                <div class="mui-input-row">
+                    <label>活动形式<span class="y-bt">*</span></label>
+                    <input type="text" id='showActivityForm' readonly class="mui-input-clear" placeholder="请选择活动形式">
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+                <div class="mui-input-row">
+                    <label>学段学科<span class="y-bt">*</span></label>
+                    <input type="text" id='showSectionAndSubject' readonly class="mui-input-clear" placeholder="请选择学段学科">
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+                <div class="mui-input-row">
+                    <label>开始时间<span class="y-bt">*</span></label>
+                    <input id='result0' type="text" readonly class="mui-input-clear result" placeholder="请选择开始时间">
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+                <div class="mui-input-row">
+                    <label>结束时间<span class="y-bt">*</span></label>
+                    <input id='result1' type="text" readonly class="mui-input-clear result" placeholder="请选择结束时间">
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+                <!--新增是否开放-->
+                <div class="mui-input-row">
+                    <label>是否开放:<span class="y-bt">*</span></label>
+                    <input type="text" id='showHasOpen' readonly class="mui-input-clear" placeholder="请选择开放形式">
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+                <div class="mui-input-row active">
+                    <label>选择附件<span class="y-bt"></span></label>
+                    <i class="iconfont y-icon-right">&#xe611;</i>
+                </div>
+                <div class="y-xzwjqu">
+                    <div id="uploadfile">
+                        <!--用来存放文件信息-->
+                        <div id="thelist" class="uploader-list" style="display: none">
+                        </div>
+                        <div id="fileJsons">
+                        </div>
+                        <div class="form-group form-inline" style="overflow: hidden">
+                            <div id="picker" style="float:left"><i class="iconfont">&#xe61f;</i><br/>上传附件</div> &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="y-ktjsxq">
+                    <textarea id="details" name="details" rows="4" placeholder="详细介绍（选填）"></textarea>
+                </div>
+                <div class="y-submitareport"><a id="input_check" class="y-tijiao active submit-a">提交</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myiframeparent">
+    <iframe id="myiframefind" src="" frameBorder=0 style="height: 80vh;width: 100%;margin-top: 20vh;border-radius: 10px 10px 0 0;border-top: 1px solid #dadadd;"></iframe>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/layer.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.min.js"></script>
+<script src="js/webuploader.min.js"></script>
+<script src="js/common.js"></script>
+
+<!--<script>-->
+<!--var defaultVal = "";-->
+<!--$(function () {-->
+<!--get("/activity/getActivity?id=" + getUrlParamValue("activityId"), function (res) {-->
+<!--if (res.code == 200) {-->
+<!--var data = res.data;-->
+<!--if (Object_filter(data)) {-->
+<!--$("#title").val(data.title);-->
+<!--defaultVal= data.sectionCode+','+data.subjectCode;-->
+<!--// $("#showSectionAndSubject").val(data.sectionCode+"  "+data.subjectCode);-->
+<!--// $("#showActivityForm").val(data.);-->
+<!--$("#result0").val(data.startDate);-->
+<!--$("#result1").val(data.endDate);-->
+<!--$("#details").html(data.details);-->
+<!--sectionAndSubjectList(data.sectionCode + "," + data.subjectCode);-->
+<!--}-->
+<!--}else {-->
+<!--sectionAndSubjectList('');-->
+<!--}-->
+<!--});-->
+<!--});-->
+
+<!--</script>-->
+
+
+<script>
+    //点击头像删除
+    mui('.y-xzdtoux').on('tap', 'a', function () {
+        if ($(this).hasClass('active')) {
+//选择参与人员
+//     mui.openWindow({
+//         url:"choose_user.html",
+//         id:''
+//     });
+            $('#title').blur();
+            var memberIds = "";
+            $(this).prevAll().each(function () {
+                if (Object_filter($(this).attr("data-id"))) {
+                    memberIds += $(this).attr("data-id") + ",";
+                }
+            });
+            memberIds = memberIds.substr(0, memberIds.length - 1);
+            $('#myiframefind').attr('src', 'choose_user.html?studioId=' + getUrlParamValue("studioId") + "&memberIds=" + memberIds).show();
+            $('#myiframeparent').slideDown();
+
+        } else {
+            //点击头像删除人员
+            $(this).remove();
+        }
+    })
+    //删除研修社群
+    mui('.y-xzyxsq').on('tap', 'a', function () {
+        if ($(this).hasClass('active')) {
+//选择研修社群
+            mui.openWindow({
+                url: 'choose_flock.html',
+                id: ''
+            });
+        } else {
+            //点击头像删除人员
+            $(this).remove();
+        }
+    })
+</script>
+
+<script>
+    //获取活动编辑数据
+    $(function () {
+        var id = getUrlParamValue("activityId");
+
+        if (Object_filter(id)) {
+            get("/activity/getActivity?id=" + id, function (res) {
+                if (res.code == 200) {
+                    var data = res.data;
+                    if (Object_filter(data)) {
+                        var filejsonArry = JSON.parse(data.fileJson);
+                        var a = '';
+                        for (var i = 0; i < filejsonArry.length; i++) {
+                            var str = filejsonArry[i].fileName;
+                            var index = str.lastIndexOf(".");
+                            str = str.substring(index + 1, str.length);
+                            // Number(100/3).toFixed(2);
+                            //这里后台传过来的size单位为kb,显示为M.所以进行处理。保留两位小数。
+                            var size=Number(filejsonArry[i].fileSize/1048576).toFixed(2);
+                            a += '<div class="item y-tjkc json" file-name="' + filejsonArry[i].fileName + '" file-code="' + filejsonArry[i].code + '"' +
+                                'file-size="' + filejsonArry[i].fileSize + '" file-url="' + filejsonArry[i].url + '" file-sid="' + filejsonArry[i].sid + '"><div class="y-fjlx-img" style="background-color: #f44c4c">' + str + '</div><div class="info"><h5>' + filejsonArry[i].fileName + '</h5><p>' + size+ 'M</p></div><div class="y-rome" id="deleteFj"><span>X</span></div></div>';
+                        }
+                        $("#fileJsons").append(a);
+                        $("#title").val(data.title);
+                        var members = data.memberList;
+                        $.each(members, function (i, v) {
+                            var a = '<a data-id="' + members[i].userId + '" class="memberId_weiyi"><span><img src="' + members[i].userImg + '"></span>' + members[i].userName + '</a>';
+                            $(".y-xzdtoux").append(a);
+                        });
+                        var groupList = data.groupList;
+                        $.each(groupList, function (i, v) {
+                            var a = '<a><span>' + groupList[i].groupName + '</span></a>';
+                            $(".y-xzyxsq").append(a);
+                        });
+                        $("#img").val(data.cover);
+                        $("#showHasOpen").val(data.isOpen);
+                        $("#details").val(data.details);
+                        $("#userId").val(data.userId);
+                        $("#result0").val(data.startDate);
+                        $("#result1").val(data.endDate);
+                        $("#details").val(data.details);
+                        if (Object_filter(data.img)) {
+                            $("#fileList").append('<div id="WU_FILE_0" class="file-item thumbnail">' +
+                                '<img src="' + data.img + '" height="200px"></div>');
+                            $("#tjfmt").html("修改封面图");
+                        }
+                        sectionAndSubjectList(data.sectionCode + "," + data.subjectCode);
+                        formList(data.classfyId + "," + data.formId);
+                        isOpen(data.isOpen);
+                    }
+                    $(".y-xzdtoux").append('<a class="active"><span><i class="iconfont">&#xe61f;</i></span>自定义用户</a>');
+                    $(".y-xzyxsq").append('<a class="active"><span><i class="iconfont">&#xe61f;</i></span>研修社群</a>');
+                }
+            });
+        } else {
+            sectionAndSubjectList('');
+            formList('');
+            isOpen('');
+            $(".y-xzdtoux").append('<a class="active"><span><i class="iconfont">&#xe61f;</i></span>自定义用户</a>');
+            $(".y-xzyxsq").append('<a class="active"><span><i class="iconfont">&#xe61f;</i></span>研修社群</a>');
+        }
+        //加载上传组件先获取当前用户id
+        get("/activity/getMyId", function (res) {
+            if (res.code == 200) {
+                initImgUploader('fileList', res.data, function (file) {
+                    $("#img").val(file.sid);
+                    // filejsonArry.push(file._raw);
+                });
+                initMoreUploader('thelist', res.data, function (file) {
+                    var str = file.fileName;
+                    var index = str.lastIndexOf(".");
+                    str = str.substring(index + 1, str.length);
+                    //这里后台传过来的size单位为kb,显示为M.所以进行处理。保留两位小数。
+                    var size=Number(file.fileSize/1048576).toFixed(2);
+                    $("#fileJsons").append('<div class="item y-tjkc json" file-name="' + file.fileName + '" file-code="' + file.code + '" ' +
+                        ' file-size="' + file.fileSize + '" file-url="' + file.url + '" file-sid="' + file.sid + '"><div class="y-fjlx-img" style="background-color: #f44c4c">' + str + '</div><div class="info"><h5>' + file.fileName + '</h5><p>' + size + 'M</p></div><div class="y-rome" id="deleteFj"><span>X</span></div></div>');
+                });
+            }
+        });
+    });
+    // 上传
+    (function ($) {
+        $.init(); //初始化
+        //设置开始时间
+        var result0 = $('.result')[0];
+        var result = $('#result0');
+        result.each(function (i, result) {
+            result.addEventListener('tap', function () {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var picker = new $.DtPicker(options);
+                picker.show(function (rs) {
+                    result0.value = rs.text;
+                    picker.dispose();
+                });
+            }, false);
+        });
+        //设置结束时间
+        var result1 = $('.result')[1];
+        var result = $('#result1');
+        result.each(function (i, result) {
+            result.addEventListener('tap', function () {
+                var optionsJson = this.getAttribute('data-options') || '{}';
+                var options = JSON.parse(optionsJson);
+                var picker = new $.DtPicker(options);
+                picker.show(function (rs) {
+                    result1.value = rs.text;
+                    picker.dispose();
+                });
+            }, false);
+        });
+    })(mui);
+
+    //获取学段学科二级联动数据
+    function sectionAndSubjectList(defaultVal) {
+        get("/activity/sectionAndSubjectList", function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                if (Object_filter(data)) {
+                    onTwoLinkage('showSectionAndSubject', data, defaultVal);
+                }
+            }
+        });
+    }
+
+    //获取活动形式
+    function formList(defaultVal) {
+        var url = '/activity/formList';
+        console.log("type="+getUrlParamValue("type"))
+     //获取传过来的type,1是工作室的活动，2是项目的活动，0是优师云门户的活动
+        var type2 = Object_filter(getUrlParamValue("type"))?(getUrlParamValue("type") == 1 ? 'GZS':''):'';
+        if (Object_filter(getUrlParamValue("studioId"))) {
+            url = url + "?type="+type2;
+        }
+        get(url, function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                if (Object_filter(data)) {
+                    onTwoLinkage('showActivityForm', data, defaultVal);
+                }
+            }
+        });
+    }
+
+    function isOpen(defaultVal) {
+        onOneLinkage('showHasOpen', [{text: '需审核', value: 1}, {text: '不开放', value: 0}, {text: '开放', value: 2}], defaultVal);
+    }
+
+</script>
+<!--联动选择器-->
+<!--上传附件-->
+<script>
+    var studioId = getUrlParamValue("studioId");
+    //提交修改
+    $(".submit-a").on('click', function () {
+        var fileJsons = [];
+        $("#fileJsons .json").each(function () {
+            var json = {
+                fileName: $(this).attr("file-name"),
+                code: $(this).attr("file-code"),
+                fileSize: $(this).attr("file-size"),
+                url: $(this).attr("file-url"),
+                sid: $(this).attr("file-sid")
+            };
+            fileJsons.push(json);
+        });
+        $('#details').blur();
+
+        var memberIds = "";
+        $(".y-xzdtoux").find("a").each(function () {
+            if (Object_filter($(this).attr("data-id"))) {
+                memberIds += $(this).attr("data-id") + ",";
+            }
+        });
+        memberIds = memberIds.substr(0, memberIds.length - 1);
+        var showActivityForm = $("#showActivityForm").next().html();
+        var showSectionAndSubject = $("#showSectionAndSubject").next().html();
+        var startTime = $("#result0").val();//获取开始时间
+        var startTimeStr = Date.parse(new Date(startTime));//转换
+        var endTime = $("#result1").val();//获取结束时间
+        var endTimeStr = Date.parse(new Date(endTime));//转换
+        var myReg=/^[\u4e00-\u9fa5a-zA-Z0-9]+$/;
+        // alert("开始时间是"+startTimeStr);
+        // alert("jieshu时间是"+endTimeStr);
+        if (!Object_filter($("#img").val())) {
+            mui.toast("请上传活动封面");
+        } else if (!Object_filter(showActivityForm.split(",")[0]) && !Object_filter(showActivityForm.split(",")[1])) {
+            mui.toast("请选择活动形式");
+            return false;
+        } else if (!Object_filter(showSectionAndSubject.split(',')[0]) && !Object_filter(showSectionAndSubject.split(',')[1])) {
+            mui.toast("请选择学段学科");
+            return false;
+        } else if (!Object_filter($("#title").val())) {
+            mui.toast("请输入活动名称");
+            return false;
+        } else if(!myReg.test($("#title").val())){
+            mui.toast("名称只支持中英文和数字");
+            return false;
+        }else if (!Object_filter($("#showHasOpen").next().html())) {
+            mui.toast("请选择是否开放");
+            return false;
+        } else if (!Object_filter($("#result0").val())) {
+            mui.toast("请选择开始时间");
+            return false;
+        } else if (!Object_filter($("#result1").val())) {
+            mui.toast("请选择结束时间");
+            return false;
+        }
+        // else if (!Object_filter(filejsonArry)) {
+        //     mui.toast("请上传附件");
+        //     return false;
+        // }
+        else if (startTimeStr > endTimeStr) {
+            mui.toast("结束时间应在开始时间之后");
+            return false;
+        } else {
+            var load = layer.open({
+                shade: 'background-color: rgba(0,0,0,0.1)',
+                shadeClose: false,
+                type: 2,
+                content: '正在提交...'
+            });
+        }
+        var data = {
+            classfyId: showActivityForm.split(",")[0],
+            formId: showActivityForm.split(",")[1],
+            sectionCode: showSectionAndSubject.split(',')[0],//学段
+            subjectCode: showSectionAndSubject.split(',')[1],//学科
+            title: $("#title").val(),
+            isOpen: $("#showHasOpen").next().html(),
+            activityId: getUrlParamValue("activityId"),
+            startDate: $("#result0").val().length == 19 ? $("#result0").val() : $("#result0").val() + ":00",
+            endDate: $("#result1").val().length == 19 ? $("#result1").val() : $("#result1").val() + ":00",
+            details: $("#details").val(),
+            memberIds: memberIds,
+            cover: $("#img").val(),
+            filejson: JSON.stringify(fileJsons),
+            studioId: Object_filter(studioId)?studioId:0,
+            type:Object_filter(getUrlParamValue("type"))?getUrlParamValue("type"):0
+        };
+        // mui.toast("正在上传请稍等...");
+
+        post("/activity/submit", data, function (res) {
+            layer.close(load);
+            if (res.code == 200) {
+
+                mui.alert('提交成功', '提示', function () {
+                    location.href = "activity_list.html?studioId=" + studioId;
+                    // mui.back();
+                });
+            } else
+                mui.toast(res.message)
+        })
+    });
+
+</script>
+<!--判断是否可以发表-->
+<script>
+    // 移除附件
+    mui("#fileJsons").on("tap", ".y-rome", function () {
+        $(this).parent().remove();
+    });
+
+    // 简单的判断了是否可以发表
+    $('.y-tijiao').removeClass('active');//初始化表单选择状态
+    $(document).ready(function () {
+        if ($('input:text').val().length == 0) {
+            $('.y-tijiao').removeClass('active');//初始化表单选择状态
+        } else {
+            $('.y-tijiao').addClass('active')
+        }
+    });
+    $("input:text").bind("input propertychange", function () {
+        var wz = $(this).val().length;//打印输入框字符长度
+        if (wz == 0) {
+            $('.y-tijiao').removeClass('active submit-a');
+        } else {
+            $('.y-tijiao').addClass('active submit-a');
+        }
+
+    });
+    // token
+    var token = getUrlParamValue("ysy_token");
+    // 工作室ID
+    var studioId = getUrlParamValue("studioId");
+    if (Object_filter(token)) {
+        saveStorage("token", token);
+    }
+    if (Object_filter(studioId)) {
+        saveStorage("studioId", studioId);
+    }
+
+    //点击空白处隐藏弹出层，下面为滑动消失效果和淡出消失效果。
+    $(document).click(function(event){
+        var _con = $('#myiframefind');   // 设置目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){ // Mark 1
+            $('#myiframeparent').slideUp('slow');   //滑动消失
+            $('#myiframefind').slideUp('slow');          //淡出消失
+        }
+    });
+</script>
+
+</body>
+</html>

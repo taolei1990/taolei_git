@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>培训引领</title>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <div class="mui-inner-wrap">
+        <div class="navbar-wrapper" style="z-index: 9">
+            <div class="w-saixuanbt ">
+                <div class="w-pxsx w-category">
+                    <span data-id="1" class="active">我的项目</span>
+                    <span data-id="0">全部项目</span>
+                    <input type="hidden" id="potype" style="opacity: 0" value="1">
+                    <a style="opacity: 0">智能排序</a>
+                    <a style="opacity: 0" class="y-aisx"><i class="iconfont">&#xe6a6;</i> 筛选</a>
+                    <!--<a href="#offCanvasSide" style="opacity: 0" class="y-aisx"><i class="iconfont">&#xe6a6;</i> 筛选</a>-->
+                </div>
+                <!--<div class="w-znpxlb">-->
+                <!--<span class="active">智能排序</span>-->
+                <!--<span>名师认证排序</span>-->
+                <!--<span>综合排序</span>-->
+                <!--<span>成员数优先</span>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div id="y-crdtsxqu" class="mui-scroll-wrapper">
+            <div class="mui-scroll" id="mui-scroll">
+                <div class="h-msfxb">
+                    <ul class="y-ltems-list">
+
+                    </ul>
+                </div>
+                <div class="y-myxmts">
+                    <div class="y-tstubiao"><span></span></div>
+                    <p class="y-myxmts-qbdxm-my" style="display:none; text-align: center">您还未参加项目，<a style="color: #007aff">现在去绑定>> </a></p>
+                    <p class="y-myxmts-qbdxm-all" style="display:none;text-align: center">还没有任何项目哦~</p>
+                </div>
+            </div>
+        </div>
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+</div>
+<div id="bangSubmit" class="y-shangchuan bangding"><a class="animated y-cjxm">绑定<br>项目</a></div>
+<div id="submit" class="y-shangchuan chuangjian" style="display:none;"><a class="animated y-cjxm">创建<br>项目</a></div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script src="js/common.js"></script>
+<script>
+    function myBindingProject() {
+        window.android.get('绑定项目')//绑定项目
+        console.log('去绑定项目方法被调用！');
+    }
+
+    function appletOfWeChat() {
+        if (window.__wxjs_environment === 'miniprogram') {
+            //微信小程序环境
+            wx.miniProgram.navigateTo({
+                url: "/pages/proDetail/proDetail"
+            })
+        } else {
+            //不是小程序环境
+        }
+    }
+
+    mui('.bangding').on('tap', 'a', function () {
+        console.log('点击了去绑定项目');
+        if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+            document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
+        } else {
+            appletOfWeChat()
+        }
+        myBindingProject()
+    });
+    mui('.y-myxmts').on('tap', '.y-myxmts-qbdxm-my', function () {
+        if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+            document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
+        } else {
+            appletOfWeChat()
+        }
+        myBindingProject()
+    });
+</script>
+<script>
+    // token
+    var token = getUrlParamValue("ysy_token");
+    // 工作室ID
+    var studioId = getUrlParamValue("studioId");
+    var studio_role = getUrlParamValue("studio_role");
+    var type=getUrlParamValue("type");
+    if (Object_filter(token)) {
+        saveStorage("token", token);
+    }
+    if (Object_filter(studioId)) {
+        saveStorage("studioId", studioId);
+    }
+    var studioId = getUrlParamValue('studioId');
+
+    function registerFlag(index, types) {
+        var Ptype = $('.w-pxsx').find('span.active').attr("data-id");
+        var url = "/project/list?Ptype=" + Ptype + "&index=" + index;
+        if (Object_filter(studioId)) {
+            url = url + "&studioId=" + studioId+"&studio_role="+studio_role;
+        } else {
+            url = url + "&type=1";
+        }
+        get(url, function (res) {
+            if (res.code == 200) {
+                var data = res.data.list;
+                pages = res.data.pages;//总页数
+                if (index < 2) {
+                    $(".y-ltems-list").html('');
+                    if (!Object_filter(data)) {
+                        $('.y-myxmts').show();
+                        if (Ptype == 1) {
+                            $('.y-myxmts-qbdxm-my').show();
+                            $('.y-myxmts-qbdxm-all').hide();
+                        } else {
+                            $('.y-myxmts-qbdxm-all').show();
+                            $('.y-myxmts-qbdxm-my').hide();
+                        }
+                    }
+                }
+                if (Object_filter(data)) {
+                    $.each(data, function (i, v) {
+                        projectList(data[i]);
+                        // console.log('有项目'+data.length);
+                    });
+                }
+            }
+
+        });
+        // alert(url);
+
+    }
+
+    function projectList(rowData) {
+
+        var projectzt = '';
+        var category = $('.w-category').find('span.active').index();
+        if (rowData.status == 0) {
+            projectzt = '<span class="y-hudonzt y-hudonzt-wks">未开始</span>'
+        } else if (list.status == 1) {
+            projectzt = '<span class="y-hudonzt y-hudonzt-jxz">进行中</span>'
+        } else if (list.status == 2) {
+            projectzt = '<span class="y-hudonzt y-hudonzt-yjs">已结束</span>'
+        }
+        var ckxq = '';
+
+        if (category == 1) {
+            ckxq = '查看详情'
+        } else if (category == 0) {
+            ckxq = '进入项目'
+        }
+        var li = '<li data-id=' + rowData.projectId + ' class="y-card">' +
+            '<div class="y-ltems-headline">' +
+            '<div class="y-ltems-tite">' +
+            '<span class="y-ltems-name">项目</span>' +
+            '</div>' +
+            '<div class="y-ltems-particulars">' +
+            '<p class="y-ltems-caption">' + rowData.title + '</p>' +
+            '<p class="y-ltems-limgzs">' + rowData.studioName + '</p>' +
+            '<p class="y-ltems-time">' + projectzt + '' + rowData.startTime + '~' + rowData.endTime + ' </p>' +
+            '</div>' +
+            '</div>' +
+            '<p class="y-ltems-ckxq">' + ckxq + '</p>' +
+            '</li >';
+        $(".y-ltems-list").append(li);
+
+    }
+
+
+    //进入查看项目
+    mui('.y-ltems-list').on('tap', 'li', function () {
+        var projectId = $(this).attr("data-id");
+        var potype=$(".w-category").find("span.active").attr("data-id");
+        //进入项目详情
+        if (potype==0) {
+            console.log('点击了查看项目');
+            mui.openWindow({
+                  url:'https://api.ceshi.yunjy.com.cn/project/detail/'+projectId,
+                //url:'https://api.dev.yunjy.com.cn/project/detail/'+projectId,
+                   id: ''
+            });
+        } else {
+            console.log('点击了进入项目');
+
+            function appletOfProject() {
+                if (window.__wxjs_environment === 'miniprogram') {
+                    //微信小程序环境
+                    wx.miniProgram.navigateTo({
+                        url: "/pages/project/project?projectId="+projectId
+                    })
+                } else {
+                    //不是小程序环境
+                }
+            }
+
+            if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+                document.addEventListener('WeixinJSBridgeReady', appletOfProject, false)
+            } else {
+                appletOfProject();
+
+            }
+            intoTheProject(projectId)
+        }
+
+    });
+
+    function intoTheProject(projectId) {
+        console.log('projectId='+projectId)
+        window.android.get('进入项目',projectId)
+    }
+
+    //初始加载状态
+    $(function () {
+
+        var PreviousMenu = localStorage.getItem("PreviousMenu");
+        if (Object_filter(PreviousMenu)) {
+            $('.w-pxsx').find('span').removeClass('active');
+            $('.w-pxsx').find("span[data-id=" + PreviousMenu + "]").addClass('active');
+            if (PreviousMenu == 0) {
+                $(".bangding").hide();
+            } else if (PreviousMenu == 1) {
+                $(".bangding").show();
+                $(".chuangjian").hide();
+            }
+            registerFlag(1, PreviousMenu);
+        } else {
+            registerFlag(1, 1);
+        }
+        ;
+
+        mui.scrollTo(acolor, 100);
+    });
+    //获取滑动距离
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        localStorage.setItem("mycolor", scroll);//保存到本地
+    });
+    //选中状态
+    var conto = 1;
+    mui(".w-pxsx").on('tap', 'span', function () {
+        document.getElementById('mui-scroll').style.transform = 'translate3d(0px, 0px, 0px) translateZ(0px)';
+        conto = 1;
+        mui('#y-crdtsxqu').pullRefresh().enablePullupToRefresh();
+        conto = 1;
+        $('.y-ltems-list').empty();
+        var x = $(this).attr("data-id");
+        localStorage.setItem("PreviousMenu", x);//保存到本地
+        if (x == 0 && studio_role == 1) {
+            $(".chuangjian").show();
+            $(".bangding").hide();
+        } else if (x == 1) {
+            $(".bangding").show();
+            $(".chuangjian").hide();
+        } else {
+            $(".bangding").hide();
+            $(".chuangjian").hide();
+        }
+        $('.w-pxsx').find('span').removeClass('active');
+        $('.w-znpx').removeClass('active');
+        $(this).addClass('active');
+        $('.w-znpxlb').find('span').removeClass('active');
+        $('.w-znpxlb').slideUp();
+        $('.w-znpx').removeClass('w-znpxoff');
+        $('.w-znpx').find('i').removeClass('itransf');
+        $('.y-myxmts').hide();
+        registerFlag(1, x);
+        // window.history.replaceState(null, null, window.location.href+"&PreviousMenu="+a);
+    });
+    mui.init({
+        pullRefresh: {
+            container: '#y-crdtsxqu',//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up: {
+                height: 50,//可选.默认50.触发上拉加载拖动距离
+                auto: false,//可选,默认false.自动上拉加载一次
+                contentrefresh: "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+                contentnomore: '闻道有先后，术业有专攻',//可选，请求完毕若没有更多数据时显示的提醒内容；
+                callback: pullfresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+            }
+        }
+    });
+
+
+    function pullfresh() {
+        setTimeout(function () {
+            console.log('总页数=' + pages);
+            mui('#y-crdtsxqu').pullRefresh().endPullupToRefresh((conto++ > pages - 1));//参数为true代表没有更多数据了。
+            registerFlag(conto, localStorage.getItem("PreviousMenu"));
+        }, 500);
+    }
+</script>
+<script src="js/stickUp.min.js"></script>
+<script type="text/javascript">
+    //initiating jQuery
+    jQuery(function ($) {
+        $(document).ready(function () {
+            //enabling stickUp on the '.navbar-wrapper' class
+            $('.navbar-wrapper').stickUp();
+        });
+    });
+
+</script>
+<script>
+    mui.init({
+        gestureConfig: {
+            tap: true, //默认为true
+            doubletap: true, //默认为false
+        }
+    });
+    mui(".mui-bar-nav").on('doubletap', '.mui-title', function () {
+        mui.scrollTo(0, 100, function () {
+            document.getElementById('mui-scroll').style.transform = 'translate3d(0px, 0px, 0px) translateZ(0px)';
+        });//回到屏幕顶部
+    })
+</script>
+
+<script>
+    // 创建项目
+    var studioId = getUrlParamValue("studioId");
+    var btn = document.getElementById("submit");
+    btn.addEventListener("tap", function () {
+        mui.openWindow({
+            url: 'add_project.html?studioId=' + studioId,
+        });
+    });
+    // // 绑定项目
+    // var studioId=getUrlParamValue("studioId");
+    // var bangSubmit = document.getElementById("bangSubmit");
+    // bangSubmit.addEventListener("tap",function () {
+    //     mui.openWindow({
+    //         url: 'add_project.html?studioId='+studioId,
+    //     });
+    // });
+    // token
+    var token = getUrlParamValue("ysy_token");
+    // 工作室ID
+    var studioId = getUrlParamValue("studioId");
+    if (Object_filter(token)) {
+        saveStorage("token", token);
+    }
+    if (Object_filter(studioId)) {
+        saveStorage("studioId", studioId);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>课程管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/mui.picker.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/w-custom.css" type="text/css"/>
+</head>
+<body>
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in ">
+    <div class="mui-inner-wrap">
+        <!--<header class="mui-bar mui-bar-nav">-->
+            <!--<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>-->
+            <!--&lt;!&ndash;<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>&ndash;&gt;-->
+            <!--<h1 class="mui-title">课程管理</h1>-->
+        <!--</header>-->
+        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <ul class="mui-table-view y-curriculumstable">
+                    <!--<li class="mui-table-view-cell">-->
+                    <!--<a>-->
+                    <!--<h5>课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称课程学习名称</h5>-->
+                    <!--<div class="y-numbox">-->
+                    <!--<span class="y-xsx">小学数学</span>-->
+                    <!--<span class="y-xrs">必修</span>-->
+                    <!--<div class="y-yxs">-->
+                    <!--<div class="mui-numbox" data-numbox-min='5' data-numbox-max='40'>&lt;!&ndash;输入框允许使用的最小值和最大值&ndash;&gt;-->
+                    <!--<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>-->
+                    <!--<input class="mui-numbox-input" type="number" value="5"/>-->
+                    <!--<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>-->
+                    <!--</div>-->
+                    <!--<em class="c54">5学时 <i class="iconfont">&#xe6df;</i></em>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!--<div class="y-selective">-->
+            <!--<div class="y-checkbox">-->
+            <!--<div class="mui-input-row mui-checkbox mui-left">-->
+            <!--<label>全选</label>-->
+            <!--<input name="checkbox" class="y-quanx" value="Item 1" type="checkbox" checked="checked">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--已选择 <b>2</b>门课程-->
+            <!--<span class="y-quxz">提交</span>-->
+            <!--</div>-->
+        </div>
+        <!-- off-canvas backdrop -->
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    mui.init();
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    var activityId = getUrlParamValue("activityId");
+    var tacheType = getUrlParamValue("tacheType");
+</script>
+<script>
+    $(function () {
+        get("/activity/courses/list?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + tacheType, function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                if (Object_filter(data)) {
+                    var li = "";
+                    for (var i = 0; i < data.list.length; i++) {
+                        var isRequired = "必修";
+                        if (data.list[i].isRequired == 0) {
+                            isRequired = "选修";
+                        }
+                        li += '<li class="mui-table-view-cell"><a>' +
+                            '<h5>' + data.list[i].title + '</h5>' +
+                            '<div class="y-numbox"><span class="y-xsx">' + data.list[i].section + data.list[i].subject + '</span>' +
+                            '<span class="y-xrs">' + isRequired + '</span>' +
+                            '<div class="y-yxs" data-id="' + data.list[i].id + '"><div class="mui-numbox" data-numbox-min="4" data-numbox-max="9">' +
+                            '<button  class="mui-btn mui-numbox-btn-minus" type="button">-</button>' +
+                            '<input class="mui-numbox-input" type="number" value="' + data.list[i].hours + '"/>' +
+                            '<button  class="mui-btn mui-numbox-btn-plus" type="button">+</button>' +
+                            '</div><em class="c54">' + data.list[i].hours + '学时<i class="iconfont">&#xe6df;</i></em>' +
+                            '</div></div></a></li>';
+                    }
+                    $(".y-curriculumstable").append(li);
+
+                }
+            }
+        });
+        // mui(".mui-bar-nav").on('tap', '.mui-action-back', function () {
+        //     mui.alert("修改课时成功");
+        //     var ids = "";
+        //     $("input[name='checkbox1']:checked").each(function () {
+        //         ids += $(this).attr("data-id") + ",";
+        //     });
+        //     ids = ids.substring(0, ids.length - 1);
+        //     console.log(ids);
+        //     post("/activity/courses/commit", {activityId: activityId, ids: ids}, function (res) {
+        //         if (res.code == 200) {
+        //             mui.toast('操作成功！');
+        //         } else {
+        //             mui.toast('操作失败！');
+        //         }
+        //     })
+        // })
+    })
+</script>
+<script>
+    //修改课时
+    $(document).ready(function () {
+        var id = "", hours = "";
+        mui(".y-curriculumstable").on('tap', '.y-yxs', function (e) {
+            $(".y-curriculumstable").find(".c54").show();
+            $(this).find(".c54").hide();
+            $('.y-curriculumstable').find(".mui-numbox").hide().removeClass('numbox-activate');
+            $(this).find(".c54").prev(".mui-numbox").show().addClass('numbox-activate');
+            $('.mui-slide-in').addClass('y-backdrop');
+            mui('.mui-numbox').numbox();
+            e.stopPropagation();
+            id = $(this).attr("data-id");
+            hours = $(this).find(".mui-numbox-input").val();
+            var divTop = $('.mui-numbox');   // 设置修改课时区域
+            var data = {id: id, hours: hours, activityId: activityId};
+            post("/activity/courses/update", data, function (res) {
+                if (res.code == 200) {
+                    modifyHours(divTop);
+                } else
+                    mui.toast(res.message);
+            })
+        });
+
+        mui("body").on('tap', '.y-backdrop', function (e) {
+            $('.mui-slide-in').removeClass('y-backdrop');
+            var divTop = $('.mui-numbox');   // 设置修改课时区域
+            if (!divTop.is(e.target) && divTop.has(e.target).length === 0) {
+                $(".y-curriculumstable").find(".c54").show();
+                divTop.hide();
+            }
+            modifyHours(divTop)
+        });
+
+        function modifyHours(divTop) {
+            for (var i = 0; i < divTop.length; i++) {
+                var val = mui(divTop.eq(i)).numbox().getValue();
+                var maxval = $('.mui-numbox').eq(i).attr('data-numbox-max');
+                var minval = $('.mui-numbox').eq(i).attr('data-numbox-min');
+             if (val==minval){
+                 mui.toast('最少要求5学时');
+                 val=parseInt(minval)+1;
+                 mui(divTop.eq(i)).numbox().setValue(parseInt(minval)+1)
+             }else if(val==maxval){
+                 mui.toast('最大不超过8学时')
+                 val=parseInt(maxval)-1
+                 mui(divTop.eq(i)).numbox().setValue(parseInt(maxval)-1)
+             }
+                $(".c54").eq(i).html(val + "学时 <i class='iconfont'>&#xe6df;</i>");
+            }
+        }
+    })
+
+    // todo 点击事件
+
+
+</script>
+
+</body>
+
+
+</html>

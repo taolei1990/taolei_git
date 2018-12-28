@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title class="title_val"></title>
+    <link href="../css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/w-custom.css" rel="stylesheet" type="text/css">
+    <link href="../css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+    <script type="text/javascript" src="../js/mui.picker.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script>
+        var activityId = getUrlParamValue("activityId");
+        var tacheType = getUrlParamValue("tacheType");
+    </script>
+</head>
+<body class="mui-ios mui-ios-9 mui-ios-9-1">
+<input type="hidden" id="pageIndex" value="1">
+
+<!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top="0" data-offset="150"-->
+<!--data-duration="16" data-scrollby=".mui-scroll-wrapper">-->
+<!--<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left "></a>-->
+<!--<h1 id="showUserPicker" class="mui-title"><span id="userResult" class="w-act-title">讨论区</span><i class="iconfont "></i>-->
+<!--</h1>-->
+<!--</header>-->
+
+<input type="hidden" id="sType" value="resource">
+<input type="hidden" id="mType" value="other">
+<!--新增描述-->
+<div class="w-describe">
+    <h5 class="title_val"><span id="describe_span" style="display: none">修改要求</span></h5>
+    <p class="w-description"></p>
+    <div class="w-wcyq">
+        <p>1、要求所有成员浏览查看本环节所有内容</p>
+        <p>2、每人提交<span class="w-val perTopic">0</span>篇新发帖</p>
+        <p>3、回复他人帖子<span class="w-val perReplyTopic">0</span>篇</p>
+        <p>4、发帖被评为精华<span class="w-val perTopicElite">0</span>篇</p>
+    </div>
+</div>
+<!--新增描述结束-->
+<div class="w-ineedall mui-row">
+    <div class="mui-col-sm-12 mui-col-xs-12">
+        <div class="mui-content-padded w-sort">
+            <ul class="mui-pagination mui-pagination-sm y-discussionboard">
+                <li data-id="1">
+                    <a class="wm-sort wm-active" show="my" id="all">
+                        全部
+                    </a>
+                </li>
+                <li data-id="2">
+                    <a class="wm-sort" show="other" id="perfect">
+                        精华
+                    </a>
+                </li>
+                <li data-id="3">
+                    <a class="wm-sort" show="other" id="myNote">
+                        我发起的
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="y-performance">
+    <ul class="mui-table-view y-discussionBoard">
+        <li class="mui-table-view-cell">
+            <!--
+             <div class="ys-part-box">
+                   <div class="ys-forum">
+                       <b>某某某某某某资源帖子某某某某某某资源帖子某某某某某某某某某</b>
+                       <span class="ico-hot">热</span>
+                        <span class="ico-essence">精</span>
+                      <span><i class="iconfont ico-accessory">&#xe6e0;</i></span>
+                      <span><i class="iconfont ico-imag">&#xe6e1;</i></span>
+                      <span><i class="iconfont ico-vido">&#xe6e2;</i></span>
+                   </div>
+                   <div class="ys-forum-portrait">
+                       <img src="../img/3c28af542f2d49f.jpg">
+                       <a>陶老师</a>
+                       <span><i class="iconfont">&#xe86f;</i>566</span>
+                       <span><i class="iconfont">&#xe67d;</i>655</span>
+                   </div>
+               <div class="ys-reply">
+                     <p><a class="ys-huifr"> A老师 </a>回复<a class="ys-biehuifr">陶老师</a>:内容
+                     内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容
+                     内容内容....</p>
+                     <p><a class="ys-huifr"> 陶老师 </a>回复<a class="ys-biehuifr">A老师</a>:内容
+                         内容内容内容内容内容内容内容内容容内容内容内容
+                         内容内容....</p>
+                     <p><a class="ys-huifr"> C老师 </a>回复<a class="ys-biehuifr">A老师</a>:内容
+                       内容内容内容内容内容容内容内容
+                         内容内容....</p>
+                 </div>
+             </div>
+         </li>-->
+            <!--<li class="mui-table-view-cell"> <div class="ys-part-box"> <div class="ys-forum"> <b>'+discussList[i].noteTitle+'</b> </div> <div class="ys-forum-portrait"> <img src="'+discussList[i].headImg+'"> <a>'+discussList[i].name+'</a> <span><i class="iconfont">&#xe86f;</i>'+discussList[i].commentNum+'</span> <span><i class="iconfont">&#xe67d;</i>'+discussList[i]+browseQuantity+'</span> </div> </div> </li>';-->
+
+    </ul>
+
+</div>
+
+<!--新增上传-->
+
+<div class="w-upload" id="w-upload" style="display: none">
+    <a class="w-btng w-ft">我要发帖</a>
+
+</div>
+<!--新增上传结束-->
+
+<!--新增编辑描述-->
+<div class="w-desc-mask">
+
+</div>
+<!--新增编辑描述结束-->
+<script>
+    $(function () {
+        $(".w-describe span").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+            $.ajax({
+                type: 'GET',
+                url: "underside_describe.html?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"),
+                success: function (data) {
+                    $(".w-desc-mask").html(data);
+                    $(".w-desc-mask").show();
+                    $(".w-describe-text").show();
+                    mui('.mui-switch')['switch']()
+
+                }
+            });
+
+        });
+        $(".w-describe-text").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        });
+
+        addDescribeButton(getUrlParamValue("activityId"));
+        getUserPower(getUrlParamValue("activityId"), function (role) {
+            if (role == 1 || role == 2) {
+                $("#w-upload").show();
+            }
+        });
+    })
+
+</script>
+<!--新增编辑描述结束-->
+<script>
+    //获取描述
+    $(function () {
+        get("/activity/describe?tacheType=" + getUrlParamValue("tacheType") + "&activityId=" + getUrlParamValue("activityId"), function (res) {
+            //console.log('测试');
+            if (res.code == 200) {
+                $('.w-description').html('');
+                var data = res.data;
+                if (Object_filter(data)) {
+                    $('.w-description').html(data.describe);
+                    if (Object_filter(data.actRule)) {
+                        if (data.actRule.status == 1) {
+                            $(".perTopic").html(data.actRule.perTopic);
+                            $(".perReplyTopic").html(data.actRule.perReplyTopic);
+                            $(".perTopicElite").html(data.actRule.perTopicElite);
+                            // 为空或者等于0时隐藏
+                            if (!Object_filter(data.actRule.perTopic) || data.actRule.perTopic == 0) {
+                                $(".perTopic").parent().hide();
+                            }
+                            if (!Object_filter(data.actRule.perReplyTopic) || data.actRule.perReplyTopic == 0) {
+                                $(".perReplyTopic").parent().hide();
+                            }
+                            if (!Object_filter(data.actRule.perTopicElite) || data.actRule.perTopicElite == 0) {
+                                $(".perTopicElite").parent().hide();
+                            }
+                        } else {
+                            $(".w-wcyq").hide();
+                        }
+                    }
+                }
+            }
+
+
+
+            $(".w-describe-text a").click(function () {
+
+                $(".w-description").text(textval);
+                $(".w-desc-mask").hide();
+                $(".w-describe-text").hide();
+                commitTacheDescribe($("#tacheDescribeTxt").val(), function (data) {
+                    if (data.code == 200) {
+                        $(".w-description").text($("#tacheDescribeTxt").val());
+                    } else {
+                        mui.toast(data.message);
+                    }
+                });
+            });
+
+        });
+    });
+</script>
+<script>
+    //讨论区
+    $(function () {
+        $(".title_val").prepend(getUrlParamValue("tacheName"));
+        //初始加载讨论区数据
+        showDiscuss(1);
+    });
+
+    function showDiscuss(discussType) {
+
+        get("/activity/discuss?discussType=" + discussType + "&tacheType=" + getUrlParamValue("tacheType") + "&activityId=" + getUrlParamValue("activityId"), function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                var discussList = data.discussList;
+                var ul = '';
+                if (Object_filter(data)) {
+                    for (var i = 0; i < discussList.length; i++) {
+                        ul += '<li class="mui-table-view-cell" data-id="' + discussList[i].id + '"> <div class="ys-part-box" > <div class="ys-forum"> <b>' + discussList[i].noteTitle + '</b> </div> <div class="ys-forum-portrait"> <img src="' + discussList[i].headImg + '"> <a>' + discussList[i].name + '</a> <span><i class="iconfont">&#xe86f;</i>' + discussList[i].commentNum + '</span> <span><i class="iconfont">&#xe67d;</i>' + discussList[i].browseQuantity + '</span> </div> </div> </li>';
+                        // div+='<li class="mui-table-view-cell"><div class="ys-part-box"><div class="ys-forum"><b></b>   </div> <div class="ys-forum-portrait"> <img src=""> <a></a> <span><i class="iconfont">&#xe86f;</i></span> <span><i class="iconfont">&#xe67d;</i></span></div></li>';
+                    }
+                    $(".y-discussionBoard").empty();
+                    $(".y-discussionBoard").append(ul);
+                }
+            }
+        });
+    }
+</script>
+
+<script>
+    //进入详情页
+    mui('.y-discussionBoard').on('tap', '.mui-table-view-cell', function () {
+        mui.openWindow({
+            url: '../../underside_detailPages.html?id=' + $(this).attr("data-id") + "&activityId=" + activityId + "&tacheType=" + tacheType,
+            id: ''
+        });
+    });
+    // 发帖
+    mui('.w-upload').on('tap', '.w-ft', function () {
+        mui.openWindow({
+            url: 'underside_tlq_ft.html?activityId=' + activityId + "&tacheType=" + tacheType,//
+            id: ''
+        });
+    });
+</script>
+<script>
+    $(function () {
+        //讨论区切换
+        mui('.y-discussionboard').on('tap', 'li', function () {
+            $('.y-discussionboard').find('.wm-sort').removeClass('wm-active');
+            $(this).find('.wm-sort').addClass('wm-active');
+            showDiscuss($(this).attr("data-id"));
+        });
+    })
+
+</script>
+</body>
+</html>

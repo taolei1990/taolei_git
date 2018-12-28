@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>上传</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css"/>
+    <link href="../../css/webuploader.css" rel="stylesheet" type="text/css">
+    <link href="../css/w-custom.css" rel="stylesheet"/>
+</head>
+<body style="background-color: #fff">
+<!--<header class="mui-bar mui-bar-nav w-subject-color">-->
+<!--<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>-->
+<!--<h1 class="mui-title">上传页面</h1>-->
+<!--</header>-->
+<div class="mui-content">
+    <div class="ys-card">
+        <form class="mui-input-group" id="input_example">
+
+            <div class="mui-input-row">
+                <label>类型:</label>
+                <input type="text" id='showUserPicker' class="mui-input-clear" placeholder="请选择类型" readonly>
+                <!--<i class="iconfont">&#xe656;</i>-->
+            </div>
+            <div class="mui-input-row">
+                <label>名称:</label>
+                <input type="text" id="title" class="mui-input-clear ys-input" autofocus="autofocus" placeholder="请输入标题">
+            </div>
+            <div class="mui-input-row">
+                <label>描述:</label>
+                <textarea class="ys-input" id="textarea" oninput="autosize(this)" placeholder="请输入内容..."></textarea>
+            </div>
+            <div class="y-xzwjqu">
+                <div id="uploadfile">
+                    <!--用来存放文件信息-->
+                    <div id="thelist" class="uploader-list" style="display: none"></div>
+                    <div id="fileJsons">
+                    </div>
+                    <div class="form-group form-inline" style="overflow: hidden;padding: 10px">
+                        <div id="picker" style="float:left"><span style="font-size: 40px;font-weight: 200">+</span><br/>上传附件</div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <div style="padding: 60px 20px;background-color: #fff" class="mui-button-row">
+            <button style="width: 100%" type="button" id="input_check" class="mui-btn mui-btn-primary">确认</button>
+            <!--<button type="button" class="mui-btn mui-btn-danger">取消</button>-->
+        </div>
+    </div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script src="../js/city.data.js"></script><!--二级联动-->
+<script src="../js/city.data-3.js"></script><!--三级联动-->
+<script src="../../js/common.js"></script>
+<script src="../../js/webuploader.min.js"></script>
+<script>
+    var resourceId = getUrlParamValue("resourceId");
+    var id = "";
+    var resourceType = "";
+    $(function () {
+        if (Object_filter(resourceId)) {
+            $(".mui-title").html("修改页面");
+            get("/activity/getResource?resourceId=" + resourceId + "&activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"), function (res) {
+                $("#textarea").val(res.data.remark);
+                $("#title").val(res.data.resourceName);
+                id = res.data.id;
+                resourceType = res.data.resourceType;
+                var filejsonArry = JSON.parse(res.data.fileJson);
+                var a = '';
+                for (var i = 0; i < filejsonArry.length; i++) {
+                    var str = filejsonArry[i].fileName;
+                    var index = str.lastIndexOf(".");
+                    str = str.substring(index + 1, str.length);
+                    // Number(100/3).toFixed(2);
+                    //这里后台传过来的size单位为kb,显示为M.所以进行处理。保留两位小数。
+                    var size=Number(filejsonArry[i].fileSize/1048576).toFixed(2);
+                    a += '<div class="item y-tjkc json" file-name="' + filejsonArry[i].fileName + '" file-code="' + filejsonArry[i].code + '"' +
+                        'file-size="' + filejsonArry[i].fileSize + '" file-url="' + filejsonArry[i].url + '" file-sid="' + filejsonArry[i].sid + '"><div class="y-fjlx-img" style="background-color: #f44c4c">' + str + '</div><div class="info"><h5>' + filejsonArry[i].fileName + '</h5><p>' + size+ 'M</p></div><div class="y-rome" id="deleteFj"><span>X</span></div></div>';
+                }
+                $("#fileJsons").append(a);
+            })
+        }
+        get("/activity/discussion/types", function (res) {
+            if (res.code == 200) {
+                var data = res.data.types;
+                if (Object_filter(data)) {
+                    if (Object_filter(resourceType)) {
+                        onOneLinkage('showUserPicker', data, resourceType);
+                    } else {
+                        onOneLinkage('showUserPicker', data, resourceType);
+                    }
+                }
+            }
+        });
+    })
+    // 兼容自适应高度textarea
+    /*
+     *
+    function autosize(obj) {
+         var el = obj;
+         setTimeout(function() {
+             el.style.cssText = 'height:auto; padding:0';
+             el.style.cssText = 'height:' + el.scrollHeight + 'px';
+         }, 0);
+     }
+     **/
+</script>
+
+<script type="text/javascript">
+var filejsonArry=[];
+    get("/activity/getMyId", function (res) {
+        if (res.code == 200) {
+
+            initMoreUploader('thelist',res.data,function(file){
+                // filejsonArry.push(file._raw);
+                var str = file.fileName;
+                var index = str.lastIndexOf(".");
+                str = str.substring(index + 1, str.length);
+                //这里后台传过来的size单位为kb,显示为M.所以进行处理。保留两位小数。
+                var size=Number(file.fileSize/1048576).toFixed(2);
+                $("#fileJsons").append('<div class="item y-tjkc json" file-name="' + file.fileName + '" file-code="' + file.code + '" ' +
+                    ' file-size="' + file.fileSize + '" file-url="' + file.url + '" file-sid="' + file.sid + '"><div class="y-fjlx-img" style="background-color: #f44c4c">' + str + '</div><div class="info"><h5>' + file.fileName + '</h5><p>' + size + 'M</p></div><div class="y-rome" id="deleteFj"><span>X</span></div></div>');
+            });
+        }
+    });
+    //判断当前input为空，则alert提醒
+    document.addEventListener('DOMContentLoaded', function () {
+        //			if(String.prototype.trim === undefined) { // fix for iOS 3.2
+        //				String.prototype.trim = function() {
+        //					return this.replace(/^\s+|\s+$/g, '');
+        //				};
+        //			}
+        document.getElementById("input_check").addEventListener('click', function () {
+            var fileJsons = [];
+            $("#fileJsons .json").each(function () {
+                var json = {
+                    fileName: $(this).attr("file-name"),
+                    code: $(this).attr("file-code"),
+                    fileSize: $(this).attr("file-size"),
+                    url: $(this).attr("file-url"),
+                    sid: $(this).attr("file-sid")
+                };
+                fileJsons.push(json);
+            });
+            var check = true;
+            // mui("#input_example .ys-input").each(function () {
+            //     //若当前input为空，则alert提醒
+            //     if (!this.value || this.value.trim() == "") {
+            //         var label = this.previousElementSibling;
+            //         mui.alert(label.innerText + "不允许为空");
+            //         check = false;
+            //         return false;
+            //     }
+            // }); //校验通过，继续执行业务逻辑
+            // todo 文件未提交
+            var files = ["xxxxx.txt", "dddddd.doc"];
+            var myReg=/^[\u4e00-\u9fa5a-zA-Z0-9]+$/;//只支持中英文和数字
+            if(!$("#showUserPicker").next().html()){
+                mui.toast("请选择类型");
+            }else if(!Object_filter($("#title").val())){
+                mui.toast("名称不能为空");
+            }else if(!myReg.test($("#title").val())){
+                mui.toast("名称只支持中英文和数字");
+            }else  if (check) {
+                var data = {
+                    id: id,
+                    activityId: getUrlParamValue("activityId"),
+                    tacheType: getUrlParamValue("tacheType"),
+                    remark: $("#textarea").val(),
+                    resourceName: $("#title").val(),
+                    resourceType: $("#showUserPicker").next().html(),
+                    filejsonArry: JSON.stringify(fileJsons),
+                };
+                post("/activity/discussion/commit", data, function (res) {
+                    if (res.code == 200) {
+                        mui.alert('上传成功', '提示', function () {
+                            mui.back()
+                        });
+                       // mui.toast('上传成功')
+                    } else {
+                        mui.toast(res.message);
+                    }
+                })
+            }
+        })
+
+    })
+$('#thelist').find('.iconfont').html('&#xe6e3;')
+</script>
+<script>
+    //删除附件
+    mui(".mui-table-view-cell").on('tap', '.mui-badge', function (e) {
+        $(this).parent(".mui-table-view-cell").remove();
+    });
+    mui("#fileJsons").on("tap", ".y-rome", function () {
+        $(this).parent().remove();
+    });
+</script>
+</body>
+</html>

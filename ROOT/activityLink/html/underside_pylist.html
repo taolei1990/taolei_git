@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>批阅</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css"/>
+    <link href="../css/w-custom.css" rel="stylesheet"/>
+    <script src="../../js/common.js"></script>
+</head>
+
+<body>
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--菜单部分-->
+    <!--<aside id="offCanvasSide" class="mui-off-canvas-right">-->
+    <!--<div id="offCanvasSideScroll" class="mui-scroll-wrapper">-->
+    <!--<div class="mui-scroll">-->
+    <!--<div class="ysy-coursesearch">-->
+    <!--<div class="ysy-mui-coursesearch">-->
+    <!--<div class="mui-input-row mui-search">-->
+    <!--<input type="search" class="mui-input-clear" placeholder="作业名称或提交人">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="ysy-coursetype">-->
+    <!--<h6>作业范围</h6>-->
+    <!--<ul class="ysy-xd">-->
+    <!--<li><a>重庆</a></li>-->
+    <!--<li><a>云南</a></li>-->
+    <!--<li><a>贵州</a></li>-->
+    <!--<li><a>广东</a></li>-->
+    <!--<li><a>海南</a></li>-->
+    <!--</ul>-->
+    <!--<ul class="ysy-xd">-->
+    <!--<li><a>作业范围</a></li>-->
+    <!--<li><a>作业范围</a></li>-->
+    <!--<li><a>作业范围</a></li>-->
+    <!--<li><a>作业范围</a></li>-->
+    <!--<li><a>作业范围</a></li>-->
+    <!--</ul>-->
+
+    <!--</div>-->
+    <!--<div class="ysy-coursetype">-->
+    <!--<h6>推优秀状态</h6>-->
+    <!--<ul>-->
+    <!--<li><a>全部</a></li>-->
+    <!--<li><a>项目优秀</a></li>-->
+    <!--<li><a>省级优秀</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="ysy-coursetype">-->
+    <!--<h6>批阅状态</h6>-->
+    <!--<ul>-->
+    <!--<li><a>未批阅</a></li>-->
+    <!--<li><a>已批阅</a></li>-->
+    <!--<li><a>退回</a></li>-->
+    <!--<li><a>推优</a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+
+    <!--</div>-->
+
+    <!--</div>-->
+
+    <!--<ul class="ysy-submitsearch">-->
+    <!--<li>-->
+    <!--<button id="offCanvasHide" type="button" class="mui-btn mui-btn-danger">取消</button>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<button type="button" class="mui-btn mui-btn-primary">查询</button>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</aside>-->
+
+    <div class="mui-inner-wrap">
+        <!--<header class="mui-bar mui-bar-nav w-subject-color">-->
+            <!--<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>-->
+            <!--&lt;!&ndash;<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>&ndash;&gt;-->
+            <!--<h1 class="mui-title">批阅</h1>-->
+        <!--</header>-->
+        <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="w-zytjtj">
+                    <p>共有<span id="total">0</span>人提交了作业</p>
+                    <p>作业状态：已批阅（合格）<span class="w-ypy">0</span>份，退回<span class="w-th">0</span>份，教研组长已推优<span class="w-ty" id="manager">0</span>份，教研员已推优<span class="w-ty" id="leader">0</span>份
+                    </p>
+                </div>
+                <p class="ys-reminder"><i class="iconfont">&#xe6a0;</i>抱歉没有搜索到你要的内容 我们推荐了以下内容!</p>
+                <!--如果查询结果没有内容就显示这个提示 反之则不显示提示-->
+                <ul class="mui-table-view ys-table">
+                    <!--<li class="mui-table-view-cell y-gradingassignment">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em >未批阅</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em class="w-bz">必做</em></a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell y-themarking">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em class="w-ypy">已批阅</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>选做</em></a>-->
+                    <!--<span>评阅人:张老师</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell y-gradingassignment">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em class="w-th">退回</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em class="w-bz">必做</em></a>-->
+                    <!--<span>评阅人:张老师</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mui-table-view-cell y-themarking">-->
+                    <!--<div class="ys-part-box">-->
+                    <!--<div class="ys-forum">-->
+                    <!--<b>某某某某</b>-->
+                    <!--<em class="w-ty">推优</em>-->
+                    <!--</div>-->
+                    <!--<div class="ys-forum-portrait">-->
+                    <!--<img src="../img/3c28af542f2d49f.jpg">-->
+                    <!--<a>陶老师 <em>选做</em></a>-->
+                    <!--<span>评阅人:张老师</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+
+                </ul>
+
+            </div>
+
+        </div>
+        <!-- off-canvas backdrop -->
+        <div class="mui-off-canvas-backdrop"></div>
+    </div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.picker.min.js"></script>
+<script>
+    $(function () {
+        var li = "";
+        post("/activity/markList", {id: getUrlParamValue("id")}, function (res) {
+            if (res.code == 200) {
+                var workList = res.data.workList;
+                $("#total").html(res.data.total);
+                $(".w-ypy").html(res.data.passed);
+                $("#manager").html(res.data.manager);
+                $(".w-th").html(res.data.returned);
+                $("#leader").html(res.data.leader);
+                if (Object_filter(workList)) {
+                    for (var i = 0; i < workList.length; i++) {
+                        var statusName = "未批阅", className = "y-gradingassignment";
+                        if (workList[i].status == 1)
+                            statusName = "已批阅", className = "y-themarking";
+                        else if (workList[i].status == 2)
+                            statusName = "退回";
+                        else if (workList[i].status == 3)
+                            statusName = "推优";
+                        var type = "必做";
+                        if (workList[i].postType == 1)
+                            type = "选做";
+                        var markUser = "";
+                        if (Object_filter(workList[i].markUser))
+                            markUser = '<span>' + workList[i].markUser + '</span>';
+                        li += '<li class="mui-table-view-cell ' + className + '" data-id="' + workList[i].id + '"><div class="ys-part-box"><div class="ys-forum"><b>' + workList[i].title + '</b><em class="w-ypy">' + statusName + '</em></div><div class="ys-forum-portrait"><img src="' + workList[i].headImg + '"><a>' + workList[i].userName + ' <em>' + type + '</em></a>' + markUser + '</div></div></li>';
+                    }
+                    $(".ys-table").append(li);
+                }
+            }
+        })
+    })
+</script>
+<script>
+    mui('#offCanvasSideScroll').scroll();
+    mui('#offCanvasContentScroll').scroll();
+    //显示侧滑菜单
+    mui(".ysy-submitsearch").on('tap', '.mui-btn', function () {
+        mui('.mui-off-canvas-wrap').offCanvas('show');
+    });
+    //隐藏侧滑菜单
+    mui(".ysy-submitsearch").on('tap', '.mui-btn', function () {
+        mui('.mui-off-canvas-wrap').offCanvas('close');
+    });
+</script>
+
+<script>
+    //按钮切换效果
+    $(document).ready(function () {
+        $(".wm-sort").on("tap", function () {
+            $(".wm-sort").removeClass("wm-active");
+            $(this).addClass("wm-active");
+        });
+    });
+</script>
+
+<script>
+    mui(".ysy-coursetype").on('tap', 'a', function () {
+//选中状态
+        if ($(this).parents(".ysy-coursetype").find("ul").hasClass("ysy-xd")) {
+            var c = $(this).parents('.ysy-xd').index() - 1;
+            $(".ysy-xd").eq(c).find("a").removeClass("active");
+            $(".ysy-xd").eq(c).find(this).addClass("active");
+        }
+        else {
+            var c = $(this).parents('.ysy-coursetype').index() - 1;
+            $(".ysy-coursetype").eq(c).find("a").removeClass("active");
+            $(".ysy-coursetype").eq(c).find(this).addClass("active");
+        }
+
+    });
+</script>
+<script>
+    //退回和未批阅的作业点击就批阅作业
+    mui(".ys-table").on('tap', '.y-gradingassignment', function () {
+        mui.openWindow({
+            url: 'underside_gradingassig.html?id=' + $(this).attr("data-id"),
+            id: ''
+        });
+    })
+    //已经批阅和推优的作业点击就查看作业
+    mui(".ys-table").on('tap', '.y-themarking', function () {
+        mui.openWindow({
+            url: 'underside_themarking.html?id=' + $(this).attr("data-id"),
+            id: ''
+        });
+    })
+</script>
+
+</body>
+
+
+</html>

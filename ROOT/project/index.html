@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>发布活动</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/webuploader.css">
+    <!--自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/activity_main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script src="//at.alicdn.com/t/font_480927_qqrcixibeh8.js"></script>
+</head>
+<body>
+
+<div class="mui-content">
+    <div id="tabbar" class="mui-control-content mui-active">
+        <!--<header class="mui-bar mui-bar-nav">-->
+            <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+            <!--<h1 class="mui-title">发布活动</h1>-->
+            <!--<a id="act-publish" class=" mui-pull-right mui-btn mui-btn-primary mui-btn-publish">下一步</a>-->
+        <!--</header>-->
+        <nav class="mui-bar mui-bar-tab">
+        <div class="act-publish">
+        <a id="act-publish" class=" mui-pull-right mui-btn mui-btn-primary mui-btn-publish">下一步</a>
+        </div>
+        </nav>
+        <div class="mui-content">
+            <div class="act-cover upload_container">
+                <!--用来存放item-->
+                <div id="fileList-0" class="uploader-list act-cover-img"></div>
+                <div id="filePicker-0" class="filePicker act-cover-design">
+                    <div class="act-cover-text">
+                        <div class="act-cover-ghfm">更换封面</div>
+                        <span class="mui-icon  mui-icon-arrowright mui-pull-right"></span>
+                        <p class="act-cover-jianjie">
+                            有趣的活动千篇一律<br/>
+                            好看的封面百里挑一</p>
+                    </div>
+                </div>
+            </div>
+            <div class="act-title-text">
+                <a class="mui-tab-item " href="#tabbar-with-chat">
+                    <h3 id="act-title" class="act-title"><span class="act-toast">有趣的活动名称更能吸引人哦~</span></h3></a>
+                <div class="richtextarea">
+                    <div>
+                        <div id="richtextarea-p-img" class="richtextarea-p-img">
+
+
+                        </div>
+                    </div>
+                    <div class="richtextarea-text">
+                        <a class="mui-tab-item " href="#tabbar-with-chat">
+                            <div id="act-text" class="act-text"><span class="act-toast">
+                                在这里详细介绍一下<br/>
+                                活动的具体安排、详细的活动和活动详情吧~</span></div>
+                        </a>
+                    </div>
+                </div>
+                <div id="act-acce" class="act-acce">
+
+                </div>
+                <span class="mui-icon  mui-icon-arrowright mui-pull-right"></span>
+            </div>
+            <div class="act-phase-studying">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <span id="science-number" class="act-result">未选择</span>
+                        <span class="mui-icon  mui-icon-arrowright mui-pull-right"></span>
+                        <a class="mui-tab-item" href="#tabbar-with-subject">学科学段</a>
+                        <p id="science-section"></p>
+                    </li>
+
+                    <li class="mui-table-view-cell">
+                        <span id="science-result" class="act-result">未选择</span>
+                        <span class="mui-icon  mui-icon-arrowright mui-pull-right"></span>
+                        <a class="mui-tab-item" href="#tabbar-with-member">添加成员<span
+                                class="cancel"> (点击头像删除) </span></a>
+                        <div id="science-affiliate" class="science-section science-affiliate">
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="act-jurisdiction">
+                <div class="act-jurisdiction-layout">
+                    <div class="act-jurisdiction-name">权限</div>
+                    <div id="jurisdiction" class="act-jurisdiction-btn">
+                        <a class="mui-btn mui-btn-outlined " data-id="2" data-loading-text="【开放】 任何人均可加入、无需审核">
+                            <span class="active"><span class="mui-icon mui-icon-checkmarkempty"></span></span>
+                            开放
+                        </a>
+                        <a class="mui-btn mui-btn-outlined" data-id="1" data-loading-text="【半开放】 任何人可申请加入、需发起人审核">
+                            <span class="active"><span class="mui-icon mui-icon-checkmarkempty"></span></span>
+                            半开放</a>
+                        <a class="mui-btn mui-btn-outlined" data-id="0" data-loading-text="【私密】 其他人不可加入、发起人可添加成员">
+                            <span class="active"><span class="mui-icon mui-icon-checkmarkempty"></span></span>
+                            私密</a>
+                    </div>
+                </div>
+                <p id="act-hint" class="act-hint ">请选择活动发布权限设置</p>
+            </div>
+            <div class="act-jurisdiction">
+                <div class="act-jurisdiction-layout">
+                    <div class="act-jurisdiction-name">时间</div>
+                    <div class="act-select-time">
+                        <div class="act-time">
+                            <span class="act-time-sign act-time-begin">始</span>
+                            <span class="act-time-result"><span class="act-toast">开始时间</span></span>
+                            <button type="button" data-options='{}' class="mui-btn time-btn mui-btn-warning">设置</button>
+                        </div>
+                        <div class="striping endways-string"></div>
+                        <div class="striping sidewards-string"></div>
+                        <div class="act-time">
+                            <span class="act-time-sign act-time-over">末</span>
+                            <span class="act-time-result"><span class="act-toast">结束时间</span></span>
+                            <button type="button" data-options='{}' class="mui-btn time-btn mui-btn-warning">设置</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="tabbar-with-chat" class="mui-control-content act-100vh">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-tab-item " href="#tabbar">
+                <span class="mui-icon mui-icon-left-nav mui-pull-left"></span>
+            </a>
+            <h1 class="mui-title">编辑标题正文</h1>
+            <a type="button" id="theediting" class="mui-pull-right mui-btn">完成</a>
+        </header>
+        <div class="act-table-view">
+            <div class="act-compile">
+                <div class="act-compile-text">
+                    <textarea rows="1" id="compiletext" maxlength="20" class="inputframe" autofocus onKeyUp='keypress()'
+                              onblur='keypress()' placeholder="填写标题..."></textarea>
+                    <span id="compilenumber" class="act-number">20</span>
+                </div>
+                <div class="act-compile-textarea">
+                    <div id="article-body"></div>
+                    <div id="accessory-bag"></div>
+                    <span class="act-number">5000</span>
+                    <!-- 内容编辑区域 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tabbar-with-subject" class="mui-control-content act-100vh">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-tab-item " href="#tabbar">
+                <span class="mui-icon mui-icon-left-nav mui-pull-left"></span>
+            </a>
+            <h1 class="mui-title">学科学段</h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab">
+            <div class="act-nav">
+                <p class="mui-pull-left">已选择:<span id="subject-number" class="subject-number">0</span>学科</p>
+                <a id="subject-complete" class="mui-pull-right mui-btn">完成</a>
+            </div>
+        </nav>
+        <div id="subject-complete-view" class="act-table-view">
+
+        </div>
+    </div>
+    <div id="tabbar-with-member" class="mui-control-content">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-tab-item " href="#tabbar">
+                <span class="mui-icon mui-icon-left-nav mui-pull-left"></span>
+            </a>
+            <h1 class="mui-title">添加成员</h1>
+        </header>
+        <div class="act-table-view">
+            <div class="act-mui-search">
+                <div class="act-search">
+                    <a class="mui-tab-item" href="#act-search"><i></i>请输入城市、区域、社群、成员名称</a>
+                </div>
+            </div>
+            <ul class="act-switch-type">
+                <li>
+                    <a class="mui-tab-item " href="#tabbar-with-contact"  data-id="0" data-projectId="61" data-animal-type="选择区域">
+                        <div class="act-switch-left">
+                            <h3>按区域选择</h3>
+                            <p>可根据区域成员加入活动</p>
+                        </div>
+                        <div class="act-switch-right">
+                            区域
+                            <span class="mui-icon  mui-icon-arrowright mui-pull-right"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="mui-tab-item " href="#tabbar-with-contact" data-id="0" data-animal-type="选择社群">
+                        <div class="act-switch-left">
+                            <h3>按社群选择</h3>
+                            <p>可根据区域成员加入活动</p>
+                        </div>
+                        <div class="act-switch-right">
+                            社群
+                            <span class="mui-icon  mui-icon-arrowright mui-pull-right"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="mui-tab-item " href="#tabbar-with-contact" data-id="0" data-animal-type="自定义选择">
+                        <div class="act-switch-left">
+                            <h3>自定义用户</h3>
+                            <p>可根据区域成员加入活动</p>
+                        </div>
+                        <div class="act-switch-right">
+                            成员 好友
+                            <span class="mui-icon  mui-icon-arrowright mui-pull-right"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <p class="marked-words"><i class="iconfont"></i>主动添加参与活动的成员、可按区域、社群选择、也可以自定义选择成员用户、可多选</p>
+        </div>
+    </div>
+    <div id="tabbar-with-contact" class="mui-control-content">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-tab-item " href="#tabbar-with-member">
+                <span class="mui-icon mui-icon-left-nav mui-pull-left"></span>
+            </a>
+            <h1 id="member-title" class="mui-title">选择区域</h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab">
+            <div class="act-nav">
+                <p class="mui-pull-left">已选择:<span class="subject-number member-number">0</span>成员</p>
+                <a class="mui-pull-right mui-btn add-member">添加</a>
+            </div>
+        </nav>
+        <div class="act-table-view">
+            <div class="act-mui-search">
+                <div class="act-search">
+                    <a class="mui-tab-item" href="#act-search"><i></i>请输入城市、区域、社群、成员名称</a>
+                </div>
+                <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                    <div id="act-scroll" class="mui-scroll">
+                        <a id="act-scroll-1" class="mui-tab-item" href="#tabbar-with-member">
+                            添加成员
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div id="region" class="act-checkbox-view act-region active">
+                <form class="mui-input-group">
+
+                </form>
+            </div>
+            <div id="region-1" class="act-checkbox-view act-region ">
+                <form class="mui-input-group">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州省 (4) </span></label>
+                        <span class="act-nextlevel act-unclickable" data-id="region-2"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="4"
+                               data-awesome='[{"daid":"on1","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on2","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on3","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on4","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},]'
+                               type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州省 (4) </span></label>
+                        <span class="act-nextlevel act-unclickable" data-id="region-2"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="4"
+                               data-awesome='[{"daid":"on1","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on2","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on3","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on4","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},]'
+                               type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州省 (3) </span></label>
+                        <span class="act-nextlevel act-unclickable" data-id="region-2"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="3"
+                               data-awesome='[{"daid":"on1","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on2","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on3","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},]'
+                               type="checkbox">
+                    </div>
+                </form>
+            </div>
+            <div id="region-2" class="act-checkbox-view act-region">
+                <form class="mui-input-group">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州市 (2) </span></label>
+                        <span class="act-nextlevel act-unclickable" data-id="region-3"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="2"
+                               data-awesome='[{"daid":"on1","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on3","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},]'
+                               type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州市 (4) </span></label>
+                        <span class="act-nextlevel act-unclickable" data-id="region-3"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="4"
+                               data-awesome='[{"daid":"on1","animaltype":"陶老师","previewsrc":""},
+                                              {"daid":"on2","animaltype":"陶老师","previewsrc":"img/20180515094122.jpg"},
+                                              {"daid":"on3","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on4","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},]'
+                               type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州市 (3) </span></label>
+                        <span class="act-nextlevel act-unclickable" data-id="region-3"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="3"
+                               data-awesome='[{"daid":"on1","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on2","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},
+                                              {"daid":"on3","animaltype":"陶老师","previewsrc":"img/ico-hd.png"},]'
+                               type="checkbox">
+                    </div>
+                </form>
+            </div>
+            <div id="region-3" class="act-checkbox-view act-region">
+                <form class="mui-input-group">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="act-teacher">
+                            <div class="act-teacher-portrait"><img src="img/ico-hd.png"></div>
+                            <div class="deputy-text">
+                                <p class="act-designation"><span class="act-monicker">张老师</span><span
+                                        class="act-tag act-counselor"><i class="iconfont">&#xe6bb;</i>辅导老师</span></p>
+                                <p class="act-subject"><i class="iconfont">&#xe6bc;</i>学科学段</p>
+                                <p class="act-site"><i class="iconfont">&#xe6ba;</i>学科学段</p>
+                            </div>
+                        </label>
+                        <input name="checkbox" data-id="01" data-animal-type="张老师" data-preview-src="img/ico-hd.png"
+                               value="1" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="act-teacher">
+                            <div class="act-teacher-portrait"><img src="img/ico-hd.png"></div>
+                            <div class="deputy-text">
+                                <p class="act-designation"><span class="act-monicker">陶老师</span><span
+                                        class="act-tag  act-admin"><i class="iconfont">&#xe6b7;</i>超级管理员</span></p>
+                                <p class="act-subject"><i class="iconfont">&#xe6bc;</i>学科学段</p>
+                                <p class="act-site"><i class="iconfont">&#xe6ba;</i>重庆市 阿斯达 SaaS暗室逢灯省份 阿斯达重庆市 阿斯达
+                                    SaaS暗室逢灯省份 阿斯达</p>
+                            </div>
+                        </label>
+                        <input name="checkbox" data-id="02" data-animal-type="陶老师" data-preview-src="img/ico-hd.png"
+                               value="1" type="checkbox">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="act-search" class="mui-control-content">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-tab-item " href="#tabbar-with-contact">
+                <span class="mui-icon mui-icon-left-nav mui-pull-left"></span>
+            </a>
+            <h1 class="mui-title">
+                <div class="mui-input-row"><input type="text" class="mui-input-clear" placeholder="请输入城市、区域、社群、成员名称">
+                </div>
+            </h1>
+            <a class="mui-tab-item " href="#tabbar-with-contact">
+                <span class="mui-pull-right act-lanyard">搜索</span>
+            </a>
+        </header>
+        <nav class="mui-bar mui-bar-tab">
+            <div class="act-nav">
+                <p class="mui-pull-left">已选择:<span class="subject-number member-number">0</span>成员</p>
+                <a class="mui-pull-right mui-btn add-member">添加</a>
+            </div>
+        </nav>
+        <div class="act-table-view">
+            <div class="search-result">
+                <form class="mui-input-group">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州省 (30) </span></label>
+                        <span class="act-nextlevel act-active"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="30" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州省 (6) </span></label>
+                        <span class="act-nextlevel act-active"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="6" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label> <span class="act-monicker">贵州省 (9) </span></label>
+                        <span class="act-nextlevel act-active"><i class="iconfont">&#xe6b6;</i>下一级</span>
+                        <input name="checkbox" value="9" type="checkbox">
+                    </div>
+                </form>
+                <div class="search-tips">
+                    <img src="img/ico-gzs.png">
+                    <p>没有相关结果</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tabbar-with-association" class="mui-control-content">
+        <header class="mui-bar mui-bar-nav">
+            <a href="#tabbar" class="mui-tab-item  mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="mui-title">选择活动形式</h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab">
+            <div class="act-nav">
+                <p id="post-template" class="mui-pull-left"><a class="act-preview" href="post_the_template/template_preview.html"><i
+                        class="iconfont">&#xe637;</i>预览模板</a></p>
+                <a id="act-btn-publish" class="mui-btn add-member mui-pull-right mui-btn mui-btn-primary mui-btn-publish"
+                   data-loading-text="发布中">发布</a>
+            </div>
+        </nav>
+        <div class="act-table-view">
+            <div id="select-activity">
+
+            </div>
+        </div>
+    </div>
+    <div id="tabbar-with-preview" class="mui-control-content">
+        <header class="mui-bar mui-bar-nav">
+            <a href="#tabbar" class="mui-tab-item  mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="mui-title">自主研修</h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab">
+            <div class="act-nav">
+                <a id="act-btn-preview" class="mui-btn act-btn-preview mui-btn-primary">选择此模板</a>
+            </div>
+        </nav>
+        <div class="act-table-view">
+            <div id="act-preview">
+             选着模板
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pvw-details" class="pvw-details"></div>
+<div class="tl-uploadstatus">
+    <span class="tl-description">图片上传中...</span>
+</div>
+</body>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/layer.js"></script>
+<script src="js/webuploader.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/Eleditor.min.js"></script>
+<script src="js/mui.zoom.js"></script>
+<script src="js/mui.previewimage.js"></script>
+<script>
+    $(document).ready(function () {
+        mui.previewImage();
+        initImgUploader();
+        subjectNumber();
+        getScienceSection();
+        // tankResults();
+        // projectMemberList();
+        // var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2;
+
+    })
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+
+    var awesome=[]
+    function getScienceSection() {
+        $.axget(URL_BASE + '/common/eduInfo', '',
+            //请求成功返回数据
+            function (data) {
+                if (data.code == 200) {
+
+                    $.each(data.data, function (i, v) {
+                        setScienceSection(data.data[i])
+                    })
+                }
+            },
+            //请求出错了
+            function () {
+                mui.toast("请求出错了")
+            }
+        );
+    };
+
+    function setScienceSection(data) {
+        var primary = ''
+        if (data.code == 201) {
+            primary = 'mui-btn-primary'
+        } else if (data.code == 202) {
+            primary = 'mui-btn-success'
+        } else if (data.code == 203) {
+            primary = 'mui-btn-warning'
+        }
+        else if (data.code == 204) {
+            primary = 'mui-btn-danger'
+        }
+        var list = ''
+        var lists = ''
+        $.each(data.list, function (i, v) {
+            list = '<a class="mui-btn mui-btn-outlined ' + primary + ' " data-id="' + data.list[i].code + '">' +
+                '' + data.list[i].name + '' +
+                '</a>'
+            lists += list
+
+        })
+
+        var wdiv = '<div class="act-card">' +
+            '<div class="act-card-header">' + data.name + '</div>' +
+            '<div class="act-card-content">' +
+            '' + lists + '' +
+            '</div>' +
+            '</div>'
+        $('#subject-complete-view').append(wdiv)
+    }
+
+    function getProjectMemberList(parentId,projectId,checkall) {
+        layer.open({
+            type: 2,
+            shade: false,
+            className: 'act-popuo-login',
+            content: '拼命加载中...',
+        });
+
+        var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDA3OTM0MzMwNzksInBheWxvYWQiOiJ7XCJpZFwiOjY3MjQsXCJ1c2VyTmFtZVwiOlwibGdrMjAxMlwiLFwicGhvbmVcIjpcIjE1NTg3MDkzNjgxXCIsXCJuYW1lXCI6XCLkvJjluIjkupFcIn0ifQ.PMyBDhwFOzygyBG5dUhH0pmKcBIN2HneS547j63hDlc'
+        var data = {parentId: parentId, projectId: projectId, token: token}
+        $.axget(URL_ACTION + '/rest/activity/projectMemberList', data,
+            //请求成功返回数据
+            function (r) {
+                layer.closeAll();
+                if(r.code==500){
+                    mui.toast(r.message)
+                }
+
+                if (r.code == 200) {
+                    var e = r.data.data;
+
+                    if(checkall==1){
+                        // $.each(e, function (i, v) {
+                        //     awesome.push({daid:e[i].id,animaltype:e[i].name,previewsrc:e[i].img});
+                        // })
+                        // $("input[data-id="+parentId+"]").attr('data-awesome',JSON.stringify(awesome))
+                        // 全选
+
+                    }else {
+                        $('#region').find('.mui-input-group').empty()//清空
+                        $.each(e, function (i, v) {
+                            setProjectMemberList(e[i],projectId);
+                        })
+                    }
+
+
+                }
+            },
+            //请求出错了
+            function () {
+                mui.toast("请求出错了")
+                layer.closeAll();
+            }
+        );
+    }
+
+    function getProjectRegionList(parentId,projectId) {
+        layer.open({
+            type: 2,
+            shade: false,
+            className: 'act-popuo-login',
+            content: '拼命加载中...',
+        });
+
+        var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDA3OTM0MzMwNzksInBheWxvYWQiOiJ7XCJpZFwiOjY3MjQsXCJ1c2VyTmFtZVwiOlwibGdrMjAxMlwiLFwicGhvbmVcIjpcIjE1NTg3MDkzNjgxXCIsXCJuYW1lXCI6XCLkvJjluIjkupFcIn0ifQ.PMyBDhwFOzygyBG5dUhH0pmKcBIN2HneS547j63hDlc'
+        var data = {parentId: parentId, projectId: projectId, token: token}
+        $.axget(URL_ACTION + '/rest/activity/getProjectRegionList', data,
+            //请求成功返回数据
+            function (r) {
+                layer.closeAll();
+                if(r.code==500){
+                    mui.toast(r.message)
+                }
+                if (r.code == 200) {
+                    $('#region').find('.mui-input-group').empty()//清空
+                    var e = r.data.data;
+                    $.each(e, function (i, v) {
+                            setProjectRegionList(e[i],projectId);
+                    })
+                }
+            },
+            //请求出错了
+            function (data) {
+                mui.toast("请求出错了")
+                layer.closeAll();
+            }
+        );
+    };
+
+    function setProjectRegionList(s,projectId) {
+        var parent = '<div class="mui-input-row mui-checkbox mui-left">' +
+            '<label> <span class="act-monicker">' + s.name + ' <span class="act-monicker-nub">(' + s.count + ')</span> </span></label>' +
+            '<span class="act-nextlevel act-unclickable" data-animal-type="'+s.isParent+'" data-projectid="'+projectId+'" data-id="' + s.code + '"><i class="iconfont">&#xe6b6;</i>下一级</span>' +
+            '<input  name="checkbox" value="' + s.count + '" type="checkbox"  data-animal-type="'+s.name+'" data-awesome=" " data-id="'+ s.code +'"> '+
+            '</div>'
+
+        $('#region').find('.mui-input-group').append(parent);
+    }
+
+    function setProjectMemberList(s,projectid) {
+        var role='';
+        if(s.jshe==0){
+            role='<span class="act-tag  act-admin"><i class="iconfont">&#xe6b7;</i>超级管理员</span>'
+        }else if(s.jshe==0) {
+            role='<span class="act-tag  act-counselor"><i class="iconfont">&#xe6b7;</i>辅导老师</span>'
+        }else {
+            role='<span class="act-tag  act-student"><i class="iconfont">&#xe6b7;</i>学员</span>'
+        }
+          var  parent = '<div class="mui-input-row mui-checkbox mui-left">' +
+            '<label class="act-teacher">' +
+            '<div class="act-teacher-portrait"><img src="'+s.img+'"></div>' +
+            '<div class="deputy-text">' +
+            '<p class="act-designation"><span class="act-monicker">"'+s.name+'"</span>' +
+            ''+role+'' +
+            '</p>'+
+            '<p class="act-subject"><i class="iconfont">&#xe6bc;</i>测试-学科学段</p>' +
+            '<p class="act-site"><i class="iconfont">&#xe6ba;</i>测试地址</p>' +
+            '</div>' +
+            '</label>' +
+            '<input name="checkbox" data-id="'+s.id+'"  data-projectid="'+projectid+'" data-animal-type="'+s.name+'" data-preview-src="'+s.img+'"' +
+            'value="1" type="checkbox">' +
+            '</div>'
+        $('#region').find('.mui-input-group').append(parent);
+    }
+
+    function tankResults() {
+        $.axspost(URL_ACTION + '/user/seinfolectUser', {'orgCode': '0'},
+            //请求成功返回数据
+            function (data) {
+                if (data.read == 200) {
+                    $.each(data.resultslist, function (i, v) {
+                        resultsListf(data.resultslist[i])
+                    })
+                }
+            },
+            //请求出错了
+            function () {
+                mui.toast("请求出错了")
+            }
+        );
+    };
+
+    //编辑按钮
+    mui('.mui-bar-nav').on('tap', '#theediting', function () {
+        var ntext = $("#compiletext").val();
+        var richtext = $("#article-body").text();
+        var pvwdetails = $("#article-body").html();
+        var uimg = $('#article-body').find('img');
+
+        if (ntext.length == 0) {
+            mui.toast('标题不能为空')
+        } else if ($('#article-body').find('.Eleditor-placeholder').hasClass('Eleditor-placeholder')) {
+            mui.toast('你还没填写内容!')
+        } else {
+            $('.mui-control-content').removeClass('mui-active')
+            $("#tabbar").addClass('mui-active')
+            $('#act-title').text(ntext);
+            $('#act-text').text(richtext);
+            $('#pvw-details').html(pvwdetails)
+            if (uimg.attr('src') != undefined) {
+                var simg = '';
+                var simgunb = '';
+                $.each(uimg, function (i, v) {
+                    simg += '<p><img src="' + uimg.eq(i).attr('src') + '" data-preview-src="" data-preview-group="1"/></p>'
+                })
+                if (uimg.length > 1) {
+                    var s = uimg.length - 1;
+                    simgunb = '<div class="corner-mark">+' + s + '</div>'
+                }
+                $('#richtextarea-p-img').show().html(simg + simgunb);
+
+            } else {
+                $('#richtextarea-p-img').hide()
+            }
+        }
+        var duixa=$('#article-body').find('.act-file-area');
+        var f=''
+        $.each(duixa,function (i) {
+            f+=duixa.eq(i).prop('outerHTML')
+        })
+        $('#act-acce').html(f)
+    });
+    //附件删除
+    mui('#act-acce').on('tap', '.act-del', function () {
+        $(this).parent('.act-file-area').remove()
+    })
+    //选择学科学段按钮
+    mui('.mui-bar-tab').on('tap', '#subject-complete', function () {
+        var num = subjectNumber()
+        if (num > 0) {
+            var ftextlen = $('#subject-complete-view').find('.mui-btn').find('.active').length;
+            var ftext, ftextid;
+            var uvs = '';
+            for (var i = 0; i < ftextlen; i++) {
+                ftext = $('#subject-complete-view').find('.mui-btn').find('.active').eq(i).parent().text();
+                ftextid = $('#subject-complete-view').find('.mui-btn').find('.active').eq(i).parent().attr('data-id');
+                uvs = uvs + '<span data-id="' + ftextid + '">【' + ftext + '】</span>'
+            }
+            $('#science-number').html("已经选择" + num + "学科")
+            $('#science-section').addClass('science-section').html(uvs);
+            $('.mui-control-content').removeClass('mui-active')
+            $("#tabbar").addClass('mui-active')
+        } else {
+            mui.toast('没有选择学段学科')
+        }
+    });
+    //学科学段
+    mui("#subject-complete-view").on('tap', '.mui-btn', function () {
+        $(this).toggleClass('mui-btn-outlined');
+        var a = '<span class="active"><span class="mui-icon mui-icon-checkmarkempty"></span></span>';
+        if ($(this).find('.active').hasClass('active')) {
+            $(this).find('.active').remove()
+        } else {
+            $(this).append(a)
+        }
+        $('.subject-number').html(subjectNumber())
+    });
+
+    function subjectNumber() {
+        var num = $('.act-card').find('.active').length;
+        if (num > 0) {
+            $('#subject-complete').addClass('mui-btn-primary')
+        } else {
+            $('#subject-complete').removeClass('mui-btn-primary')
+        }
+        return num
+    }
+
+    //添加成员
+    mui('.act-switch-type').on('tap', '.mui-tab-item', function () {
+        var title = $(this).attr('data-animal-type');
+        var parentId = $(this).attr('data-id');
+        var projectId = $(this).attr('data-projectId');
+        $('#act-scroll-1').nextAll().remove();
+        getProjectRegionList(parentId,projectId);
+        memberTitle(title);
+        $('#act-scroll').append('<i class="iconfont">&#xe611;</i>' +
+            '<a data-projectId="'+projectId+'" data-id="' + parentId + '" class="act-tab-item active">' +
+            '' + title + '' +
+            '</a>');
+    })
+    //选择完成确认添加
+    mui('.act-nav').on('tap', '.add-member', function () {
+        if (summation() > 0) {
+             var arrt =summationId();
+
+            mui.alert("你成功添加" + summation() + "人", '提示', '确认', function () {
+                $('#science-affiliate').empty();
+                $('#science-affiliate').append('<div class="head-portrait-a">' +
+                    '<a class="mui-tab-item" href="#tabbar-with-member">添加</a>' +
+                    '</div>');
+                $('.head-portrait-a').show();
+                $('.cancel').show();
+                $('#science-result').html("已经选择" + summation() + "成员");
+                $('.mui-control-content').removeClass('mui-active')
+                $("#tabbar").addClass('mui-active')
+                $.each(arrt, function (i, e) {
+                     var name = '';
+                     if (arrt[i].previewsrc == undefined || arrt[i].previewsrc == '' || arrt[i].previewsrc == null) {
+                         name = arrt[i].animaltype.substring(0, 2)//截取前2位
+
+                     } else {
+                         name = '<img src="' + arrt[i].previewsrc + '">'
+                     }
+                     $('#science-affiliate').addClass('science-section').prepend('<div class="head-portrait" data-id="' + arrt[i].dataid + '" data-name="' + arrt[i].animaltype + '">' + name + '</div>');
+                 });
+            })
+        } else {
+            mui.toast('你还未选择成员')
+        }
+    })
+    //成员删除
+    mui('#science-affiliate').on('tap', '.head-portrait', function () {
+        $(this).remove()
+        var len = $('.head-portrait').length;
+        if (len == 0) {
+            $('.cancel').hide();
+            $('.head-portrait-a').hide();
+            $('#science-result').html("未选择")
+        } else {
+            $('#science-result').html("已经选择" + len + "成员");
+        }
+        ;
+    })
+
+    //成员人数选择
+    function summation() {
+        var numArr = []; // 定义一个空数组
+        var people = $("[name='checkbox']:checked"); // 获取所选中的值
+        for (var i = 0; i < people.length; i++) {
+            numArr.push(people.eq(i).val()); // 将值添加到数组中
+        }
+        var sum = eval(numArr.join('+'));//将值求和
+        return sum;//返回求和值
+    }
+
+    //成员选择
+    function summationId() {
+        var numArrid = []; // 定义一个空数组
+        var people = $("[name='checkbox']:checked"); // 获取所选中的值
+
+        for (var i = 0; i < people.length; i++) {
+            // if (people.eq(i).attr('data-awesome') == undefined) {
+            //
+            //
+            // } else {
+            //     var sas = eval("(" + people.eq(i).attr('data-awesome') + ")");
+            //
+            //     $.each(sas, function (n, e) {
+            //         numArrid.push({// 将值id添加到数组中
+            //             dataid: sas[n].daid,
+            //             animaltype: sas[n].animaltype,
+            //             previewsrc: sas[n].previewsrc,
+            //         });
+            //     })
+            // }
+            if (people.eq(i).attr('data-id') == undefined) {
+
+            } else {
+                numArrid.push({// 将值id添加到数组中
+                    dataid: people.eq(i).attr('data-id'),
+                    animaltype: people.eq(i).attr('data-animal-type'),
+                    previewsrc: people.eq(i).attr('data-preview-src'),
+                });
+            }
+        }
+        return numArrid;//返回求和值
+    }
+
+    $("#region").on("click", "input[name='checkbox']", function () {//选中
+        var checkall=1;
+        var crew=$(this).prev();
+            crew.toggleClass('act-unclickable');
+        var parentId=crew.attr('data-id');
+        var projectId='61';
+        // if(crew.attr('data-animal-type')==1){
+        //     getProjectMemberList(parentId,projectId,checkall)
+        // }//全选
+        //var b = $(this).parents('.mui-control-content');
+        var allCheckNum = $("input[name='checkbox']").length;
+        var checkedNum = $("input[name='checkbox']:checked").length;
+
+        if (checkedNum > 0) {
+            $('.member-number').html(summation());
+            $('.add-member').addClass('mui-btn-primary')
+        } else {
+            $('.member-number').html('0');
+            $('.add-member').removeClass('mui-btn-primary')
+        }
+
+    });
+    //上级
+    mui("#act-scroll").on('tap', '.act-tab-item', function () {
+        var parentId = $(this).attr('data-id');
+        var projectId = $(this).attr('data-projectId');
+        // $('.act-region').removeClass('active')
+        getProjectRegionList(parentId,projectId)
+        $(this).addClass('active')
+        $(this).nextAll().remove();
+        memberTitle()
+    })
+    //下一级
+    mui('#tabbar-with-contact').on('tap', '.act-unclickable', function () {
+        var parentId = $(this).attr('data-id');
+        var projectId = $(this).attr('data-projectId');
+        var datatype = $(this).attr('data-animal-type');
+        var datatext = $(this).prev().find('.act-monicker').text();
+        if (datatype==0){
+            getProjectMemberList(parentId,projectId)
+        } else if (datatype==1) {
+            getProjectRegionList(parentId,projectId)
+        }
+        if($(this).hasClass('act-teacher')){
+
+        }else {
+        $('.act-tab-item').removeClass('active')
+        $('#act-scroll').append('<i class="iconfont">&#xe611;</i>' +
+            '<a data-id="' + parentId + '" data-projectId="'+projectId+'" class="act-tab-item active">' +
+            '' + datatext + '' +
+            '</a>');
+        memberTitle()
+        }
+
+    });
+
+    function memberTitle(t) {
+        if ($('#act-scroll').find('.act-tab-item').hasClass('active')) {
+            var title = $('#act-scroll').find('.act-tab-item.active').text();
+
+            if (t == undefined || t == '' || t == null) {
+                $('#member-title').html(title)
+            }
+            else {
+                $('#member-title').html(t)
+            }
+        }
+    }
+
+    //权限按钮
+    mui('#jurisdiction').on('tap', '.mui-btn', function () {
+        var text = $(this).attr('data-loading-text')
+        $('#jurisdiction').find('.mui-btn').removeClass('mui-btn-success')
+        $(this).addClass('mui-btn-success');
+        $('#act-hint').addClass('active').text(text)
+    });
+
+    //下一步按钮
+    var textarea = [];
+    var btn = document.getElementById("act-publish");
+    btn.addEventListener("tap", function () {
+        var cover = $('#fileList-0').find('img').attr('data-id');
+        var title = $('#act-title').text();
+        var details = $('#pvw-details').html();
+        var detailstext = $('#act-text').text();
+        var subjectCode = ''
+        var subject = $('#science-section').find('span');
+        $.each(subject, function (i, v) {
+            subjectCode += subject.eq(i).attr('data-id') + ',';
+        });
+        var filejson=''
+        var filejsonid = $('#act-acce').find('.act-file-area');
+        $.each(filejsonid, function (i, v) {
+            filejson += filejsonid.eq(i).attr('data-id') + ',';
+        });
+        var memberIds = '';
+        var member = $('#science-affiliate').find('.head-portrait');
+        $.each(member, function (i, v) {
+            memberIds += member.eq(i).attr('data-id') + ',';
+        });
+        var isOpen = $('#jurisdiction').find('.mui-btn-success').attr('data-id');
+        var startDate = $('.act-time-begin').next('.act-time-result').text();
+        var startDateType = $('.act-time-begin').next('.act-time-result').attr('data-animal-type');
+        var endDate = $('.act-time-over').next('.act-time-result').text();
+        var endDateType = $('.act-time-over').next('.act-time-result').attr('data-animal-type');
+
+        textarea.push({
+            subjectCode: subjectCode,
+            memberIds: memberIds,
+            isOpen: isOpen,
+            cover: cover,
+            title: title,
+            details: details,
+            startDate: startDateType,
+            endDate: endDateType,
+            filejson:filejson,
+        });
+
+        if (Object_filter(cover)) {
+
+            if (Object_filter(detailstext)) {
+
+                if (Object_filter(title)) {
+
+                    if (Object_filter(subjectCode)) {
+
+                        if (Object_filter(memberIds)) {
+
+                            if (Object_filter(isOpen)) {
+
+                                if (Object_filter(startDate)) {
+
+                                    if (Object_filter(endDate)) {
+                                        $('.mui-control-content').removeClass('mui-active')
+                                        $("#tabbar-with-association").addClass('mui-active')
+                                        getForms()
+                                    } else {
+                                        mui.alert('未选择结束时间')
+                                    }
+                                } else {
+                                    mui.alert('未选择开放时间')
+                                }
+                            } else {
+                                mui.alert('未选择权限')
+                            }
+                        } else {
+                            mui.alert('未选择成员')
+                        }
+                    } else {
+                        mui.alert('未选择学科学段')
+                    }
+                } else {
+                    mui.alert('标题为空')
+                }
+            } else {
+                mui.alert('没有填写内容')
+            }
+        } else {
+            mui.alert('添加一个好看的封面吧')
+        }
+    });
+    //发布
+    function activityPublish(textarea) {
+        var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzkyNDQxNTQ5MjMsInBheWxvYWQiOiJ7XCJpZFwiOjY3MjQsXCJ1c2VyTmFtZVwiOlwibGdrMjAxMlwiLFwicGhvbmVcIjpudWxsLFwibmFtZVwiOlwi5LyY5biI5LqRXCJ9In0.FbKMwKmJICqUj7Kw_tP7XXqFxgpA_LOD-dGY3yBLOS4'
+        $.axspost(URL_ACTION + '/rest/activity/submitProjectActivity', {
+                'projectId': '38',
+                'userId': '6724',
+                'token': token,
+                'deviceCode': 'weixin',
+                'classfyId': textarea.classfyId,
+                'formId': '66',
+                'subjectCode': textarea.subjectCode,
+                'memberIds': textarea.memberIds,
+                'title': textarea.title,
+                'startDate': textarea.startDate,
+                'endDate': textarea.endDate,
+                'details': textarea.details,
+                'cover': textarea.cover,
+                'isOpen': textarea.isOpen,
+               // 'filejson':textarea.filejson,
+            },
+            //请求成功返回数据
+            function (data) {
+                mui('#act-btn-publish').button('reset');
+                if(data.code==200){
+                mui.toast(data.message)
+                }else {
+                    mui.toast(data.message)
+                }
+            },
+            //请求出错了
+            function (data) {
+                console.log("no", data);
+                mui.toast("网诺错误 稍后发布");
+                mui('#act-btn-publish').button('reset');
+            }
+        );
+
+    };
+
+    mui("#select-activity").on('tap', '.mui-card', function () {
+        $('#select-activity').find('.mui-card').removeClass('active');
+        $(this).toggleClass('active')
+        $('.add-member').addClass('mui-btn-primary')
+    })
+//预览
+
+    mui('#post-template').on('tap', '.act-preview', function () {
+        mui.openWindow({
+            url:'post_the_template/template_preview.html',
+            id:''
+        });
+    });
+    function getForms() {
+        $.axget(URL_ACTION + '/rest/activity/forms', '',
+            //请求成功返回数据
+            function (res) {
+                $.each(res, function (i, e) {
+                    getFormsRes(res[i])
+                })
+            },
+            //请求出错了
+            function (data) {
+                mui.toast("请求出错了515")
+            }
+        );
+    };
+
+    function getFormsRes(s) {
+        $.each(s.children, function (i, e) {
+            var res = '<div class="mui-card">' +
+                '<div class="mui-card-content act-card-activity">' +
+                '<div class="act-card-flex">' +
+                '<div class="act-card-name">' +
+                '<h4 class="act-card-name-h4">' + s.text + '</h4>' +
+                '<h3 class="act-card-name-h3">' + s.children[i].text + '</h3>' +
+                '</div>' +
+                '<div class="act-card-icon">' +
+                '<i class="iconfont">&#xe6a7;</i>' +
+                '</div>' +
+                '</div>' +
+                '<p>' + s.children[i].remark + '</p>' +
+                '</div>' +
+                '</div>'
+            $('#select-activity').append(res)
+        })
+    }
+
+    //确认发布按钮
+    var actpublish = document.getElementById("act-btn-publish");
+    actpublish.addEventListener("tap", function () {
+        mui('#act-btn-publish').button('loading');
+        activityPublish(textarea[0])
+    })
+
+</script>
+<script>
+    /*实例化一个编辑器*/
+    var artEditor = new Eleditor({
+        el: '#article-body',
+        /*upload是上传配置对象*/
+
+        upload: {
+            server: URL_ACTION + '/uploadapp/upload/create?appid=1000&uid=110815170',//后台接收地址
+            fileSizeLimit: 3,//限制文件上传大小为3M
+            formName: 'image',//设置文件name,
+            // accept: {//accept一般不用设置
+            //     title: 'Images',
+            //     extensions: 'gif,jpg,jpeg,bmp,png,webp',
+            //     mimeTypes: 'image/gif,image/jpg,image/jpeg,image/bmp,image/png,image/webp'
+            // }
+        },
+        /*初始化完成钩子*/
+        mounted: function () {
+            /*以下是扩展插入视频的演示*/
+            var _videoUploader = WebUploader.create({
+                auto: true,
+                server: URL_ACTION+'/uploadapp/upload/create?appid=1000&uid=110815170',
+               // server: 'preview.php',
+                /*按钮类就是[Eleditor-你的自定义按钮id]*/
+                pick: $('.Eleditor-insertAcce'),
+                duplicate: true,
+                fileSizeLimit: 5 * 1024 * 1024,
+                resize: false,
+                // accept: {
+                //     title: 'Images',
+                //     extensions: 'mp4',
+                //     mimeTypes: 'video/mp4'
+                // },
+                fileVal: 'file',
+            });
+            _videoUploader.on('uploadSuccess', function (_file, _call) {
+                if (_call.status == 0) {
+                    return window.alert(_call.msg);
+                }
+                var cals=''
+                if(_file.ext=='jpg'||_file.ext=='png'){
+                    cals='calsjpg'
+                }else if(_file.ext=='doc'||_file.ext=='docx'){
+                    cals='calsdoc'
+                }else if(_file.ext=='ppt'||_file.ext=='pptx'){
+                    cals='calsppt'
+                }else if(_file.ext=='xls'||_file.ext=='xlsx'){
+                    cals='calsxls'
+                }else {
+                    cals='calsfile'
+                }
+                /*保存状态，以便撤销*/
+                artEditor.saveState();
+                artEditor.getEditNode().after(`<div class="act-file-area ${cals}" data-url="${_call.url}" data-id="${_call.sid}" data-name="${_call.fileName}">${_call.fileName}<span class="act-del"><i class="iconfont">&#xe65c;</i></span></div>`);
+                artEditor.hideEditorControllerLayer();
+            });
+        },
+        changer: function () {
+
+        },
+        toolbars: [
+            'insertText',
+            'editText',
+            'insertImage',
+            {
+                id: 'insertURL',//不能重复，此id可用于定义按钮样式，例如创建后按钮类为Eleditor-insertShop
+                // tag: 'img', //指定标签显示按钮，逗号分隔，默认不指定
+                name: '插链接',
+                handle: function (_select, _controll) {
+                    //回调有两个参数，分别是已选择的编辑dom对象和当前控制按钮对象
+                    /*这里省略部分逻辑，主要是显示产品列表弹窗，并且选择返回*/
+                    var _selectShop = [];
+                    mui.prompt('请输入您要添加的文字', '输入文字', '添加标题', '', function (e) {
+                        if (e.index == 1) {
+                            var name = e.value;
+                            mui.prompt('请输入您要添加的链接', '输入链接', '添加链接', '', function (e) {
+                                if (e.index == 1) {
+                                    _selectShop.push({name: name, src: e.value});
+                                    _select.append($('<a href="' + _selectShop[0].src + '" style="color: rgb(33, 150, 243)">' + _selectShop[0].name + '</a>'));
+                                    // _select.after($('<a href="'+_selectShop[0].src+'" style="color: rgb(33, 150, 243)">' + _selectShop[0].name + '</a>'));
+
+                                } else {
+                                    mui.toast('取消')
+                                }
+                            })
+                        } else {
+                            mui.toast('取消')
+                        }
+                    })
+                }
+            },
+            //自定义一个视频按钮
+            {
+                id: 'insertAcce',
+                // tag: 'p,img', //指定P标签操作，可不填
+                name: '添加附件',
+                handle: function (select, controll) {//回调返回选择的dom对象和控制按钮对象
+                    /*因为上传要提前绑定按钮到webuploader，所以这里不做上传逻辑，写在mounted*/
+                    /*!!!!!!返回false编辑面板不会关掉*/
+                    return false;
+                }
+            },
+            'cancel',
+            'delete',
+        ],
+    });
+
+</script>
+
+</html>

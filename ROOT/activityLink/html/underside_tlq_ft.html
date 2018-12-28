@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>发帖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css"/>
+    <link href="../css/w-custom.css" rel="stylesheet"/>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/webuploader.min.js"></script>
+    <script src="../js/mui.min.js"></script>
+</head>
+<body>
+<!--<header class="mui-bar mui-bar-nav">-->
+<!--<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>-->
+<!--<h1 class="mui-title">发帖</h1>-->
+<!--</header>-->
+<div class="mui-content">
+    <div class="ys-card">
+        <form class="mui-input-group" id="input_example">
+            <div class="mui-input-row">
+                <label>名称:</label>
+                <input type="text" id="title" class="mui-input-clear ys-input" autofocus="autofocus" placeholder="请输入标题">
+            </div>
+            <div class="mui-input-row">
+                <label>内容:</label>
+                <textarea class="ys-input" id="textarea" oninput="autosize(this)" placeholder="请输入内容..."></textarea>
+            </div>
+            <!--    <div class="y-xzwjqu">
+                    <div id="uploadfile">
+                        &lt;!&ndash;用来存放文件信息&ndash;&gt;
+                        <div id="thelist" class="uploader-list"></div>
+                        <div class="form-group form-inline" style="overflow: hidden;padding: 10px">
+                            <div id="picker" style="float:left"><span style="font-size: 40px;font-weight: 200">+</span><br/>上传附件</div>
+                        </div>
+                    </div>
+                </div>-->
+            <!--<div class="mui-button-row">-->
+            <!--<button type="button" id="input_check" class="mui-btn mui-btn-primary" >确认</button>-->
+            <!--&lt;!&ndash;<button type="button" class="mui-btn mui-btn-danger" >取消</button>&ndash;&gt;-->
+            <!--</div>-->
+            <div style="padding: 60px 20px;background-color: #fff" class="mui-button-row">
+                <button style="width: 100%" type="button" id="input_check" class="mui-btn mui-btn-primary">确认</button>
+                <!--<button type="button" class="mui-btn mui-btn-danger">取消</button>-->
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var filejsonArry = [];
+    get("/activity/getMyId", function (res) {
+        if (res.code == 200) {
+
+            initMoreUploader('thelist', res.data, function (file) {
+                filejsonArry.push(file._raw);
+            });
+        }
+    });
+
+
+</script>
+<script type="text/javascript">
+    //判断当前input为空，则alert提醒
+    document.addEventListener('DOMContentLoaded', function () {
+        //			if(String.prototype.trim === undefined) { // fix for iOS 3.2
+        //				String.prototype.trim = function() {
+        //					return this.replace(/^\s+|\s+$/g, '');
+        //				};
+        //			}
+        document.getElementById("input_check").addEventListener('click', function () {
+            var check = true;
+            var myReg = /^[\u4e00-\u9fa5a-zA-Z0-9]+$/;
+            if (!Object_filter($("#title").val().trim())){
+                mui.alert("名称不能为空");
+                return false;
+            }
+            if (!myReg.test($("#title").val())) {
+                mui.alert("名称只支持中英文和汉字");
+                return false;
+            }
+            if (!Object_filter($("#textarea").val().trim())){
+                mui.alert("内容不能为空");
+                return false;
+            }
+            //校验通过，继续执行业务逻辑
+            var data = {
+                activityId: getUrlParamValue("activityId"),
+                tacheType: getUrlParamValue("tacheType"),
+                title: $("#title").val(),
+                content: $("#textarea").val(),
+                filejsonArry: '[' + filejsonArry + ']'
+            };
+            post("/activity/submitTopic", data, function (res) {
+                if (res.code == 200)
+                    mui.alert('发帖成功', '提示', function () {
+                        mui.back()
+                    });
+                else
+                    mui.toast(res.message)
+            })
+        })
+
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>批阅作业</title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/w-custom.css" rel="stylesheet"/>
+</head>
+<body>
+<!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top='0' data-offset='150' data-duration='16' data-scrollby=".mui-scroll-wrapper">-->
+    <!--<a class="mui-action-back" style="padding: 10px 0;" href="#get-back"><i class="iconfont w-back">&#xe652;</i></a>-->
+    <!--<h1 class="mui-title">批阅作业</h1>-->
+<!--</header>-->
+
+<div class="mui-content ">
+    <div class="h-moderator">
+        <img id="h_headImg" src="#"/>
+        <div class="h-momz">
+            <a id="h_assignMan"></a>
+            <em id="roleName"></em>
+            <!--<p class="w-wz">未做</p>-->
+            <p class="w-yz">已批阅 </p><!--注：已做和未做两个状态-->
+            <!--<span class="w-zt w-wpy">未批阅</span>--><!--注：批阅的四个状态-->
+            <!--<span class="w-zt w-ypy">已批阅</span>-->
+            <!--<span class="w-zt w-th">退回</span>-->
+            <span class="w-zt w-ty" id="markFlag"></span>
+        </div>
+
+    </div>
+    <div class="h-details">
+        <h1 class="w-zyyq">作业要求</h1>
+        <p><b id="assignMan">布置人：</b></p>
+        <p><b id="createDate">开始时间：</b></p>
+        <p><b id="endTime">结束时间：</b></p>
+        <p><b id="name">作业题目：</b></p>
+        <p><b id="content">作业要求：</b></p>
+
+        <div class="h-accessory">
+            <!--<ul class="mui-table-view">-->
+            <!--<li class="mui-table-view-cell mui-media">-->
+            <!--<a href="javascript:;">-->
+            <!--<img class="mui-media-object mui-pull-left" src="../img/3c28af542f2d49f.jpg">-->
+            <!--<div class="mui-media-body">-->
+            <!--夏天挫冰吃瓜，冬天围炉取暖.ppt-->
+            <!--<p class='mui-ellipsis'>56kb</p>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+
+            <!--</ul>-->
+        </div>
+        <div class="mui-row h-aiipageview">
+            <div class="mui-col-sm-4 mui-col-xs-4">
+                <!--  <i class="iconfont">&#xe6b1;</i> -->
+                <span class="mui-badge mui-badge-warning" id="type">类型:</span>
+            </div>
+            <div class="mui-col-sm-4 mui-col-xs-4">
+                <!-- <i class="iconfont">&#xe67d;</i>-->
+                <span class="mui-badge mui-badge-success" id="finishNum">已做:0人</span>
+            </div>
+            <div class="mui-col-sm-4 mui-col-xs-4">
+                <!-- <i class="iconfont">&#xe6bc;</i>-->
+                <span class="mui-badge" id="notFinishNum">未做:0人</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="h-discuss">
+        <h1>ta的做作业（1）</h1>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left" id="headImg" src="#">
+                <div class="mui-media-body">
+                    <a id="userName"></a>
+                    <p class='mui-ellipsis' id="title"></p>
+                    <p class='mui-ellipsis' id="h_content"></p>
+                </div>
+            </li>
+            <!--<li class="mui-table-view-cell mui-media">-->
+            <!--<a href="javascript:;">-->
+            <!--<img class="mui-media-object mui-pull-left w-wodre" src="../img/3c28af542f2d49f.jpg">-->
+            <!--<div class="mui-media-body">-->
+            <!--莫名我就喜欢你.wod-->
+            <!--<p class='mui-ellipsis'>56kb</p>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+        </ul>
+        <h1>陶老师的批阅</h1>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left" id="p_headImg" src="#">
+                <div class="mui-media-body">
+                    <a id="p_userName"></a>
+                    <p class='mui-ellipsis' id="markContent"></p>
+                </div>
+
+            </li>
+            <!--<li class="mui-table-view-cell mui-media">-->
+            <!--<a href="javascript:;">-->
+            <!--<img class="mui-media-object mui-pull-left w-wodre" src="../img/3c28af542f2d49f.jpg">-->
+            <!--<div class="mui-media-body">-->
+            <!--莫名我就喜欢你.wod-->
+            <!--<p class='mui-ellipsis'>56kb</p>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+        </ul>
+
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    $(function () {
+        post("/activity/markDetail", {markId: getUrlParamValue("id")}, function (res) {
+            if (res.code == 200) {
+                var data = res.data;
+                if (Object_filter(data)) {
+                    $("#h_headImg").attr("src", data.h_headImg);
+                    $("#h_assignMan").html(data.assignMan);
+                    $("#roleName").html(data.roleName);
+
+                    $("#assignMan").after(data.assignMan);
+                    $("#createDate").after(data.createDate);
+                    $("#endTime").after(data.endTime);
+                    $("#name").after(data.name);
+                    $("#content").after(data.content);
+                    $("#type").append(data.type == 0 ? "必做" : "选做");
+                    $("#finishNum").html("已做:" + data.finishNum + "人");
+                    $("#notFinishNum").html("未做:" + data.finishNum + "人");
+                    var homework = data.homework;
+                    if (Object_filter(homework)) {
+                        $("#headImg").attr("src", homework.headImg);
+                        $("#userName").html(homework.userName);
+                        $("#title").html(homework.title);
+                        $("#h_content").html(homework.content);
+                    }
+                    var markInfo = data.markInfo;
+                    if (Object_filter(markInfo)) {
+                        $("#p_headImg").attr("src", markInfo.headImg);
+                        $("#p_userName").html(markInfo.userName);
+                        $("#markContent").html(markInfo.markContent);
+                        var flag = "合格";
+                        if (markInfo.markFlag == 2)
+                            flag = "不合格";
+                        else if (markInfo.markFlag == 3)
+                            flag = "优秀";
+                        $("#markFlag").html(flag);
+                    }
+                }
+            }
+        })
+    })
+</script>
+
+</body>
+
+</html>

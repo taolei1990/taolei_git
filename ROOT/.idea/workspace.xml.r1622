@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="ffb85fb5-ee83-446c-857e-d2ed492b1934" name="默认的" comment="默认的">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/h-studio.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/h-studio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/培训引领-项目主页.html" beforeDir="false" afterPath="$PROJECT_DIR$/培训引领-项目主页.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="choose_user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose_user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-323">
+              <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="audit_member.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audit_member.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-203">
+              <caret line="85" column="85" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete_user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/delete_user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="67" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activity_home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="716" column="18" lean-forward="true" selection-start-line="716" selection-start-column="18" selection-end-line="716" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_activity.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/add_activity.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="224" column="72" lean-forward="true" selection-start-line="224" selection-start-column="72" selection-end-line="224" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>y-myxmts</find>
+      <find>myBindingProject</find>
+      <find>y-project</find>
+      <find>input_check</find>
+      <find>myiframefind</find>
+      <find>y-hdhj-lc</find>
+      <find>pages</find>
+      <find>sType</find>
+      <find>wm-sort</find>
+      <find>submit</find>
+      <find>/activity/themeDiscuss?activityId=</find>
+      <find>activity/themeDiscuss</find>
+      <find>/activity/themeDiscus</find>
+      <find>common</find>
+      <find>hdhjtj</find>
+      <find>y-hdhjtj</find>
+      <find>y-y-lxrxzqx</find>
+      <find>data-id</find>
+      <find>新增</find>
+      <find>choose_user.html</find>
+      <find>activity/hkMemberList?studioId</find>
+      <find>$(function () {</find>
+      <find>管理</find>
+      <find>名称</find>
+      <find>defaultVal</find>
+      <find>defailtVal</find>
+      <find>sectionAndSubjectList</find>
+      <find>onTwoLinkage</find>
+      <find>src</find>
+      <find>fileList</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>y-kcst</replace>
+      <replace>#c8c7cc</replace>
+      <replace>#f2f2f2</replace>
+      <replace>defaultVal</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/mui.min.js" />
+        <option value="$PROJECT_DIR$/activityLink/html/列表页-上传-点评.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/打赏失败提示.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/l123.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/a123.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/活动环节-作业.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/course_studies.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/course_studies_B.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/course_studies_A.html" />
+        <option value="$PROJECT_DIR$/js/common.js" />
+        <option value="$PROJECT_DIR$/activityLink/html/course_learning.html" />
+        <option value="$PROJECT_DIR$/css/h-studio.css" />
+        <option value="$PROJECT_DIR$/inspection_setup.html" />
+        <option value="$PROJECT_DIR$/delete_user.html" />
+        <option value="$PROJECT_DIR$/choose_item.html" />
+        <option value="$PROJECT_DIR$/choose_area.html" />
+        <option value="$PROJECT_DIR$/audit_member.html" />
+        <option value="$PROJECT_DIR$/add_project.html" />
+        <option value="$PROJECT_DIR$/activity_list.html" />
+        <option value="$PROJECT_DIR$/project_list.html" />
+        <option value="$PROJECT_DIR$/underside_detailPages.html" />
+        <option value="$PROJECT_DIR$/underside_discussion_board.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_2add2.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_bzzy.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_courses.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_dplist.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_fzxj.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_gradingassig.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_hdcg.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_hddy.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_kcxx.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_kcxx2.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_kcxx_bj.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_klgm.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_management.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_pylist.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_qjdr.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_students.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_themarking.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_tlq.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_tlq_ft.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_toupload.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_toupload_all.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_upload_resource.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_xgzy.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_ztyt.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_zy.html" />
+        <option value="$PROJECT_DIR$/activityLink/html/underside_2or2hp.html" />
+        <option value="$PROJECT_DIR$/activity_home.html" />
+        <option value="$PROJECT_DIR$/choose_user.html" />
+        <option value="$PROJECT_DIR$/add_activity.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="45" />
+    <option name="y" value="20" />
+    <option name="width" value="1805" />
+    <option name="height" value="1049" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="activity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="activity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+              <item name="activityLink" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="activity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+              <item name="activityLink" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="activity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="来自&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="F:/测试服/trunk/taolei_test/syw-h5" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\apache-tomcat-7.0.53\apache-tomcat-7.0.53\webapps\ROOT\activityLink\html" />
+      <recent name="F:\apache-tomcat-7.0.53\apache-tomcat-7.0.53\webapps\ROOT" />
+      <recent name="F:\apache-tomcat-7.0.53\apache-tomcat-7.0.53\webapps\ROOT\img" />
+      <recent name="F:\apache-tomcat-7.0.53\apache-tomcat-7.0.53\webapps\ROOT\activityLink\img" />
+      <recent name="F:\apache-tomcat-7.0.53\apache-tomcat-7.0.53\webapps\ROOT\activityLink" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\lenovo\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ffb85fb5-ee83-446c-857e-d2ed492b1934" name="默认的" comment="" />
+      <created>1521787260364</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521787260364</updated>
+      <workItem from="1521787261509" duration="1557000" />
+      <workItem from="1521790628534" duration="7287000" />
+      <workItem from="1522026725453" duration="26588000" />
+      <workItem from="1522113273830" duration="26793000" />
+      <workItem from="1522227911551" duration="2374000" />
+      <workItem from="1522285736612" duration="26245000" />
+      <workItem from="1522372951027" duration="16505000" />
+      <workItem from="1522397027729" duration="5699000" />
+      <workItem from="1522631200478" duration="18515000" />
+      <workItem from="1522736303903" duration="7340000" />
+      <workItem from="1522803628723" duration="20059000" />
+      <workItem from="1523149472010" duration="15844000" />
+      <workItem from="1523239701683" duration="3545000" />
+      <workItem from="1523347139263" duration="5724000" />
+      <workItem from="1523409328404" duration="9489000" />
+      <workItem from="1523495888591" duration="36000" />
+      <workItem from="1523496619350" duration="797000" />
+      <workItem from="1523868693904" duration="180000" />
+      <workItem from="1524640029992" duration="3300000" />
+      <workItem from="1524704630543" duration="21095000" />
+      <workItem from="1524792324045" duration="1082000" />
+      <workItem from="1524881650862" duration="1014000" />
+      <workItem from="1525424619604" duration="875000" />
+      <workItem from="1525656467127" duration="4569000" />
+      <workItem from="1525742340656" duration="723000" />
+      <workItem from="1525766982075" duration="11000" />
+      <workItem from="1526027283074" duration="13991000" />
+      <workItem from="1526259947745" duration="116000" />
+      <workItem from="1526286326710" duration="4116000" />
+      <workItem from="1526348064431" duration="16126000" />
+      <workItem from="1526432831431" duration="5516000" />
+      <workItem from="1526438940443" duration="21348000" />
+      <workItem from="1526521043170" duration="22246000" />
+      <workItem from="1526605468370" duration="1244000" />
+      <workItem from="1526607593595" duration="3627000" />
+      <workItem from="1526613475060" duration="10648000" />
+      <workItem from="1526866113613" duration="24811000" />
+      <workItem from="1526951752973" duration="1454000" />
+      <workItem from="1527213999803" duration="8055000" />
+      <workItem from="1527470149952" duration="16824000" />
+      <workItem from="1527558429547" duration="15700000" />
+      <workItem from="1527641921668" duration="14094000" />
+      <workItem from="1527730321334" duration="16663000" />
+      <workItem from="1527814783014" duration="24419000" />
+      <workItem from="1528338556981" duration="819000" />
+      <workItem from="1528339446114" duration="3627000" />
+      <workItem from="1528350079376" duration="10249000" />
+      <workItem from="1528365099537" duration="632000" />
+      <workItem from="1528419428289" duration="3046000" />
+      <workItem from="1528424321444" duration="22326000" />
+      <workItem from="1528506391654" duration="278000" />
+      <workItem from="1528525691647" duration="4239000" />
+      <workItem from="1528594186826" duration="21868000" />
+      <workItem from="1528681746122" duration="16948000" />
+      <workItem from="1528767228345" duration="18652000" />
+      <workItem from="1528853352338" duration="20437000" />
+      <workItem from="1528941160799" duration="2957000" />
+      <workItem from="1528946044842" duration="24924000" />
+      <workItem from="1529025311659" duration="23367000" />
+      <workItem from="1529370497032" duration="14034000" />
+      <workItem from="1529457102516" duration="1848000" />
+      <workItem from="1529487000296" duration="432000" />
+      <workItem from="1529632010136" duration="14157000" />
+      <workItem from="1529653084768" duration="5708000" />
+      <workItem from="1529889986966" duration="5653000" />
+      <workItem from="1529911218491" duration="253000" />
+      <workItem from="1529985354601" duration="8103000" />
+      <workItem from="1530161858238" duration="4658000" />
+      <workItem from="1530676587072" duration="14905000" />
+      <workItem from="1530752961362" duration="19670000" />
+      <workItem from="1531111906487" duration="16612000" />
+      <workItem from="1531185248301" duration="37277000" />
+      <workItem from="1531270819500" duration="32748000" />
+      <workItem from="1531357708154" duration="25322000" />
+      <workItem from="1531444119560" duration="47720000" />
+      <workItem from="1531703424470" duration="18473000" />
+      <workItem from="1531726199218" duration="5724000" />
+      <workItem from="1531733974110" duration="8008000" />
+      <workItem from="1531789747178" duration="32999000" />
+      <workItem from="1531876702740" duration="26618000" />
+      <workItem from="1531963376689" duration="10597000" />
+      <workItem from="1531980554297" duration="11159000" />
+      <workItem from="1532049347613" duration="16420000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1001711000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32894737" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1603631" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="运行" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32976446" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="调试" order="7" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="找到" order="8" weight="0.32929516" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.16008772" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32976446" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="运行" order="10" />
+      <window_info anchor="bottom" id="找到" order="15" weight="0.32929516" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.16008772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1603631" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="调试" order="13" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认的" />
+    <option name="LAST_COMMIT_MESSAGE" value="默认的" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/activityLink/html/活动环节-作业-查看批阅.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/活动环节-作业-批阅作业.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/活动环节-课程学习-课程管理.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7512">
+          <caret line="313" lean-forward="true" selection-start-line="313" selection-end-line="313" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/city.data.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/course_studies_B.html" />
+    <entry file="file://$PROJECT_DIR$/css/h-studio.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="2583" column="14" selection-start-line="2583" selection-start-column="14" selection-end-line="2583" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inspection_setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/underside_discussion_board.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" selection-start-line="15" selection-start-column="4" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11263">
+          <caret line="1249" column="12" selection-start-line="1249" selection-start-column="12" selection-end-line="1249" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose_area.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose_item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/course_learning.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="130" column="27" selection-start-line="130" selection-start-column="27" selection-end-line="130" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/course_studies_A.html" />
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_bzzy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_courses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" selection-start-line="20" selection-start-column="4" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_fzxj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_gradingassig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_hdcg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_hddy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_kcxx.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_kcxx2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_kcxx_bj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1632">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_klgm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_pylist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1392">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_qjdr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_themarking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_tlq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="94" selection-start-line="94" selection-start-column="4" selection-end-line="99" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_tlq_ft.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_toupload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_toupload_all.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_upload_resource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_xgzy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_zy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_zzxj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="91" column="100" selection-start-line="91" selection-start-column="96" selection-end-line="91" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_2add2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_2or2hp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1389">
+          <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1470">
+          <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_students.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="521" column="20" selection-start-line="521" selection-start-column="20" selection-end-line="521" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_dplist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="129" column="118" selection-start-line="129" selection-start-column="118" selection-end-line="129" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/underside_detailPages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="189" column="10" lean-forward="true" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activityLink/html/underside_ztyt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="336" column="38" lean-forward="true" selection-start-line="336" selection-start-column="38" selection-end-line="336" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#select#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="87" selection-start-line="87" selection-end-line="87" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audit_member.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203">
+          <caret line="85" column="85" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delete_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="67" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="716" column="18" lean-forward="true" selection-start-line="716" selection-start-column="18" selection-end-line="716" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_activity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="224" column="72" lean-forward="true" selection-start-line="224" selection-start-column="72" selection-end-line="224" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

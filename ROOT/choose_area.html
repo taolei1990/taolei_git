@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>选择参与人员</title>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="y-fff">
+<!--<header class="mui-bar mui-bar-nav ">-->
+    <!--<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>-->
+
+    <!--<h1 class="mui-title">选择参与人员</h1>-->
+<!--</header>-->
+    <div class="mui-content">
+       <div class="y-lxrsos">
+           <div class="mui-input-row mui-search">
+           <input type="search" class="mui-input-clear" placeholder="收索">
+       </div>
+       </div>
+        <p class="y-lxrbt"><a>选择参与人员</a> > <span>区域用户</span> </p>
+<div class="y-y-lxrxzqx">
+        <div class="mui-input-row mui-checkbox mui-left">
+            <label>全选</label>
+
+            <input name="checkbox" class="y-quanx" value="Item 1" type="checkbox">
+        </div>
+</div>
+        <div class="y-lxrxzdx">
+    <ul class="y-lxrxzlist">
+    <li class="mui-input-row mui-checkbox mui-left">
+        <input name="checkbox1" value="2" type="checkbox">
+        <label>重庆（2人）</label>
+        <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+    </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="16" type="checkbox">
+            <label>重庆(16人)</label>
+            <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="2" type="checkbox" checked="checked">
+            <label>重庆(2人)</label>
+            <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+        <input name="checkbox1" value="21" type="checkbox">
+            <label>重庆(21人)</label>
+        <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+    </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="22" type="checkbox">
+            <label>重庆(22人)</label>
+            <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="2" type="checkbox">
+            <label>重庆(2人)</label>
+            <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="3" type="checkbox"  >
+            <label>重庆(3人)</label>
+            <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+        </li>
+        <li class="mui-input-row mui-checkbox mui-left">
+            <input name="checkbox1" value="5" type="checkbox" checked="checked"  >
+            <label>重庆(5人)</label>
+            <span class="y-lxrxj"><i class="iconfont">&#xe74c;</i>下级</span>
+        </li>
+    </ul>
+        </div>
+    </div>
+<div>
+    <nav class="mui-bar mui-bar-tab">
+    <div class="y-lxrbar">
+        <div class="y-lxr-xzrs">已选择：<span>651人</span> </div>
+        <div class="y-lxr-qereng"><span class="insertM">确定</span></div>
+    </div>
+    </nav>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    //打开区域用户
+    mui(".y-lxrxzlist").on('tap', '.y-lxrxj', function () {
+        mui.openWindow({
+            url:'choose_user.html',
+            id:''
+        });
+    })
+
+</script>
+<script>
+    //添加成员
+    var memberIds=getUrlParamValue("memberIds");
+    var orgIds=getUrlParamValue("orgIds");
+    mui(".y-lxr-qereng").on('tap', '.insertM', function () {
+        var he= fz();
+        if(he>0){
+            insert_tj();
+        }else{
+            mui.toast('请选择成员');
+        }
+    });
+    function insert_tj() {
+        var he= fz();
+        var btnArray = ['确认', '取消'];
+        mui.confirm('确认新增该成员？', '提示', btnArray, function(e) {
+            if (e.index == 0) {
+                post("/activity/member/add",{activityId:getUrlParamValue("activityId"),memberIds:memberIds,orgIds:orgIds}, function (res) {
+                    if (res.code == 200) {
+                        mui.toast('成功添加' + he + '人');
+                    }
+                });
+
+            } else {
+
+                mui.toast('你取消了添加');
+            }
+        });
+    }
+
+    var numArr = []; // 定义一个空数组
+    var txt = $("[name='checkbox1']:checked"); // 获取所选中的值
+    if(txt.length==0){
+        $('.y-lxr-xzrs span').text('0');//清空
+        $('.y-lxr-qereng').removeClass('active');
+    }else {
+        for (var i = 0; i < txt.length; i++) {
+            numArr.push(txt.eq(i).val()); // 将值添加到数组中
+        }
+        var he=eval(numArr.join('+'));//将值求和
+        $('.y-lxr-xzrs span').text(he+'人');
+        $('.y-lxr-qereng').addClass('active');
+    }
+
+    function fz( ) {
+        var numArr = []; // 定义一个空数组
+        var txt = $("[name='checkbox1']:checked"); // 获取所选中的值
+        for (var i = 0; i < txt.length; i++) {
+            numArr.push(txt.eq(i).val()); // 将值添加到数组中
+        }
+        var he=eval(numArr.join('+'));//将值求和
+        //console.info(numArr);
+        return he;//返回求和值
+    }
+
+    $(".y-quanx").click(function(){//全选
+        var allCheckNum = $("input[name='checkbox1']").length;
+        var checkedNum = $("input[name='checkbox1']:checked").length;
+        if (allCheckNum == checkedNum){
+            $("input[name='checkbox1']").prop("checked",false);
+            $('.y-lxr-xzrs span').text("0");
+            $('.y-lxr-qereng').removeClass('active');
+        } else {
+            $("input[name='checkbox1']").prop("checked",true);
+           var he= fz();
+            $('.y-lxr-xzrs span').text(he+'人');
+            $('.y-lxr-qereng').addClass('active');
+        }
+    });
+    $("input[name='checkbox1']").click(function(){//选中
+        var allCheckNum = $("input[name='checkbox1']").length;
+        var checkedNum = $("input[name='checkbox1']:checked").length;
+        if (allCheckNum == checkedNum){
+            $(".y-quanx").prop("checked",true);
+        } else {
+            $(".y-quanx").prop("checked",false);
+        }
+        var he= fz();
+        $('.y-lxr-xzrs span').text(he+'人');
+        $('.y-lxr-qereng').addClass('active');
+    });
+</script>
+</body>
+</html>

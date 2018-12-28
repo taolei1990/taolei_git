@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>发文章</title>
+    <meta itemprop="name" content="点击这点发表一篇文章吧！">
+    <meta itemprop="description" content="在这里阅读有关于人生的感悟日志文章，人生感悟短语和语句，品味经典感悟人生的文章故事，我的人生我的感触，倾听心灵的呐喊，记录生活中使我们感悟的瞬间。">
+    <meta itemprop="image" content="http://html.yunjy.com.cn/img/logo-1.jpg">
+    <link href="css/webuploader.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet"type="text/css">
+    <link href="js/need/layer.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="tl-contentarea">
+    <!--文字-->
+    <div class="tl-contentarea-text">
+        <!--封面-->
+        <div class="tl-text-img">
+        <div class="upload_container">
+            <!--用来存放item-->
+            <div id="fileList-0" class="uploader-list"></div>
+                <div id="filePicker-0" class="filePicker">
+                        <span class="y-xzmfan">
+                            <p>添加封面</p>
+                        </span>
+                </div>
+        </div>
+            <div class="tl-headline"><p id="tlheadline" class="tl-subeditor"><i class="iconfont">&#xe6b9;</i>点击设置标题</p></div>
+        </div>
+    </div>
+        <ul class="tl-craphic-list">
+            <li><div class="tl-craphic-addb"><i class="iconfont">&#xe61f;</i></div></li>
+            <li >
+            <div class="tl-craphic-li">
+                <div class="upload_container tl-craphic-img">
+                    <div class="uploader-list"></div>
+                    <div class="filePicker">
+                        <span class="tl-xzmfan"></span>
+                        </div>
+                    </div>
+                <div class="tl-craphic-text"><p class="tl-subeditor tl-textbox"><span class="placeholder">编辑文本..</span></p></div>
+                </div>
+            <div class="tl-arrows tl-arrows-up"><i class="iconfont">&#xe69f;</i></div>
+            <div class="tl-arrows tl-arrows-do"><i class="iconfont">&#xe61b;</i></div>
+            <div class="tl-remove"><i class="iconfont">&#xe674;</i></div>
+            <div class="tl-craphic-addb"><i class="iconfont">&#xe61f;</i></div>
+            </li>
+        </ul>
+</div>
+<div class="tl-base">
+    <!--<a class="tl-draft"><i class="iconfont">&#xe65b;</i><br/>草稿</a>-->
+    <a class="tl-preview"><i class="iconfont">&#xe687;</i><br/>预览</a>
+    <a class="tl-submit">确认</a>
+</div>
+<div class="tl-popup">
+    <div class="tl-textarea">
+        <div class="tl-handle">
+            <a class="tl-handle-qx">取消</a>
+            <a class="tl-handle-wc">完成</a>
+        </div>
+        <textarea id="username" maxlength="5000" onKeyUp='keypress()' onblur='keypress()' placeholder="点击添加文字" ></textarea>
+        <p class="tl-precision"><span class="tl-surplus">5000</span><!--5000--></p>
+    </div>
+</div>
+<div class="tl-uploadstatus">
+    <span class="tl-description">图片上传中...</span>
+</div>
+
+<div class="the-preview-window">
+    <div class="tl-out-box">
+        <div class="tl-new-head">标题</div>
+        <div class="tl-author">
+                <img class="tl-author-img" src="img/logo.png" />
+                <span class="tl-author-name">游客</span>
+                <span class="tl-author-time">2018.08.17</span></div>
+        <div class="tl-indetail"></div>
+    </div>
+    <div class="tl-base">
+        <!--<a class="tl-draft"><i class="iconfont">&#xe65b;</i><br/>草稿</a>-->
+        <a class="tl-amend"><i class="iconfont">&#xe673;</i><br/>修改</a>
+        <a class="tl-submit">确认</a>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/webuploader.min.js"></script>
+<script src="js/layer.js"></script>
+<script src="js/main.js"></script>
+<script>
+    $(document).ready(function(){
+    // userAgent()
+    // 初始化内容
+    initImgUploader();
+    //编辑标题
+    $('.tl-headline').on('click','p',function () {
+        $('.tl-subeditor').removeClass('tl-system')
+        $(this).addClass('tl-system');
+        $('.tl-popup').show();
+        $('#username').attr({placeholder:"添加标题..",maxlength:"30"}).focus();
+        keypress()
+    });
+    //编辑文本
+    $('.tl-craphic-list').on('click','.tl-subeditor',function () {
+        $(this).find('.placeholder').remove();
+        $('.tl-subeditor').removeClass('tl-system')
+        $(this).addClass('tl-system');
+        $('.tl-popup').show();
+        $('#username').val($('.tl-system').text()).attr({placeholder:"点击添加文字",maxlength:"5000"}).focus();
+        keypress()
+    });
+    //取消
+    $('.tl-handle').on('click','.tl-handle-qx',function () {
+        layer.open({
+            content: '你的内容将不被保存？'
+            ,btn: ['好的', '我在想想']
+            ,yes: function(index){
+                $('.tl-popup').hide();
+                layer.close(index);
+            }
+        });
+
+    });
+    //文字提交
+    $('.tl-handle').on('click','.tl-handle-wc.active',function () {
+        $('.tl-system').html($('#username').val());
+        $('.tl-popup').hide();
+        $('#username').val('');
+    });
+    //删除段落
+    $('.tl-craphic-list').on('click','.tl-remove',function () {
+        var onthis=$(this);
+        layer.open({
+            content: '您确定要删除这条内容吗？'
+            ,btn: ['删除', '不要']
+            ,yes: function(index){
+                onthis.parent().addClass('fadeOutLeftBig');
+                setTimeout(function(){
+                    $('.tl-craphic-list').find('.fadeOutLeftBig').remove();
+                }, 250);
+                initImgUploader();
+                layer.close(index);
+            }
+        });
+
+    });
+    //添加段落
+    $('.tl-craphic-list').on('click','.tl-craphic-addb',function () {
+        var li='<li >' +
+            '<div class="tl-craphic-li">' +
+            '<div class="upload_container tl-craphic-img">' +
+            '<div class="uploader-list"></div>' +
+            '<div class="filePicker">' +
+            '<span class="tl-xzmfan"></span>' +
+            '</div>' +
+            '</div>' +
+            '<div class="tl-craphic-text"><p class="tl-subeditor tl-textbox"><span class="placeholder">编辑文本..</span></p></div>' +
+            '</div>' +
+            '<div class="tl-arrows tl-arrows-up"><i class="iconfont">&#xe69f;</i></div>' +
+            '<div class="tl-arrows tl-arrows-do"><i class="iconfont">&#xe61b;</i></div>' +
+            '<div class="tl-remove"><i class="iconfont">&#xe674;</i></div>' +
+            '<div class="tl-craphic-addb"><i class="iconfont">&#xe61f;</i></div>' +
+            '</li>'
+           $(this).parent().after(li);
+           $(this).parent().next().addClass('animated bounceIn');
+          initImgUploader();
+           setTimeout(function(){
+           $('.tl-craphic-list').find('.animated').removeClass('bounceIn');
+        }, 500);
+    });
+    //上移动
+    $('.tl-craphic-list').on('click','.tl-arrows-up',function () {
+       var childnode=$(this).parent().html();
+        $(this).parent().prev().before("<li>"+childnode+"</li>");
+        $(this).parent().prev().addClass('animated bounceIn');
+        $(this).parent().remove();
+        initImgUploader();
+        setTimeout(function(){
+            $('.tl-craphic-list').find('.animated').removeClass('bounceIn');
+        }, 500);
+    });
+    //下移动
+    $('.tl-craphic-list').on('click','.tl-arrows-do',function () {
+        var childnode=$(this).parent().html();
+        $(this).parent().next().after("<li>"+childnode+"</li>");
+        $(this).parent().next().addClass('animated bounceIn');
+        $(this).parent().remove();
+        initImgUploader();
+        setTimeout(function(){
+            $('.tl-craphic-list').find('.animated').removeClass('bounceIn');
+        }, 500);
+    });
+    //发表文章
+    $('.tl-base').on('click','.tl-submit',function () {
+     if(judge(function (tlheadline,tlcover) {
+         if(tlContent()!=false){
+         submissions(tlheadline,tlcover)}
+     })){}
+    });
+    function judge(cao) {
+        var tlheadline=$('#tlheadline').text();//标题
+        var tlcover=$('#fileList-0').find('img').attr('src');//封面图片
+        var details=$('.tl-craphic-list').find('.tl-craphic-li');
+        if($('.tl-subeditor').find('i').hasClass('iconfont')){
+            layer.open({
+                content: '请填写标题'
+                ,skin: 'msg'
+                ,time: 1 //1秒后自动关闭
+            });
+        }else if(isEmojiCharacter(tlheadline)==true){
+            layer.open({
+                content: '标题中暂不支持表情'
+                ,skin: 'msg'
+                ,time: 1 //1秒后自动关闭
+            });
+        }
+        else if(tlcover==''||tlcover==null||tlcover==undefined){
+            layer.open({
+                content: '请设置封面图片'
+                ,skin: 'msg'
+                ,time: 1 //1秒后自动关闭
+            });
+        }else if(details.length==0){
+            layer.open({
+                content: '至少添加一段内容'
+                ,skin: 'msg'
+                ,time: 1 //1秒后自动关闭
+            });
+        } else {
+
+            cao(tlheadline,tlcover);
+            return true;
+        }
+        return false;
+    }
+    function tlContent() {
+        var mrimg=$(".tl-craphic-list").find("img");
+        var mrtext=$(".tl-craphic-list").find(".tl-system");
+        $(".tl-textbox").find(".placeholder").remove();
+        if (mrimg.length == 0 && mrtext.length == 0 && $('.tl-textbox').text().length==0) {
+            layer.open({
+                content: '内容为空',
+                skin: 'msg',
+                time: 1 //1秒后自动关闭
+            });
+        }else{
+             $(".placeholder").parent('.tl-textbox').remove();
+         var content ='';
+         $(".tl-craphic-list").find(".tl-craphic-li").each(function () {
+             var myimg = $(this).find("img");
+             var mytext = $(this).find(".tl-textbox");
+             if (mytext.length != 0) {
+                 content += mytext[0].outerHTML;
+             }
+                if (myimg.length != 0) {
+                 content += myimg[0].outerHTML;
+               }
+         });
+
+         return content;}
+         return false;
+    }
+    function submissions(tlheadline,tlcover){
+            var userId=$.getUrlParam("userId");
+            var token=$.getUrlParam("token");
+           // var devicecode=deviceCode();
+            var devicecode="869720037195917";
+            var url="/api/post/teachArticle?userId="+userId+"&token="+token+"&deviceCode="+devicecode;
+            var fcfggvv=tlContent();
+            var dataJson = {"articleCategoryId":"",
+                "articleType":"",
+                "content":fcfggvv,
+                "contentSummary":fcfggvv,
+                "fileJson":"[]",
+                "id":"",
+                "title":tlheadline,
+                "cover":tlcover
+                           };
+        $.ajax({
+            url:url,
+            type:'post',　　　　　　 //请求方式 还可以是get type不可写成Type 不让会导致数据发送不过去,使用post无法接受
+            contentType:'application/json;charset=UTF-8',
+            dataType:'json',　　　　//返回格式 ,还可以是json
+            async:false,　　 　　  //同步异步 ,一般为异步flase
+            data:JSON.stringify(dataJson),　　 //参数值　　 //参数值
+            beforesend:function(){　//　请求前的处理
+
+            },
+            success:function(success){　　//请求成功时的处理
+                layer.open({
+                    content: '文章已发布 去查看文章',
+                    btn: ['查看', '再写一篇'],
+                    yes: function(index){
+                        var rn=tlContent();
+                        $('.tl-indetail').html(rn);
+                        $('.the-preview-window').show();
+                        $('.tl-indetail').find('.tl-subeditor').removeClass('tl-subeditor');
+                        $('.tl-indetail').find('.tl-textbox').removeClass('tl-textbox');
+                        layer.close(index);
+                    },
+                    no: function(index){
+                        location.reload();
+                        layer.close(index)
+                    }
+                });
+            },
+            complete:function(){　　//请求完成时的处理
+
+            },
+            error:function(){　　　　//请求出错误时的处理
+                layer.open({
+                    content: '网络延迟 稍后再试...',
+                    skin: 'msg',
+                    time: 1 //1秒后自动关闭
+                });
+            }
+        });
+        }
+        if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+            document.addEventListener('WeixinJSBridgeReady', appletOfProject, false);
+            //不是微信
+            var ua = navigator.userAgent.toLowerCase();
+            if (/iphone|ipad|ipod/.test(ua)) {
+                //是苹果
+                // layer.open({
+                //     content: "来自苹果手机",
+                //     btn: '收到了'
+                // });
+            } else {
+                //是安卓
+                // layer.open({
+                //     content: "来自安卓",
+                //     btn: '收到了'
+                // });
+               // deviceCode();
+            }
+        } else {
+            //微信
+            appletOfProject()
+        }
+        function appletOfProject() {
+            if (window.__wxjs_environment === 'miniprogram') {
+                //微信小程序环境
+
+            } else {
+                //微信环境
+                // layer.open({
+                //     content: "来自微信环境",
+                //     btn: '收到了'
+                // });
+            }
+        }
+    //预览
+        $('.tl-base').on('click','.tl-preview',function () {
+            if(judge(function () {
+                if(tlContent()!=false){
+                    var rn=tlContent();
+                    $('.tl-indetail').html(rn);
+                    $('.the-preview-window').show();
+                    $('.tl-new-head').html($('#tlheadline').text())
+                    $('.tl-indetail').find('.tl-subeditor').removeClass('tl-subeditor');
+                    $('.tl-indetail').find('.tl-textbox').removeClass('tl-textbox');
+                    $(".tl-indetail").find('img').wrap("<p class='tl-indetail-img'></p>");
+                }
+            })){}
+         $('.tl-author-time').html(ftile())
+        })
+       //修改
+        $('.tl-base').on('click','.tl-amend',function () {
+            $('.tl-indetail').html('');
+            $('.the-preview-window').hide();
+        })
+        //保存草稿
+        $('.tl-base').on('click','.tl-draft',function () {
+            if(judge(function () {
+                if(tlContent()!=false){
+                    $('.tl-draft').find("i").html("&#xe662;").addClass('tl-redness')
+                    layer.open({
+                        content: '成功保存到草稿箱',
+                        skin: 'msg',
+                        time: 1 //1秒后自动关闭
+                    });
+                }
+            })){}
+        })
+        //安卓获取设备码
+        function deviceCode() {
+            var deviceCode= window.android.getDeviceCode();
+            return deviceCode;
+        }
+    });
+
+</script>
+<script>
+</script>
+</body>
+</html>

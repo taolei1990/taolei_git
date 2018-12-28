@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>2+2互评</title>
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	<link href="../css/w-custom.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top='0' data-offset='150' data-duration='16' data-scrollby=".mui-scroll-wrapper">
+	<a class="mui-action-back" style="padding: 10px 0;" href="#get-back"><i class="iconfont w-back">&#xe652;</i></a>
+	<h1 class="mui-title">2+2互评</h1>
+</header>
+
+<div class="mui-content ">
+	<div class="h-moderator">
+		<img src="../img/3c28af542f2d49f.jpg" />
+		<div class="h-momz">
+			<a>师源网</a>
+			<em>超级管理员</em>
+			<p>1小时前</p>
+		</div>
+		<span>楼主</span>
+	</div>
+	<div class="h-details">
+		<h1>测试后果反思</h1>
+		<p>
+			自7月份以来，小程序几乎以每周1-2次的 速度进行迭代，包括与更多公众号开放关联、不断降低开发 门槛、上线“社交立减金”、提升群分享等好友传播体验等。
+		</p>
+		<p>仅从“商品分享”这一功能，即可看出下方小程序页面的分 享，在商品信息、UI 展现等方面明显优于上方的 H5页面</p>
+		<div class="h-accessory">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="../img/3c28af542f2d49f.jpg">
+						<div class="mui-media-body">
+							夏天挫冰吃瓜，冬天围炉取暖.jpg
+							<p class='mui-ellipsis'>56kb</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="../img/3c28af542f2d49f.jpg">
+						<div class="mui-media-body">
+							夏天挫冰吃瓜，冬天围炉取暖.jpg
+							<p class='mui-ellipsis'>56kb</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="../img/3c28af542f2d49f.jpg">
+						<div class="mui-media-body">
+							夏天挫冰吃瓜，冬天围炉取暖.jpg
+							<p class='mui-ellipsis'>56kb</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="mui-row h-aiipageview">
+			<div class="h-tags">
+				<i class="iconfont h-tags-a">&#xe6bb;</i>
+				<!--h-tags-ab为点赞后的类名-->
+				<i class="iconfont h-tags-b">&#xe6bc;</i>
+			</div>
+			<div class="mui-col-sm-4 mui-col-xs-4">
+				<!--  <i class="iconfont">&#xe6b1;</i> -->
+				<span class="mui-badge mui-badge-red">赞:199</span>
+			</div>
+			<div class="mui-col-sm-4 mui-col-xs-4">
+				<!-- <i class="iconfont">&#xe67d;</i>-->
+				<span class="mui-badge mui-badge-warning">浏览量:3</span>
+			</div>
+			<div class="mui-col-sm-4 mui-col-xs-4">
+				<!-- <i class="iconfont">&#xe6bc;</i>-->
+				<span class="mui-badge mui-badge-success">转发:123</span>
+			</div>
+
+		</div>
+	</div>
+	<div class="h-discuss">
+		<h1>2+2互评(1)</h1>
+		<form class="mui-input-group">
+			<p class="w-tomorrow"><i class="iconfont">&#xe6df;</i>2点值得学习之处</p>
+			<div class="mui-input-row">
+				<label>第1点</label>
+				<textarea placeholder="评价一下吧"></textarea>
+			</div>
+			<div class="mui-input-row">
+				<label>第2点</label>
+				<textarea placeholder="评价一下吧"></textarea>
+			</div>
+			<p class="w-tomorrow"><i class="iconfont">&#xe6df;</i>2点修改建议</p>
+			<div class="mui-input-row">
+				<label>第1点</label>
+				<textarea placeholder="评价一下吧"></textarea>
+			</div>
+			<div class="mui-input-row">
+				<label>第2点</label>
+				<textarea placeholder="评价一下吧"></textarea>
+			</div>
+			<div class="mui-button-row">
+				<button type="button" class="mui-btn mui-btn-primary" >提交</button>
+			</div>
+		</form>
+	</div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script>
+    //点赞..
+    var reg = /\d+/g;
+    var str = $(".mui-badge-red").text();
+    var ms = str.match(reg)
+    $(".h-tags-a").click(function() {
+        $(this).toggleClass("hmyfirst");
+        $(this).toggleClass("h-tags-ab");
+        tes=parseInt(ms.join());
+
+        if ($ (this).hasClass("h-tags-ab"))
+        {
+            var test=tes+1;
+            $(".mui-badge-red").text("赞:"+test);
+        }
+        else
+        {   var tesf=tes;
+            $(".mui-badge-red").text("赞:"+tesf);
+        }
+    });
+
+</script>
+</body>
+

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title class="title_val"></title>
+    <link href="../css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/w-custom.css" rel="stylesheet" type="text/css">
+    <link href="../css/mui.picker.min.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/mui.picker.min.js"></script>
+    <script src="../../js/common.js"></script>
+</head>
+<body class="mui-ios mui-ios-9 mui-ios-9-1">
+<input type="hidden" id="pageIndex" value="1">
+
+<!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top="0" data-offset="150"-->
+<!--data-duration="16" data-scrollby=".mui-scroll-wrapper">-->
+<!--<a class=" mui-icon mui-icon-arrowleft mui-pull-left shut-out"></a>-->
+<!--<h1 id="showUserPicker" class="mui-title"><span id="userResult" class="w-act-title">主题研讨</span><i class="iconfont "></i>-->
+<!--</h1>-->
+<!--</header>-->
+
+<input type="hidden" id="sType" value="resource">
+<input type="hidden" id="mType" value="other">
+<!--新增描述-->
+<div class="w-describe">
+    <h5 class="title_val"><span id="describe_span" style="display: none">修改要求</span></h5>
+    <p class="w-description"></p>
+</div>
+<!--新增描述-->
+<div class="w-ineedall mui-row">
+    <div class="mui-col-sm-6 mui-col-xs-6">
+        <div class="w-came">
+            <select id="resourceType" name="cars">
+                <option value="2">其他人的资源</option>
+                <option value="1">我的资源</option>
+            </select>
+            <select id="resourceType-1" style="display: none" name="cars">
+                <option value="1">我点评的</option>
+                <option value="2">其他人点评</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mui-col-sm-6 mui-col-xs-6">
+        <div class="mui-content-padded w-sort">
+            <ul class="mui-pagination mui-pagination-sm">
+                <li>
+                    <a class="wm-sort wm-active" show="my">
+                        上传类
+                    </a>
+                </li>
+                <li>
+                    <a class="wm-sort" show="other">
+                        点评类
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="w-performance" id="topic_content_list">
+    <ul class="mui-table-view y-topicsDiscuList">
+        <!--<li class="mui-table-view-cell mui-media">
+            <a  class="">
+                <img class="mui-media-object mui-pull-left" src="http://upload2.yunjy.com.cn/avatar/8500/6724.jpg">
+                <div class="mui-media-body">名称
+                    <p class="mui-ellipsis">上传人</p>
+                    <p>2018-03-22
+                        <em><i class="iconfont">&#xe86f;</i>566</em>
+                        <em><i class="iconfont">&#xe67d;</i>655</em>
+                    </p>
+                </div>
+                <span class="confirmbtn"> <i class="iconfont ">&#xe656;</i></span>
+            </a>
+        </li>-->
+
+    </ul>
+</div>
+
+<!--新增上传-->
+
+<div class="w-upload " id="w-upload" style="display: none;">
+    <a class="w-btng w-sc">我要上传</a>
+    <a href="#bottomPopover" class="w-btng w-dp">我要点评</a>
+</div>
+<!--新增上传结束-->
+
+<!--新增编辑描述-->
+<div class="w-desc-mask">
+
+</div>
+<!--新增编辑描述结束-->
+<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+    <!-- 可选择菜单 -->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell y-modification">
+            <a href="#">修改</a>
+        </li>
+        <li class="mui-table-view-cell y-zyremove">
+            <a href="#">删除</a>
+        </li>
+    </ul>
+    <!-- 取消菜单 -->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#sheet1"><b>取消</b></a>
+        </li>
+    </ul>
+</div>
+<div id="sheet2" class="mui-popover mui-popover-bottom mui-popover-action ">
+    <!-- 可选择菜单 -->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell y-toreview">
+            <a href="#">去点评</a>
+        </li>
+    </ul>
+    <!-- 取消菜单 -->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#sheet2"><b>取消</b></a>
+        </li>
+    </ul>
+</div>
+<!--点评选项-->
+<div id="bottomPopover" class="mui-popover mui-popover-bottom ys-popover">
+    <div class="mui-popover-arrow"></div>
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell y-comment"><a><i class="iconfont">&#xe940;</i>我要点评</a></li>
+                <li class="mui-table-view-cell y-tudentscomment"><a><i class="iconfont">&#xe69f;</i>选择资源给学员点评</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script>
+    //编辑描述
+    var tacheType = getUrlParamValue("tacheType");
+    var activityId = getUrlParamValue("activityId");
+    //获取描述
+    $(function () {
+        $(".title_val").prepend(getUrlParamValue("tacheName"));
+        get("/activity/describe?tacheType=" + getUrlParamValue("tacheType") + "&activityId=" + getUrlParamValue("activityId"), function (res) {
+            //console.log('测试');
+            if (res.code == 200) {
+                $('.w-description').html('');
+                var data = res.data;
+                if (Object_filter(data)) {
+                    $.each(data, function (i, v) {
+                        // addRow(data[i]);
+                        $('.w-description').html(data.describe);
+                    });
+                }
+            }
+
+
+
+
+            $(".w-describe-text a").click(function () {
+
+                $(".w-description").text(textval);
+                $(".w-desc-mask").hide();
+                $(".w-describe-text").hide();
+            });
+
+        });
+        getUserPower(getUrlParamValue("activityId"), function (role) {
+            if (role == 1 || role == 2) {
+                $("#w-upload").show();
+            }
+        });
+    });
+
+    function commit() {
+        /*alert($(".w-describe-text textarea").val());*/
+        post("/activity/describeSave", {activityId: activityId, tacheType: tacheType, describe: $(".w-describe-text textarea").val()}, function (res) {
+            if (res.code == 200) {
+                mui.toast('修改成功');
+            } else {
+                mui.toast('修改失败');
+            }
+        });
+    }
+
+    $(function () {
+        //初始加载
+        getThemeDiscussList(1, 2);
+        //资源选择时
+        $("#resourceType").change(function () {
+            getThemeDiscussList(1, $(this).val());
+        });
+        //点评选择时
+        $("#resourceType-1").change(function () {
+            getThemeDiscussList(2, $(this).val());
+        });
+    });
+
+    function getThemeDiscussList(items, type) {
+
+        get("/activity/themeDiscuss?items=" + items + "&type=" + type + "&tacheType=" + tacheType + "&activityId=" + activityId, function (res) {
+            if (res.code == 200) {
+                var data = res.data.discussList;
+                var li = '';
+                if (Object_filter(data)) {
+                    for (var i = 0; i < data.length; i++) {
+                        var rowData = data[i];
+                        if (items == 1) {
+                            // 资源
+                            li += '<li class="mui-table-view-cell mui-media"><a  class="">' +
+                                '<img class="mui-media-object mui-pull-left" src=' + rowData.headimg + '>\n' +
+                                '<div class="mui-media-body yopicsDiscuList" data-id="' + rowData.id + '">' + rowData.noteTitle + ' ' +
+                                '<p class="y-sczname">' + rowData.name + '</p>' +
+                                '<p>' + rowData.createDate + ' ' +
+                                '<em><i class="iconfont">&#xe86f;</i>' + rowData.commentNum + '</em>' +
+                                '<em><i class="iconfont">&#xe67d;</i>' + rowData.browseQuantity + '</em>' +
+                                '</p>' +
+                                '</div>' +
+                                '<span class="confirmbtn" data-id="' + rowData.id + '" id="resourseId"> <i class="iconfont ">&#xe656;</i></span>' +
+                                '</a></li>';
+                        } else {
+                            // 点评
+                            li += "<li class='mui-table-view-cell mui-media'><a>" +
+                                "<img class='mui-media-object mui-pull-left' src= ' " + rowData.headimg + " '> " +
+                                "<div class='mui-media-body yommentOnClass' data-id='" + rowData.id + "'>" + rowData.noteTitle + " " +
+                                "<p class='y-sczname'>" + rowData.name + " " +
+                                "<em class='w-dpe'>点评人:" + rowData.remarkMan + "</em> </p>" +
+                                "<p>" + rowData.createDate + " " +
+                                "<em><i class='iconfont'>&#xe86f;</i> " + rowData.commentNum + " </em>" +
+                                "<em><i class='iconfont'>&#xe67d;</i> " + rowData.browseQuantity + " </em>" +
+                                "</p>" +
+                                "</div>" +
+                                // "<span class='confirmbtn-1' data-id='" + rowData.id + "'> <i class='iconfont '>&#xe656;</i></span>" +
+                                "</a></li>";
+                        }
+                    }
+                }
+                $(".y-topicsDiscuList").empty();
+                $(".y-topicsDiscuList").append(li);
+            }
+        });
+
+    }
+</script>
+<!--新增编辑描述结束-->
+<script>
+    //选项卡切换对应上传评论按钮
+    $(".wm-sort").on("tap", function () {
+        $(".wm-sort").removeClass("wm-active");
+        $(this).addClass("wm-active");
+        var inx = $(this).parent().index();
+        $(".w-upload .w-btng").hide();
+        $(".w-upload .w-btng").eq(inx).show();
+        $("select[name=cars]").hide();
+        $("select[name=cars]").eq(inx).show();
+        if (inx == 1) {//点评
+            $("#topic_content_list .y-topicsDiscuList").html('');
+            getThemeDiscussList(2, $("#resourceType-1").val());
+        } else {
+            getThemeDiscussList(1, $("#resourceType").val());
+        }
+    });
+
+
+</script>
+<!--新增编辑描述结束-->
+<script>
+    $(function () {
+        $(".w-describe span").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+            // $(".w-describe-text").show();
+            // $(".w-desc-mask").show();
+            $.ajax({
+                type: 'GET',
+                url: "underside_describe.html?activityId=" + getUrlParamValue("activityId") + "&tacheType=" + getUrlParamValue("tacheType"),
+                success: function (data) {
+                    $(".w-desc-mask").html(data);
+                    $(".w-desc-mask").show();
+                    $(".w-describe-text").show();
+                    mui('.mui-switch')['switch']()
+
+                }
+            });
+
+        });
+        $(".w-describe-text").click(function (event) {
+            var e = window.event || event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        });
+
+        addDescribeButton(getUrlParamValue("activityId"));
+    })
+
+</script>
+<script>
+
+
+
+</script>
+<script>
+    //进入资源详情页
+    mui('.mui-table-view').on('tap', '.yopicsDiscuList', function () {
+        mui.openWindow({
+            url: '../../underside_detailPages.html?id=' + $(this).attr("data-id") + "&activityId=" + activityId + "&tacheType=" + tacheType,
+            id: ''
+        });
+    });
+    //我要上传
+    mui('.w-upload').on('tap', '.w-sc', function () {
+        mui.openWindow({
+            url: 'underside_upload_resource.html?activityId=' + activityId + "&tacheType=" + tacheType,//
+            id: ''
+        });
+    });
+
+    //进入点评详情页
+    mui('.mui-table-view').on('tap', '.yommentOnClass', function () {
+        mui.openWindow({
+            url: '../../underside_detailPages.html?id=' + $(this).attr("data-id") + "&activityId=" + activityId + "&tacheType=" + tacheType,
+            id: ''
+        });
+    });
+    //我要点评
+    mui('.mui-table-view').on('tap', '.y-comment', function () {
+        mui.openWindow({
+            url: 'underside_dplist.html?activityId=' + activityId + "&tacheType=" + tacheType,//
+            id: ''
+        });
+    });
+    //选择资源给学员点评
+    mui('.mui-table-view').on('tap', '.y-tudentscomment', function () {
+        mui.openWindow({
+            url: 'underside_students.html?activityId=' + activityId + "&tacheType=" + tacheType,
+            id: ''
+        });
+    });
+
+</script>
+
+<script>
+    //资源修改-删除-取消操作
+    $(".mui-table-view").on('tap', '.confirmbtn', function () {
+        var resourceId = $(this).attr("data-id");
+        mui('#sheet1').popover('toggle');
+        //修改
+        mui('.mui-table-view').on('tap', '.y-modification', function () {
+            mui('#sheet1').popover('toggle');
+            mui.openWindow({
+                url: 'underside_upload_resource.html?activityId=' + activityId + "&tacheType=" + tacheType + "&resourceId=" + resourceId,//
+                id: ''
+            });
+        });
+        //删除
+        mui('.mui-table-view').on('tap', '.y-zyremove', function () {
+            mui('#sheet1').popover('toggle');
+            var btnArray = ['取消', '删除'];
+            mui.confirm('你将要删除资源？', '提示', btnArray, function (e) {
+                if (e.index == 1) {
+                    post("/activity/discussion/delete", {activityId: activityId, id: resourceId}, function (res) {
+                        if (res.code == 200) {
+                            mui.confirm('删除成功', '提示', ['确认'], function (e) {
+                                window.location.reload();
+                            })
+
+                        } else {
+                            mui.toast(res.message);
+                        }
+                    });
+                } else {
+                    //选择了取消
+                }
+            })
+
+
+            /*  post("/activity/discussion/delete", {activityId: activityId, id: id}, function (res) {
+                  if (res.code == 200) {
+                      mui('#sheet1').popover('toggle');
+                      mui.toast('点击了删除', {duration: 'long', type: 'div'});
+                      window.location.reload();
+                  } else {
+                      mui.toast(res.message);
+                  }
+              });*/
+
+        });
+    });
+    //点评-取消 操作
+    $(".mui-table-view").on('tap', '.confirmbtn-1', function () {
+        mui('#sheet2').popover('toggle');
+        //去点评
+        mui('.mui-table-view').on('tap', '.y-toreview', function () {
+            mui('#sheet1').popover('toggle');
+            mui.openWindow({
+                url: '../../underside_detailPages.html',//
+                id: ''
+            });
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>2+2互评</title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/w-custom.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!--<header class="mui-bar mui-bar-nav mui-bar-transparent w-subject-color" data-top='0' data-offset='150' data-duration='16' data-scrollby=".mui-scroll-wrapper">-->
+    <!--<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>-->
+    <!--<h1 class="mui-title">2+2互评</h1>-->
+<!--</header>-->
+
+<div class="mui-content ">
+    <div class="h-moderator">
+        <img id="headimg" src="#"/>
+        <div class="h-momz">
+            <a id="name"></a>
+            <em id="userRole"></em>
+            <p id="commentTime"></p>
+        </div>
+        <span>楼主</span>
+    </div>
+    <div class="h-details">
+        <h1 id="title"></h1>
+        <p id="content"></p>
+
+    </div>
+    <div class="h-discuss">
+        <h1>2+2互评(1)</h1>
+        <form class="mui-input-group">
+            <p class="w-tomorrow"><i class="iconfont">&#xe6df;</i>2点值得学习之处</p>
+            <div class="mui-input-row">
+                <label>第1点</label>
+                <textarea placeholder="评价一下吧" id="one"></textarea>
+            </div>
+            <div class="mui-input-row">
+                <label>第2点</label>
+                <textarea placeholder="评价一下吧" id="two"></textarea>
+            </div>
+            <p class="w-tomorrow"><i class="iconfont">&#xe6df;</i>2点修改建议</p>
+            <div class="mui-input-row">
+                <label>第1点</label>
+                <textarea placeholder="评价一下吧" id="three"></textarea>
+            </div>
+            <div class="mui-input-row">
+                <label>第2点</label>
+                <textarea placeholder="评价一下吧" id="four"></textarea>
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    var id = "";
+    //获取描述
+    $(function () {
+        get("/activity/peerReading/detail?tacheType=" + getUrlParamValue("tacheType") + "&activityId=" + getUrlParamValue("activityId") + "&id=" + getUrlParamValue("id") + "&twoType=" + getUrlParamValue("twoType"), function (res) {
+            //console.log('测试');
+            if (res.code == 200) {
+                var data = res.data;
+                id = data.id;
+                $("#name").html(data.name);
+                $("#userRole").html(data.userRole);
+                $("#headimg").attr("src", data.headimg);
+                $("#commentTime").html(data.commentTime);
+                $("#title").html(data.title);
+                $("#content").html(data.content);
+                var commentContent = data.commentContent;
+                if (Object_filter(commentContent)) {
+                    $("#one").val(commentContent.split("#")[0]);
+                    $("#two").val(commentContent.split("#")[1]);
+                    $("#three").val(commentContent.split("#")[2]);
+                    $("#four").val(commentContent.split("#")[3]);
+                }
+            }
+        })
+    })
+    $(".mui-btn-primary").click(function () {
+        var data = {
+            activityId: getUrlParamValue("activityId"),
+            tacheType: getUrlParamValue("tacheType"),
+            orginId: getUrlParamValue("id"),
+            content: $("#one").val() + "#" + $("#two").val() + "#" + $("#three").val() + "#" + $("#four").val()
+        };
+        post("/activity/peerReading/submit", data, function (res) {
+            if(res.code==200){
+                mui.toast("提交成功");
+            }else{
+                mui.toast(res.message);
+            }
+            console.log(res);
+        })
+    })
+</script>
+<script>
+    //点赞..
+    var reg = /\d+/g;
+    var str = $(".mui-badge-red").text();
+    var ms = str.match(reg)
+    $(".h-tags-a").click(function () {
+        $(this).toggleClass("hmyfirst");
+        $(this).toggleClass("h-tags-ab");
+        tes = parseInt(ms.join());
+
+        if ($(this).hasClass("h-tags-ab")) {
+            var test = tes + 1;
+            $(".mui-badge-red").text("赞:" + test);
+        }
+        else {
+            var tesf = tes;
+            $(".mui-badge-red").text("赞:" + tesf);
+        }
+    });
+
+</script>
+</body>
+

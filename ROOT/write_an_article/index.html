@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>写文章</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="tl-guidance">
+    <div class="tl-menu">
+        <h5 class="tl-describe-h5">选择制作类型</h5>
+        <p class="tl-describe-p">支持图片文字</p>
+    <div class="tl-menu-btn tl-menu-text">文字</div>
+    <div class="tl-menu-btn tl-menu-img">图片</div>
+    </div>
+</div>
+<div class="tl-contentarea">
+    <!--图片-->
+     <div class="tl-contentarea-img">
+         <div>图片</div>
+     </div>
+    <!--文字-->
+    <div class="tl-contentarea-text">
+        <div>文字</div>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/webuploader.min.js"></script>
+<script>
+    $('.tl-guidance').on('click','.tl-menu-img',function () {
+        window.location.href='img.html'
+    })
+    $('.tl-guidance').on('click','.tl-menu-text',function () {
+        window.location.href='text.html'
+    })
+
+</script>
+</body>
+</html>
