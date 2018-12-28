@@ -109,6 +109,7 @@
         color: #989898;
     }
     .y-hsy{
+        display: none;
         position: fixed;
         bottom: 60px;
         left: 10px;
@@ -118,24 +119,24 @@
     }
     .y-hsy span i{
         margin-right: 5px;
-        font-size: 13px;
+        font-size: 14px;
     }
     .y-span-sy{
         display: block;
-        padding: 2px 10px;
+        padding: 5px 10px;
         border-radius: 55px;
         background-color: rgba(0, 122, 255, 0.8);
         color: #fff;
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
     }
     .y-span-db{
         display: block;
-        padding: 2px 10px;
+        padding: 5px 10px;
         border-radius: 55px;
         background-color: rgba(0, 122, 255, 0.8);
         color: #fff;
-        font-size: 13px;
+        font-size: 14px;
         text-align: center;
     }
 </style>
@@ -316,7 +317,7 @@
 
             if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
                 document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
-                mui.toast('报错')
+
             } else {
                 appletOfWeChat()
             }
@@ -488,6 +489,7 @@
             var isShare = getUrlParamValue("isShare");
             var isfrom = getUrlParamValue("from");
             if (isShare == 1||isfrom != null) {
+                $('.y-hsy').show()
                 $(".isShare").removeClass('active');
                 $('.y-ktyjcz').hide();
                 $('#content').css('padding-bottom', '50px');
@@ -495,6 +497,7 @@
                 $('.see-more-comments a').addClass('ysy-wx-ckgd').removeClass('ysy-ckgd');
             } else {
                 $('.see-more-comments a').addClass('ysy-ckgd').removeClass('ysy-wx-ckgd');
+                $('.y-hsy').hide()
             }
 
             //安卓 ios 小程序 分享
