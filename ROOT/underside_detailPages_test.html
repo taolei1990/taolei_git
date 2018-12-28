@@ -295,12 +295,17 @@
     $(function () {
 
         function appletOfWeChat() {
-
+            mui.toast("点击返回首页")
             if (window.__wxjs_environment === 'miniprogram') {
                 //微信小程序环境
-                wx.miniProgram.navigateTo({
+                // wx.miniProgram.navigateTo({
+                //     url: "/pages/index/index"
+                // })
+                mui.toast("wx.miniProgram.reLaunch")
+                wx.miniProgram.reLaunch({
                     url: "/pages/index/index"
                 })
+
                 mui.toast('点击了返回首页')
             } else {
                 //不是小程序环境
