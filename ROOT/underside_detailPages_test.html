@@ -178,9 +178,6 @@
             <div class="contentImg"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png" data-preview-src="" data-preview-group="1"></div>
             <p class="contentText">在每年年末，《</p>
             <p class="contentText ">在每年年末，《麻省理工科技评论》都会对当年的科技成果做阶段性总结，同时展望来年的技术发展趋势。</p>
-            <div class="contentImg"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png" data-preview-src="" data-preview-group="1"></div>
-            <p class="contentText">在每年年末，《</p>
-            <p class="contentText ">在每年年末，《麻省理工科技评论》都会对当年的科技成果做阶段性总结，同时展望来年的技术发展趋势。</p>
 
         </div>
 
@@ -303,7 +300,7 @@
     $(function () {
 
         function appletOfWeChat() {
-            mui.toast("点击返回首页")
+
             if (window.__wxjs_environment === 'miniprogram') {
                 //微信小程序环境
                 // wx.miniProgram.navigateTo({
@@ -314,7 +311,7 @@
                     url: "/pages/index/index"
                 })
 
-                mui.toast('点击了返回首页')
+
             } else {
                 //不是小程序环境
             }
@@ -331,7 +328,7 @@
 
         });
         mui('.y-hsy').on('tap', '.y-span-db', function () {
-            mui.toast('测试返回顶部')
+            // mui.toast('测试返回顶部')
             mui.scrollTo(0,100);
         });
         // 附件
