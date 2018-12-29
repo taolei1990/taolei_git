@@ -17,7 +17,6 @@
     <!--<a class="mui-icon mui-icon-more mui-pull-right"></a>-->
 <!--</header>-->
 <div class="mui-content">
-
        <div class="tl-xszy-assemble">
            <div class="tl-nav navbar-wrapper">
                <a data-id="box-0" class="active">默认排序</a>
@@ -30,7 +29,7 @@
            <!--</div>-->
        <div class="tl-leibiao-box active">
            <div id="box-1" class="tl-leibiao">
-               <span  class="tl-zuoye-span ">最热作业</span>
+               <span  class="tl-zuoye-span">最热作业</span>
            <ul class="tl-xszy-list">
                <li><div class="tl-xszy-box">
                    <div class="tl-xszy-fm">
@@ -51,9 +50,9 @@
                    <div class="tl-xszy-role">
                        <div class="tl-xszy-name">
                            <img src="img/004cd35950bfc8a8012193a37f8fbc.png">
-                           <span>陶老师</span>
+                           <span>asdasdasdasda</span>
                        </div>
-                       <div class="tl-sxzy-time"><span>2018-11-30</span></div>
+                       <div class="tl-sxzy-time"><span>文字标签文字标2018-11-30</span></div>
                    </div>
                </div></li>
                <li><div class="tl-xszy-box">
@@ -123,9 +122,9 @@
                    <div class="tl-xszy-role">
                        <div class="tl-xszy-name">
                            <img src="img/004cd35950bfc8a8012193a37f8fbc.png">
-                           <span>陶老师</span>
+                           <span>陶老师陶老师陶老师</span>
                        </div>
-                       <div class="tl-sxzy-time"><span>2018-11-30</span></div>
+                       <div class="tl-sxzy-time"><span>陶老师2018-11-30</span></div>
                    </div>
                </div></li>
                <li><div class="tl-xszy-box">
@@ -147,9 +146,9 @@
                    <div class="tl-xszy-role">
                        <div class="tl-xszy-name">
                            <img src="img/004cd35950bfc8a8012193a37f8fbc.png">
-                           <span>陶老师</span>
+                           <span>陶老师asd阿斯达</span>
                        </div>
-                       <div class="tl-sxzy-time"><span>2018-11-30</span></div>
+                       <div class="tl-sxzy-time"><span>2018-11-30陶老师</span></div>
                    </div>
                </div></li>
            </ul>
@@ -579,16 +578,16 @@
 
         $(window).scroll(function () {
             var a = $(document).scrollTop();
+            console.log("a"+a)
             for (var i=0;i<$('.tl-leibiao').length;i++){
-                 var b=$(".tl-leibiao").eq(i).offset().top-44;
+                 var b=$(".tl-leibiao").eq(i).offset().top-89;
+                 console.log(i+"b"+b)
                 if(a>b){
                     $(".tl-leibiao").eq(i).find('.tl-zuoye-span').addClass('active')
                 }else {
                     $(".tl-leibiao").eq(i).find('.tl-zuoye-span').removeClass('active')
                 }
             }
-
-
 
             // console.log('滚动条像素:' + a + 'px');
         })

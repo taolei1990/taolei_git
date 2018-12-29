@@ -23,24 +23,24 @@
 </header>
 <div class="mui-content" style="background-color: #fff">
 <div class="sys-img">
-
-    <img id="showImg" src="img/20181217142938.png">
+    <img id="showImg1" src="img/20181217142938.png">
+    <img id="showImg2" src="img/20181224162745.jpg">
     <p style="text-align: center;line-height: 40px">长按上方图片识别图中二维码</p>
 </div>
     <div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
         <!-- 可选择菜单 -->
         <ul class="mui-table-view">
             <li class="mui-table-view-cell" onclick="alertChange(1)" >
-                <a href="#">识别图中二维码</a>
+                <a class="sys-ewmg" style="color: #333333">识别图中二维码</a>
             </li>
             <li class="mui-table-view-cell" onclick="alertChange(2)">
-                <a href="#">保存图片到手机</a>
+                <a style="color: #333333">保存图片到手机</a>
             </li>
         </ul>
         <!-- 取消菜单 -->
         <ul class="mui-table-view">
             <li class="mui-table-view-cell">
-                <a href="#sheet1"><b>取消</b></a>
+                <a href="#sheet1" style="color: #ea4336">取消</a>
             </li>
         </ul>
     </div>
@@ -60,17 +60,36 @@
     });
 
     $('.sys-img').on('longtap','img',function() {
-        mui('#sheet1').popover('toggle');
+        var imgId=$(this).attr('id');
+        console.log(imgId)
+        $('.sys-ewmg').attr('data-id',imgId)
+        codeAnalysis(imgId)
     });
 
     function alertChange(param){
+        var imgId=$('.sys-ewmg').attr('data-id')
+        var imgSrc=$('.sys-ewmg').attr('data-src')
+        console.log(imgSrc)
         if(param === 1){
-            analyticCode.getUrl('img-url',document.getElementById('showImg'),function(url){window.location.href = url;});
+            mui('#sheet1').popover('toggle');
+            window.location.href = imgSrc;
         }else if(param === 2){
-            getUrl(document.getElementById('showImg'),'img-url');
+            mui('#sheet1').popover('toggle');
+            getUrl(document.getElementById(imgId),'img-url');
         }
     }
+function codeAnalysis(imgId) {
+    analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
+        if (e=='error decoding QR Code') {
+            console.log('解析错误')
+        }else {
+            console.log(e)
+            $('.sys-ewmg').attr('data-src',e)
+            mui('#sheet1').popover('toggle');
+        }
 
+    });
+}
     function getUrl(e,param){
         analyticCode.getUrl(param,e,function(url,url_2){
             console.log('把图片拿到传给移动端让移动端app完成保存图片到相册')

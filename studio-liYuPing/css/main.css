@@ -205,7 +205,7 @@ em {
 }
 .tl-titlbt p{
     position: absolute;
-    bottom: 12px;
+    bottom: 10%;
     left: 60px;
     font-size: 20px;
     color: #fff;
@@ -256,7 +256,7 @@ em {
 }
 
 .tl-occasion{
-    padding: 15px;
+    padding: 15px 15px 0 15px;
     background-image: url("../img/bj-1.png");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -364,16 +364,19 @@ margin: 0 -15px;
     text-align: center;
 }
 .tl-img-kt{
-    position: absolute;
-    top: -30px;
-    left: 10px;
-    right: 10px;
+    /*position: absolute;*/
+    /*top: -30px;*/
+    /*left: 10px;*/
+    /*right: 10px;*/
+    margin-bottom: 10px;
+
 }
 .tl-img-kt img{
     width: 100%;
+    margin-top: -30px;
 }
 .tl-zysm-list{
-    padding-top: 50px;
+    padding-top: 0px;
     background-image: url("../img/ty-t.png"),url("../img/ty-b.png"),url("../img/ty-b.png"),url("../img/bl-min.png"),url("../img/bl-max.png"),url("../img/bl-max.png");
     background-size: 60px,100px,100px,60px,90px,90px;
     background-repeat: no-repeat;
@@ -586,19 +589,22 @@ margin: 0 -15px;
 
 }
 .tl-xszy-name span{
-   margin-left: 5px;
+    display: block;
+    max-width: 50px;
+    margin-left: 5px;
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .tl-sxzy-time span{
     display: block;
-    width: 66px;
+    width: 50px;
     text-align: right;
     color: #999999;
     font-size: 12px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .tl-djckgdnr{
     line-height: 40px;
@@ -1137,21 +1143,29 @@ display: none;
     display: flex;
     display: -webkit-flex;
     justify-content: space-between;
-    padding: 5px ;
+    padding: 8px 5px 5px 5px;
     align-items: center;
 
+}
+.mui-icon-more{
+    width: 20px;
+    text-align: center;
+}
+.mui-icon-more:before{
+
+    content: url("../img/dddbs .png");
 }
 .tl-span-tisi{
     font-size: 12px;
     color: #999999;
 }
 .tl-btn-paixu{
-    padding: 4px 10px 4px 30px;
+    padding: 0px 8px 0px 30px;
     background-color: #007aff;
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     border-radius: 4px;
-    background-image: url("../img/paixu@2x.png");
+    background-image: url(../img/paixu@2x.png);
     background-repeat: no-repeat;
     background-size: 14px;
     background-position: 9px center;
@@ -1618,14 +1632,14 @@ p.titl-tishi{
 }
 .tl-tiel-h{
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     color: #333;
 }
 .tl-tiel-h1{
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #333;
 }
@@ -1640,7 +1654,7 @@ p.titl-tishi{
 }
 .tl-panel-span{
     line-height: 14px;
-    border-right: 1px solid #333;
+    border-right: 1px solid #666;
     padding: 0 10px;
 }
 .tl-introduce-p{
@@ -1653,4 +1667,293 @@ p.titl-tishi{
 .tl-introduce-operation{
     display: flex;
     flex-direction: row-reverse;
+    font-size: 12px;
+}
+.tl-introduce-ico{
+    padding: 5px 5px 5px 15px;
+    margin-left: 30px;
+    background-repeat: no-repeat;
+    background-position: left center;
+
+}
+.tl-introduce-compile{
+    background-image: url("../img/qianbi@2x.png");
+    background-size: 15px;
+}
+.tl-introduce-share{
+    background-image: url("../img/fenxiang(3)@2x.png");
+    background-size: 12px;
+}
+.tl-masking{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+.tl-masking p,.tl-masking a{
+    color: #fff;
+
+}
+.tl-shade-1{
+    position: fixed;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.tl-shade-1 img{
+    width: 30px;
+}
+.tl-shade-1 p{
+    font-size: 16px;
+    padding: 20px 0;
+}
+.tl-shade-1 a{
+    margin: 20px;
+    font-size: 16px;
+    padding: 5px 15px;
+    border: 1px solid #fff;
+    border-radius: 55px;
+}
+.tl-shade-2{
+    margin-top: 133px;
+}
+.tl-shade-2 img{
+    width: 100%;
+}
+.tl-shade-2 p{
+    font-size: 16px;
+    padding: 20px 15%;
+    text-align: center;
+}
+.tl-shade-2 a{
+    margin: 20px;
+    font-size: 16px;
+    padding: 5px 15px;
+    border: 1px solid #fff;
+    border-radius: 55px;
+}
+.tl-shade-3 img{
+    width: 100px;
+    float: right;
+}
+.tl-shade-3{
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    left: 0;
+    text-align: center;
+}
+.tl-shade-3 p{
+    width: 100%;
+    font-size: 16px;
+    padding:0 0 20px 0;
+}
+.tl-shade-3 a{
+    margin: 20px;
+    font-size: 16px;
+    padding: 5px 15px;
+    border: 1px solid #fff;
+    border-radius: 55px;
+}
+.tl-lecturer-frame{
+    display: flex;
+}
+.tl-lecturer-img img{
+    width: 50px;
+    height: 50px;
+    margin: 5px 10px 5px 0;
+    border-radius: 55px;
+
+}
+.tl-lecturer-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #efeff4;
+    margin-bottom: -10px;
+}
+.tl-lecturer-list .mui-segmented-control{
+   height: 60px;
+}
+.tl-lecturer-list .mui-segmented-control.mui-scroll-wrapper .mui-scroll{
+    height: 60px;
+}
+.tl-lecturer-list .mui-segmented-control .mui-control-item{
+    padding: 0 30px 0 0 ;
+    text-align: left;
+}
+.tl-lecturer-name h5{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #333333;
+}
+.tl-lecturer-name p{
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+    line-height: 30px;
+}
+.tl-lecturer-add{
+    width: 80px;
+    height: 60px;
+    position: relative;
+    text-align: center;
+}
+.tl-lecturer-add:before{
+    position: absolute;
+    content: '';
+    width: 1px;
+    left: 0px;
+    top: -15px;
+    bottom: -15px;
+    background-color:#efeff4;
+}
+.tl-lecturer-add img{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.tl-fbsz-list{
+    margin-bottom: -11px;
+}
+.tl-table-view-cell{
+    position: relative;
+    padding: 11px 15px 11px 0;
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../img/icon-right@2x.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 8px;
+}
+.tl-table-view-time{
+    background: none;
+    padding: 11px 0;
+}
+.tl-table-view-time a{
+    color: #999;
+    font-size: 12px;
+}
+.tl-table-view-cell:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color:#efeff4;
+    content: '';
+}
+.tl-panel-classify{
+    background-image: url(../img/Group2@2x.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px;
+    height: 16px;
+    line-height: 16px;
+    padding-left: 20px;
+}
+.tl-wnleib-li{
+    display: none;
+}
+.tl-wnleib-li.active{
+    display: block;
+}
+.tl-jxkc-list {
+display: flex;
+}
+.tl-jxkc-li{
+    width: 50%;
+}
+.tl-jxkc-div{
+    padding: 10px;
+}
+.tl-jxkc-div img{
+    width: 100%;
+}
+.tl-jxkc-h5{
+    margin: 10px 0;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tl-jxkc-p{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.tl-jxkc-text{
+    padding: 10px;
+    background-color: #fff;
+
+}
+.tl-kcjg-mf{
+    color: #2ac845;
+}
+.tl-kcjg-sf{
+    color: #ea4336;
+}
+.ctl-assist-rwm{
+    padding: 20px 0;
+    text-align: center;
+}
+.ctl-assist-rwm img{
+    width: 130px;
+    height: 130px;
+}
+.ctl-assist-text{
+    padding: 5px 10%;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 4px #bbb;
+    font-weight: 600;
+    line-height: 26px;
+}
+.tl-titl p{
+    float: left;
+    font-size: 17px;
+    color: #fff;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tl-shade-2>div{
+    text-align: center;
+}
+.tl-shade-2>div img{
+   width: 80%;
+}
+.tl-shade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+@media screen and (max-width: 374px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+    .tl-titlbt p{
+        bottom: 5%;
+        font-size: 17px;
+    }
+    .tl-statistics {
+        font-size: 12px;
+    }
+    .tl-masking p,.tl-masking a{
+        font-size: 13px!important;
+    }
+    .tl-shade-2 p {
+        padding: 15px 15% 5px 15%;
+        text-align: center;
+    }
+    .tl-titl p{
+        max-width: 180px;}
 }
