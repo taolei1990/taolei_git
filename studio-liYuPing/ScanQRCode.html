@@ -61,7 +61,9 @@
             longtap: true,
         }
     });
-
+    mui('body').on('tap','a',function(){
+        window.top.location.href=this.href;
+    });
     $('.sys-img').on('longtap','.show-img',function() {
         var imgId=$(this).attr('data-id');
         console.log(imgId)
@@ -96,10 +98,11 @@ function codeAnalysis(imgId) {
     function getUrl(e,param){
         analyticCode.getUrl(param,e,function(url,url_2){
             console.log('把图片拿到传给移动端让移动端app完成保存图片到相册')
-          //  mui.toast('图片地址:'+url_2)
-            window.open('https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course');
+            mui.toast('图片地址:'+url_2)
+          //   window.open('https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course');
         });
     }
+
 </script>
 </body>
 </html>
