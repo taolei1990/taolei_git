@@ -34,10 +34,8 @@
             <li class="mui-table-view-cell" onclick="alertChange(1)" >
                 <a class="sys-ewmg" style="color: #333333">识别图中二维码</a>
             </li>
-            <li class="mui-table-view-cell" >
-                <a style="color: #333333" href="img/20181217142938.png"
-                   download="图片.png">点击下载</a>
-
+            <li class="mui-table-view-cell" onclick="alertChange(2)">
+                <a style="color: #333333">下载图片</a>
             </li>
         </ul>
         <!-- 取消菜单 -->
@@ -62,7 +60,6 @@
         }
     });
 
-    mui('body').on('tap','a',function(){document.location.href=this.href;});
     $('.sys-img').on('longtap','.show-img',function() {
         var imgId=$(this).attr('data-id');
         console.log(imgId)
@@ -78,8 +75,7 @@
             mui('#sheet1').popover('toggle');
             window.location.href = imgSrc;
         }else if(param === 2){
-         //   mui('#sheet1').popover('toggle');
-           // getUrl(document.getElementById(imgId),'img-url');
+           getUrl(document.getElementById(imgId),'img-url');
         }
     }
 function codeAnalysis(imgId) {
@@ -96,9 +92,9 @@ function codeAnalysis(imgId) {
 }
     function getUrl(e,param){
         analyticCode.getUrl(param,e,function(url,url_2){
-            console.log('把图片拿到传给移动端让移动端app完成保存图片到相册')
-            mui.toast('图片地址:'+url_2)
-          //   window.open('https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course');
+            console.log('图片地址:'+url_2)
+            window.open('https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course');
+            mui('#sheet1').popover('toggle');
         });
     }
 
