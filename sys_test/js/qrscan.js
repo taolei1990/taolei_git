@@ -108,7 +108,7 @@ function cdata(){
 
         sendBlob: function (blob, func) {
             codeAnalysis('sdafe')
-            $('#result').append('<p>开始请求</p>')
+            $('#result').append('<p>开始解析</p>')
             // var fd = new FormData();
             // fd.append('auth', 'lkl123456');
             // fd.append('base64', blob);
@@ -160,7 +160,8 @@ function codeAnalysis(imgId) {
             console.log('解析错误')
             mui.toast('解析错误')
         }else {
-                    window.location.href=e;
+            $('#result').append('<p>解析成功:'+e+'</p>')
+                  //  window.location.href=e;
                     scan.closeScan();
                     $('#close,.box-1').hide()
         }
