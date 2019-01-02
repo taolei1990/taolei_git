@@ -61,9 +61,8 @@
             longtap: true,
         }
     });
-    // mui('body').on('tap','a',function(){
-    //     window.top.location.href=this.href;
-    // });
+
+    mui('body').on('tap','a',function(){document.location.href=this.href;});
     $('.sys-img').on('longtap','.show-img',function() {
         var imgId=$(this).attr('data-id');
         console.log(imgId)
