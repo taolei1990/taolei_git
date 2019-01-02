@@ -35,8 +35,8 @@
                 <a class="sys-ewmg" style="color: #333333">识别图中二维码</a>
             </li>
             <li class="mui-table-view-cell" onclick="alertChange(2)">
-                <a style="color: #333333" href="https://taolei1990.github.io/taolei_git/studio-liYuPing/img/20181224162745.jpg"
-                   download="20181224162745.jpg">点击下载</a>
+                <a style="color: #333333" href="https://taolei1990.github.io/taolei_git/studio-liYuPing/img/20181217142938.png"
+                   download="20181217142938.png">点击下载</a>
 
             </li>
         </ul>
@@ -96,7 +96,8 @@ function codeAnalysis(imgId) {
     function getUrl(e,param){
         analyticCode.getUrl(param,e,function(url,url_2){
             console.log('把图片拿到传给移动端让移动端app完成保存图片到相册')
-            mui.toast('图片地址:'+url_2)
+          //  mui.toast('图片地址:'+url_2)
+            window.open(url_2);
         });
     }
 </script>
