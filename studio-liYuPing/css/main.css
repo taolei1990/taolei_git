@@ -1939,6 +1939,20 @@ display: flex;
     bottom: 0;
     right: 0;
 }
+.sys-img{
+    position: relative;
+}
+.sys-img img{
+    width: 100%;
+}
+.show-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(102, 102, 102, 0.0);
+}
 @media screen and (max-width: 374px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
     .tl-titlbt p{
         bottom: 5%;
