@@ -160,8 +160,9 @@ function codeAnalysis(imgId) {
             console.log('解析错误')
             mui.toast('解析错误')
         }else {
-            $('#result').append('<p>解析成功：'+e+'</p>')
-
+                    window.location.href=e;
+                    scan.closeScan();
+                    $('#close,.box-1').hide()
         }
 
     });
