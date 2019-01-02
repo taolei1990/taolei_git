@@ -14,7 +14,8 @@
     <!--<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>-->
     <!--<h1 class="mui-title">长按识别二维码DOM</h1>-->
 <!--</header>-->
-<div class="mui-content" style="background-color: #fff;padding: 10px">
+<div class="mui-content">
+<div style="background-color: #fff;padding: 10px">
     <div class="sys-img">
         <img id="showImg1" src="img/20181217142938.png">
         <div class="show-img" data-id="showImg1"></div>
@@ -24,14 +25,15 @@
         <img id="showImg2" src="img/20181224162745.jpg">
         <div class="show-img" data-id="showImg2"></div>
     </div>
+</div>
     <div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
         <!-- 可选择菜单 -->
         <ul class="mui-table-view">
             <li class="mui-table-view-cell" onclick="alertChange(1)" >
                 <a class="sys-ewmg" style="color: #333333">识别图中二维码</a>
             </li>
-            <li class="mui-table-view-cell" >
-                <a style="color: #333333" href="https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course">下载图片</a>
+            <li class="mui-table-view-cell" onclick="alertChange(2)">
+                <a style="color: #333333">下载图片</a>
             </li>
         </ul>
         <!-- 取消菜单 -->
@@ -55,8 +57,7 @@
             longtap: true,
         }
     });
-
-    mui('body').on('tap','a',function(){document.location.href=this.href;});
+    // mui('body').on('tap','a',function(){document.location.href=this.href;});
     $('.sys-img').on('longtap','.show-img',function() {
         var imgId=$(this).attr('data-id');
         console.log(imgId)
@@ -90,7 +91,7 @@ function codeAnalysis(imgId) {
     function getUrl(e,param){
         analyticCode.getUrl(param,e,function(url,url_2){
             console.log('图片地址:'+url_2)
-            window.open('https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course');
+            window.location="https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course";
             mui('#sheet1').popover('toggle');
         });
     }
