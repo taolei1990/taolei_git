@@ -34,9 +34,9 @@
             <li class="mui-table-view-cell" onclick="alertChange(1)" >
                 <a class="sys-ewmg" style="color: #333333">识别图中二维码</a>
             </li>
-            <li class="mui-table-view-cell" onclick="alertChange(2)">
-                <a style="color: #333333" href="https://taolei1990.github.io/taolei_git/studio-liYuPing/img/20181217142938.png"
-                   download="20181217142938.png">点击下载</a>
+            <li class="mui-table-view-cell" >
+                <a style="color: #333333" href="img/20181217142938.png"
+                   download="图片.png">点击下载</a>
 
             </li>
         </ul>
@@ -61,9 +61,9 @@
             longtap: true,
         }
     });
-    mui('body').on('tap','a',function(){
-        window.top.location.href=this.href;
-    });
+    // mui('body').on('tap','a',function(){
+    //     window.top.location.href=this.href;
+    // });
     $('.sys-img').on('longtap','.show-img',function() {
         var imgId=$(this).attr('data-id');
         console.log(imgId)
@@ -79,8 +79,8 @@
             mui('#sheet1').popover('toggle');
             window.location.href = imgSrc;
         }else if(param === 2){
-            mui('#sheet1').popover('toggle');
-            getUrl(document.getElementById(imgId),'img-url');
+         //   mui('#sheet1').popover('toggle');
+           // getUrl(document.getElementById(imgId),'img-url');
         }
     }
 function codeAnalysis(imgId) {
