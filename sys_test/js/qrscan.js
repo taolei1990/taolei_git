@@ -107,35 +107,36 @@ function cdata(){
         },
 
         sendBlob: function (blob, func) {
-            codeAnalysis('ewmid2')
+            codeAnalysis('sdafe')
             $('#result').append('<p>开始请求</p>')
-            var fd = new FormData();
-            fd.append('auth', 'lkl123456');
-            fd.append('base64', blob);
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = cdata();
-            xhr.open('post', 'https://px.dev.yunjy.com.cn/api/test/qcode', true);
-            xhr.onload = function () {
-                var data = JSON.parse(xhr.responseText);
-                if(data.resultCode == 200){
-                    $('#result').append('<p>请求成功</p>')
-                    $('#result').append('<p>解析内容：'+data.resultMsg+'</p>')
-                    // scan.closeScan();
-                    // $('#close,.box-1').hide();
-                    window.location.href=data.resultMsg;
-                    scan.closeScan();
-                    $('#close,.box-1').hide()
-                }else {
-
-                }
-               // var p1 = "<p>上传成功</p>";
-              //  $("#result").append(p1);
-              //    var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
-              //  $("#result").append(p2);
-              // func ? func(JSON.parse(xhr.responseText)) : null;
-
-            };
-            xhr.send(fd);
+            // var fd = new FormData();
+            // fd.append('auth', 'lkl123456');
+            // fd.append('base64', blob);
+            // var xhr = new XMLHttpRequest();
+            // xhr.onreadystatechange = cdata();
+            // xhr.open('post', 'https://px.dev.yunjy.com.cn/api/test/qcode', true);
+            // xhr.onload = function () {
+            //     var data = JSON.parse(xhr.responseText);
+            //     if(data.resultCode == 200){
+            //         $('#result').append('<p>请求成功</p>')
+            //         $('#result').append('<p>解析内容：'+data.resultMsg+'</p>')
+            //         // scan.closeScan();
+            //         // $('#close,.box-1').hide();
+            //         window.location.href=data.resultMsg;
+            //         scan.closeScan();
+            //
+            //         $('#close,.box-1').hide()
+            //     }else {
+            //
+            //     }
+            //    // var p1 = "<p>上传成功</p>";
+            //   //  $("#result").append(p1);
+            //   //    var p2 = "<p>"+JSON.parse(xhr.responseText)+"</p>";
+            //   //  $("#result").append(p2);
+            //   // func ? func(JSON.parse(xhr.responseText)) : null;
+            //
+            // };
+            // xhr.send(fd);
 
         },
 
@@ -153,3 +154,14 @@ function cdata(){
     win.QRScan = QRScan;
 }(window, document));
 
+function codeAnalysis(imgId) {
+    analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
+        if (e=='error decoding QR Code') {
+            console.log('解析错误')
+            mui.toast('解析错误')
+        }else {
+       mui.toast(e)
+        }
+
+    });
+}

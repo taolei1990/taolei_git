@@ -101,18 +101,26 @@
 </div>
     <span id="close">X</span>
     <div id="result"></div>
-    <div >
+    <div class="asdaf" >
         　<div id="test-image-preview"></div>
-
+           <img style="width: 100%" id="sdafe" src="img/20181217152851.png">
            <p id="test-file-info"></p>
     </div>
 </div>
 </body>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/mui.min.js"></script>
+<script src="js/llqrcode.js" type="text/javascript" ></script>
+<script src="js/analyticCode.js" type="text/javascript" ></script>
+<script src="js/clipboard.min.js"></script>
 <script src="js/qrscan.js"></script>
-<script src="js/analyticCode.js"></script>
+
 <script>
+    mui.init({
+        gestureConfig:{
+            longtap: true,
+        }
+    });
     var ds = null;
     var scan = new QRScan('video');
     // document.getElementById('open').onclick = function () {
@@ -147,7 +155,12 @@
         });
     };
 
+    $('.asdaf').on('longtap','#sdafe',function() {
+        var id='sdafe';
+        mui.toast('changan')
+        codeAnalysis('sdafe')
 
+    })
 </script>
 </html>
 
