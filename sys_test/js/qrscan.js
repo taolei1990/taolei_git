@@ -136,19 +136,7 @@ function cdata(){
             //
             // };
             // xhr.send(fd);
-            function codeAnalysis (imgId) {
-                $('#result').append('<p>识别：'+imgId+'</p>')
-                analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
-                    if (e=='error decoding QR Code') {
-                        console.log('解析错误')
-                        $('#result').append('<p>识别解析错误</p>')
-                    }else {
-                        $('#result').append('<p>识别成功</p>')
-                          mui.toast(e)
-                    }
 
-                });
-            }
         },
 
         Base64ToBlob: function (base64) {
@@ -164,3 +152,17 @@ function cdata(){
 
     win.QRScan = QRScan;
 }(window, document));
+
+function codeAnalysis (imgId) {
+    $('#result').append('<p>识别2：'+imgId+'</p>')
+    analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
+        if (e=='error decoding QR Code') {
+            console.log('解析错误')
+            $('#result').append('<p>识别解析错误</p>')
+        }else {
+            $('#result').append('<p>识别成功</p>')
+            mui.toast(e)
+        }
+
+    });
+}
