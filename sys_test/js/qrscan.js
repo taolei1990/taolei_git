@@ -107,7 +107,7 @@ function cdata(){
         },
 
         sendBlob: function (blob, func) {
-            codeAnalysis('ewmid')
+            codeAnalysis('ewmid2')
             // $('#result').append('<p>开始请求</p>')
             // var fd = new FormData();
             // fd.append('auth', 'lkl123456');
@@ -154,7 +154,7 @@ function cdata(){
 }(window, document));
 
 function codeAnalysis (imgId) {
-    $('#result').append('<p>识别2：'+imgId+'</p>')
+    $('#result').append('<p>识别3：'+imgId+'</p>')
     analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
         if (e=='error decoding QR Code') {
             console.log('解析错误')
