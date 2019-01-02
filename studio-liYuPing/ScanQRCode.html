@@ -77,7 +77,8 @@
             mui('#sheet1').popover('toggle');
             window.location.href = imgSrc;
         }else if(param === 2){
-            copyLink('cplink', imgSrc)
+            copyLink('cplink', imgSrc);
+            mui('#sheet1').popover('toggle');
         }
         else if(param === 3){
             getUrl(document.getElementById(imgId),'img-url');
