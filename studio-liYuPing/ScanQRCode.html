@@ -32,7 +32,10 @@
             <li class="mui-table-view-cell" onclick="alertChange(1)" >
                 <a class="sys-ewmg" style="color: #333333">识别图中二维码</a>
             </li>
-            <li class="mui-table-view-cell" onclick="alertChange(2)">
+            <li class="mui-table-view-cell" id="cplink" onclick="alertChange(2)">
+                <a class="copy-link"   style="color: #333333">复制课程链接</a>
+            </li>
+            <li class="mui-table-view-cell" onclick="alertChange(3)">
                 <a style="color: #333333">下载图片</a>
             </li>
         </ul>
@@ -48,8 +51,11 @@
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/mui.min.js"></script>
+<script src="js/Eleditor-master/webuploader.min.js"></script>
 <script src="js/llqrcode.js" type="text/javascript" ></script>
 <script src="js/analyticCode.js" type="text/javascript" ></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/common.js"></script>
 <script>
     //设置
     mui.init({
@@ -60,20 +66,21 @@
     // mui('body').on('tap','a',function(){document.location.href=this.href;});
     $('.sys-img').on('longtap','.show-img',function() {
         var imgId=$(this).attr('data-id');
-        console.log(imgId)
         $('.sys-ewmg').attr('data-id',imgId)
         codeAnalysis(imgId)
     });
 
     function alertChange(param){
-        var imgId=$('.sys-ewmg').attr('data-id')
-        var imgSrc=$('.sys-ewmg').attr('data-src')
-        console.log(imgSrc)
+        var imgId=$('.sys-ewmg').attr('data-id');
+        var imgSrc=$('.sys-ewmg').attr('data-src');
         if(param === 1){
             mui('#sheet1').popover('toggle');
             window.location.href = imgSrc;
         }else if(param === 2){
-           getUrl(document.getElementById(imgId),'img-url');
+            copyLink('cplink', imgSrc)
+        }
+        else if(param === 3){
+            getUrl(document.getElementById(imgId),'img-url');
         }
     }
 function codeAnalysis(imgId) {
@@ -81,7 +88,6 @@ function codeAnalysis(imgId) {
         if (e=='error decoding QR Code') {
             console.log('解析错误')
         }else {
-            console.log(e)
             $('.sys-ewmg').attr('data-src',e)
             mui('#sheet1').popover('toggle');
         }
