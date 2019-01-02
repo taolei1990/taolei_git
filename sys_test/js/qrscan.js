@@ -141,8 +141,9 @@ function cdata(){
                 analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
                     if (e=='error decoding QR Code') {
                         console.log('解析错误')
+                        $('#result').append('<p>识别解析错误</p>')
                     }else {
-                        $('.sys-ewmg').attr('data-src',e)
+                        $('#result').append('<p>识别成功</p>')
                           mui.toast(e)
                     }
 
