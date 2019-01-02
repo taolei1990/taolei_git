@@ -137,7 +137,7 @@ function cdata(){
             // };
             // xhr.send(fd);
             function codeAnalysis (imgId) {
-                $('#result').append('<p>识别图片二维码</p>')
+                $('#result').append('<p>识别：'+imgId+'</p>')
                 analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
                     if (e=='error decoding QR Code') {
                         console.log('解析错误')
