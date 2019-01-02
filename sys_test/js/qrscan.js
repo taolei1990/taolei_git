@@ -100,7 +100,7 @@ function cdata(){
                     self.sendBlob(canvas.toDataURL(), func);
                 });
                 // $('#result').append('<p>获取图片二维码</p>')
-                // $('#ewmid').attr('src',canvas.toDataURL())
+                $('#sdafe').attr('src',canvas.toDataURL())
                 // var img="<img id='"+said+"' src='"+canvas.toDataURL()+"' />"
                 // $("#result").append(img);
             }
@@ -160,7 +160,8 @@ function codeAnalysis(imgId) {
             console.log('解析错误')
             mui.toast('解析错误')
         }else {
-       mui.toast(e)
+            $('#result').append('<p>解析成功：'+e+'</p>')
+
         }
 
     });
