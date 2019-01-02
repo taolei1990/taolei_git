@@ -126,7 +126,7 @@ function copyLink(uid,t) {
     });
     clipboard.on('success', function(e) {
         console.log(e);
-        mui.toast("复制成功:"+e.text)
+        mui.toast("复制成功")
     });
     clipboard.on('error', function(e) {
         console.log(e);
