@@ -1340,7 +1340,7 @@ display: none;
 
 }
 .tl-pre-img img{
-    min-width: 100%;
+    width: 100%;
 }
 .tl-btn-down{
     position: absolute;

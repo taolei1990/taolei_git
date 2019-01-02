@@ -22,24 +22,22 @@
 <div class="mui-content"  >
     <div class="tl-ctrl-img" >
         <div class="tl-pre-img">
-            <p> <img src="img/20181211112559.png"></p>
+            <p> <img src="img/20181217142938.png"></p>
         </div>
 
         <div class="tl-btn-down">
-            <button type="button" class="mui-btn mui-btn-warning" style="padding: 6px 20px">保存图片</button>
-            <p style="color:#fff ; margin-top: 10px">下载二维码海报</p>
+            <button type="button" class="mui-btn mui-btn-warning down-img" style="padding: 6px 20px">保存图片</button>
+            <p style="color:#fff ; margin-top: 10px"><a style="color: #fff" href="https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course" download>下载二维码海报</a></p>
         </div>
     </div>
-
-
 </div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/mui.min.js"></script>
 
 <script>
     //设置
-    $('.tl-bar').on('tap','.mui-icon-more',function() {
-        $('.tl-set-active').show();
+    $('.tl-btn-down').on('tap','.down-img',function() {
+        window.location="https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course";
     })
 
 
