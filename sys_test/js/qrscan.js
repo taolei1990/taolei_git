@@ -165,8 +165,7 @@ function codeAnalysis(imgId) {
                     $('#close,.box-1').hide();
                     if(checkUrl(e)){
                           window.location.href=e;
-                    }
-                    else {
+                    } else {
                         mui.alert(e)
                     }
         }
@@ -177,9 +176,9 @@ function checkUrl(urlString){
     if(urlString!=""){
         var reg=/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
         if(!reg.test(urlString)){
-            alert("不是正确的网址吧，请注意检查一下");
             return false
+        }else{
+            return true
         }
-        return true
     }
 }
