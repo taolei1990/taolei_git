@@ -92,7 +92,7 @@
                 //     url: "/pages/index/index"
                 // })
                 // mui.toast("wx.miniProgram.reLaunch")
-                wx.miniProgram.reLaunch({
+                wx.miniProgram.switchTab({
                     url: "/pages/index/index"
                 })
 
@@ -109,7 +109,7 @@
             } else {
                 appletOfWeChat()
             }
-
+        });
         });
     //设置
     mui.init({
