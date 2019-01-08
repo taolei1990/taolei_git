@@ -69,7 +69,11 @@
             </li>
         </ul>
     </div>
-    <div class="tl-taber"><span class="tl-home">首页</span></div>
+    <div class="tl-taber">
+        <span class="tl-home">首页</span>
+        <span class="tl-xiaoxi">消息</span>
+    </div>
+
 </div>
 
 
@@ -83,19 +87,23 @@
 <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 <script>
     $(function () {
-
         function appletOfWeChat() {
-
             if (window.__wxjs_environment === 'miniprogram') {
                 //微信小程序环境
                 // wx.miniProgram.navigateTo({
                 //     url: "/pages/index/index"
                 // })
                 // mui.toast("wx.miniProgram.reLaunch")
-                wx.miniProgram.switchTab({
-                    url: "/pages/index/index"
-                })
-
+                wx.miniProgram.switchTab({url: "/pages/index/index"})
+            } else {
+                //不是小程序环境
+            }
+        }
+        function apptlxiaoxi() {
+            if (window.__wxjs_environment === 'miniprogram') {
+                wx.miniProgram.postMessage({ data: {foo: 'bar'} })
+                wx.miniProgram.getEnv(function(res) {
+                    console.log(res.miniprogram) })
             } else {
                 //不是小程序环境
             }
@@ -110,6 +118,9 @@
                 appletOfWeChat()
             }
         });
+        mui('.tl-taber').on('tap', '.tl-home', function () {
+            apptlxiaoxi()
+        })
         });
     //设置
     mui.init({
