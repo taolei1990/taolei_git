@@ -109,12 +109,15 @@
             }
         }
         function dwimg(rec) {
+            console.log('地址'+rec)
             if (window.__wxjs_environment === 'miniprogram') {
                 wx.downloadFile({
                     url: rec, // 仅为示例，并非真实的资源
                     success(res) {
+                        console.log('成功1')
                         // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
                         if (res.statusCode === 200) {
+                            console.log('成功2')
                             wx.playVoice({
                                 filePath: res.tempFilePath
                             })
@@ -180,7 +183,7 @@ function codeAnalysis(imgId) {
 }
     function getUrl(e,param){
         analyticCode.getUrl(param,e,function(url,url_2){
-            // console.log('图片地址:'+url_2)
+            console.log('图片地址:'+url_2)
             // window.location="https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course";
             // mui('#sheet1').popover('toggle');
             dwimg(url_2)
