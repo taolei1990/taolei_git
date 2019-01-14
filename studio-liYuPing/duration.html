@@ -86,7 +86,16 @@
            $("#audio").attr("src", objUrl);
            $("#video").attr("src", objUrl);
            $('#audio').prepend('<source src="'+objUrl+'" /><embed   src="'+objUrl+'" />')
-            getTime(video);
+            if(/image\/\w+/.test(video.type)) {
+                mui.alert('不支持图片类型请重新选择');
+                return false;
+            }
+            if(/audio\/\w+/.test(video.type)||/video\/\w+/.test(video.type)) {
+                getTime(video);
+            }else {
+                mui.alert('选择的类型不支持 请选择视频');
+                return false;
+            }
         });
     });
     <!--获取mp3文件的时间 兼容浏览器-->
@@ -100,9 +109,9 @@
             }
             else{
                 var hsm=s_to_hs(duration)
-                // if (duration>15) {
-                //     mui.alert('时间大于15秒')
-                // }
+                if (duration>15) {
+                    mui.alert('时间大于15秒')
+                }
                 var p='<p style="padding-top: 10px;border-top: 1px solid #eee"><b>名称:</b>'+video.name+'</p>'+
                     '<p><b>类型:</b>'+video.type+'</p>'+
                     '<p><b>大小:</b>'+getfilesize(video.size)+'</p>'+
