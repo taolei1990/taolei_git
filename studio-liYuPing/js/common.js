@@ -118,7 +118,8 @@ uploader.on( 'uploadComplete', function( file ) {
 
 //点击复制链接
 function copyLink(uid,t) {
-    console.log(uid)
+    console.log(uid,t)
+
     var clipboard = new ClipboardJS('#'+uid, {
         text: function() {
             return t;

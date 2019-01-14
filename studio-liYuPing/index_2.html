@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/mui.min.css" type="text/css">
     <link rel="stylesheet" href="css/swiper.min.css" type="text/css">
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="vide7.1.0/css/video-js.min.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
@@ -26,20 +27,22 @@
             <div class="tl-lubfb">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
+                        <!--<div class="swiper-slide">-->
+                            <!--<div class="tl-video-box">-->
+                             <!--<iframe id="tl-video-iframe" class="tl-video-iframe" src="video.html" width="100%"  frameborder="0"></iframe>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<div class="tl-video-box">-->
+                            <!--<video class="tl-video-pause" src="video/video-1.mp4"  width="100%" webkit-playsinline="" playsinline="" x5-playsinline="" x-webkit-airplay="allow" controls="controls" controlsList="nodownload"></video>-->
+                        <!--</div>-->
+                        <!--</div>-->
                         <div class="swiper-slide">
                             <div class="tl-video-box">
-                             <iframe id="tl-video-iframe" class="tl-video-iframe" src="video.html" width="100%"  frameborder="0"></iframe>
+                                <video id="my-video"  playsinline="" webkit-playsinline="" x5-playsinline="" x-webkit-airplay="allow"  class="video-js vjs-big-play-centered" controls
+                                       data-setup="{}">
+                                </video>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tl-video-box">
-                            <video class="tl-video-pause" src="video/video-1.mp4"  width="100%" webkit-playsinline="" playsinline="" x5-playsinline="" x-webkit-airplay="allow" controls="controls" controlsList="nodownload"></video>
-                        </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tl-video-box">
-                            <video class="tl-video-pause" src="video/video-1.mp4"  width="100%" webkit-playsinline="" playsinline="" x5-playsinline="" x-webkit-airplay="allow" controls="controls" controlsList="nodownload"></video>
-                        </div>
                         </div>
                     </div>
                     <div class="swiper-button-prev"></div><!--左箭头-->
@@ -300,7 +303,31 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/mui.min.js"></script>
 <script src="js/swiper.min.js"></script>
+<script src="vide7.1.0/js/video.min.js"></script>
+<script src="vide7.1.0/js/zh-CN.js"></script>
+<script src="vide7.1.0/js/videojs-contrib-hls.min.js"></script>
 <script>
+    $(document).ready(function(){
+        var myPlayer = videojs('my-video');
+
+        videojs("my-video").ready(function(){
+            var myPlayer = this;
+            myPlayer.src({src: "http://www.cqjsfz.cn/cus_video_play/video/play/c2768ecc7bb3b168e6dd0fa9969fa9d1/JfXNJR6UmShjrNQvTzQMqOwEx+40Ek84IyfeMablc7CgISmdarPzuA==", type: "application/x-mpegURL"});
+          //  myPlayer.play();
+
+        });
+        $('#my-video').on('tap', function() {
+            $(this).toggleClass('vjs-paused')
+            if($(this).hasClass('vjs-paused')){
+                console.log('暂停')
+                myPlayer.pause();
+            }else {
+                console.log('播放')
+                myPlayer.play();
+            }
+        });
+    });
+
     var mySwiper = new Swiper('.swiper-container', {
         // autoplay: true,//可选选项，自动滑动
         // allowTouchMove: false,

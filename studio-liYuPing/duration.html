@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="css/mui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <style>
+        .tl-btn{
+            position: fixed;
+            bottom: 40px;
+           left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .tl-file{
+            position: relative;
+            animation-iteration-count: 1;    //动画执行次数
+           -webkit-animation-duration: 2s;
+            -moz-animation-duration: 2s;
+            -o-animation-duration: 2s;
+            animation-duration: 2s;
+        }
+        .tl-file label{
+            text-align: center;
+            display: block;
+            width: 80px;
+            height: 80px;
+            color: #fff;
+            font-size: 16px;
+            display: table-cell;
+            vertical-align: middle;
+            border-radius: 55px;
+            background-color: #3e83fd;
+        }
+        .tl-file input{
+            width: 80px;
+            height: 80px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .tl-text{
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .tl-text p{
+            margin:0 10px 10px 10px;
+        }
+.tl-sjxh{
+    font-size: 12px;
+    color: #666;
+}
+    </style>
+</head>
+<body>
+<div style="width: 100%">
+    <div style="background-color: #323232">
+    <audio id="audio"  controls style="display: none;width: 100%" ></audio>
+    <video id="video" style="width: 100%;max-height: 320px" poster="http://demo.html.yunjy.com.cn/img/500504332_banner.jpg" src="" controls="controls" x5-playsinline="" playsinline="" webkit-playsinline ></video>
+    </div>
+    <div class="tl-sjxh"></div>
+        <div class="tl-text"></div>
+<div class="tl-btn">
+    <div class="tl-file animated bounce">
+        <label>选择<br/>文件</label>
+        <input id="test" type="file" multiple="multiple"/>
+    </div>
+</div>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mobile-detec.js"></script>
+<script>
+    $(function () {
+        $("#test").change(function () {
+           $('#audio').empty();
+           var objUrl = getObjectURL(this.files[0]);
+           var video = this.files[0];
+           $("#audio").attr("src", objUrl);
+           $("#video").attr("src", objUrl);
+           $('#audio').prepend('<source src="'+objUrl+'" /><embed   src="'+objUrl+'" />')
+
+            getTime(video);
+        });
+    });
+    <!--获取mp3文件的时间 兼容浏览器-->
+    function getTime(video) {
+        var date = new Date(video.lastModifiedDate);
+        var date_value=date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+        var duration = $("#audio")[0].duration;
+        setTimeout(function () {
+            if(isNaN(duration)){
+                getTime(video);
+            }
+            else{
+                var hsm=s_to_hs(duration)
+                // if (duration>15) {
+                //     mui.alert('时间大于15秒')
+                // }
+                var p='<p style="padding-top: 10px;border-top: 1px solid #eee"><b>名称:</b>'+video.name+'</p>'+
+                    '<p><b>类型:</b>'+video.type+'</p>'+
+                    '<p><b>大小:</b>'+getfilesize(video.size)+'</p>'+
+                    '<p><b>最后修改时间:</b>'+date_value+'</p>'+
+                    '<p><b>时长</b>:<span style="color: #ff5722">'+hsm+'</span></p>'
+                    $('.tl-text').append(p);
+            }
+        }, 10);
+
+    }
+    <!--把文件转换成可读URL-->
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) { // basic
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+
+        return url;
+    }
+
+    function getfilesize(size) {
+        if (!size)
+            return "";
+        var num = 1024.00; //byte
+
+        if (size < num)
+            return size + "B";
+        if (size < Math.pow(num, 2))
+            return (size / num).toFixed(2) + "K"; //kb
+        if (size < Math.pow(num, 3))
+            return (size / Math.pow(num, 2)).toFixed(2) + "M"; //M
+        if (size < Math.pow(num, 4))
+            return (size / Math.pow(num, 3)).toFixed(2) + "G"; //G
+        return (size / Math.pow(num, 4)).toFixed(2) + "T"; //T
+    }
+    function s_to_hs(hms){
+        //计算分钟
+        //算法：将秒数除以60，然后下舍入，既得到分钟数
+        var h = Math.floor(hms/60/60);
+        var m = Math.floor(hms/60%60);
+        var s = Math.floor(hms%60);
+        //将变量转换为字符串
+        h    +=    '';
+        m    +=    '';
+        s    +=    '';
+        //如果只有一位数，前面增加一个0
+        h  =   (h.length==1)?'0'+h:h;
+        m  =   (m.length==1)?'0'+m:m;
+        s  =   (s.length==1)?'0'+s:s;
+        return h+':'+m+':'+s;
+    }
+
+    //判断数组中是否包含某字符串
+    Array.prototype.contains = function(needle) {
+        for (i in this) {
+            if (this[i].indexOf(needle) > 0)
+                return i;
+        }
+        return -1;
+    }
+
+    var deviceType = navigator.userAgent;//获取userAgent信息
+    var networkStr = deviceType.match(/NetType\/\w+/) ? deviceType.match(/NetType\/\w+/)[0] : 'NetType/other';
+        networkStr = networkStr.toLowerCase().replace('nettype/', '');
+    // document.write(deviceType);//打印到页面
+    // $('.tl-sjxh').append('<p>'+deviceType+'</p>')
+    // $('.tl-sjxh').append('网络:'+networkStr+' ')
+    var md = new MobileDetect(deviceType);//初始化mobile-detect
+    var os = md.os();//获取系统
+    $('.tl-sjxh').append('手机系统:'+os+' ')
+    //手机型号(厂商)
+    var model = "";
+    //系统的版本号
+    var version = "";
+    if (os == "iOS") {//ios系统的处理
+        version =  md.version("iPhone");
+        os = md.os();
+        model = md.mobile();
+        $('.tl-sjxh').append('手机型号:'+model+' ')
+        $('.tl-sjxh').append('系统版本:iOS '+version+' ');
+    } else if (os == "AndroidOS") {//Android系统的处理
+        os = md.os();
+        version = md.version("Android");
+        var sss = deviceType.split(";");
+        var i = sss.contains("Build/");
+        if (i > -1) {
+            model = sss[i].substring(0, sss[i].indexOf("Build/"));
+        }
+        $('.tl-sjxh').append('手机型号:'+model+' ')
+        $('.tl-sjxh').append('系统版本:Android '+version+' ');
+    }
+
+</script>
+</body>
+</html>

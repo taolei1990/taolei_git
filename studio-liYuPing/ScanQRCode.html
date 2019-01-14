@@ -7,24 +7,7 @@
     <link rel="stylesheet" href="css/mui.min.css" type="text/css">
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-<style>
-    .tl-taber{
-        position: fixed;
-        bottom: 0px;
-        right: 0;
-        z-index: 9;
-    }
-    .tl-taber span{
-        display: block;
-        width: 50px;
-        height: 50px;
-        border-radius: 55px;
-        color: #fff;
-        text-align: center;
-        line-height: 50px;
-        background-color: #f94636;
-    }
-</style>
+
 </head>
 <body style="background-color: #fff">
 <!--<header class="mui-bar mui-bar-nav ">-->
@@ -42,12 +25,6 @@
         <img id="showImg2" src="img/20181224162745.jpg">
         <div class="show-img" data-id="showImg2"></div>
     </div>
-    <div>
-        <input type="file" accept="image/*" capture="camera">
-        <input type="file" accept="video/*" capture="camcorder">
-        <input type="file" accept="audio/*" capture="microphone">
-    </div>
-
 </div>
     <div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
         <!-- 可选择菜单 -->
@@ -61,9 +38,6 @@
             <li class="mui-table-view-cell" onclick="alertChange(3)">
                 <a style="color: #333333">下载图片</a>
             </li>
-            <li class="mui-table-view-cell" onclick="alertChange(4)">
-                <a style="color: #333333">录音</a>
-            </li>
         </ul>
         <!-- 取消菜单 -->
         <ul class="mui-table-view">
@@ -72,11 +46,6 @@
             </li>
         </ul>
     </div>
-    <div class="tl-taber">
-        <span class="tl-home">首页</span>
-        <span class="tl-xiaoxi">消息</span>
-    </div>
-
 </div>
 
 
@@ -87,58 +56,13 @@
 <script src="js/analyticCode.js" type="text/javascript" ></script>
 <script src="js/clipboard.min.js"></script>
 <script src="js/common.js"></script>
-<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 <script>
-
-        function appletOfWeChat() {
-            if (window.__wxjs_environment === 'miniprogram') {
-                //微信小程序环境
-                // wx.miniProgram.navigateTo({
-                //     url: "/pages/index/index"
-                // })
-                // mui.toast("wx.miniProgram.reLaunch")
-                wx.miniProgram.switchTab({url: "/pages/index/index"})
-            } else {
-                //不是小程序环境
-            }
-        }
-        function apptlxiaoxi() {
-            if (window.__wxjs_environment === 'miniprogram') {
-                wx.miniProgram.postMessage({ data: {foo: 'bar'} })
-                wx.miniProgram.getEnv(function(res) {
-                    console.log(res.miniprogram) })
-            } else {
-                //不是小程序环境
-            }
-        }
-        function dwimg() {
-            console.log('录音')
-            if (window.__wxjs_environment === 'miniprogram') {
-                wx.startRecord();
-            } else {
-                //不是小程序环境
-            }
-        }
-        mui('.tl-taber').on('tap', '.tl-home', function () {
-
-            if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
-                document.addEventListener('WeixinJSBridgeReady', appletOfWeChat, false)
-
-            } else {
-                appletOfWeChat()
-            }
-        });
-        mui('.tl-taber').on('tap', '.tl-xiaoxi', function () {
-            apptlxiaoxi()
-        })
-
     //设置
     mui.init({
         gestureConfig:{
             longtap: true,
         }
     });
-
     // mui('body').on('tap','a',function(){document.location.href=this.href;});
     $('.sys-img').on('longtap','.show-img',function() {
         var imgId=$(this).attr('data-id');
@@ -146,7 +70,20 @@
         codeAnalysis(imgId)
     });
 
-
+    function alertChange(param){
+        var imgId=$('.sys-ewmg').attr('data-id');
+        var imgSrc=$('.sys-ewmg').attr('data-src');
+        if(param === 1){
+            mui('#sheet1').popover('toggle');
+            window.location.href = imgSrc;
+        }else if(param === 2){
+            copyLink('cplink', imgSrc)
+            mui('#sheet1').popover('toggle');
+        }
+        else if(param === 3){
+            getUrl(document.getElementById(imgId),'img-url');
+        }
+    }
 function codeAnalysis(imgId) {
     analyticCode.getUrl('img-url',document.getElementById(imgId),function(e){
         if (e=='error decoding QR Code') {
@@ -163,28 +100,7 @@ function codeAnalysis(imgId) {
             console.log('图片地址:'+url_2)
             window.location="https://hk.yunjy.com.cn/save/qrcode?text=/commoncourse/qrcode%3Fid%3D212165&id=212165&type=course";
             mui('#sheet1').popover('toggle');
-
         });
-    }
-
-    function alertChange(param){
-        var imgId=$('.sys-ewmg').attr('data-id');
-        var imgSrc=$('.sys-ewmg').attr('data-src');
-        if(param === 1){
-            mui('#sheet1').popover('toggle');
-            window.location.href = imgSrc;
-        }else if(param === 2){
-            copyLink('cplink', imgSrc);
-            mui('#sheet1').popover('toggle');
-        }
-        else if(param === 3){
-            getUrl(document.getElementById(imgId),'img-url');
-
-        }
-        else if(param === 4){
-            dwimg
-
-        }
     }
 
 </script>

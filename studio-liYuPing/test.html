@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tl-content {
+            width: 100%;
+            height: 100vh;
+            background-color: #5da7fe;
+            display: table-cell;
+            vertical-align: middle;
+
+
+        }
+
+        .tl-content-box {
+            position: relative;
+            margin: 0 30px;
+
+        }
+
+        .tl-Group {
+            width: 100%;
+        }
+
+        .tl-procedure {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .tl-procedure-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 50%;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .tl-procedure-2 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .tl-content-span {
+            background-color: #ff750a;
+            color: #fff;
+            display: block;
+            width: 60px;
+            height: 23px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 23px;
+            margin: 0 auto;
+            border-radius: 55px;
+        }
+
+        .tl-content-text {
+
+        }
+
+        .tl-content-url {
+            font-size: 19px;
+            color: #5da7fe;
+            font-weight: bold;
+        }
+
+        .tl-content-yzm {
+            display: flex;
+            justify-content: space-around;
+            width: 220px;
+            margin: 0 auto;
+
+        }
+
+        .tl-content-sz {
+            width: 40px;
+            height: 40px;
+            font-size: 19px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            color: #ff750a;
+            border: 1px solid #e1e1e1;
+            background-color: #f6f6f6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body style="background-color: #5da7fe; text-align: center">
+<div class="tl-content">
+    <div class="tl-content-box">
+        <img class="tl-Group" src="img/Group@2x(1).png">
+        <div class="tl-procedure">
+            <div class="tl-procedure-1">
+                <span class="tl-content-span">第1步</span>
+                <p class="tl-content-text">打开电脑</p>
+                <p class="tl-content-url">网址56456465.com</p>
+            </div>
+            <div class="tl-procedure-2">
+                <span class="tl-content-span">第2步</span>
+                <p class="tl-content-text">打开电脑</p>
+                <div class="tl-content-yzm">
+                    <div class="tl-content-sz">2</div>
+                    <div class="tl-content-sz">0</div>
+                    <div class="tl-content-sz">6</div>
+                    <div class="tl-content-sz">J</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
