@@ -1,0 +1,431 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/awesome-bootstrap-checkbox.css" type="text/css">
+    <link rel="stylesheet" href="../css/build.css" type="text/css">
+    <link rel="stylesheet" href="../css/h-evaluation.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="h-treport">
+        <div class="h-treport-head ">
+            <div class="row">
+                <div class="col-xs-4	col-sm-2">
+                    <img src="../img/logo.png">
+                </div>
+                <div class="col-xs-4	col-sm-8">
+                    <h4>家庭教育健康度测评报告</h4>
+                </div>
+
+                <p>测评时间：2017-01-10</p>
+
+            </div>
+        </div>
+        <div class="h-chart">
+
+            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <div id="main" style="width: 100%;height:400px;"></div>
+        </div>
+        <div class="h-indicators">
+            <h4>教育指标</h4>
+
+            <div class="row">
+                <div class="col-sm-3 col-xs-12">
+                    <div class="h-issue h-lemon">
+                        <b>科学喂养</b>
+                        <P>从现实角度来说，完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-12">
+                    <div class="h-issue h-lightskyblue">
+                        <b>科学喂养</b>
+                        <P>从现实角度来说，完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-12">
+                    <div class="h-issue h-lilac">
+                        <b>科学喂养</b>
+                        <P>从现实角度来说，完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-12">
+                    <div class="h-issue h-orange">
+                        <b>科学喂养</b>
+                        <P>从现实角度来说，完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-12">
+                    <div class="h-issue h-turquoise">
+                        <b>科学喂养</b>
+                        <P>从现实角度来说，完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                    </div>
+                </div>
+            </div>
+            <!--   <div class="main clearfix" >
+                   <div class="box">
+                       <div class="pic h-feeding">
+                           <b>科学喂养</b>
+                           <P>从现实角度来说，完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                       </div>
+                   </div>
+                   <div class="box">
+                       <div class="pic">
+                           <b>科学喂养</b>
+                           <P>从现实角度来说，完全现实角度来说，完全现实角度来说，完全现实角度来说，
+                               完全禁不现实，孩子接触新奇玩具不现实，孩子接触不现实，孩子接触新奇玩具不现实，
+                               孩子接触止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的
+                               </P>
+                       </div>
+                   </div>
+                   <div class="box">
+                       <div class="pic">
+                           <b>科学喂养</b>
+                           <P>从现实角度来说，完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                       </div>
+                   </div>
+
+                   <div class="box">
+                       <div class="pic">
+                           <b>科学喂养</b>
+                           <P>从子接触新奇玩具现实角度来说，完全禁止孩子接触新奇玩具
+                               子接触新奇玩具子接触新奇玩具
+                               子接触新奇玩具
+                               不现实，孩子接子接触新奇玩具
+                               子接触新奇玩具触新奇玩具不现实，孩子接触新奇玩具不现实，孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</P>
+                       </div>
+                   </div>
+                   <div class="box">
+                       <div class="pic">
+                           <b>科学喂养</b>
+                           <P>从现实角度来说，完全现实角度来说，完全现实角度来说，完全现实角度来说，
+                               完全禁不现实，孩子接触新奇玩具不现实，孩子接触不现实，孩子接触新奇玩具不现实，
+                               孩子接触止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的
+                               孩子接触止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的
+                               抵抗</P>
+                       </div>
+                   </div>
+
+
+               </div>-->
+            <h4>教育指标解读</h4>
+
+            <div class="row h-indicators">
+
+                <div class="col-xs-12 col-sm-12">
+
+                    <div class="h-border">
+                        <div class="h-grade">
+                            <b>53分</b>
+                            <p>科学喂养</p>
+                        </div>
+                        <div class="h-narrate">
+                            从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</div></div>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+
+                    <div class="h-border">
+                        <div class="h-grade">
+                            <b>53分</b>
+                            <p>科学喂养</p>
+                        </div>
+                        <div class="h-narrate">
+                            从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</div></div>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+
+                    <div class="h-border">
+                        <div class="h-grade">
+                            <b>53分</b>
+                            <p>科学喂养</p>
+                        </div>
+                        <div class="h-narrate">
+                            从现实角度来说，
+                            从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</div></div>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+
+                    <div class="h-border">
+                        <div class="h-grade">
+                            <b>53分</b>
+                            <p>科学喂养</p>
+                        </div>
+                        <div class="h-narrate">
+                            从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说 从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</div></div>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+
+                    <div class="h-border">
+                        <div class="h-grade">
+                            <b>53分</b>
+                            <p>科学喂养</p>
+                        </div>
+                        <div class="h-narrate">
+                            从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说 从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子
+                            对问题玩具的抵抗从现实角度来说，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强，完全禁止孩子
+                            接触新奇玩具不现实，只能增强孩子对问题玩具的
+                            抵抗从现实角度来说，完全禁止孩子接触新奇玩具不现实，
+                            只能增强孩子对问题玩具的抵抗从现实角度来说，
+                            完全禁止孩子接触新奇玩具不现实，只能增强孩子对问题玩具的抵抗</div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--打印按钮-->
+    <div class="h-print">
+        <button type="button" class="btn btn-success ">打印报告</button>
+    </div>
+    <!--专家解读-->
+    <div class="h-expert-read">
+        <h4>专家解读</h4>
+        <div class="h-our-expert">
+            <img src="../img/zhuanj.jpg">
+        </div>
+    </div>
+    <!--推荐课程-->
+    <div class="h-course">
+        <h4>专家推荐您学习的课程</h4>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4">
+                <a href="#" class="h-currse-table">
+                    <div class="h-currse-img">
+                        <img src="../img/093205530446528100.png" >
+                        <span></span>
+                        <i class="iconfont">&#xe62d;</i>
+                    </div>
+                    <b>保护孩子的专注力</b>
+                    <p>保护孩子的专注力
+                        保护孩子的专注力保护孩子的专注力保护孩子的专注力
+                        保护孩子的专注力
+                    </p>
+                    <div class="h-currse-price">
+                        <span><em>￥</em> 15.00</span>
+                        <button type="button" class="btn btn-info">购买课程</button>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <a href="#" class="h-currse-table">
+                    <div class="h-currse-img">
+                        <img src="../img/093205530446528100.png" >
+                        <span></span>
+                        <i class="iconfont">&#xe62d;</i>
+                    </div>
+                    <b>保护孩子的专注力</b>
+                    <p>保护孩子的专注力
+                        保护孩子的专注力保护孩子的专注力保护孩子的专注力
+                        保护孩子的专注力
+                    </p>
+                    <div class="h-currse-price">
+                        <span><em>￥</em> 15.00</span>
+                        <button type="button" class="btn btn-success">购买课程</button>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <a href="#" class="h-currse-table">
+                    <div class="h-currse-img">
+                        <img src="../img/093205530446528100.png" >
+                        <span></span>
+                        <i class="iconfont">&#xe62d;</i>
+                    </div>
+                    <b>保护孩子的专注力</b>
+                    <p>保护孩子的专注力
+                        保护孩子的专注力保护孩子的专注力保护孩子的专注力
+                        保护孩子的专注力
+                    </p>
+                    <div class="h-currse-price">
+                        <span><em>￥</em> 15.00</span>
+                        <button type="button" class="btn btn-danger">购买课程</button>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <a href="#" class="h-currse-table">
+                    <div class="h-currse-img">
+                        <img src="../img/093205530446528100.png" >
+                        <span></span>
+                        <i class="iconfont">&#xe62d;</i>
+                    </div>
+                    <b>保护孩子的专注力</b>
+                    <p>保护孩子的专注力
+                        保护孩子的专注力保护孩子的专注力保护孩子的专注力
+                        保护孩子的专注力
+                    </p>
+                    <div class="h-currse-price">
+                        <span><em>￥</em> 15.00</span>
+                        <button type="button" class="btn btn-primary">购买课程</button>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <a href="#" class="h-currse-table">
+                    <div class="h-currse-img">
+                        <img src="../img/093205530446528100.png" >
+                        <span></span>
+                        <i class="iconfont">&#xe62d;</i>
+                    </div>
+                    <b>保护孩子的专注力</b>
+                    <p>保护孩子的专注力
+                        保护孩子的专注力保护孩子的专注力保护孩子的专注力
+                        保护孩子的专注力
+                        保护孩子的专注力保护孩子的专注力保护孩子的专注力
+                        保护孩子的专注力
+                        保护孩子的专注力保护孩子的专注力保护孩子的专注力
+                        保护孩子的专注力
+                    </p>
+                    <div class="h-currse-price">
+                        <span><em>￥</em> 15.00</span>
+                        <button type="button" class="btn btn-warning">购买课程</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/echarts.common.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+
+    option = {
+        title: {
+            text: '家庭教育分析表（单位:分）',
+            subtext: '全通云教育',
+            sublink: 'http://hk.yunjy.com.cn/'
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            },
+            formatter: function (params) {
+                var tar = params[1];
+                return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type : 'category',
+            splitLine: {show:false},
+            data : ['科学喂养', '教育冲突', '安全感建设', '关键期发展', '亲子关系',],
+        },
+        yAxis: {
+            max: 100,
+            type : 'value'
+        },
+
+        series: [
+            {
+                name: '辅助高度',
+                type: 'bar',
+                stack:  '总量',
+                itemStyle: {
+                    normal: {
+                        barBorderColor: 'rgba(0,0,0,0)',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    emphasis: {
+                        barBorderColor: 'rgba(0,0,0,0)',
+                        color: 'rgba(0,0,0,0)'
+                    }
+                },
+                data: [0, 17,30, 60, 3,]
+            },
+            {
+                name: '分数',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'inside',
+
+                    }
+                },
+                data:[
+                    {   name:'科学喂养',
+                        value: '69',
+                        itemStyle: {normal: {color: '#c055ff'}}
+                    },
+                    {   name:'教育冲突',
+                        value: '12',
+                        itemStyle: {normal: {color: '#fe47a4'}}
+                    },
+                    {   name:'安全感建设',
+                        value: '30',
+                        itemStyle: {normal: {color: '#22aadd'}}
+                    },
+                    {   name:'关键期发展',
+                        value: '20',
+                        itemStyle: {normal: {color: '#5ae9ff'}}
+                    },
+                    {   name:'亲子关系',
+                        value: '80',
+                        itemStyle: {normal: {color: '#ffa500'}}
+                    }
+
+                ]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

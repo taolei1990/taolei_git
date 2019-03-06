@@ -1,0 +1,185 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/awesome-bootstrap-checkbox.css" type="text/css">
+    <link rel="stylesheet" href="../css/build.css" type="text/css">
+    <link rel="stylesheet" href="../css/h-evaluation.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="h-treport">
+        <div class="h-treport-head ">
+            <div class="row">
+                <div class="col-xs-4	col-sm-2">
+                    <img src="../img/logo.png">
+                </div>
+                <div class="col-xs-4	col-sm-8">
+                    <h4>家庭教育健康度测评报告</h4>
+                </div>
+
+                <p>测评时间：2017-01-10</p>
+
+            </div>
+        </div>
+        <div class="h-chart">
+            <div class="row">
+                <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                <div id="main" style="width: 100%;height:400px;"> </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/echarts.common.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    var mainData = [];
+    mainData.push({
+        name: '科学喂养',
+        value: 34,
+        prevalue: 60,
+        hismax: 100
+    });
+    mainData.push({
+        name: '教育冲突',
+        value: 64,
+        prevalue: 60,
+        hismax: 100
+    });
+    mainData.push({
+        name: '安全感建设',
+        value: 50,
+        prevalue: 60,
+        hismax: 100
+    });
+    mainData.push({
+        name: '关键期发展',
+        value: 80,
+        prevalue: 60,
+        hismax: 100
+    });
+    mainData.push({
+        name: '亲子关系',
+        value: 11,
+        prevalue: 60,
+        hismax: 100
+    });
+
+    function createSeries(mainData) {
+        var result = [];
+        var insideLabel = {
+            normal: {
+                position: 'center',
+                formatter: function(params) {
+                    if (params.name == "other")
+                        return "";
+                    return params.value + '\n' + params.name;
+                },
+                textStyle: {
+                    fontStyle: 'normal',
+                    fontWeight: 'normal',
+                    fontSize: 12
+                }
+            }
+        };
+        var outsideLabel = {
+            normal: {
+                show: false
+            }
+        };
+        var itemOthers = {
+            normal: {
+                color: '#ccc'
+            }
+        };
+        for (var i = 0; i < mainData.length; i++) {
+            var increase = mainData[i].value > mainData[i].prevalue;
+            result.push({
+                type: 'pie',
+                center: [i * 20 + 10 + '%', '40%'],
+                radius: ['50%', '40%'],
+                label: insideLabel,
+                data: [{
+                    name: 'other',
+                    value: mainData[i].hismax - mainData[i].value,
+                    itemStyle: itemOthers
+                }, {
+                    name: mainData[i].name,
+                    value: mainData[i].value,
+                    prevalue: mainData[i].prevalue
+                }],
+                markPoint: {
+
+                    data: [{
+
+                        symbol: 'triangle',
+                        symbolSize: 28,
+                        symbolOffset: [0, 100],
+                        symbolRotate: increase ? 0 : 180,
+                        itemStyle: {
+
+                            normal: {
+
+                                color: increase ? 'red' : 'green'
+                            }
+                        },
+                        name: mainData[i].name,
+                        value: ((mainData[i].value - mainData[i].prevalue) * 100 / mainData[i].prevalue).toFixed(2) + '%',
+                        x: myChart.getWidth() * (i + 0.5) / 5 - 15,
+                        y: myChart.getHeight() * 0.45 + 15,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'right',
+                                formatter: function(params) {
+                                    return params.value;
+                                },
+                                textStyle: {
+                                    color: increase ? 'red' : 'green'
+                                }
+                            }
+                        },
+                    }
+                    ]
+                }
+            });
+        }
+        return result;
+    }
+    option = {
+        title: {
+            text: '关键指标',
+            subtext: '这是你最关心的数据了吧？',
+            x: 'left'
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                dataView: {
+                    show: true,
+                    readOnly: true
+                },
+                restore: {
+                    show: true
+                },
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        series: createSeries(mainData)
+    }
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

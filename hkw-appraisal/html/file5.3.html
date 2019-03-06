@@ -1,0 +1,311 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/awesome-bootstrap-checkbox.css" type="text/css">
+    <link rel="stylesheet" href="../css/build.css" type="text/css">
+    <link rel="stylesheet" href="../css/h-evaluation.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="h-treport">
+        <div class="h-treport-head ">
+            <div class="row">
+                <div class="col-xs-4	col-sm-2">
+                    <img src="../img/logo.png">
+                </div>
+                <div class="col-xs-4	col-sm-8">
+                    <h4>家庭教育健康度测评报告</h4>
+                </div>
+
+                <p>测评时间：2017-01-10</p>
+
+            </div>
+        </div>
+        <div class="h-chart">
+<div class="row">
+            <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <div id="main" style="width: 100%;height:400px;"> </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/echarts.common.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+
+    option = {
+        tooltip : {
+            formatter: "{a} <br/>{c} {b}"
+        },
+
+        series : [
+            {
+                name: '速度',
+                type: 'gauge',
+                z: 3,
+                min: 0,
+                max: 100,
+                splitNumber: 10,
+                radius: '50%',
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 10
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    length: 15,        // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 20,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                title : {
+                    textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        fontStyle: 'italic'
+                    }
+                },
+                detail : {
+                    textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                        fontWeight: 'bolder'
+                    }
+                },
+                data:[{value: 19, name: '分数'}]
+            },
+            {
+                name: '分数',
+                type: 'gauge',
+                z: 4,
+                min: 0,
+                max: 100,
+                center: ['30%', '50%'],
+                splitNumber: 10,
+                radius: '50%',
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 10
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    length: 15,        // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 20,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                title : {
+                    textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        fontStyle: 'italic'
+                    }
+                },
+                detail : {
+                    textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                        fontWeight: 'bolder'
+                    }
+                },
+                data:[{value: 66, name: '分数'}]
+            },
+            {
+                name: '分数',
+                type: 'gauge',
+                z: 4,
+                min: 0,
+                max: 100,
+                center: ['70%', '50%'],
+                splitNumber: 10,
+                radius: '50%',
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 10
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    length: 15,        // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 20,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                title : {
+                    textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        fontStyle: 'italic'
+                    }
+                },
+                detail : {
+                    textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                        fontWeight: 'bolder'
+                    }
+                },
+                data:[{value: 88, name: '分数'}]
+            },
+            {
+                name: '转速',
+                type: 'gauge',
+                center: ['12%', '55%'],    // 默认全局居中
+                radius: '40%',
+                min:0,
+                max:7,
+                endAngle:45,
+                splitNumber:7,
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 8
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    length:12,        // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length:20,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                pointer: {
+                    width:5
+                },
+                title: {
+                    offsetCenter: [0, '-30%'],       // x, y，单位px
+                },
+                detail: {
+                    textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                        fontWeight: 'bolder'
+                    }
+                },
+                data:[{value: 1.5, name: '分数'}]
+            },
+
+            {
+                name: '油表',
+                type: 'gauge',
+                center: ['88%', '50%'],    // 默认全局居中
+                radius: '40%',
+                min: 0,
+                max: 2,
+                startAngle: 135,
+                endAngle: 45,
+                splitNumber: 2,
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 8
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    splitNumber: 5,
+                    length: 10,        // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                axisLabel: {
+                    formatter:function(v){
+                        switch (v + '') {
+                            case '0' : return 'E';
+                            case '1' : return 'Gas';
+                            case '2' : return 'F';
+                        }
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 15,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                pointer: {
+                    width:2
+                },
+                title : {
+                    show: false
+                },
+                detail : {
+                    show: false
+                },
+                data:[{value: 0.5, name: 'gas'}]
+            },
+            {
+                name: '水表',
+                type: 'gauge',
+                center : ['88%', '50%'],    // 默认全局居中
+                radius : '40%',
+                min: 0,
+                max: 2,
+                startAngle: 315,
+                endAngle: 225,
+                splitNumber: 2,
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 8
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    show: false
+                },
+                axisLabel: {
+                    formatter:function(v){
+                        switch (v + '') {
+                            case '0' : return '优';
+                            case '1' : return '良';
+                            case '2' : return '差';
+                        }
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 15,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                pointer: {
+                    width:2
+                },
+                title: {
+                    show: false
+                },
+                detail: {
+                    show: false
+                },
+                data:[{value: 0.5, name: '分数'}]
+            }
+        ]
+    };
+
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

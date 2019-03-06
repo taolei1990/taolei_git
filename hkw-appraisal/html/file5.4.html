@@ -1,0 +1,202 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/awesome-bootstrap-checkbox.css" type="text/css">
+    <link rel="stylesheet" href="../css/build.css" type="text/css">
+    <link rel="stylesheet" href="../css/h-evaluation.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="h-treport">
+        <div class="h-treport-head ">
+            <div class="row">
+                <div class="col-xs-4	col-sm-2">
+                    <img src="../img/logo.png">
+                </div>
+                <div class="col-xs-4	col-sm-8">
+                    <h4>家庭教育健康度测评报告</h4>
+                </div>
+
+                <p>测评时间：2017-01-10</p>
+
+            </div>
+        </div>
+        <div class="h-chart">
+            <div class="row">
+                <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                <div id="main" style="width: 100%;height:400px;"> </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/echarts.common.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+
+    var symbols = [
+        'path://M471.545636 0 471.545636 78.777181l78.768995 0 0-78.777181L471.545636 0zM471.545636 236.299821l78.768995 0 0-78.761831-78.768995 0L471.545636 236.299821zM471.545636 393.83781l78.768995 0 0-78.761831-78.768995 0L471.545636 393.83781zM471.545636 551.376823l78.768995 0 0-78.753645-78.768995 0L471.545636 551.376823zM471.545636 708.922998l78.768995 0 0-78.760808-78.768995 0L471.545636 708.922998zM471.545636 866.460987l78.768995 0 0-78.761831-78.768995 0L471.545636 866.460987zM471.545636 1024l78.768995 0 0-78.777181-78.768995 0L471.545636 1024z ',
+        'path://M471.545636 0 471.545636 78.777181l78.768995 0 0-78.777181L471.545636 0zM471.545636 236.299821l78.768995 0 0-78.761831-78.768995 0L471.545636 236.299821zM471.545636 393.83781l78.768995 0 0-78.761831-78.768995 0L471.545636 393.83781zM471.545636 551.376823l78.768995 0 0-78.753645-78.768995 0L471.545636 551.376823zM471.545636 708.922998l78.768995 0 0-78.760808-78.768995 0L471.545636 708.922998zM471.545636 866.460987l78.768995 0 0-78.761831-78.768995 0L471.545636 866.460987zM471.545636 1024l78.768995 0 0-78.777181-78.768995 0L471.545636 1024z ',
+        'path://M471.545636 0 471.545636 78.777181l78.768995 0 0-78.777181L471.545636 0zM471.545636 236.299821l78.768995 0 0-78.761831-78.768995 0L471.545636 236.299821zM471.545636 393.83781l78.768995 0 0-78.761831-78.768995 0L471.545636 393.83781zM471.545636 551.376823l78.768995 0 0-78.753645-78.768995 0L471.545636 551.376823zM471.545636 708.922998l78.768995 0 0-78.760808-78.768995 0L471.545636 708.922998zM471.545636 866.460987l78.768995 0 0-78.761831-78.768995 0L471.545636 866.460987zM471.545636 1024l78.768995 0 0-78.777181-78.768995 0L471.545636 1024z ',
+        'path://M471.545636 0 471.545636 78.777181l78.768995 0 0-78.777181L471.545636 0zM471.545636 236.299821l78.768995 0 0-78.761831-78.768995 0L471.545636 236.299821zM471.545636 393.83781l78.768995 0 0-78.761831-78.768995 0L471.545636 393.83781zM471.545636 551.376823l78.768995 0 0-78.753645-78.768995 0L471.545636 551.376823zM471.545636 708.922998l78.768995 0 0-78.760808-78.768995 0L471.545636 708.922998zM471.545636 866.460987l78.768995 0 0-78.761831-78.768995 0L471.545636 866.460987zM471.545636 1024l78.768995 0 0-78.777181-78.768995 0L471.545636 1024z ',
+        'path://M471.545636 0 471.545636 78.777181l78.768995 0 0-78.777181L471.545636 0zM471.545636 236.299821l78.768995 0 0-78.761831-78.768995 0L471.545636 236.299821zM471.545636 393.83781l78.768995 0 0-78.761831-78.768995 0L471.545636 393.83781zM471.545636 551.376823l78.768995 0 0-78.753645-78.768995 0L471.545636 551.376823zM471.545636 708.922998l78.768995 0 0-78.760808-78.768995 0L471.545636 708.922998zM471.545636 866.460987l78.768995 0 0-78.761831-78.768995 0L471.545636 866.460987zM471.545636 1024l78.768995 0 0-78.777181-78.768995 0L471.545636 1024z ',
+
+    ];
+
+    var bodyMax = 150;
+
+    var labelSetting = {
+        normal: {
+            show: true,
+            position: 'outside',
+            offset: [0, -20],
+            formatter: function (param) {
+                return (param.value / bodyMax * 100).toFixed(0) + '分';
+            },
+            textStyle: {
+                fontSize: 18,
+                fontFamily: 'Arial'
+            }
+        }
+    };
+
+    var markLineSetting = {
+        symbol: 'none',
+        lineStyle: {
+            normal: {
+                opacity: 0.3
+            }
+        },
+        data: [{
+            type: 'max',
+            label: {
+                normal: {
+                    formatter: 'max: {c}'
+                }
+            }
+        }, {
+            type: 'min',
+            label: {
+                normal: {
+                    formatter: 'min: {c}'
+                }
+            }
+        }]
+    };
+
+    option = {
+        tooltip: {
+        },
+        legend: {
+            data: ['typeA', 'typeB'],
+            selectedMode: 'single'
+        },
+        xAxis: {
+            data: ['科学喂养', '教育冲突', '安全感建设', '关键期发展', '亲子关系'],
+            //axisTick: {show: false},
+            //axisLine: {show: false},
+            //axisLabel: {show: false}
+        },
+        yAxis: {
+            max: bodyMax,
+            offset: 20,
+            splitLine: {show: false}
+        },
+        grid: {
+            top: 'center',
+            height: 230
+        },
+        markLine: {
+            z: -100
+        },
+        series: [{
+            name: 'typeA',
+            type: 'pictorialBar',
+            symbolClip: true,
+            symbolBoundingData: bodyMax,
+            label: labelSetting,
+            data: [{
+                value: 123,
+                symbol: symbols[0]
+            }, {
+                value: 34,
+                symbol: symbols[1]
+            }, {
+                value: 101,
+                symbol: symbols[2]
+            }, {
+                value: 89,
+                symbol: symbols[3]
+            }, {
+                value: 72,
+                symbol: symbols[4]
+            }],
+            markLine: markLineSetting,
+            z: 10
+        }, {
+            name: 'typeB',
+            type: 'pictorialBar',
+            symbolClip: true,
+            symbolBoundingData: bodyMax,
+            label: labelSetting,
+            data: [{
+                value: 12,
+                symbol: symbols[0]
+            }, {
+                value: 44,
+                symbol: symbols[1]
+            }, {
+                value: 131,
+                symbol: symbols[2]
+            }, {
+                value: 33,
+                symbol: symbols[3]
+            }, {
+                value: 142,
+                symbol: symbols[4]
+            }],
+            markLine: markLineSetting,
+            z: 10
+        }, {
+            name: 'full',
+            type: 'pictorialBar',
+            symbolBoundingData: bodyMax,
+            animationDuration: 0,
+            itemStyle: {
+                normal: {
+                    color: '#ccc'
+                }
+            },
+            data: [{
+                value: 1,
+                symbol: symbols[0]
+            }, {
+                value: 1,
+                symbol: symbols[1]
+            }, {
+                value: 1,
+                symbol: symbols[2]
+            }, {
+                value: 1,
+                symbol: symbols[3]
+            }, {
+                value: 1,
+                symbol: symbols[4]
+            }]
+        }]
+    };
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>
