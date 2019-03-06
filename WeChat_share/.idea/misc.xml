@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="F:/VIS_UALSVN/WEB-UI">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="svn://106.14.77.205/menhu" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../..">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="svn://106.14.77.205/html/portal/branches" />
+                  <option value="svn://106.14.77.205/html/portal/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="svn://106.14.77.205/html/portal/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+</project>

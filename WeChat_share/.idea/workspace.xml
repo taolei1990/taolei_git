@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/css/main.css" line="105" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="836fe466-432b-4854-9711-554318b8ef89" name="默认的" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="微信分享" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1747">
+              <caret line="496" column="1" lean-forward="false" selection-start-line="496" selection-start-column="1" selection-end-line="496" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="生成海报.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/生成海报.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="173" column="77" lean-forward="true" selection-start-line="173" selection-start-column="16" selection-end-line="173" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4300">
+              <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="推荐奖励.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/推荐奖励.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1025">
+              <caret line="101" column="32" lean-forward="false" selection-start-line="100" selection-start-column="11" selection-end-line="101" selection-end-column="32" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1524124388489" expanded="true" signature="4649:7408" ph="..." />
+                <marker date="1524124388489" expanded="false" signature="4728:7401" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="4779:5617" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="4815:5603" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="4997:5586" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5076:5426" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5122:5130" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5179:5187" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5236:5244" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5293:5301" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5350:5358" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5668:6504" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5704:6490" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5886:6473" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="5965:6313" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6011:6019" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6068:6076" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6125:6133" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6182:6190" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6239:6247" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6555:7391" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6591:7377" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6773:7360" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6852:7200" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6898:6906" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="6955:6963" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="7012:7020" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="7069:7077" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="7126:7134" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="7511:7644" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="7558:7566" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="7673:7752" ph="..." />
+                <marker date="1524124388489" expanded="false" signature="7948:8492" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="7976:8032" ph="{...}" />
+                <marker date="1524124388489" expanded="true" signature="8093:8481" ph="{&quot;direction&quot;: 'vertical'...}" />
+                <marker date="1524124388489" expanded="true" signature="8191:8475" ph="{...}" />
+                <marker date="1524124388489" expanded="true" signature="8221:8336" ph="{...}" />
+                <marker date="1524124388489" expanded="true" signature="8386:8465" ph="{...}" />
+                <marker date="1524124388489" expanded="true" signature="8501:8736" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="8607:8725" ph="{...}" />
+                <marker date="1524124388489" expanded="true" signature="8649:8717" ph="{&quot;id&quot;: 'fs-phb'...}" />
+                <marker date="1524124388489" expanded="true" signature="8745:8981" ph="..." />
+                <marker date="1524124388489" expanded="true" signature="8853:8970" ph="{...}" />
+                <marker date="1524124388489" expanded="true" signature="8895:8962" ph="{&quot;id&quot;: 'fs-money'...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="奖金收益排行榜.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/奖金收益排行榜.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1525">
+              <caret line="61" column="92" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="92" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#script#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swiper.animate1.0.3.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/swiper.animate1.0.3.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>w-star</find>
+      <find>.w-star</find>
+      <find>w-reminder</find>
+      <find>w-hint</find>
+      <find>pop-up1</find>
+      <find>#F8511A</find>
+      <find>#f8511a</find>
+      <find>audio</find>
+      <find>music</find>
+      <find>.part1</find>
+      <find>play</find>
+      <find>part1</find>
+      <find>red-packet</find>
+      <find>arrow</find>
+      <find>anima</find>
+      <find>swiper-slide</find>
+      <find>.fadeIn</find>
+      <find>item1</find>
+      <find>w-share</find>
+      <find>w-rules</find>
+      <find>wx-fx-gdxs</find>
+      <find>wx-phb-list</find>
+      <find>wx-fs-phb</find>
+      <find>wx-fxhb</find>
+      <find>content</find>
+      <find>wx-eweima-l</find>
+      <find>wx-xzan</find>
+      <find>.wx-eweima-l</find>
+      <find>wx-kcfm</find>
+      <find>wx-fxhb-tup</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>#4bbbfa</replace>
+      <replace>#15aef5</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/showBo.js" />
+        <option value="$PROJECT_DIR$/html/滑动.html" />
+        <option value="$PROJECT_DIR$/html/活动介绍.html" />
+        <option value="$PROJECT_DIR$/css/normalize.css" />
+        <option value="$PROJECT_DIR$/html/被推荐人.html" />
+        <option value="$PROJECT_DIR$/html/课程购买页面.html" />
+        <option value="$PROJECT_DIR$/html/ca.html" />
+        <option value="$PROJECT_DIR$/html/case2.html" />
+        <option value="$PROJECT_DIR$/../style-1.css" />
+        <option value="$PROJECT_DIR$/js/H5FullscreenPage.js" />
+        <option value="$PROJECT_DIR$/demo-1.html" />
+        <option value="F:/VIS_UALSVN/Web-UI/Application/Home/View/Index/index.html" />
+        <option value="$PROJECT_DIR$/html/case1.html" />
+        <option value="$PROJECT_DIR$/js/vendor/jquery.min.js" />
+        <option value="$PROJECT_DIR$/js/swiper.min.js" />
+        <option value="$PROJECT_DIR$/demo.html" />
+        <option value="$PROJECT_DIR$/css/page-animation.css" />
+        <option value="$PROJECT_DIR$/css/H5FullscreenPage.css" />
+        <option value="$PROJECT_DIR$/03-vertical.html" />
+        <option value="$PROJECT_DIR$/css/swiper.min.css" />
+        <option value="$PROJECT_DIR$/html/case3.html" />
+        <option value="F:/VIS_UALSVN/WEB-UI/Application/Home/View/Index/index.html" />
+        <option value="$PROJECT_DIR$/工作室-基本信息管理.html" />
+        <option value="$PROJECT_DIR$/奖金收益排行榜.html" />
+        <option value="$PROJECT_DIR$/分享测试.html" />
+        <option value="$PROJECT_DIR$/NativeShare.js" />
+        <option value="$PROJECT_DIR$/合成图片.html" />
+        <option value="$PROJECT_DIR$/推荐奖励.html" />
+        <option value="$PROJECT_DIR$/js/html2canvas.min.js" />
+        <option value="$PROJECT_DIR$/../html2/html2/index.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/生成海报.html" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="43" />
+    <option name="y" value="19" />
+    <option name="width" value="1797" />
+    <option name="height" value="1041" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="微信分享第二版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="微信分享第二版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="微信分享第二版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="微信分享第二版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="微信分享第二版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="微信分享第二版" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="item1&#9;null&#9;null" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xxx\Desktop\微信分享第二版" />
+      <recent name="C:\Users\xxx\Desktop\微信分享第二版\js" />
+      <recent name="C:\Users\xxx\Desktop\微信分享第二版\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xxx\Desktop\微信分享第二版" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\xxx\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\测试服\trunk\taolei_test\微信分享第二版" />
+          <option name="myCopyRoot" value="F:\测试服\trunk\taolei_test\微信分享第二版" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\测试服\trunk\taolei_test\微信分享第二版" />
+          <option name="myCopyRoot" value="F:\测试服\trunk\taolei_test\微信分享第二版" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="836fe466-432b-4854-9711-554318b8ef89" name="默认的" comment="" />
+      <created>1496920802330</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1496920802330</updated>
+      <workItem from="1496920804663" duration="17541000" />
+      <workItem from="1496976180475" duration="4057000" />
+      <workItem from="1497257635689" duration="825000" />
+      <workItem from="1497316333740" duration="2106000" />
+      <workItem from="1497491876768" duration="9021000" />
+      <workItem from="1497504169922" duration="15852000" />
+      <workItem from="1497584488766" duration="7971000" />
+      <workItem from="1497840610964" duration="15289000" />
+      <workItem from="1497921183109" duration="20864000" />
+      <workItem from="1498008577772" duration="14907000" />
+      <workItem from="1499665142392" duration="34597000" />
+      <workItem from="1501057401524" duration="2009000" />
+      <workItem from="1523868304439" duration="5948000" />
+      <workItem from="1523928726852" duration="33097000" />
+      <workItem from="1524045188467" duration="467000" />
+      <workItem from="1524099757332" duration="3560000" />
+      <workItem from="1524106668524" duration="856000" />
+      <workItem from="1524123567009" duration="864000" />
+      <workItem from="1524127069219" duration="1364000" />
+      <workItem from="1524445217164" duration="29155000" />
+      <workItem from="1524531675521" duration="3111000" />
+      <workItem from="1524549606560" duration="669000" />
+      <workItem from="1525849151245" duration="2451000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="226581000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="43" y="19" width="1797" height="1041" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11313246" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/index.html" />
+    <entry file="file://$PROJECT_DIR$/html/fengs.html" />
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9350">
+          <caret line="374" column="0" lean-forward="false" selection-start-line="374" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/活动介绍.html" />
+    <entry file="file://$PROJECT_DIR$/html/活动介绍.html" />
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9350">
+          <caret line="374" column="18" lean-forward="false" selection-start-line="374" selection-start-column="18" selection-end-line="374" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/fengs.html" />
+    <entry file="file://$PROJECT_DIR$/js/showBo.js" />
+    <entry file="file://$PROJECT_DIR$/js/plugins.js" />
+    <entry file="file://$PROJECT_DIR$/html/index.html" />
+    <entry file="file://$PROJECT_DIR$/html/活动介绍.html" />
+    <entry file="file://$PROJECT_DIR$/css/normalize.css" />
+    <entry file="file://$PROJECT_DIR$/html/滑动.html" />
+    <entry file="file://$PROJECT_DIR$/html/被推荐人.html" />
+    <entry file="file://$PROJECT_DIR$/html/课程购买页面.html" />
+    <entry file="file://$PROJECT_DIR$/html/ca.html" />
+    <entry file="file://F:/VIS_UALSVN/WEB-UI/Public/Home/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="532" column="11" lean-forward="false" selection-start-line="532" selection-start-column="11" selection-end-line="532" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/jquery.mobile-1.4.5.min.css" />
+    <entry file="file://$PROJECT_DIR$/../css/main.css" />
+    <entry file="file://$PROJECT_DIR$/../style-1.css" />
+    <entry file="file://$PROJECT_DIR$/css/showBo.css" />
+    <entry file="file://$PROJECT_DIR$/demo-1.html" />
+    <entry file="file://$PROJECT_DIR$/js/vendor/jquery.min.js" />
+    <entry file="file://$PROJECT_DIR$/js/swiper.min.js" />
+    <entry file="file://$PROJECT_DIR$/js/H5FullscreenPage.js" />
+    <entry file="file://$PROJECT_DIR$/css/H5FullscreenPage.css" />
+    <entry file="file://$PROJECT_DIR$/css/page-animation.css" />
+    <entry file="file://$PROJECT_DIR$/03-vertical.html" />
+    <entry file="file://$PROJECT_DIR$/html/fengs.html" />
+    <entry file="file://$PROJECT_DIR$/js/main.js" />
+    <entry file="file://$PROJECT_DIR$/css/swiper.min.css" />
+    <entry file="file://$PROJECT_DIR$/html/case1.html" />
+    <entry file="file://$PROJECT_DIR$/html/case2.html" />
+    <entry file="file://$PROJECT_DIR$/html/case3.html" />
+    <entry file="file://$PROJECT_DIR$/demo.html" />
+    <entry file="file://$PROJECT_DIR$/js/swiper-4.2.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/swiper-4.2.0.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/VIS_UALSVN/WEB-UI/Application/Home/View/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="228" column="16" lean-forward="false" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/分享测试.html" />
+    <entry file="file://$PROJECT_DIR$/合成图片.html" />
+    <entry file="file://$PROJECT_DIR$/NativeShare.js" />
+    <entry file="file://$PROJECT_DIR$/奖金收益排行榜.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="61" column="92" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="92" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../html2/html2/index.html" />
+    <entry file="file://$PROJECT_DIR$/推荐奖励.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="101" column="32" lean-forward="false" selection-start-line="100" selection-start-column="11" selection-end-line="101" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1524124388489" expanded="true" signature="4649:7408" ph="..." />
+            <marker date="1524124388489" expanded="false" signature="4728:7401" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="4779:5617" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="4815:5603" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="4997:5586" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5076:5426" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5122:5130" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5179:5187" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5236:5244" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5293:5301" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5350:5358" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5668:6504" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5704:6490" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5886:6473" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="5965:6313" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6011:6019" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6068:6076" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6125:6133" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6182:6190" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6239:6247" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6555:7391" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6591:7377" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6773:7360" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6852:7200" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6898:6906" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="6955:6963" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="7012:7020" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="7069:7077" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="7126:7134" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="7511:7644" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="7558:7566" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="7673:7752" ph="..." />
+            <marker date="1524124388489" expanded="false" signature="7948:8492" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="7976:8032" ph="{...}" />
+            <marker date="1524124388489" expanded="true" signature="8093:8481" ph="{&quot;direction&quot;: 'vertical'...}" />
+            <marker date="1524124388489" expanded="true" signature="8191:8475" ph="{...}" />
+            <marker date="1524124388489" expanded="true" signature="8221:8336" ph="{...}" />
+            <marker date="1524124388489" expanded="true" signature="8386:8465" ph="{...}" />
+            <marker date="1524124388489" expanded="true" signature="8501:8736" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="8607:8725" ph="{...}" />
+            <marker date="1524124388489" expanded="true" signature="8649:8717" ph="{&quot;id&quot;: 'fs-phb'...}" />
+            <marker date="1524124388489" expanded="true" signature="8745:8981" ph="..." />
+            <marker date="1524124388489" expanded="true" signature="8853:8970" ph="{...}" />
+            <marker date="1524124388489" expanded="true" signature="8895:8962" ph="{&quot;id&quot;: 'fs-money'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/swiper.animate1.0.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/html2canvas.min.js" />
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4300">
+          <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indexa.html" />
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1747">
+          <caret line="496" column="1" lean-forward="false" selection-start-line="496" selection-start-column="1" selection-end-line="496" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/生成海报.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="173" column="77" lean-forward="true" selection-start-line="173" selection-start-column="16" selection-end-line="173" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

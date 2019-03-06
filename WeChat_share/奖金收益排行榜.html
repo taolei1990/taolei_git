@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background-color: #fff;">
+
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <h1 class="mui-title">收益榜单</h1>
+</header>
+
+
+<div class="mui-content" >
+<div class="wx-syphbd">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <b>1</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>2</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>3</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>4</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>5</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>6</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>7</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>8</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>9</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+        <li class="mui-table-view-cell">
+            <b>10</b>
+            <img src="http://hk.yunjy.com.cn/files/default/2018/03-27/144447fd3dff530110.jpg">
+            陶老师
+            <span class="mui-badge">总收益 33 元</span>
+        </li>
+    </ul>
+</div>
+</div>
+
+<div class="wx-fs-purchase">
+    <button type="button" class="mui-btn mui-btn-danger">我要分享</button>
+</div>
+
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/swiper.animate1.0.3.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script>
+    setInterval(function(){
+        $('.wx-fs-money').toggleClass("bounce");
+    }, 5000);
+
+    var mySwiper = new Swiper('.swiper-container', {
+        direction : 'vertical',
+        loop : true,
+        autoplay:true,//等同于以下设置
+        on:{
+            init: function(){
+                swiperAnimateCache(this); //隐藏动画元素
+                swiperAnimate(this); //初始化完成开始动画
+            },
+            slideChangeTransitionEnd: function(){
+                swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
