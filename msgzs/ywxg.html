@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <a id="offCanvasBtn" href="#offCanvasSide"
+       class="mui-icon mui-icon-more  mui-pull-right"></a>
+    <h1 class="mui-title">与我相关</h1>
+</header>
+<nav class="mui-bar mui-bar-tab" id="mui-bar-tab">
+    <a class="mui-tab-item">
+        <span class="mui-icon"><i class="iconfont">&#xe6ea;</i></span>
+        <span class="mui-tab-label">名师荟</span>
+    </a>
+    <a class="mui-tab-item " href="#">
+        <span class="mui-icon"><i class="iconfont">&#xe62d;</i></span>
+        <span class="mui-tab-label">名师动态</span>
+    </a>
+    <a class="mui-tab-item mui-active" href="#tabbar-with-contact">
+        <span class="mui-icon"><i class="iconfont">&#xe6a3;</i><span class="mui-badge">9</span></span>
+        <span class="mui-tab-label">与我相关</span>
+    </a>
+    <a class="mui-tab-item" href="#tabbar-with-map">
+        <span class="mui-icon"><i class="iconfont">&#xe6a7;</i></span>
+        <span class="mui-tab-label">工作室</span>
+    </a>
+</nav>
+<div class="mui-content">
+  <div class="y-ksdfkj">
+      <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+      <div class="y-cznr"><p>购买了你创建的课程{课程名称}</p></div>
+  </div>
+    <div class="y-ksdfkj">
+        <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+        <div class="y-cznr"><p>关注了工作室{帖子名称}   </p></div>
+    </div>
+    <div class="y-ksdfkj">
+        <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+        <div class="y-cznr"><p>学完你创建的课程{课程名称}并进行了评价</p></div>
+        <div class="y-ckxq"><p>查看评价>> </p></div>
+    </div>
+    <div class="y-ksdfkj">
+        <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+        <div class="y-cznr"><p>在【工作室名称】中上传了《课程名称》</p></div>
+    </div>
+    <div class="y-ksdfkj">
+        <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+        <div class="y-cznr"><p>正在学习你创建的课程《课程名称》</p></div>
+    </div>
+    <div class="y-ksdfkj">
+        <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+        <div class="y-cznr"><p>申请加入你创建的工作室{帖子名称}</p></div>
+        <div class="y-ckxq"><button type="button" class="mui-btn mui-btn-warning">去审核</button></div>
+    </div>
+    <div class="y-ksdfkj">
+        <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+        <div class="y-cznr"><p>学完你创建的课程{课程名称}并进行了评价</p></div>
+        <div class="y-ckxq"><p>查看评价>> </p></div>
+    </div>
+
+    <div class="y-ksdfkj">
+        <div class="y-mingz"><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"> <a>陶老师</a> <span>刚刚</span></div>
+        <div class="y-cznr"><p>学完你创建的课程{课程名称}并进行了评价</p></div>
+        <div class="y-ckxq"><p>查看评价>> </p></div>
+    </div>
+    <div class="y-jiewei">闻道有先后，术业有专攻</div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script>
+    //打开页面
+    mui('#mui-bar-tab').on('tap','a',function(e){
+        var index = $(this).index();
+        if(index==0){
+            mui.openWindow({
+                url:'http://html.yunjy.com.cn/msgzs/msh.html',
+                id:' '
+            });
+        }else if(index==1){
+            mui.openWindow({
+                url:'http://html.yunjy.com.cn/msgzs/msdt.html',
+                id:' '
+            });
+        }
+        else if(index==2){
+            mui.openWindow({
+                url:'http://html.yunjy.com.cn/msgzs/ywxg.html',
+                id:' '
+            });
+        }
+        else if(index==3){
+            mui.openWindow({
+                url:'http://html.yunjy.com.cn/msgzs/gzs.html',
+                id:' '
+            });
+        }
+    });
+</script>
+</body>
+</html>

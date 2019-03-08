@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--菜单部分-->
+    <aside id="offCanvasSide" class="mui-off-canvas-right y-search-interface">
+        <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+            <header class="mui-bar mui-bar-nav ">
+                <a class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
+                    <div class="w-search">
+                    <div class="mui-input-row mui-search">
+                        <input type="search" class="mui-input-clear" placeholder="工作室名称/姓名">
+                    </div>
+                </div>
+            </header>
+            <div class="mui-content">
+            </div>
+        </div>
+    </aside>
+    <div id="depotbox" class="mui-inner-wrap">
+        <header class="mui-bar mui-bar-nav ">
+            <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+            <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>
+            <h1 class="mui-title">名师动态</h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab" id="mui-bar-tab">
+            <a class="mui-tab-item">
+                <span class="mui-icon"><i class="iconfont">&#xe6ea;</i></span>
+                <span class="mui-tab-label">名师荟</span>
+            </a>
+            <a class="mui-tab-item mui-active" href="#">
+                <span class="mui-icon"><i class="iconfont">&#xe62d;</i></span>
+                <span class="mui-tab-label">名师动态</span>
+            </a>
+            <a class="mui-tab-item" href="#tabbar-with-contact">
+                <span class="mui-icon"><i class="iconfont">&#xe6a3;</i><span class="mui-badge">9</span></span>
+                <span class="mui-tab-label">与我相关</span>
+            </a>
+            <a class="mui-tab-item" href="#tabbar-with-map">
+                <span class="mui-icon"><i class="iconfont">&#xe6a7;</i></span>
+                <span class="mui-tab-label">工作室</span>
+            </a>
+        </nav>
+        <div id="offCanvasContentScroll" class="mui-scroll-wrapper y-msdtsx">
+            <div class="mui-scroll k-scroll">
+                <div class="y-scroll">
+                    <div class="y-card">
+                    <div class='mui-card'>
+                        <!--页眉，放置标题-->
+                        <div class='mui-card-header mui-card-media'><img
+                                src='http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png'/>
+                            <div class='mui-media-body'> 小M <p>创建于 2016-06-30 15:30</p></div>
+                        </div>
+                        <!--内容区-->
+                        <div class='mui-card-content'>
+                            <div class='y-card-content'>
+                                <div class='y-kcimg'><img src='http://html.yunjy.com.cn/img/055a71865c120c1.jpg'>
+                                    <p>《课程名称:怒放的青春》</p>
+                                </div>
+                            </div>
+                            <p class='y-source'><i class='iconfont'>&#xe636;</i><a class='s-gzsmc'>工作室名称</a></p>
+                        </div>
+                        <!--页脚，放置补充信息或支持的操作-->
+                        <div class='mui-card-footer y-zps'>
+                            <a><i class='iconfont'>&#xe627;</i><i class='iconfont actvit'>&#xe696;</i>赞</a>
+                            <a><i class='iconfont'>&#xe609;</i>评</a>
+                            <a href="#popover2"><i class='iconfont'>&#xe651;</i>赏</a>
+                            <div class='y-zdrs'><i class='iconfont'>&#xe696;</i> <span>陶老师</span> 等12位老师绝对很赞</div>
+                        </div>
+                    </div>
+
+                </div>
+                    <div class="y-card">
+                        <div class="mui-card">
+                            <!--页眉，放置标题-->
+                            <div class="mui-card-header mui-card-media">
+                                <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png"/>
+                                <div class="mui-media-body">
+                                    小M
+                                    <p>发表于 2016-06-30 15:30</p>
+                                </div>
+                            </div>
+                            <!--内容区-->
+                            <div class="mui-card-content">
+                                <div class="y-card-content">
+                                    <div class="y-card-img">
+                                        <img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png">
+                                    </div>
+                                    <div class="y-content"><p>帖子标题</p></div>
+                                </div>
+                                <p class="y-source"><i class="iconfont">&#xe636;</i><a class="s-gzsmc">工作室名称</a></p>
+                            </div>
+                            <!--页脚，放置补充信息或支持的操作-->
+                            <div class="mui-card-footer y-zps">
+                                <a><i class="iconfont">&#xe627;</i><i class="iconfont actvit">&#xe696;</i>赞</a>
+                                <a><i class="iconfont">&#xe609;</i>评</a>
+                                <a href="#popover2"><i class="iconfont">&#xe651;</i>赏</a>
+                                <div class='y-zdrs'><i class='iconfont'>&#xe696;</i><span>陶老师</span><span>张老师</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="y-card">
+                        <div class="mui-card">
+                            <!--页眉，放置标题-->
+                            <div class="mui-card-header mui-card-media">
+                                <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png"/>
+                                <div class="mui-media-body">
+                                    小M
+                                    <p>2016-06-30 15:30</p>
+                                </div>
+                            </div>
+                            <!--内容区-->
+                            <div class="mui-card-content">
+                                <div class="y-card-content">
+                                    <p class="y-jrgzs">加入<a>某某某工作室</a></p>
+
+                                </div>
+                            </div>
+                            <!--页脚，放置补充信息或支持的操作-->
+                            <div class="mui-card-footer y-zps">
+                              <a class="y-djckx">点击查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="y-card">
+                        <div class="mui-card">
+                            <!--页眉，放置标题-->
+                            <div class="mui-card-header mui-card-media">
+                                <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png"/>
+                                <div class="mui-media-body">
+                                    小M
+                                    <p>2016-06-30 15:30</p>
+                                </div>
+                            </div>
+                            <!--内容区-->
+                            <div class="mui-card-content">
+                                <div class="y-card-content">
+                                    <p class="y-jrgzs">学完了<a>《课程名称》</a>并进行了评价</p>
+
+                                </div>
+                            </div>
+                            <!--页脚，放置补充信息或支持的操作-->
+                            <div class="mui-card-footer y-zps">
+                                <a class="y-djckx">点击查看详情</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- off-canvas backdrop -->
+    <div class="mui-off-canvas-backdrop"></div>
+</div>
+<!--新增加 打赏 2018/4/11-->
+<div id="popover2" class="mui-popover">
+    <div class="ds-reward">
+        <div class="ds-toux"><img src="img/500373494_wx.jpg"></div>
+        <p class="ds-wenan">活动打赏，其实是超越赞的一种表达</p>
+        <div class="ds-randomamount"><label>￥</label><span>0.55</span><i class="iconfont animated rotateInDownLeft">&#xe63d;</i></div>
+        <div class="ds-input">
+            <label>￥</label>
+            <input id="test1" type="text" class="mui-input-clear" onkeyup="limitInput(this)"  placeholder="最多不超过20元">
+        </div>
+        <div class="ds-srsj">
+            <span class="ds-srsj-a">输入金额</span>
+            <span class="ds-srsj-b">随机金额</span></div>
+        <div class="ds-qezf"><a>赏</a></div>
+        <div class="ds-zffs">
+            <p>选择支付方式,<a>支付宝</a></p>
+            <button class="animated  ds-zfb">支付宝</button>
+            <button class="animated  ds-wx">微信</button>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script>
+    //  mui('#offCanvasSideScroll').scroll();
+    //  mui('#offCanvasContentScroll').scroll();
+    //隐藏侧滑菜单
+    mui("#offCanvasSideScroll").on('tap', '.mui-icon-arrowleft', function () {
+        mui('.mui-off-canvas-wrap').offCanvas('close');
+    });
+</script>
+<script>
+    <!--滑动加载-->
+    mui.init({
+        pullRefresh: {
+            container: '#offCanvasContentScroll',
+            down: {
+                callback: pulldownRefresh,
+                contentrefresh: '正在刷新...',
+            },
+            up: {
+                auto:false,//可选,默认false.自动上拉加载一次
+                contentrefresh: '正在加载...',
+                callback: pullupRefresh,
+                contentnomore: '闻道有先后，术业有专攻'
+            }
+        }
+    });
+    /**
+     * 下拉刷新具体业务实现 暂不实现
+     */
+    function pulldownRefresh() {
+        setTimeout(function () {
+            location.reload();
+        }, 1500);
+    }
+    var count = 0;
+    /**
+     * 上拉加载具体业务实现
+     */
+    function pullupRefresh() {
+
+        setTimeout(function () {
+            mui('#offCanvasContentScroll').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+            var table = document.body.querySelector('.y-scroll');
+            var cells = document.body.querySelectorAll('.y-card');
+            for (var i = cells.length, len = i + 6; i < len; i++) { //每次加载的数量。
+                var div = document.createElement('div');
+                div.className = 'y-card';
+                // li.innerHTML = '<a class="mui-navigate-right">我是加载出来' + (i + 1) +' </a>';
+                div.innerHTML = " <div class='mui-card'> <div class='mui-card-header mui-card-media'> <img src='http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png'/> <div class='mui-media-body'> 陶老师 <p>创建于 2016-06-30 15:30</p> </div></div><div class='mui-card-content'> <div class='y-card-content'> <div class='y-kcimg'> <img src='http://html.yunjy.com.cn/img/055a71865c120c1.jpg'> <p>《怒放的青春》</p> </div> </div> <p class='y-source'><i class='iconfont'>&#xe78d;</i><a class='s-gzsmc'>学科学段</a></p> </div><div class='mui-card-footer y-zps'> <a><i class='iconfont'>&#xe627;</i><i class='iconfont actvit'>&#xe696;</i>赞</a> <a><i class='iconfont'>&#xe609;</i>评</a> <a><i class='iconfont'>&#xe651;</i>赏</a> <div class='y-zdrs'> <i class='iconfont'>&#xe696;</i> <span>陶老师</span> 等12位老师绝对很赞 </div> </div> </div>";
+                table.appendChild(div);
+            }
+        }, 500);
+    }
+
+</script>
+<script>
+    //打开页面
+    mui('#mui-bar-tab').on('tap', 'a', function () {
+        var index = $(this).index();
+        if (index == 0) {
+            mui.openWindow({
+                url: 'http://html.yunjy.com.cn/msgzs/msh.html',
+                id: ' '
+            });
+        } else if (index == 1) {
+            mui.openWindow({
+                url: 'http://html.yunjy.com.cn/msgzs/msdt.html',
+                id: ' '
+            });
+        }
+        else if (index == 2) {
+            mui.openWindow({
+                url: 'http://html.yunjy.com.cn/msgzs/ywxg.html',
+                id: ' '
+            });
+        }
+        else if (index == 3) {
+            mui.openWindow({
+                url: 'http://html.yunjy.com.cn/msgzs/gzs.html',
+                id: ' '
+            });
+        }
+    });
+
+</script>
+<script>
+    //点赞 评论 打赏
+    mui('.y-scroll').on('tap', '.y-zps a', function () {
+        var index = $(this).index();
+        if (index == 0) {
+            //点赞动画
+            $(this).find('.iconfont').toggle();
+            $(this).toggleClass('animated bounceIn actvit');
+
+            $(this).nextAll('.y-zdrs').toggle().toggleClass('animated fadeInDown');
+            ;
+
+
+        } else if (index == 1) {
+            //评论操作
+            /* mui.openWindow({
+             url:'评论操作.html',
+             id:'评论操作id'
+             });*/
+        }
+        else if (index == 2) {
+            //打赏操作
+            /*mui.openWindow({
+             url:'打赏',
+             id:'打赏id'
+             });*/
+        }
+    });
+</script>
+<script>
+    //失去焦点
+    document.getElementById('offCanvasWrapper').addEventListener('tap', function() {
+        document.activeElement.blur();
+    });
+</script>
+<script>
+//打赏.. 2018/04/11
+//初始化随机数
+var num=Math.random();//随机数
+var newNum =num.toFixed(2);//0到1之间的,保留两位小数点
+if(newNum==0){
+$('.ds-randomamount span').text('0.01');//如果为0时候就默认为0.01元
+}else {
+$('.ds-randomamount span').text(newNum);}
+//随机数
+mui(".ds-randomamount").on('tap','i',function(){
+$(this).toggleClass('rotateInDownLeft rotateInUpRight');
+
+var num=Math.random();//随机数
+var newNum =num.toFixed(2);//0到1之间的,保留两位小数点
+if(newNum==0){
+$('.ds-randomamount span').text('0.01');
+mui.alert('0');
+}else {
+$('.ds-randomamount span').text(newNum);}
+
+});
+//输入金额
+mui(".ds-srsj").on('tap','.ds-srsj-a',function(){
+$(this).hide();
+$('.ds-srsj-b').show();
+$('.ds-randomamount').hide();
+$('.ds-input').show();
+});
+//随机金额
+mui(".ds-srsj").on('tap','.ds-srsj-b',function(){
+$(this).hide();
+$('.ds-srsj-a').show();
+$('.ds-randomamount').show();
+$('.ds-input').hide();
+//重新初始化随机数
+var num=Math.random();//随机数
+var newNum =num.toFixed(2);//0到1之间的,保留两位小数点
+if(newNum==0){
+$('.ds-randomamount span').text('0.01');
+mui.alert('0');
+}
+$('.ds-randomamount span').text(newNum);
+});
+//只能输入数字小数点精确到小数点后两位
+function limitInput(o){
+o.value = o.value.replace(/[^\d.]/g,""); //清除"数字"和"."以外的字符
+o.value = o.value.replace(/^\./g,""); //验证第一个字符是数字
+o.value = o.value.replace(/0\.\d\{2}/);
+o.value = o.value.replace(/\.{2,}/g,"."); //只保留第一个, 清除多余的
+o.value = o.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+o.value = o.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); //只能输入两个小数
+if(o.value.indexOf(".")< 0 && o.value !=""){//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+o.value= parseFloat(o.value);
+}
+var value=o.value;
+var min=0;//最小金额
+var max=20;//最大金额
+if(parseInt(value)<min||parseInt(value)>=max){
+o.value='20';
+}
+}
+
+//选择支付方式
+mui(".ds-zffs").on('tap','a',function(){
+$('.ds-zffs button').show();
+$('.ds-zffs button').addClass('flipInX');
+});
+mui(".ds-zffs").on('tap','button',function(){
+var t=$(this).text();
+$('.ds-zffs a').text(t);
+});
+//打赏.. 2018/04/12 结束
+</script>
+</body>
+</html>

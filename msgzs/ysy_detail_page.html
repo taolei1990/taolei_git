@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>责任+耐心+爱</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--分享描述-->
+    <meta itemprop="description" content="作为一名小学班主任，要让爱成为沟通师生情感的桥梁，
+                用爱调动起每个学生的积极性，挖掘其潜力，
+                创造宽松和谐的育人环境，
+                使每个学生都认识到自己是一颗闪耀的星星。">
+    <!--分享图片如果没有图片content里面设为空-->
+    <meta itemprop="image" content="img/500373494_wx.jpg">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+            border: none
+        }
+
+        .and-share {
+            height: 50px;
+            background-color: #ffffff;
+            background-image: url("img/02e22ce7397e98b8ad4d749267166b1c.png");
+            background-size: 100% auto;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e9e9e9;
+            border-top: 1px solid #e9e9e9;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            font-size: 16px;
+            padding-bottom: 50px;
+        }
+
+        @font-face {
+            font-family: 'iconfont';  /* project id 480927 */
+            src: url('//at.alicdn.com/t/font_480927_47vkke14g2f.eot');
+            src: url('//at.alicdn.com/t/font_480927_47vkke14g2f.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_480927_47vkke14g2f.woff') format('woff'),
+            url('//at.alicdn.com/t/font_480927_47vkke14g2f.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_480927_47vkke14g2f.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .ysy-logo {
+            padding: 5px 10px;
+        }
+
+        .ysy-logo img {
+            width: 40px;
+            height: 40px;
+            float: left;
+            border: 1px solid #e9e9e9;
+            border-radius: 8px;
+        }
+
+        .yoy-logo-text {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .yoy-logo-text b {
+
+            color: #0f82fd;
+            display: block;
+        }
+
+        .yoy-logo-text span {
+            color: #656565;
+            font-size: 12px;
+        }
+
+        .ysy-immediatelyopen {
+
+            text-align: right;
+        }
+
+        .ysy-immediatelyopen a {
+            padding: 5px 18px;
+            background-color: #0f82fd;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .ysy-shut {
+            height: inherit;
+        }
+
+        .ysy-shut-btn {
+            display: block;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            border-radius: 55px;
+            background-color: rgba(57, 57, 57, 0.37);
+            color: #fff;
+        }
+
+        .ysy-article-title {
+            padding: 20px 10px;
+            font-size: 20px;
+        }
+
+        .ysy-material {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .ysy-name-img img {
+            width: 40px;
+            height: 40px;
+            border-radius: 55px;
+            border: 1px solid #e9e9e9;
+        }
+
+        .ysy-contentarticle {
+            padding: 20px 10px;
+            font-size: 17px!important;
+        }
+        .ysy-contentarticle>p,.ysy-contentarticle>span{
+            font-size: 17px!important;
+        }
+        .ysy-contentarticle.active {
+            font-size: 19px!important;
+        }
+        .ysy-contentarticle.active>p, .ysy-contentarticle.active>span{
+            font-size: 19px!important;
+        }
+        .ysy-name-p1 {
+            font-size: 16px;
+        }
+
+        .ysy-name-p1 a {
+            font-size: 14px;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        .ysy-name-p1 span {
+            font-size: 12px;
+            color: #fff;
+            background-color: rgba(15, 130, 253, 0.48);
+            border-radius: 55px;
+            padding: 0 5px;
+        }
+
+        .ysy-name-p2 {
+            font-size: 12px;
+            color: #989898;
+        }
+
+        .ysy-name-p2 span {
+            margin: 0 10px;
+        }
+        .ysy-contentarticle>p {
+            margin: 10px 0;
+            text-indent: 34px;
+        }
+        .ysy-contentarticle.active>p {
+            text-indent: 38px;
+        }
+          .ysy-name-text{
+             flex-grow: 1;
+         }
+        .ysy-name-text p {
+            line-height: 20px;
+        }
+
+        .ysy-footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f2f2f2;
+            border-top: 1px solid #e9e9e9;
+        }
+
+        .ysy-discuss {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+
+        .ysy-observer {
+            flex-grow: 1;
+            padding: 8px 10px;
+        }
+
+        .ysy-observer span {
+            display: block;
+            padding: 10px;
+            border-radius: 55px;
+            font-size: 14px;
+            color: #989898;
+            background-color: #fff;
+        }
+
+        .ysy-critical-orien {
+            min-width: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .ysy-share {
+            min-width: 50px;
+
+        }
+
+        .ysy-share i {
+            font-size: 26px;
+            color: #989898;
+        }
+
+        .ysy-critical-orien i {
+            font-size: 26px;
+            color: #989898;
+        }
+
+        .ysy-branches {
+            position: absolute;
+            top: -8px;
+            right: 5px;
+            display: block;
+            padding: 0 5px;
+            background-color: #f7110f;
+            color: #ffffff;
+            border-radius: 55px;
+            font-size: 12px;
+        }
+
+        .ysy-content {
+            background-color: #fff;
+        }
+
+        .ysy-criticism {
+            background-color: #fff;
+            border-top: 1px solid #e9e9e9;
+            padding: 0 10px;
+            margin-top: 10px;
+        }
+
+        .ysy-private-int {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #e9e9e9;
+        }
+
+        .ysy-total-int {
+
+        }
+
+        .ysy-commentlist {
+            padding: 10px 0;
+        }
+
+        .ysy-commentlist li {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .ysy-commentlist li:after {
+            position: absolute;
+            right: -10px;
+            bottom: 0;
+            left: 0px;
+            height: 1px;
+            content: '';
+            background-color: #c8c7cc;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+        }
+
+        .ysy-review img {
+            width: 40px;
+            height: 40px;
+            border-radius: 55px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .ysy-review b {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .ysy-review p {
+            font-size: 12px;
+            color: #989898;
+        }
+
+        .ysy-pinglun {
+            padding: 15px 0;
+        }
+
+        .ysy-shade {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(51, 51, 51, 0.2);
+        }
+
+        .ysy-shade-head {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #e9e9e9;
+        }
+
+        .ysy-input-area {
+            display: none;
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .ysy-textarea {
+            padding: 10px;
+        }
+
+        .ysy-textarea textarea {
+            width: 100%;
+            height: 100px;
+            border: none;
+            font-size: 14px;
+
+        }
+        input,button,select,textarea{ outline:none;}
+        textarea{resize:none;}
+        .ysy-cancel {
+            color: #989898;
+        }
+
+        .ysy-confirm {
+            color: #989898;
+        }
+
+        .ysy-confirm.active {
+            color: #0f82fd;
+        }
+
+        .and-on-off {
+            display: none;
+        }
+
+        #content {
+            position: relative;
+
+        }
+
+        .and-on-off.active {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .see-more-comments {
+            display: none;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .see-more-comments a {
+            display: block;
+            padding: 10px;
+            font-size: 12px;
+            color: #989898;
+            text-align: center;
+            background-color: #f0f0f0;
+            border-radius: 55px;
+        }
+
+        .ysy-wx-tc {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 20px;
+            right: 20px;
+            text-align: center;
+            background-color: #e9e9e9;
+            background-image: url("https://dev.yunjy.com.cn/activityhtml/img/02e22ce7397e98b8ad4d749267166b1c.png");
+            background-size: 100% auto;
+            border-radius: 4px;
+        }
+
+        .ysy-wx-tc p {
+
+            padding-bottom: 20px;
+        }
+
+        .ysy-wx-tc a {
+            padding: 6px 19px;
+            background-color: #0f82fd;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .ysy-wx-tcgb {
+            padding: 20px;
+            position: relative;
+        }
+
+        .ysy-wx-tcgb .ysy-shut-btn {
+            display: block;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            border-radius: 55px;
+            background-color: rgba(57, 57, 57, 0.37);
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .ysy-page-view {
+            height: 22px;
+            position: relative;
+            padding: 10px;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #989898;
+        }
+
+        .ysy-dz i {
+
+            font-size: 22px;
+        }
+
+        .ysy-dz span {
+            position: relative;
+        }
+
+        .ysy-dz-on {
+            display: none;
+            color: #0f82fd;
+        }
+
+        .ysy-yuedu {
+            margin-left: 5px;
+        }
+
+        .ysy-accessory {
+            padding: 10px;
+
+        }
+
+        .ysy-adjunct {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e9e9e9;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .ysy-adjunct-bt {
+            width: 60%;
+            text-align: left;
+        }
+
+        .ysy-adjunct-bt p {
+            padding-left: 10px;
+            font-size: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ysy-adjunct-bt span {
+            padding-left: 10px;
+            font-size: 12px;
+            color: #989898;
+        }
+
+        .ysy-adjunct-bs {
+            width: 20%;
+        }
+
+        .ysy-adjunct-yl {
+            width: 20%;
+            text-align: center;
+        }
+
+        .ysy-adjunct-bs span {
+            display: block;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            background-color: #e73f19;
+            padding: 8px 0;
+        }
+
+        .ysy-adjunct-yl a {
+            padding: 5px 15px;
+            background-color: #017ffd;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+
+        }
+        .ysy-font-size{
+           width: 10%;
+        }
+        .ysy-font-size i{
+            font-size: 27px;
+        }
+        .ysy-font-sub{
+            display: none;
+        }
+        .my-weixing{
+            display: none;
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            max-width: 60%;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(5, 5, 5, 0.9);
+
+        }
+        .my-weixing p{
+            color: #fff;
+            font-size: 14px;
+        }
+        #triangle-left{
+            position: fixed;
+            top: 0;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 10px solid rgba(5, 5, 5, 0.9);
+        }
+        #triangle-left.active{
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <div class="and-on-off">
+        <div class="and-share">
+            <div class="ysy-logo">
+                <img src="img/logo.png">
+                <div class="yoy-logo-text">
+                    <b>优师云</b>
+                    <span>智慧研修平台</span>
+                </div>
+            </div>
+            <div class="ysy-immediatelyopen"><a>立即打开</a></div>
+            <div class="ysy-shut"><span class="ysy-shut-btn">X</span></div>
+        </div>
+    </div>
+    <div class="ysy-content">
+        <!--标题-->
+        <div class="ysy-article-title"><b>责任+耐心+爱</b></div>
+        <!--头像-->
+        <div class="ysy-material">
+            <div class="ysy-name-img">
+                <img src="img/logo.png">
+            </div>
+            <div class="ysy-name-text">
+                <p class="ysy-name-p1"><a class="">陶老师</a><span>学员</span></p>
+                <p class="ysy-name-p2"><span>优师云</span>|<span>08-03 14:30</span> |  <span id="ipa">电脑</span></p>
+            </div>
+            <div class="ysy-font-size">
+                 <span>
+                      <i class="iconfont ysy-font-add">&#xe6ae;</i>
+                      <i class="iconfont ysy-font-sub">&#xe6ad;</i>
+                 </span>
+            </div>
+        </div>
+        <!--内容-->
+        <div class="ysy-contentarticle">
+            <p class="ysy-article-fx">分享地址</p>
+            <p> 作为一名小学班主任，要让爱成为沟通师生情感的桥梁，
+                用爱调动起每个学生的积极性，挖掘其潜力，
+                创造宽松和谐的育人环境，
+                使每个学生都认识到自己是一颗闪耀的星星。 </p>
+            <p>一个人，如果没有了爱心，没有了对别人的关爱，
+                那他就等于是一无所有。做班主任更是这样，
+                如果没有博大的胸怀，没有对一切学生无私的爱心，
+                没有对伟大教育事业的全身心投入，那他算不上是称职的教师。
+                作为一名人民教师，特别是作为一名班主任，我深深知道：
+                要关爱每个孩子，越是学习上、生活上有困难的孩子，
+                越是心灵有创伤的孩子，就越需要老师加倍的关爱、
+                体贴和照顾。对待每一个孩子都要平等相待，
+                和每一个孩子彼此取得信任。只有这样班主任工作开展起来，才会顺手。 </p>
+            <p>但办公室里发生的一件事，让我深深知道这个可怜的孩子是多么需要关爱：
+                许×的作业又没订正，下课后他习惯性地来到我的桌前。这时我想起自己的
+                课本落在了讲台上，便对办公室里一位学生说：“宝贝，请你去11班，
+                把我的语文课本拿过来吧！”话音刚落，一旁的许×略带伤感地对我说：
+                “老师，你平时怎么不喊我‘宝贝’呢？”说完又继续订正作业了，
+                这时的我无言以对。是啊！如果我平时在学习和生活上对他多些关爱，
+                这个缺少爱的孩子也许会自信些。事后，我开始留心他在校的一点一滴，
+                对他的不足耐心指导和帮助，对他的闪光点加以赏识和信任，
+                他也慢慢从我的赏识和信任中得到了自信的力量、自强的勇气。
+                是啊！也许我们教师不经意的话语和行为，就能让孩子感受到爱的力量，
+                就能照亮孩子前方的道路，使每个学生都认识到自己也是一颗闪耀的星星，
+                同样可以亮丽起来。 </p>
+        </div>
+        <div class="ysy-accessory">
+            <div class="ysy-adjunct">
+                <div class="ysy-adjunct-bs"><span style="background-color: #e73f19">pdf</span></div>
+                <div class="ysy-adjunct-bt">
+                    <p>名字.pdf</p>
+                    <span>5.2M</span>
+                </div>
+                <div class="ysy-adjunct-yl"><a>预览</a></div>
+            </div>
+            <div class="ysy-adjunct">
+                <div class="ysy-adjunct-bs"><span style="background-color: #075ffd">doc</span></div>
+                <div class="ysy-adjunct-bt">
+                    <p>名字.doc</p>
+                    <span>5.2M</span>
+                </div>
+                <div class="ysy-adjunct-yl"><a>预览</a></div>
+            </div>
+        </div>
+        <div class="ysy-page-view">
+            <div class="ysy-yd">阅读<span class="ysy-yuedu"></span></div>
+            <div class="ysy-dz">
+                <span><i class="iconfont ysy-dz-off">&#xe627;</i></span>
+                <span><i class="iconfont ysy-dz-on">&#xe696;</i></span>
+                <span class="ysy-dztj">5</span>
+            </div>
+        </div>
+    </div>
+    <!--全部评论-->
+    <div class="ysy-criticism">
+        <div id="divNode" class="ysy-private-int">全部评论(<span class="ysy-total-int">10</span>)</div>
+        <ul class="ysy-commentlist">
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="ysy-review">
+                        <img src="img/logo.png">
+                        <b>陶老师</b>
+                        <p>8小时前</p>
+                    </div>
+                    <div class="ysy-pinglun">
+                        <p>
+                            评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--评论超过十条显示查看更多-->
+    <div class="see-more-comments"><a class="ysy-ckgd">查看更多评论<i class="iconfont">&#xe61b;</i></a></div>
+</div>
+<!--底部评论框-->
+<div class="ysy-footer">
+    <div class="ysy-discuss">
+        <div class="ysy-observer"><span><i class="iconfont">&#xe673;</i>评论一下吧~</span></div>
+        <div class="ysy-critical">
+            <div class="ysy-critical-orien">
+                <i class="iconfont">&#xe616;</i>
+                <span class="ysy-branches">10</span></div>
+        </div>
+        <div class="ysy-share">
+            <i class="iconfont">&#xe6ac;</i>
+        </div>
+    </div>
+</div>
+<!--评论输入框-->
+<div class="ysy-shade">
+    <div class="ysy-input-area">
+        <div class="ysy-shade-head">
+            <div class="ysy-cancel">取消</div>
+            <div class="all-article-number">全部(<span>10</span>)条评论</div>
+            <div class="ysy-confirm">确定</div>
+        </div>
+        <div class="ysy-textarea"><textarea id="user-textarea" onKeyUp='keypress()' onblur='keypress()'
+                                            placeholder="说点什么吧"></textarea></div>
+    </div>
+</div>
+<div class="ysy-wx-tc">
+    <div class="ysy-wx-tcgb">
+        <p>下载app或进入小程序查看更多评论</p>
+        <a>立即下载</a>
+        <span class="ysy-shut-btn">X</span>
+    </div>
+</div>
+<!--各端弹窗-->
+<div class="my-weixing">
+    <div id="triangle-left"></div>
+    <P class="my-weixing-1">1 点击右上方 "•••"</P>
+    <p class="my-weixing-2">2 选择分享给朋友或者朋友圈</p>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //初始加载
+        (function ($) {
+            $.getUrlParam = function (name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;
+
+            }
+        })(jQuery);
+        $(window).scroll(function () {
+            var doc_height = $(document).height();
+            var scroll_top = $(document).scrollTop();
+            var window_height = $(window).height();
+
+            if (scroll_top == 0) {
+                $('.and-on-off').removeClass("active");
+            } else if (scroll_top + window_height >= doc_height) {
+                $('.and-on-off').addClass("active");
+            }
+        });
+        //字体放大缩小
+        $('.ysy-font-size').on('click', 'span', function () {
+            $(this).find('i').toggle();
+            $('.ysy-contentarticle').toggleClass('active')
+        });
+
+        //点赞动画
+        $('.ysy-dz').on('click', '.ysy-dz-off', function () {
+            var ls = parseInt($('.ysy-dztj').text()) + 1;
+            $('.ysy-dztj').html(ls)
+            $(this).hide();
+            $(".ysy-dz-on").show();
+            var dz = $(".ysy-dz-on");
+            dz.animate({fontSize: '26px'}, "slow");
+            dz.animate({fontSize: '22px'}, "slow");
+        });
+        //取消点赞动画
+        $('.ysy-dz').on('click', '.ysy-dz-on', function () {
+            var ls = parseInt($('.ysy-dztj').text()) - 1;
+            $('.ysy-dztj').html(ls)
+            $(this).hide();
+            $(".ysy-dz-off").show();
+        });
+        //关闭立即打开按钮
+        $('.ysy-shut').on('click', ' .ysy-shut-btn', function () {
+            $('.and-on-off').hide();
+            $('#content').css('padding-bottom', '0')
+        });
+        //打开输入框
+        $('.ysy-observer').on('click', 'span', function (event) {
+            event.stopPropagation();
+            $(".ysy-shade").slideDown("fast");
+            $('.ysy-input-area').slideDown("fast");
+            $('#user-textarea').trigger("click").focus().attr('placeholder', '评论一下吧~');
+            return false;
+        });
+        //关闭输入框
+        $('.ysy-shade-head').on('click', '.ysy-cancel', function () {
+            $(".ysy-shade").slideUp("fast");
+            $('.ysy-input-area').slideUp("fast");
+        });
+        $(document).click(function (event) {
+            var _con = $('.ysy-input-area');
+            if (!_con.is(event.target) && _con.has(event.target).length === 0) {
+                $(".ysy-shade").slideUp("fast");
+                $('.ysy-input-area').slideUp("fast");
+            }
+        });
+        $(".ysy-discuss").on('click', '.ysy-critical', function () {
+            $('html,body').animate({scrollTop: $("#divNode").offset().top}, 500);
+        });
+    });
+
+    //textarea输入长度处理
+    function keypress() {
+        var text1 = document.getElementById("user-textarea").value;
+        if (text1.length > 0)//textarea控件不能用maxlength属性，就通过这样显示输入字符数了
+        {
+            $('.ysy-confirm').addClass('active');
+        }
+        else {
+            $('.ysy-confirm').removeClass('active');
+        }
+    }
+
+    //本地测试评论
+    $('.ysy-shade-head').on('click', '.ysy-confirm', function () {
+        var mytext = $(" #user-textarea ").val();
+        var li = ' <li>' +
+            '<a>' +
+            '<div class="ysy-review">' +
+            '<img src="img/logo.png">' +
+            '<b>陶老师</b>' +
+            '<p>8小时前</p>' +
+            '</div>' +
+            '<div class="ysy-pinglun">\n' +
+            '<p>' + mytext + '</p>' +
+            '</div>' +
+            '</a>' +
+            '</li>';
+        $('.ysy-commentlist').prepend(li);
+        $(".ysy-shade").slideUp("fast");
+        $('.ysy-input-area').slideUp("fast");
+        $('html,body').animate({scrollTop: $("#divNode").offset().top}, 500);
+    });
+    $('.see-more-comments').on('click', '.ysy-ckgd', function () {
+        alert('点击了查看更多评论')
+    })
+
+
+
+    $(document).ready(function () {
+        //浏览量统计
+        if (localStorage.pagecount) {
+            localStorage.pagecount = Number(localStorage.pagecount) + 1;
+        } else {
+            localStorage.pagecount = 1;
+        }
+        var yuedu = localStorage.pagecount;
+        // console.log("yx")
+        $(".ysy-yuedu").html(yuedu);
+        var fxurl=window.location.href
+        // $(".ysy-article-fx").html("分享地址="+fxurl);
+       // alert(fxurl);
+        var lilength = $('.ysy-commentlist li').length;
+        var isfrom = $.getUrlParam("from");
+        var isShare = $.getUrlParam("isShare");
+        if (lilength >= 10) {
+            $('.see-more-comments').show();
+        }
+        //安卓 ios 小程序 分享
+        $('.ysy-discuss').on('click', '.ysy-share', function () {
+            if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+                document.addEventListener('WeixinJSBridgeReady', appletOfProject, false);
+                //不是微信
+                var ua = navigator.userAgent.toLowerCase();
+                if (/iphone|ipad|ipod/.test(ua)) {
+                    //是苹果
+                    $("#ipa").html('苹果');
+                    $('#triangle-left').removeClass('active');
+                    $('.my-weixing').show();
+                    $('.my-weixing-1').html('1 点击右上方 "分享"');
+                    $('.my-weixing-2').html('2 选择"微信"或者"微信朋友圈"将文章推荐给好友吧');
+                    setTimeout(function(){$('.my-weixing').hide();},3000);
+                } else {
+                    //是安卓
+                    $("#ipa").html('安卓');
+                    androidShare()
+                }
+            } else {
+                //微信
+                appletOfProject();
+            }
+        });
+        if (!window.WeixinJSBridge || !WeixinJSBridge.invoke) {
+            document.addEventListener('WeixinJSBridgeReady', appletOfProject, false);
+            //不是微信
+            var ua = navigator.userAgent.toLowerCase();
+            if (/iphone|ipad|ipod/.test(ua)) {
+                //是苹果
+                $("#ipa").html('苹果');
+                $('#triangle-left').removeClass('active');
+                $('.my-weixing').show();
+                $('.my-weixing-1').html('1 点击右上方 "分享"');
+                $('.my-weixing-2').html('2 选择"微信"或者"微信朋友圈"将文章推荐给好友吧');
+                setTimeout(function(){$('.my-weixing').hide();},3000);
+            } else {
+                //是安卓
+                $("#ipa").html('安卓');
+
+            }
+        } else {
+            //微信
+           
+        }
+        if (isShare == 1||isfrom != null) {
+          //  console.log(isfrom)
+            $(".and-on-off").show();
+            $('.ysy-footer').hide();
+            $('#content').css('padding-bottom', '50px');
+            $('body').css('padding-bottom', '0');
+            $('.see-more-comments a').addClass('ysy-wx-ckgd').removeClass('ysy-ckgd');
+        }else {
+            $('.see-more-comments a').addClass('ysy-ckgd').removeClass('ysy-wx-ckgd');
+        }
+
+        $('.and-share').on('click', '.ysy-immediatelyopen', function () {
+            $(window).attr('location', 'details_page_sharing.html');
+        })
+        $('.see-more-comments').on('click', '.ysy-wx-ckgd', function () {
+            $('.ysy-wx-tc').show();
+        })
+        $('.ysy-wx-tcgb').on('click', 'span', function () {
+            $('.ysy-wx-tc').hide();
+        })
+        $('.ysy-wx-tcgb').on('click', 'a', function () {
+            $(window).attr('location', 'details_page_sharing.html');
+        })
+
+
+
+    });
+
+    function androidShare() {
+        var sharetitle=$(document).attr("title");
+        var sharedesc=document.querySelector('meta[itemprop="description"]').getAttribute('content');
+        var sharelink=window.location.href;
+        var shareimg=document.querySelector('meta[itemprop="image"]').getAttribute('content');
+        if(shareimg==null||shareimg==undefined||shareimg==""){
+            shareimg='img/logo.png';
+        }
+        window.android.share('&sharetitle='+sharetitle+'' +
+            '&sharelink='+sharelink+'' +
+            '&sharedesc='+sharedesc+'' +
+            '&shareimg='+shareimg+'')
+    }
+    function appletOfProject() {
+        if (window.__wxjs_environment === 'miniprogram') {
+            //微信小程序环境
+            $("#ipa").html('小程序')
+            $('#triangle-left').addClass('active');
+            $('.my-weixing').show();
+            $('.my-weixing-1').html('1 点击右上方 "•●•"')
+            $('.my-weixing-2').html('2 选择"转发"将文章推荐给好友吧');
+            setTimeout(function(){$('.my-weixing').hide();},3000);
+        } else {
+            //微信环境
+           $("#ipa").html('微信')
+            $('#triangle-left').removeClass('active');
+            $('.my-weixing').show();
+            setTimeout(function(){$('.my-weixing').hide();},3000);
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

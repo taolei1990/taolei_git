@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+    <script>
+        $(function(){
+            var luel=window.location.href;
+            var url={'reurl':luel};
+            $.ajax({
+                type : "get",
+                url : "http://datahk.yunjy.com.cn/weixin/Weixinshareapi/getsign",
+                dataType : "json",
+                async : false,
+                data:url,
+                success : function(data) {
+                    // console.log(data);
+                    wx.config({
+                        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: data.appid, // 必填，公众号的唯一标识
+                        timestamp:data.timestamp , // 必填，生成签名的时间戳
+                        nonceStr: data.noncestr, // 必填，生成签名的随机串
+                        signature: data.string_js,// 必填，签名
+                        jsApiList: [//需要调用的JS接口列表
+                            'checkJsApi',//判断当前客户端版本是否支持指定JS接口
+                            'onMenuShareTimeline',//分享给好友
+                            'onMenuShareAppMessage',//分享到朋友圈
+                            'onMenuShareQQ',//分享到QQ
+                            'onMenuShareQZone',//分享到朋友圈
+                        ]
+                    });
+                    wx.ready(function () {
+                        var link = 'http://html.yunjy.com.cn/msgzs/msh.html';
+                        var protocol = 'http://html.yunjy.com.cn/img/500452692_wx.jpg';
+
+                        //分享朋友圈
+                        wx.onMenuShareTimeline({
+                            title: '这是一个自定义的标题！',
+                            link: link,
+                            imgUrl: protocol,// 自定义图标
+                            success: function () {
+                                // 用户点击了分享后执行的回调函数
+                            },
+                        });
+                        //分享给好友
+                        wx.onMenuShareAppMessage({
+                            title: '这是一个自定义的标题！', // 分享标题
+                            desc: '这是一个自定义的描述这是一个自定义的描述这是一个自定义的描述这是一个自定义的描述！', // 分享描述
+                            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: protocol,// 自定义图标
+                            type: 'link', // 分享类型,music、video或link，不填默认为link
+                            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        });
+                        //分享到QQ
+                        wx.onMenuShareQQ({
+                            title: '这是一个自定义的标题！', // 分享标题
+                            desc: '分享测试描述', // 分享描述
+                            link: link, // 分享链接
+                            imgUrl: protocol, // 分享图标
+                            success: function () {
+// 用户确认分享后执行的回调函数
+                            },
+                            cancel: function () {
+// 用户取消分享后执行的回调函数
+                            }
+                        });
+                        //分享到QQ空间
+                        wx.onMenuShareQZone({
+                            title: '这是一个自定义的标题！', // 分享标题
+                            desc: '分享测试描述', // 分享描述
+                            link: link, // 分享链接
+                            imgUrl: protocol, // 分享图标
+                            success: function () {
+// 用户确认分享后执行的回调函数
+                            },
+                            cancel: function () {
+// 用户取消分享后执行的回调函数
+                            }
+                        });
+
+                        wx.error(function (res) {
+                            alert(res.errMsg);
+                        });
+                    });
+                },
+
+            })
+        });
+
+    </script>
+</head>
+<body class="y-fff">
+<header class="mui-bar mui-bar-nav ">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <a  class="mui-icon mui-icon-more  mui-pull-right"></a>
+    <h1 class="mui-title">课题研究</h1>
+</header>
+    <div class="mui-content">
+        <div class="y-ktyjdh h-sqktgzs-act">
+            <span class="active">全部</span>
+            <span class="">问答</span>
+            <span class="">精华</span>
+            <a ><i class="iconfont">&#xe646;</i>最后回复</a>
+            <a class="active"><i class="iconfont">&#xe646;</i>最新发表</a>
+        </div>
+        <ul class="mui-table-view y-ktyj">
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                    <span class="y-ktyjzd"><i class="iconfont">&#xe6eb;</i></span>
+                    <span class="y-ktyjzx">new</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                    <span class="y-ktyjzd"><i class="iconfont">&#xe6eb;</i></span>
+                    <span class="y-ktyjzx">new</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a  href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                    <span class="y-ktyjzd"><i class="iconfont">&#xe6eb;</i></span>
+                    <span class="y-ktyjjh">精华</span>
+
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                    <span class="y-ktyjzd"><i class="iconfont">&#xe6eb;</i></span>
+                    <span class="y-ktyjzx">new</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+
+
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+
+
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+
+
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media wow fadeIn">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left">课题</div>
+                    <div class="mui-media-body">
+                        <h5 class='mui-ellipsis'>校本研修实施方案</h5>
+                        <div class="y-ktyjbq">
+                            <span class="y-ktyjmz"><i class="iconfont">&#xe643;</i>陶老师</span>
+                            <span class="y-ktyjtim">1小时前</span>
+                            <span class="y-ktyjliul"><i class="iconfont">&#xe606;</i>150</span>
+                            <span class="y-ktyjhuif"><i class="iconfont">&#xe609;</i>160</span></div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="y-jiewei">闻道有先后，术业有专攻</div>
+        <!--发表-->
+    </div>
+<div class="y-shangchuan"><a class="animated y-xzkt" >新增<br>课题</a></div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 1,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<script>
+    mui(".h-sqktgzs-act").on('tap', 'span', function () {
+        var x=$('.h-sqktgzs-act span').index(this);
+        $('.h-sqktgzs-act span').removeClass('active');
+        $('.h-sqktgzs-act span').eq(x).addClass('active');
+if(x==0){
+    //执行1
+} else if(x==1){
+    //执行1
+         }
+else if(x==2){
+    //执行1
+}
+    });
+    mui(".h-sqktgzs-act").on('tap', 'a', function () {
+        var x=$('.h-sqktgzs-act a').index(this);
+        $('.h-sqktgzs-act a').removeClass('active');
+        $('.h-sqktgzs-act a').eq(x).addClass('active');
+        if(x==0){
+            //执行1
+        } else if(x==1){
+            //执行1
+        }
+    })
+</script>
+<script>
+    mui.init({
+        gestureConfig:{
+            hold:true,//默认为false，不监听
+            release:true//默认为false，不监听
+        }
+    });
+   //打开上传课程
+    mui('.y-shangchuan').on('hold','a',function(){
+
+        $(this).addClass('pulse');
+        //   mui.openWindow({
+        // url:'工作室-管理.html',
+        //  id:''
+        //});
+    });
+    //
+    mui('.y-shangchuan').on('release','a',function(){
+        $(this).removeClass('pulse');
+        //   mui.openWindow({
+        // url:'工作室-管理.html',
+        //  id:''
+        //});
+    });
+</script>
+
+</body>
+</html>

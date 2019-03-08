@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>视频播放</title>
+    <meta name="Description" content="UtoVR全景播放器">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        html body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #panoDesk {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left:0px;
+            top:0px;
+            overflow: hidden;
+        }
+        .y-bar-nav{
+            background-color: rgba(31,31,31,0.3);
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav y-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <!-- <a id="offCanvasBtn"  class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>-->
+    <h1 class="mui-title">视频直播</h1>
+</header>
+<div id="panoDesk"></div>
+<!--引入引导js 动态下载播放器-->
+<script language="javascript" type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script language="javascript" type="text/javascript" src="player/UtoVRPlayerGuide.js"></script>
+<script src="js/mui.min.js"></script>
+</body>
+<script language="javascript" type="text/javascript">
+    /*播放器参数配置*/
+    //todo:工具栏点击显示隐藏
+    var isShowAll = true;
+    var hiddenAll = function () {
+        $("#videoToolbar").animate({bottom: -41}, 300);
+        $('.mui-bar').animate({top: -44}, 300);
+        isShowAll = false;
+    };
+    var showAll = function () {
+        $("#videoToolbar").animate({bottom: 0}, 300);
+        $('.mui-bar').animate({top: 0}, 300);
+        isShowAll = true;
+    };
+    var toggleAll = function () {
+        if (isShowAll) {
+            hiddenAll();
+        } else {
+            showAll();
+        }
+    };
+    /*播放器参数配置*/
+    var params = {
+        container: document.getElementById("panoDesk"),
+        name: "SceneViewer",
+        isGyro:true,        //默认开启陀螺仪功能  移动端支持陀螺仪设备有效
+        fullScreenMode:true,//全屏模式 ===>如果是配置了该参数，将忽略width和height的配置，播放器将取当前窗口的尺寸作为播放器的初始尺寸*/
+        //isDBViewPort:true,//是否是双屏显示
+        scenesArr: [
+            //todo:注意修改视频路径，需要保证播放页面与视频属于同一域名下
+            {
+                sceneId: "v1",
+                sceneName: "视频",
+                //sceneFilePath: "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L2_vmayhotsln9yv4f5.mp4",
+                sceneFilePath: "https://taolei1990.github.io/taolei_git/video/VID4K.mp4",
+                sceneType: "Video",
+                isVideoAutoPlay: true  //todo:注意isVideoAutoPlay 是H5 模式下的播放属性，不适用于移动端
+            }
+        ],
+        //播放器不支持全景播放回调
+        errorCallBack: function (e) {
+            console.log("错误状态：" + e);
+        },
+        //浏览器不支持全屏回调
+        fsCallBack: function (status, playObj) {
+
+            alert("手机横屏观看！");
+        },
+        sceneEventClickCallBack: function (e) {
+            //todo:播放器点击事件 绑定工具栏显示隐藏
+            toggleAll();
+        },
+    };
+    /*初始化开始*/
+
+    /*初始化开始*/
+    window.onload = function () {
+        //todo：配置工具栏的多码率格式
+        var TBConfig = {
+            videoQuality: 2,
+            videoList: [
+                {
+                    "Text": "极速",
+                    "Quality": 1,
+                    "Resolution": "1280x640",
+                    "MP4": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L1_zgucy3i1hcllftu5.mp4",
+                    "M3U8": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L1_gnq7gkbcpdgjsmh7.m3u8",
+                    "RTMP": null
+                },
+                {
+                    "Text": "标清",
+                    "Quality": 2,
+                    "Resolution": "1920x960",
+                    "MP4": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L2_vmayhotsln9yv4f5.mp4",
+                    "M3U8": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L2_w41nz0mqpxgnhzve.m3u8",
+                    "RTMP": null
+                },
+                {
+                    "Text": "高清",
+                    "Quality": 3,
+                    "Resolution": "2880x1440",
+                    "MP4": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L3_ngeaxawx1c88u8de.mp4",
+                    "M3U8": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L3_qzmptjut4qk8r6ao.m3u8",
+                    "RTMP": null
+                },
+                {
+                    "Text": "4K",
+                    "Quality": 4,
+                    "Resolution": "3840x1920",
+                    "MP4": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L4_dsehbbeegjdx2yhe.mp4",
+                    "M3U8": "http://cache.utovr.com/5b8d3395d6024c7e99c107627ae9c93c/L4_czi5ee1sfhvefrn4.m3u8",
+                    "RTMP": null
+                }]
+        };
+        initLoad(params, function (playMode) {
+            console.log(playMode);
+        }, TBConfig);
+    };
+    /*没有多码率格式*/
+    /*
+    window.onload = function () {
+        initLoad(params);
+    };
+       */
+</script>
+
+</html>

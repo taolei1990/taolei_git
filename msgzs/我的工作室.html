@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="mui-bar mui-bar-nav y-bar-nav mui-active">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <a  class="mui-icon mui-icon-more  mui-pull-right"></a>
+    <h1 class="mui-title">我的工作室</h1>
+</header>
+    <div class="mui-content">
+        <div class="h-sqktgzs h-sqktgzs-act">
+            <button type="button" class="mui-btn mui-btn-primary h-ktmsgzs">创建工作室</button>
+            <span class="active"><i class="iconfont">&#xe663;</i></span>
+            <span><i class="iconfont">&#xe65e;</i></span>
+        </div>
+
+        <div class="h-famousteacher-list">
+            <div class="mui-row ">
+                <div class="mui-col-sm-12 mui-col-xs-12">
+                    <div class="h-famousteacher mui-table-view-cell animated ">
+                        <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png">
+                        <h5>杨桂林</h5>
+                        <h6>学段学科</h6>
+                        <p>全国中小学教师继续教育网家庭教育首席专家</p>
+                        <div class="h-attribute">
+                            <!--<button type="button" class="mui-btn mui-btn-primary">加入</button>-->
+                            <span>人气值:560</span>
+                            <span>资源数:560</span>
+                            <span>成员数:560</span>
+                        </div>
+                        <span  class=" w-arrowright"> <i class="iconfont">&#xe630;</i></span>
+                    </div>
+                </div>
+                <div class="mui-col-sm-12 mui-col-xs-12">
+                    <div class="h-famousteacher mui-table-view-cell animated ">
+                        <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png">
+                        <h5>杨桂林</h5>
+                        <h6>学段学科</h6>
+                        <p>全国中小学教师继续教育网家庭教育首席专家</p>
+                        <div class="h-attribute">
+                            <!--<button type="button" class="mui-btn mui-btn-primary">加入</button>-->
+                            <span>人气值:560</span>
+                            <span>资源数:560</span>
+                            <span>成员数:560</span>
+                        </div>
+                        <span  class=" w-arrowright"> <i class="iconfont">&#xe630;</i></span>
+                    </div>
+                </div>
+                <div class="mui-col-sm-12 mui-col-xs-12">
+                    <div class="h-famousteacher mui-table-view-cell animated ">
+                        <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png">
+                        <h5>杨桂林</h5>
+                        <h6>学段学科</h6>
+                        <p>全国中小学教师继续教育网家庭教育首席专家</p>
+                        <div class="h-attribute">
+                            <!--<button type="button" class="mui-btn mui-btn-primary">加入</button>-->
+                            <span>人气值:560</span>
+                            <span>资源数:560</span>
+                            <span>成员数:560</span>
+                        </div>
+                        <span  class=" w-arrowright"> <i class="iconfont">&#xe630;</i></span>
+                    </div>
+                </div>
+                <div class="mui-col-sm-12 mui-col-xs-12">
+                    <div class="h-famousteacher mui-table-view-cell animated ">
+                        <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png">
+                        <h5>杨桂林<span>审核未通过</span></h5>
+                        <h6>学段学科</h6>
+                        <p>全国中小学教师继续教育网家庭教育首席专家</p>
+                        <div class="h-attribute">
+                            <!--<button type="button" class="mui-btn mui-btn-primary">加入</button>-->
+                            <span>人气值:0</span>
+                            <span>资源数:0</span>
+                            <span>成员数:0</span>
+                        </div>
+                        <span  class=" w-arrowright"> <i class="iconfont">&#xe630;</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<div id="forward" class="mui-popover mui-popover-action mui-popover-bottom">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#">工作室管理</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a href="#">基本信息</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a href="#">封面图片</a>
+        </li>
+    </ul>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#forward"><b>取消</b></a>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script>
+    //打开页面
+    mui('#mui-bar-tab').on('tap','a',function(e){
+        var index = $(this).index();
+        if(index==0){
+            mui.openWindow({
+                url:'名师荟.html',
+                id:'名师荟.html'
+            });
+        }else if(index==1){
+            mui.openWindow({
+                url:'名师动态.html',
+                id:'名师动态.html'
+            });
+        }
+        else if(index==2){
+            mui.openWindow({
+                url:'与我相关.html',
+                id:'与我相关.html'
+            });
+        }
+        else if(index==3){
+            mui.openWindow({
+                url:'工作室.html',
+                id:'工作室.html'
+            });
+        }
+
+
+    });
+</script>
+<script>
+    //列表切换
+    mui(".h-sqktgzs").on('tap', 'span', function () {
+        $(".h-sqktgzs span").removeClass("active");
+        $(this).addClass("active");
+        var inx = $(this).index();
+        if (inx == 1) {
+            $('.h-famousteacher-list').removeClass('k-famousteacher-list')
+            $('.animated').removeClass('bounceIn');
+            $('.mui-col-sm-12.mui-col-xs-12').hide();
+            var i;
+            var j = 0;
+            $('.mui-col-sm-12.mui-col-xs-12').each(function () {
+                i = $(this).index();
+                tt = function (d) {
+                    $('.mui-col-sm-12.mui-col-xs-12').eq(d).show().find('.animated').addClass("bounceInLeft");
+                }
+                setTimeout('tt(' + i + ')', j);
+                j = j + 100;
+            });
+        }
+        if (inx == 2) {
+            $('.h-famousteacher-list').addClass('k-famousteacher-list');
+
+
+            $('.animated').removeClass('bounceInLeft');
+            $('.mui-col-sm-12.mui-col-xs-12').hide();
+            var i;
+            var j = 0;
+            $('.mui-col-sm-12.mui-col-xs-12').each(function () {
+                i = $(this).index();
+                tt = function (d) {
+                    $('.mui-col-sm-12.mui-col-xs-12').eq(d).show().find('.animated').addClass("bounceIn");
+                }
+                setTimeout('tt(' + i + ')', j);
+                j = j + 100;
+            });
+        }
+    })
+
+</script>
+<script>
+    //管理工作室
+    mui(".h-famousteacher-list").on('tap','.w-arrowright',function(){
+        mui('.mui-popover').popover('toggle')
+    });
+
+</script>
+</body>
+</html>

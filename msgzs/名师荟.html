@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+    <!--菜单部分-->
+    <aside id="offCanvasSide" class="mui-off-canvas-right">
+        <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                 <div class="w-search">
+                    <div class="mui-input-row mui-search ">
+                        <input type="search"  class="mui-input-clear" placeholder="工作室名称/姓名">
+                    </div>
+                </div>
+                <div class="h-sfcx">
+                    <button type="button" class="mui-btn mui-btn-primary">全部</button>
+                    <button type="button" class="mui-btn">重庆市</button>
+                    <button type="button" class="mui-btn">北京市</button>
+                    <button type="button" class="mui-btn">天津市</button>
+                    <button type="button" class="mui-btn">河北省</button>
+                    <button type="button" class="mui-btn">山西省</button>
+                    <button type="button" class="mui-btn">天津市</button>
+                    <button type="button" class="mui-btn">河北省</button>
+                    <button type="button" class="mui-btn">山西省</button>
+                    <button type="button" class="mui-btn">天津市</button>
+                    <button type="button" class="mui-btn">河北省</button>
+                    <button type="button" class="mui-btn">山西省</button>
+                    <button type="button" class="mui-btn">重庆市</button>
+                    <button type="button" class="mui-btn">北京市</button>
+                </div>
+            </div>
+            <div class="w-quedin">
+                <button type="button" class="mui-btn mui-btn-danger">取消</button>
+                <button type="button" class="mui-btn mui-btn-primary">确定</button>
+            </div>
+        </div>
+    </aside>
+    <div id="depotbox" class="mui-inner-wrap">
+        <header class="mui-bar mui-bar-nav w-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+            <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-search mui-pull-right"></a>
+            <h1 class="mui-title">名师荟</h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab" id="mui-bar-tab">
+            <a class="mui-tab-item mui-active" href="#">
+                <span class="mui-icon"><i class="iconfont">&#xe6ea;</i></span>
+                <span class="mui-tab-label">名师荟</span>
+            </a>
+            <a class="mui-tab-item" href="#">
+                <span class="mui-icon"><i class="iconfont">&#xe62d;</i></span>
+                <span class="mui-tab-label">名师动态</span>
+            </a>
+            <a class="mui-tab-item" href="#tabbar-with-contact">
+                <span class="mui-icon"><i class="iconfont">&#xe6a3;</i><span class="mui-badge">9</span></span>
+                <span class="mui-tab-label">与我相关</span>
+            </a>
+            <a class="mui-tab-item" href="#tabbar-with-map">
+                <span class="mui-icon"><i class="iconfont">&#xe6a7;</i></span>
+                <span class="mui-tab-label">工作室</span>
+            </a>
+        </nav>
+
+        <div id="offCanvasContentScroll" class=" mui-scroll-wrapper">
+            <div class="mui-scroll1 " >
+                <div class="w-slider" >
+                 <div class="swiper-container">
+                     <div class="swiper-wrapper">
+                         <div class="swiper-slide"><a><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14295531e7cd462323.png"></a></div>
+                         <div class="swiper-slide"><a><img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png"></a></div>
+                         <div class="swiper-slide"><a><img src="http://hk.yunjy.com.cn/files/course/2017/07-12/14283868020c417644.png"></a></div>
+                     </div>
+                     <!-- 如果需要分页器 -->
+                     <div class="swiper-pagination w-pagination"></div>
+                 </div>
+
+                     </div>
+                <div class="h-sqktgzs h-sqktgzs-act">
+                    <button type="button" class="mui-btn mui-btn-primary h-ktmsgzs">申请开通名师工作室</button>
+                    <span class="active"><i class="iconfont">&#xe663;</i></span>
+                    <span><i class="iconfont">&#xe65e;</i></span>
+                </div>
+                <div class="h-famousteacher-list">
+                    <div class="mui-row ">
+                        <div class="mui-col-sm-12 mui-col-xs-12">
+                            <div class="h-famousteacher mui-table-view-cell animated ">
+                                <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png">
+                                <h5>杨桂林</h5>
+                                <h6>学段学科</h6>
+                                <p>全国中小学教师继续教育网家庭教育首席专家</p>
+                                <div class="h-attribute">
+                                    <!--<button type="button" class="mui-btn mui-btn-primary">加入</button>-->
+                                    <span>人气值:560</span>
+                                    <span>资源数:560</span>
+                                    <span>成员数:560</span>
+                                </div>
+                               <span  class="mui-icon mui-icon-arrowdown w-arrowright"></span>
+                            </div>
+                        </div>
+                        <div class="mui-col-sm-12 mui-col-xs-12">
+                            <div class="h-famousteacher mui-table-view-cell animated ">
+                                <img src="http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png">
+                                <h5>杨桂林</h5>
+                                <h6>学段学科</h6>
+                                <p>全国中小学教师继续教育网家庭教育首席专家</p>
+                                <div class="h-attribute">
+                                    <!--<button type="button" class="mui-btn mui-btn-primary">加入</button>-->
+                                    <span>人气值:560</span>
+                                    <span>资源数:560</span>
+                                    <span>成员数:560</span>
+                                </div>
+                                <span class="mui-icon mui-icon-arrowdown w-arrowright"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- off-canvas backdrop -->
+        <div class="mui-off-canvas-backdrop"></div>
+
+    </div>
+
+</div>
+<div id="forward" class="mui-popover mui-popover-action mui-popover-bottom">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#">加入Ta的工作室</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a href="#">关注Ta的工作室</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a href="#">分享Ta的工作室</a>
+        </li>
+    </ul>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#forward"><b>取消</b></a>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script>
+    //  mui('#offCanvasSideScroll').scroll();
+    // mui('#offCanvasContentScroll').scroll();
+    //隐藏侧滑菜单
+    mui(".w-quedin").on('tap','.mui-btn-danger',function(){
+        mui('.mui-off-canvas-wrap').offCanvas('close');
+    });
+</script>
+<script>
+    //失去焦点
+    document.getElementById('offCanvasWrapper').addEventListener('tap', function() {
+        document.activeElement.blur();
+    });
+
+</script>
+<script>
+    //加入工作室
+    mui(".h-famousteacher-list").on('tap','.w-arrowright',function(){
+        mui('.mui-popover').popover('toggle')
+    });
+
+</script>
+<script>
+    //打开页面
+   mui('#mui-bar-tab').on('tap','a',function(){
+       var index = $(this).index();
+     if(index==0){
+         mui.openWindow({
+             url:'名师荟.html',
+             id:'名师荟.html'
+         });
+     }else if(index==1){
+         mui.openWindow({
+             url:'名师动态.html',
+             id:'名师动态.html'
+         });
+     }
+     else if(index==2){
+         mui.openWindow({
+             url:'与我相关.html',
+             id:'与我相关.html'
+         });
+     }
+     else if(index==3){
+         mui.openWindow({
+             url:'工作室.html',
+             id:'工作室.html'
+         });
+     }
+   });
+
+</script>
+<script>
+    //banner
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        autoplay:true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+            bulletClass : 'my-bullet-1',
+            bulletActiveClass: 'my-bullet-active-1',
+        },
+    })
+</script>
+<script>
+    //选择省份
+    mui(".h-sfcx").on('tap', 'button', function () {
+        $('.h-sfcx').find('button').removeClass('mui-btn-primary');
+        $(this).addClass('mui-btn-primary')
+    })
+</script>
+<script>
+    //列表切换
+    mui(".h-sqktgzs").on('tap', 'span', function () {
+        $(".h-sqktgzs span").removeClass("active");
+        $(this).addClass("active");
+        var inx = $(this).index();
+        if (inx == 1) {
+            $('.h-famousteacher-list').removeClass('k-famousteacher-list')
+            $('.animated').removeClass('bounceIn');
+            $('.mui-col-sm-12.mui-col-xs-12').hide();
+            var i;
+            var j = 0;
+            $('.mui-col-sm-12.mui-col-xs-12').each(function () {
+                i = $(this).index();
+                tt = function (d) {
+                    $('.mui-col-sm-12.mui-col-xs-12').eq(d).show().find('.animated').addClass("bounceInLeft");
+                }
+                setTimeout('tt(' + i + ')', j);
+                j = j + 100;
+            });
+        }
+        if (inx == 2) {
+            $('.h-famousteacher-list').addClass('k-famousteacher-list');
+
+
+        $('.animated').removeClass('bounceInLeft');
+        $('.mui-col-sm-12.mui-col-xs-12').hide();
+        var i;
+        var j = 0;
+        $('.mui-col-sm-12.mui-col-xs-12').each(function () {
+            i = $(this).index();
+            tt = function (d) {
+                $('.mui-col-sm-12.mui-col-xs-12').eq(d).show().find('.animated').addClass("bounceIn");
+            }
+            setTimeout('tt(' + i + ')', j);
+            j = j + 100;
+        });
+        }
+    })
+
+</script>
+<script>
+    <!--滑动加载-->
+    mui.init({
+        pullRefresh: {
+            container: '#offCanvasContentScroll',
+            down: {
+                callback: pulldownRefresh,
+                contentrefresh: '正在刷新...',
+            },
+            up: {
+                contentrefresh: '正在加载...',
+                callback: pullupRefresh,
+                contentnomore:'学习——永远不晚(^_−)'
+            }
+        }
+    });
+    /**
+     * 下拉刷新具体业务实现 暂不实现
+     */
+    function pulldownRefresh() {
+        setTimeout(function () {
+            location.reload();
+        }, 1500);
+    }
+    var count = 0;
+    /**
+     * 上拉加载具体业务实现
+     */
+    function pullupRefresh() {
+
+        setTimeout(function () {
+            mui('#offCanvasContentScroll').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+            var table = document.body.querySelector('.h-famousteacher-list .mui-row');
+            var cells = document.body.querySelectorAll('.mui-col-sm-12.mui-col-xs-12');
+            for (var i = cells.length, len = i + 6; i < len; i++) {//每次加载的数量。
+                var div = document.createElement('div');
+                div.className = 'mui-col-sm-12 mui-col-xs-12';
+                // li.innerHTML = '<a class="mui-navigate-right">我是加载出来' + (i + 1) +' </a>';
+                div.innerHTML = "   <div class='h-famousteacher mui-table-view-cell animated '> <img src='http://hk.yunjy.com.cn/files/course/2018/03-10/233543f09848033065.png'> <h5>陶老师的工作室</h5> <h6>学段学科</h6> <p>全国中小学教师继续教育网家庭教育首席专家</p> <div class='h-attribute'> <span>人气值:560</span> <span>资源数:560</span> <span>成员数:560</span> </div> <span  class='mui-icon mui-icon-arrowdown w-arrowright'></span></div>" ;
+                table.appendChild(div);
+            }
+        }, 500);
+    }
+    if (mui.os.plus) {
+        mui.plusReady(function () {
+            setTimeout(function () {
+                mui('#offCanvasContentScroll').pullRefresh().pullupLoading();
+            }, 5000);
+
+        });
+    } else {
+        mui.ready(function () {
+            mui('#offCanvasContentScroll').pullRefresh().pullupLoading();
+        });
+    }
+</script>
+<script>
+//导航栏 渐变
+/*mui("body").on('dragstart','#offCanvasContentScroll',function(){
+   mui.alert('向上滑动了');
+});*/
+
+    var myVar = setInterval(function(){ myTimer() },0);
+    function myTimer() {
+   var tra=$('.mui-scroll1').css("transform").replace(/[^0-9\-,]/g,'').split(',')[5];
+   var rgba=0;
+            if(tra<-116){
+                rgba=1;
+                $('.w-bar-nav').css('background-color','rgba(0, 122, 255, '+rgba+')');
+           } else if(tra<0) {
+                rgba=tra*-1/116;
+                $('.w-bar-nav').css('background-color','rgba(0, 122, 255, '+rgba+')');
+           } else{
+                $('.w-bar-nav').css("background-color","rgba(0, 122, 255, 0)");
+            }
+    }
+</script>
+
+</body>
+</html>

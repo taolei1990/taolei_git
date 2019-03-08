@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .my-download {
+            height: -webkit-fill-available;
+            background-color: #fff;
+            background-image: url(img/611f85f1ff53823475e52f2b37d4819e.png);
+            background-repeat: no-repeat;
+            background-size: 88%;
+            background-position: 0px 0px;
+        }
+
+        .my-download-btn {
+            text-align: center;
+        }
+
+        .my-download-btn button {
+            width: 60%;
+            font-size: 19px;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-radius: 55px;
+            border: none;
+            color: #fff;
+        }
+
+        .my-download-btn .my-android {
+            background-color: #0f82fd;
+        }
+
+        .my-download-btn .my-ios {
+            background-color: #b4b4b4;
+        }
+
+        .my-content {
+            text-align: center;
+            position: relative;
+        }
+
+        .my-img1 {
+            padding-top: 15%;
+        }
+
+        .my-bag img {
+            width: 100%;
+        }
+        .my-logo {
+
+        }
+        .my-img1 img {
+            width: 70%;
+        }
+        .my-logo img {
+            width: 80px;
+            border: 1px solid #e9e9e9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .my-download-btn {
+            padding-top: 20px;
+        }
+
+        .my-textarea {
+            padding-top: 10px;
+            text-align: center;
+            color: #323232;
+        }
+
+        .my-text-b {
+            font-size: 26px;
+        }
+
+        .my-text-p {
+            padding-top: 10px;
+            font-size: 20px;
+        }
+
+        .my-img1 {
+
+        }
+
+        .my-xiaocxun img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="my-download">
+    <div class="my-content ">
+        <div class="my-img1"><img src="img/899f7aeb14d774e1aabf9feb55e27ada.png"></div>
+        <div class="my-logo"><img src="img/logo.png"></div>
+    </div>
+
+    <div class="my-textarea">
+        <p class="my-text-b">优师云</p>
+        <p class="my-text-p">让老师学习不在烦恼</p>
+    </div>
+    <div class="my-download-btn">
+        <button id="my-btn1" class="my-android">安卓下载</button>
+        <button id="my-btn2" class="my-ios">ios下载</button>
+    </div>
+
+</div>
+
+<script src="js/jquery-3.1.0.min.js"></script>
+<script>
+    var $eleBtn1 = $("#btn1");
+    var $eleBtn2 = $("#btn2");
+
+    //已知一个下载文件的后端接口：
+    //https://codeload.github.com/douban/douban-client/legacy.zip/master
+    //方法一：window.open()
+    $eleBtn1.click(function () {
+        var url = "https://raw.githubusercontent.com/HouChengYue/Release/master/youshiyun.apk";
+        window.open(url);
+    });
+
+    //方法二：通过form
+    $eleBtn2.click(function () {
+        var $eleForm = $("<form method='get'></form>");
+
+        $eleForm.attr("action", "https://codeload.github.com/douban/douban-client/legacy.zip/master");
+
+        $(document.body).append($eleForm);
+
+        //提交表单，实现下载
+        $eleForm.submit();
+    });
+</script>
+</body>
+</html>

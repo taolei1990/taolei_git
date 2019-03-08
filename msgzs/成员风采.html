@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper-4.2.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/h-studio.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+</head>
+<body class="y-fff">
+<header class="mui-bar mui-bar-nav y-bar-nav mui-active">
+    <a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+    <a  class="mui-icon mui-icon-more  mui-pull-right"></a>
+    <h1 class="mui-title">成员风采</h1>
+</header>
+    <div class="mui-content">
+        <div class="h-sqktgzs h-sqktgzs-act">
+            <em>共56个成员</em>
+            <span class="active"><i class="iconfont">&#xe663;</i></span>
+            <span><i class="iconfont">&#xe65e;</i></span>
+        </div>
+            <ul class="y-cyfc y-cyfc-list ">
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>辅导老师</span><span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li> <li>
+                <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+            </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li> <li>
+                <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+            </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li>
+                <li>
+                    <img src="http://hk.yunjy.com.cn/files/course/2017/07-21/093613d6d070209281.png">
+                    <p>名字字名字字 <span>学员</span><i class="iconfont">&#xe611;</i></p>
+                </li>
+
+
+            </ul>
+
+
+    </div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+
+<script>
+    //列表切换
+    mui(".h-sqktgzs").on('tap', 'span', function () {
+        $(".h-sqktgzs span").removeClass("active");
+        $(this).addClass("active");
+        var inx = $(this).index();
+        if (inx == 1) {
+            $('.y-cyfc').removeClass('y-cyfc-view')
+            $('.y-cyfc').addClass('y-cyfc-list');
+        }
+        if (inx == 2) {
+            $('.y-cyfc').removeClass('y-cyfc-list')
+            $('.y-cyfc').addClass('y-cyfc-view');
+        }
+    })
+
+</script>
+</body>
+</html>
