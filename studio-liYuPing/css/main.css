@@ -273,7 +273,7 @@ em {
 }
 .tl-btn-tjzy{
     position: fixed;
-    bottom: 10px;
+    bottom: 100px;
     right: 10px;
     width: 70px;
     height: 80px;
@@ -281,9 +281,16 @@ em {
     background-size: 100%;
     z-index: 99;
 
-    animation-iteration-count: 3;
-
-
+}
+.tl-btn-wdzy{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 70px;
+    height: 80px;
+    background-image: url("../img/btn-wdzy.png");
+    background-size: 100%;
+    z-index: 99;
 
 }
 .tl-titl-xfx{
@@ -1174,7 +1181,7 @@ display: none;
 .tl-course-list{
 
 }
-.tl-course-list li{
+.tl-course-list>li{
     padding: 5px;
 }
 .tl-pxwc{
@@ -1219,6 +1226,7 @@ display: none;
 .selection-sort .tl-pxwc{
     display: block;
     background-color: #fff;
+    border-bottom: 1px solid #f2f2f2;
 }
 .tl-course-box{
     display: flex;
@@ -1227,10 +1235,37 @@ display: none;
     background-color: #fff;
     padding: 10px;
     position: relative;
-
 }
-
+.tl-ieldSet{
+    min-height: 56px;
+    position: relative;
+}
+.tl-ieldSet:before{
+    content: '空空如也~';
+    position: absolute;
+    color: #999999;
+    top: 0;
+    background-color: #fff;
+    height: 44px;
+    line-height: 44px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    background-image: url(../img/img-Oval@2x.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 21px center;
+}
+.tl-box-knob .tl-box-curriculum .tl-box-knob>.tl-course-box .tl-course-titl img{
+    margin-top: 16px;
+    margin-left: 24px;
+}
+.tl-course-list:before{
+    left: 5px;
+    right: 5px;
+}
 .tl-course-titl{
+
     margin-left: 20px;
 }
 .tl-course-titl img{
@@ -1388,11 +1423,25 @@ display: none;
 .tl-box-curriculum>.tl-course-box{
 padding-left: 50px;
 }
+.tl-box-chapter>ul .tl-course-box{
+    padding-left: 35px;
+}
+.tl-box-chapter>ul .tl-box-knob>.tl-course-box{
+    padding-left: 10px;
+}
+
+.tl-box-curriculum>ul .tl-course-box{
+    padding-left: 50px;
+}
+
+.tl-box-chapter .tl-box-knob .tl-course-box{
+
+}
 .tl-box-chapter .tl-course-titl img {
     margin-left: -10px;
     margin-right: 20px;
 }
-.tl-box-chapter .tl-box-knob{
+.tl-course-box+ul{
     display: none;
 }
 .tl-box-knob .tl-box-curriculum{
@@ -1419,7 +1468,31 @@ padding-left: 50px;
     -webkit-transform: scaleY(.5);
     transform: scaleY(.5);
 }
+
+
+.tl-box-knob>ul .tl-course-box:before,.tl-box-chapter>ul .tl-course-box:before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 70px;
+    height: 1px;
+    content: '';
+    background-color: #efeff4;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
 .tl-box-curriculum>.tl-course-box:before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 122px;
+    height: 1px;
+    content: '';
+    background-color: #efeff4;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+.tl-box-curriculum>ul .tl-course-box:before {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -1436,6 +1509,22 @@ padding-left: 50px;
     background-position: 5px center;
     background-repeat: no-repeat;
 }
+.tl-box-chapter>ul .tl-course-box .tl-course-tpye {
+    padding-left: 20px;
+    background-image: url(../img/img-Oval@2x.png);
+    background-size: 22px;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+.tl-box-chapter .tl-box-knob>.tl-course-box .tl-course-tpye {
+    padding-left: 0px;
+    background-image:none;
+    background-size: 22px;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+
+
 .tl-box-knob{
     position: relative;
 }
@@ -1460,6 +1549,28 @@ padding-left: 50px;
      content: '';
      background-color: #34a853;
  }
+.tl-box-chapter>ul{
+    position: relative;
+}
+.tl-box-chapter>ul:after{
+    position: absolute;
+    top: -22px;
+    width: 2px;
+    left: 30px;
+    bottom: 39px;
+    content: '';
+    background-color: #34a853;
+}
+.tl-box-chapter>ul .tl-course-box:after{
+    position: absolute;
+    top: 37px;
+    width: 15px;
+    left: 30px;
+    height: 2px;
+    content: '';
+    background-color: #34a853;
+}
+
 .tl-box-knob .tl-box-curriculum .tl-course-box:after{
     position: absolute;
     top: 37px;
@@ -1489,6 +1600,15 @@ padding-left: 50px;
 }
 .tl-box-chapter .tl-box-knob:after {
     position: absolute;
+    top: -38px;
+    bottom: 30px;
+    left: 30px;
+    width: 2px;
+    content: '';
+    background-color: #34a853;
+}
+.tl-box-chapter>ul li:nth-of-type(1) .tl-box-knob:after {
+    position: absolute;
     top: -22px;
     bottom: 30px;
     left: 30px;
@@ -1496,6 +1616,10 @@ padding-left: 50px;
     content: '';
     background-color: #34a853;
 }
+.mui-bar .mui-title{
+    z-index: -1;
+}
+
 .tl-box-chapter .tl-box-knob.active:after {
     bottom: 38px;
 }
@@ -1988,6 +2112,136 @@ display: flex;
 .video-js{
     width: 100%;
     height: 160px;
+}
+.tl-navwodezy{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+}
+.tl-navbar-zy{
+    background-color: #fff;
+    padding:0 10px;
+    font-size: 14px;
+    position: relative;
+}
+.tl-nav-list{
+    display: none;
+    position: fixed;
+    background-color: rgba(51, 51, 51, 0.5);
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+}
+.tl-nav-list .tl-gengduo{
+    display: none;
+    background-color: #fff;
+}
+.tl-paixun{
+    padding: 0 10px;
+    border-bottom: 1px solid #eee;
+}
+.tl-paixun li{
+    line-height: 40px;
+    border-top:1px solid #eee;
+    font-size: 12px;
+}
+.tl-paixun li.active{
+    color: #2177E8;
+    background-image: url("../img/ico-duigou@2x.png");
+    background-repeat: no-repeat;
+    background-size: 17px;
+    background-position: right center;
+}
+.navbar-wrapper{
+    width: 100%;
+    z-index: 99;
+}
+.tl-switch{
+    display: flex;
+    align-items: center;
+}
+.tl-switch-text{
+    margin-right: 10px;
+    font-size: 12px;
+}
+.tl-switch .mui-switch {
+
+    height: 24px;
+
+}
+.tl-switch .mui-switch .mui-switch-handle {
+    width: 22px;
+    height: 22px;
+}
+.tl-navwodezy-list{
+    font-size: 12px;
+    margin-right: 20px;
+    padding-right: 20px;
+    background-image: url("../img/ico-arrowdown2x.png");
+    background-position: right center;
+    background-size: 12px;
+    background-repeat: no-repeat;
+}
+.tl-navwodezy-list.active{
+    background-image: url("../img/ico-arrowup2x.png");
+}
+.tl-navwodezy-zuix{
+
+}
+.tl-wodezy-list{
+    padding-top: 0;
+}
+.tl-zuixzuir{
+    display: flex;
+    align-items: center;
+}
+.tl-gengduo-ul{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    padding:  5px;
+    position: relative;
+}
+.tl-gengduo-ul:after{
+    position: absolute;
+    content: '';
+    height: 1px;
+    left: 10px;
+    top: 0;
+    right: 10px;
+    background-color: #eee;
+}
+.tl-btnqer{
+    display: block;
+    height: 40px;
+    background-color: #e8e8e8;
+    color: #999;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
+.tl-btnqer.active{
+    background-color: #3e83fd;
+    color: #fff;
+}
+.tl-gengduo-ul li{
+    display: block;
+    margin: 7px;
+    color: #999999;
+    padding: 0 5px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 4px;
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
+}
+.tl-gengduo-ul li.active{
+    background-color:rgba(86, 99, 214, 0.1);
+    color:#5663d6;
+    border: 1px solid rgba(86, 99, 214, 0.5);
 }
 @media screen and (max-width: 374px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
     .tl-titlbt p{

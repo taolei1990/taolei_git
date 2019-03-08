@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="css/swiper.min.css" type="text/css">
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-
+<style>
+    .sad-scroll{
+        position: relative;
+    }
+</style>
 </head>
 <body>
 <header class="mui-bar  mui-bar-transparent tl-bar">
@@ -66,220 +70,225 @@
                 </h1>
                 <a class="mui-pull-right"><span class="acco-sort">完成</span></a>
             </header>
-            <ul class="tl-course-list">
-                <li data-index="0">
-                    <div class="tl-course-box">
-                        <div class="tl-course-tpye">
-                            <div class="tl-course-titl"><img src="img/document.png">课时1</div>
-                            <div class="tl-course-label">
-                                <a class="label-green">选修</a>
-                                <a class="label-blue">文档</a>
-                                <a class="label-orange">未发布</a>
-                            </div>
-                        </div>
-                        <div><a class="tl-dindindin"></a></div>
-                    </div>
-                </li>
-                <li data-index="1">
-                    <div class="tl-course-box">
-                        <div class="tl-course-tpye">
-                            <div class="tl-course-titl"><img src="img/document.png">课时2</div>
-                            <div class="tl-course-label">
-                                <a class="label-pink">视频</a>
-                                <a class="label-green">已发布</a>
-                                <span>时长04:10</span>
-                            </div>
-                        </div>
-                        <div><a class="tl-dindindin"></a></div>
-                    </div>
-                </li>
-                <li data-index="2">
-                    <div class="tl-course-box">
-                        <div class="tl-course-tpye">
-                            <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                            <div class="tl-course-label">
-                                <a class="label-green">必修</a>
-                                <a class="label-orange">图文</a>
-                            </div>
-                        </div>
-                        <div><a class="tl-dindindin"></a></div>
-                    </div>
-                </li>
-                <li data-index="3">
-                    <div class="tl-box-chapter">
-                        <div class="tl-course-box ">
+
+                <ul  class="tl-course-list tl-ieldSet">
+                    <li class="C_move">
+                        <div class="tl-course-box">
                             <div class="tl-course-tpye">
-                                <div class="tl-course-titl"><img src="img/img-chapter@2x.png">章1</div>
+                                <div class="tl-course-titl"><img src="img/document.png">课时1</div>
+                                <div class="tl-course-label">
+                                    <a class="label-green">选修</a>
+                                    <a class="label-blue">文档</a>
+                                    <a class="label-orange">未发布</a>
+                                </div>
                             </div>
                             <div><a class="tl-dindindin"></a></div>
                         </div>
+                    </li>
+                    <li class="C_move">
+                        <div class="tl-course-box">
+                            <div class="tl-course-tpye">
+                                <div class="tl-course-titl"><img src="img/document.png">课时2</div>
+                                <div class="tl-course-label">
+                                    <a class="label-pink">视频</a>
+                                    <a class="label-green">已发布</a>
+                                    <span>时长04:10</span>
+                                </div>
+                            </div>
+                            <div><a class="tl-dindindin"></a></div>
+                        </div>
+                    </li>
+                    <li class="C_move">
+                        <div class="tl-course-box">
+                            <div class="tl-course-tpye">
+                                <div class="tl-course-titl"><img src="img/document.png">课时3</div>
+                                <div class="tl-course-label">
+                                    <a class="label-green">必修</a>
+                                    <a class="label-orange">图文</a>
+                                </div>
+                            </div>
+                            <div><a class="tl-dindindin"></a></div>
+                        </div>
+                    </li>
+                    <li class="C_move">
+                        <div class="tl-box-chapter">
+                            <div class="tl-course-box ">
+                                <div class="tl-course-tpye">
+                                    <div class="tl-course-titl"><img src="img/img-chapter@2x.png">章1</div>
+                                </div>
+                                <div><a class="tl-dindindin"></a></div>
+                            </div>
+                            <ul class="tl-ieldSet" >
+                                <li class="C_move">
+                                    <div class="tl-box-knob">
+                                        <div class="tl-course-box">
+                                            <div class="tl-course-tpye">
+                                                <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节1</div>
+                                            </div>
+                                            <div><a class="tl-dindindin"></a></div>
+                                        </div>
+                                        <div class="tl-box-curriculum">
+                                            <ul class="tl-ieldSet">
+                                                <li class="C_move">
+                                                    <div class="tl-course-box ">
+                                                        <div class="tl-course-tpye">
+                                                            <div class="tl-course-titl"><img src="img/document.png">课时1.1</div>
+                                                            <div class="tl-course-label">
+                                                                <a class="label-green">必修</a>
+                                                                <a class="label-orange">图文</a>
+                                                            </div>
+                                                        </div>
+                                                        <div><a class="tl-dindindin"></a></div>
+                                                    </div>
+                                                </li>
+                                                <li class="C_move">
+                                                    <div class="tl-course-box ">
+                                                        <div class="tl-course-tpye">
+                                                            <div class="tl-course-titl"><img src="img/document.png">课时1.2</div>
+                                                            <div class="tl-course-label">
+                                                                <a class="label-green">必修</a>
+                                                                <a class="label-orange">图文</a>
+                                                            </div>
+                                                        </div>
+                                                        <div><a class="tl-dindindin"></a></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="C_move">
+                                    <div class="tl-box-knob">
+                                        <div class="tl-course-box">
+                                            <div class="tl-course-tpye">
+                                                <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节2</div>
+                                            </div>
+                                            <div><a class="tl-dindindin"></a></div>
+                                        </div>
+                                        <div class="tl-box-curriculum">
+                                            <ul class="tl-ieldSet">
+                                                <li class="C_move">
+                                                    <div class="tl-course-box ">
+                                                        <div class="tl-course-tpye">
+                                                            <div class="tl-course-titl"><img src="img/document.png">课时2.1</div>
+                                                            <div class="tl-course-label">
+                                                                <a class="label-green">必修</a>
+                                                                <a class="label-orange">图文</a>
+                                                            </div>
+                                                        </div>
+                                                        <div><a class="tl-dindindin"></a></div>
+                                                    </div>
+                                                </li>
+                                                <li class="C_move">
+                                                    <div class="tl-course-box ">
+                                                        <div class="tl-course-tpye">
+                                                            <div class="tl-course-titl"><img src="img/document.png">课时2.2</div>
+                                                            <div class="tl-course-label">
+                                                                <a class="label-green">必修</a>
+                                                                <a class="label-orange">图文</a>
+                                                            </div>
+                                                        </div>
+                                                        <div><a class="tl-dindindin"></a></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="C_move">
+                                    <div class="tl-box-knob">
+                                        <div class="tl-course-box">
+                                            <div class="tl-course-tpye">
+                                                <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节3</div>
+                                            </div>
+                                            <div><a class="tl-dindindin"></a></div>
+                                        </div>
+                                        <div class="tl-box-curriculum">
+                                            <ul class="tl-ieldSet">
+                                                <li class="C_move">
+                                                    <div class="tl-course-box ">
+                                                        <div class="tl-course-tpye">
+                                                            <div class="tl-course-titl"><img src="img/document.png">课时3.1</div>
+                                                            <div class="tl-course-label">
+                                                                <a class="label-green">必修</a>
+                                                                <a class="label-orange">图文</a>
+                                                            </div>
+                                                        </div>
+                                                        <div><a class="tl-dindindin"></a></div>
+                                                    </div>
+                                                </li>
+                                                <li class="C_move">
+                                                    <div class="tl-course-box ">
+                                                        <div class="tl-course-tpye">
+                                                            <div class="tl-course-titl"><img src="img/document.png">课时3.2</div>
+                                                            <div class="tl-course-label">
+                                                                <a class="label-green">必修</a>
+                                                                <a class="label-orange">图文</a>
+                                                            </div>
+                                                        </div>
+                                                        <div><a class="tl-dindindin"></a></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="C_move">
+                                    <div class="tl-course-box">
+                                        <div class="tl-course-tpye">
+                                            <div class="tl-course-titl"><img src="img/document.png">课时4</div>
+                                            <div class="tl-course-label">
+                                                <a class="label-pink">视频</a>
+                                                <a class="label-green">已发布</a>
+                                                <span>时长04:10</span>
+                                            </div>
+                                        </div>
+                                        <div><a class="tl-dindindin"></a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="C_move">
                         <div class="tl-box-knob">
                             <div class="tl-course-box">
                                 <div class="tl-course-tpye">
-                                    <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节1</div>
+                                    <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节4</div>
                                 </div>
                                 <div><a class="tl-dindindin"></a></div>
                             </div>
                             <div class="tl-box-curriculum">
-                                <div class="tl-course-box ">
-                                    <div class="tl-course-tpye">
-                                        <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                        <div class="tl-course-label">
-                                            <a class="label-green">必修</a>
-                                            <a class="label-orange">图文</a>
+                                <ul class="tl-ieldSet" id="C_fieldSet_04">
+                                    <li class="C_move">
+                                        <div class="tl-course-box ">
+                                            <div class="tl-course-tpye">
+                                                <div class="tl-course-titl"><img src="img/document.png">课时4.1</div>
+                                                <div class="tl-course-label">
+                                                    <a class="label-green">必修</a>
+                                                    <a class="label-orange">图文</a>
+                                                </div>
+                                            </div>
+                                            <div><a class="tl-dindindin"></a></div>
                                         </div>
-                                    </div>
-                                    <div><a class="tl-dindindin"></a></div>
-                                </div>
-                                <div class="tl-course-box ">
-                                    <div class="tl-course-tpye">
-                                        <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                        <div class="tl-course-label">
-                                            <a class="label-green">必修</a>
-                                            <a class="label-orange">图文</a>
+                                    </li>
+                                    <li class="C_move">
+                                        <div class="tl-course-box ">
+                                            <div class="tl-course-tpye">
+                                                <div class="tl-course-titl"><img src="img/document.png">课时4.2</div>
+                                                <div class="tl-course-label">
+                                                    <a class="label-green">必修</a>
+                                                    <a class="label-orange">图文</a>
+                                                </div>
+                                            </div>
+                                            <div><a class="tl-dindindin"></a></div>
                                         </div>
-                                    </div>
-                                    <div><a class="tl-dindindin"></a></div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
+                        </div>
+                    </li>
+                </ul>
 
-                        </div>
-                    </div>
-                </li>
-                <li data-index="4">
-                    <div class="tl-box-chapter">
-                        <div class="tl-course-box ">
-                            <div class="tl-course-tpye">
-                                <div class="tl-course-titl"><img src="img/img-chapter@2x.png">章2</div>
-                            </div>
-                            <div><a class="tl-dindindin"></a></div>
-                        </div>
-                        <div class="tl-box-knob">
-                            <div class="tl-course-box">
-                                <div class="tl-course-tpye">
-                                    <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节1</div>
-                                </div>
-                                <div><a class="tl-dindindin"></a></div>
-                            </div>
-                            <div class="tl-box-curriculum">
-                                <div class="tl-course-box ">
-                                    <div class="tl-course-tpye">
-                                        <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                        <div class="tl-course-label">
-                                            <a class="label-green">必修</a>
-                                            <a class="label-orange">图文</a>
-                                        </div>
-                                    </div>
-                                    <div><a class="tl-dindindin"></a></div>
-                                </div>
-                                <div class="tl-course-box ">
-                                    <div class="tl-course-tpye">
-                                        <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                        <div class="tl-course-label">
-                                            <a class="label-green">必修</a>
-                                            <a class="label-orange">图文</a>
-                                        </div>
-                                    </div>
-                                    <div><a class="tl-dindindin"></a></div>
-                                </div>
-                            </div>
-                            <div class="tl-course-box">
-                                <div class="tl-course-tpye">
-                                    <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节2</div>
-                                </div>
-                                <div><a class="tl-dindindin"></a></div>
-                            </div>
-                            <div class="tl-box-curriculum">
-                                <div class="tl-course-box ">
-                                    <div class="tl-course-tpye">
-                                        <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                        <div class="tl-course-label">
-                                            <a class="label-green">必修</a>
-                                            <a class="label-orange">图文</a>
-                                        </div>
-                                    </div>
-                                    <div><a class="tl-dindindin"></a></div>
-                                </div>
-                                <div class="tl-course-box ">
-                                    <div class="tl-course-tpye">
-                                        <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                        <div class="tl-course-label">
-                                            <a class="label-green">必修</a>
-                                            <a class="label-orange">图文</a>
-                                        </div>
-                                    </div>
-                                    <div><a class="tl-dindindin"></a></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li data-index="5">
-                    <div class="tl-box-knob">
-                        <div class="tl-course-box">
-                            <div class="tl-course-tpye">
-                                <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节1</div>
-                            </div>
-                            <div><a class="tl-dindindin"></a></div>
-                        </div>
-                        <div class="tl-box-curriculum">
-                            <div class="tl-course-box ">
-                                <div class="tl-course-tpye">
-                                    <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                    <div class="tl-course-label">
-                                        <a class="label-green">必修</a>
-                                        <a class="label-orange">图文</a>
-                                    </div>
-                                </div>
-                                <div><a class="tl-dindindin"></a></div>
-                            </div>
-                            <div class="tl-course-box ">
-                                <div class="tl-course-tpye">
-                                    <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                    <div class="tl-course-label">
-                                        <a class="label-green">必修</a>
-                                        <a class="label-orange">图文</a>
-                                    </div>
-                                </div>
-                                <div><a class="tl-dindindin"></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li data-index="6">
-                    <div class="tl-box-knob">
-                        <div class="tl-course-box">
-                            <div class="tl-course-tpye">
-                                <div class="tl-course-titl"><img src="img/img-Oval@2x.png">节2</div>
-                            </div>
-                            <div><a class="tl-dindindin"></a></div>
-                        </div>
-                        <div class="tl-box-curriculum">
-                            <div class="tl-course-box ">
-                                <div class="tl-course-tpye">
-                                    <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                    <div class="tl-course-label">
-                                        <a class="label-green">必修</a>
-                                        <a class="label-orange">图文</a>
-                                    </div>
-                                </div>
-                                <div><a class="tl-dindindin"></a></div>
-                            </div>
-                            <div class="tl-course-box ">
-                                <div class="tl-course-tpye">
-                                    <div class="tl-course-titl"><img src="img/document.png">课时3</div>
-                                    <div class="tl-course-label">
-                                        <a class="label-green">必修</a>
-                                        <a class="label-orange">图文</a>
-                                    </div>
-                                </div>
-                                <div><a class="tl-dindindin"></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
             <div id="popover" class="mui-popover  tl-mui-popover">
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell">
@@ -545,10 +554,11 @@
 <script src="js/Eleditor-master/Eleditor.min.js"></script>
 <script src="js/cropper.min.js"></script>
 <script src="js/clipboard.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/Sortable.min.js"></script>
 <script src="js/common.js"></script>
 <script>
+
+
     //引导遮罩
     $('.tl-masking').on('tap', '.tl-shade', function () {
         var ind=$('.tl-shade').index(this)
@@ -563,6 +573,7 @@
                 $('.tl-masking,.tl-shade').hide();
             }
     })
+
     //导航切换
     $('.tl-scroll-wrapper').on('tap', '.mui-control-item', function () {
         var ind=$('.mui-control-item').index(this)
@@ -606,54 +617,49 @@
         }
         $('.tl-add-popup').hide();
     });
-
     //排序开始
     $('.tl-keshipaixu').on('tap', '.tl-btn-paixu', function () {
-        $('.tl-dindindin').addClass('drag-and-drop').removeClass('tl-dindindin')
-        $('.tl-wnleib').addClass('selection-sort')
-
-        $(".tl-course-list").sortable({
-            items: "li",
-            revert: true,
-            scroll: true,
-            update: function (e, i) {       //更新排序之后
-                mui.toast('拖动了一个');
-                console.log(e)
-                console.log(i)
-            }
+        // $('.tl-dindindin').addClass('drag-and-drop').removeClass('tl-dindindin')
+        // $('.tl-wnleib').addClass('selection-sort')
+        // dragTheSorting(false)
+        mui.openWindow({
+            url: 'index_6(paixu).html',
         });
-
     });
     //取消排序
     $('.tl-pxwc').on('tap', '.mui-icon-left-nav', function () {
-        $('.drag-and-drop').addClass('tl-dindindin').removeClass('.drag-and-drop');
-        $('.tl-wnleib').removeClass('selection-sort');
-
-        var ihtml = ''
-        for (var i = 0; i < $(".tl-course-list").find('li').length; i++) {
-            ihtml = ihtml + $(".tl-course-list").find('li[data-index="' + i + '"]').prop('outerHTML')
-        }
-        $('.tl-course-list').empty()
-        $('.tl-course-list').append(ihtml)
-        $(".tl-course-list").sortable('destroy')
+        // $('.drag-and-drop').addClass('tl-dindindin').removeClass('.drag-and-drop');
+        // $('.tl-wnleib').removeClass('selection-sort');
+        //
+        // dragTheSorting(true)
     });
     //完成排序
     $('.tl-pxwc').on('tap', '.acco-sort', function () {
-        $('.drag-and-drop').addClass('tl-dindindin').removeClass('.drag-and-drop')
-        $('.tl-wnleib').removeClass('selection-sort')
-        // $( ".tl-course-list" ).sortable( 'serialize' , [options] )
-        $(".tl-course-list").sortable('destroy')
+        // $('.drag-and-drop').addClass('tl-dindindin').removeClass('.drag-and-drop')
+        // $('.tl-wnleib').removeClass('selection-sort')
+        //
+        // dragTheSorting(true)
     });
+//拖拽排序
+function dragTheSorting(ft) {
+    var al = $('.tl-ieldSet');
+    $.each(al,function(i,v){
+        var sortable = new Sortable(v, {
+            group: ".C_move",
+            handle: ".C_move",
+            disabled: ft,
+        })
+    });
+}
     //展开章节
     $('.tl-course-list').on('tap', '.tl-course-box', function (e) {
         var divTop = $(this).find('.tl-dindindin');
-
+        console.log(e)
 
         if (!divTop.is(e.target) && divTop.has(e.target).length === 0) {
             if ($(this).parent('.tl-box-chapter').hasClass('tl-box-chapter')) {
                 //展开节
-                $(this).next('.tl-box-knob').slideToggle("slow");
-
+                $(this).next('ul').slideToggle("slow");
             } else {
                 //展开课时
                 $(this).next('.tl-box-curriculum').slideToggle("slow")
@@ -664,7 +670,6 @@
                 }
             }
         }
-
     });
 
 
@@ -758,6 +763,9 @@
         $('.tl-add-catalog').hide()
         $('.tl-bar-directory').find('.tl-btn-cancel').text('添加目录').addClass('mui-btn-append').removeClass('tl-btn-cancel')
     }
+
+
 </script>
+
 </body>
 </html>
