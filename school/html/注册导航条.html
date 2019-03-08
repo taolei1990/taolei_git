@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+    <meta charset="UTF-8">
+    <title>个人工作室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 主要css文件（一般用于自定义样式） -->
+    <link rel="stylesheet" href="../css/teacher.css">
+    <!-- html5shiv用于兼容ie9以下浏览器对H5标签识别 -->
+    <!-- respond用于兼容ie9以下浏览器屏幕自适应-->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--导航-->
+<div class="syw-studio">
+    <div class="w1200 syw-studio">
+        <a href="../index.html" class="logo2"><img src="../images/logo.png"> </a>
+        <ul>
+            <li><a href="#" >首页</a></li>
+            <li><a href="#" class="bt-on">政策资讯</a></li>
+            <li><a href="#">研培项目</a></li>
+            <li><a href="#">教学心得</a></li>
+            <li><a href="#">学科资源</a></li>
+            <li><a href="#">研修部落</a></li>
+            <li><a href="#">星光大道</a></li>
+        </ul>
+        <div class="syw-grzl">
+            <!--登录注册按钮-->
+            <!-- <a class="syw-dl">登录</a>
+                 <a class="syw-zc">注册</a>  -->
+            <a style="border-left: none"><img src="../images/grgzs-tx.png"> <em>X名字X名字X名字</em></a>
+            <a><i class="iconfont-syw">&#xe672;</i> 我的空间</a>
+            <a><i class="iconfont-syw">&#xe622;</i> 消息<span>99+</span></a>
+            <a><i class="iconfont-syw">&#xe62e;</i> 退出</a>
+            <a><i class="iconfont-syw">&#xe687;</i> 设置</a>
+        </div>
+    </div>
+</div>
+<!--注册进度条-->
+<div class="w1200 syw-xxmjh">
+    <h2>新用户注册（学习码激活）</h2></div>
+<div class="syw-zcjdt">
+    <div class="w1200 syw-zcjdt st1 "><!--注：st1 st2 st3分别对应第一步 第二步 第三步-->
+
+    </div>
+
+</div>
+<div class="syw-srxxm"><span>输入学习码</span><input type="text" /><input type="submit"value="验证学习码"/></div>
+
+
+<!--页脚-->
+<div class="syw-yj">
+    <div class="w1200 syw-yj1">
+        <div class="syw-gywm">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">联系我们</a>
+            <a href="#" style="border-right: none">帮助中心</a>
+        </div>
+        <div class="syw-gzwm">
+            <a><img src="../images/ewm-1.png">
+                <p>扫一扫 关注微博</p>
+                <span>(微博号:syw123)</span>
+            </a>
+            <a><img src="../images/ewm-1.png">
+                <p>扫一扫 关注微信</p>
+                <span>(微信号:syw123)</span>
+            </a>
+        </div>
+    </div>
+    <p >Copyright © 2015 yun100.com All Rights Reserved <a href="#">| 京ICP备 1304664 |</a><img src="../images/pic1.gif"></p>
+</div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/unslider.min.js"></script>
+<script type="text/javascript">
+    if(window .chrome) {
+        $('.banner li').css('background-size', '100% 100%');
+    }
+    $('.banner').unslider({
+        arrows: true,
+        fluid: true,
+        dots: true
+    });
+    //  Find any element starting with a # in the URL
+    //  And listen to any click events it fires
+    $('a[href^="#"]').click(function() {
+        //  Find the target element
+        var target = $($(this).attr('href'));
+
+        //  And get its position
+        var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
+
+        //  jQuery will return false if there's no element
+        //  and your code will throw errors if it tries to do .offset().left;
+        if(pos) {
+            //  Scroll the page
+            $('html, body').animate({
+                scrollTop: pos.top,
+                scrollLeft: pos.left
+            }, 1000);
+        }
+
+        //  Don't let them visit the url, we'll scroll you there
+        return false;
+    });
+
+
+</script>
+<!-- 自定义JS文件 -->
+<script language = "JavaScript" src="../js/teacher.js"></script>
+
+</html>

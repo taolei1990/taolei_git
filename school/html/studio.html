@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+    <meta charset="UTF-8">
+    <title>个人工作室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 主要css文件（一般用于自定义样式） -->
+    <link rel="stylesheet" href="../css/teacher.css">
+    <!-- html5shiv用于兼容ie9以下浏览器对H5标签识别 -->
+    <!-- respond用于兼容ie9以下浏览器屏幕自适应-->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--右边漂浮导航-->
+<ul  class="right-jxy">
+    <li><i class="iconfont-syw">&#xe64c;</i></li>
+    <li><i class="iconfont-syw">&#xe646;</i></li>
+    <li><i class="iconfont-syw">&#xe64d;</i></li>
+    <li><i class="iconfont-syw">&#xe64f;</i></li>
+    <li class="app-down">
+        <i class="iconfont-syw">&#xe645;</i>
+        <div >
+            <img src="../images/ewm-1.png" >
+        </div>
+    </li>
+    <li id="gotoTop"  onclick="pageScroll()"><i class="iconfont-syw">&#xe64b;</i></li>
+</ul>
+<!--导航-->
+<div class="syw-studio">
+    <div class="w1200">
+        <a href="../index.html" class="logo2"><img src="../images/logo.png"> </a>
+    <ul>
+        <li><a href="#" >首页</a></li>
+        <li><a href="#">政策资讯</a></li>
+        <li><a href="#">研培项目</a></li>
+        <li><a href="#">教学心得</a></li>
+        <li><a href="#">学科资源</a></li>
+        <li><a href="#">研修部落</a></li>
+        <li><a href="#">星光大道</a></li>
+    </ul>
+        <div class="syw-grzl">
+            <a style="border-left: none"><img src="../images/grgzs-tx.png"> <em>X名字X名字X名字</em></a>
+            <a><i class="iconfont-syw">&#xe672;</i> 我的空间</a>
+            <a><i class="iconfont-syw">&#xe622;</i> 消息<span>99+</span></a>
+            <a><i class="iconfont-syw">&#xe62e;</i> 退出</a>
+            <a><i class="iconfont-syw">&#xe687;</i> 设置</a>
+        </div>
+    </div>
+</div>
+<!--页头广告-->
+<div class="w1200">
+    <div class="banner banner-3">
+        <ul>
+            <li style="background-image: url('../img/3-banner-1.png');">
+            </li>
+        </ul>
+    </div>
+</div>
+<!--内容-->
+<div class="w1200 syw-outer">
+    <div class="syw-list-nav">
+        <ul>
+        <li >
+            <h3 class="pitch-on"><i class="iconfont-syw">&#xe651;</i> 空间首页 </h3>
+        </li>
+        <li >
+            <h3><i class="iconfont-syw">&#xe617;</i> 我的研修 <i class="iconfont-syw r-arrow ">&#xe656;</i></h3>
+            <a target="ifm" href="grgzs-1.html" class="pitch-on">名师工作室</a> <!--类 .pitch-on 为选中后蓝色底状态-->
+            <a target="ifm">研修部落</a>
+            <a>研修工作坊</a>
+            <a>研修组</a>
+            <a>研修活动</a>
+        </li>
+        <li >
+                <h3><i class="iconfont-syw">&#xe6db;</i> 我的培训 <i class="iconfont-syw r-arrow ">&#xe656;</i></h3>
+                <a>我参加的培训项目</a>
+            </li>
+        <li >
+            <h3><i class="iconfont-syw">&#xe718;</i> 我的教学 <i class="iconfont-syw r-arrow ">&#xe656;</i></h3>
+            <a>教学日志 <span>5</span></a>
+            <a>发展规划与总结</a>
+        </li>
+        <li class="o-unfold">
+            <h3><i class="iconfont-syw">&#xe696;</i> 我的资源 <i class="iconfont-syw b-arrow ">&#xe656;</i></h3>
+             <a>资源1</a>
+             <a>资源1</a>
+        </li>
+        <li class="o-unfold">
+        <h3><i class="iconfont-syw">&#xe637;</i> 管 <i class="iconfont-syw b-arrow ">&#xe656;</i></h3>
+        <a>教研员管理后台</a>
+        <a>管理员后台</a>
+        <a>作业批改</a>
+        <a>课程管理</a>
+        </li>
+        <li class="o-unfold">
+            <h3><i class="iconfont-syw">&#xe7dd;</i> 我的 <sup>99+</sup> <i class="iconfont-syw b-arrow ">&#xe656;</i></h3>
+            <a>账户管理</a>
+            <a>我的相册</a>
+            <a>消息<em>小纸条</em><em>留言</em></a>
+            <a>个人档案</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="syw-PersonalData">
+<!--iframe加载进来的网页-->
+        <iframe id="frame_content" src="grgzs-1.html" name="ifm" scrolling="no" frameborder="0" onload="this.height=100"></iframe>
+           <!--iframe自适应高度-->
+        <script type="text/javascript">
+
+            function reinitIframe(){
+
+                var iframe = document.getElementById("frame_content");
+
+                try{
+
+                    var bHeight = iframe.contentWindow.document.body.scrollHeight;
+
+                    var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+
+                    var height = Math.max(bHeight, dHeight);
+
+                    iframe.height =  height;
+
+                }catch (ex){}
+
+            }
+
+            window.setInterval("reinitIframe()", 200);
+
+        </script>
+    </div>
+</div>
+<!--页脚-->
+<div class="syw-yj">
+    <div class="w1200">
+        <div class="syw-gywm">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">联系我们</a>
+            <a href="#" style="border-right: none">帮助中心</a>
+        </div>
+        <div class="syw-gzwm">
+            <a><img src="../images/ewm-1.png">
+                <p>扫一扫 关注微博</p>
+                <span>(微博号:syw123)</span>
+            </a>
+            <a><img src="../images/ewm-1.png">
+                <p>扫一扫 关注微信</p>
+                <span>(微信号:syw123)</span>
+            </a>
+        </div>
+    </div>
+    <p>Copyright © 2015 yun100.com All Rights Reserved <a href="#">| 京ICP备 1304664 |</a><img src="../images/pic1.gif"></p>
+</div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/unslider.min.js"></script>
+<script type="text/javascript">
+    if(window .chrome) {
+        $('.banner li').css('background-size', '100% 100%');
+    }
+    $('.banner').unslider({
+        arrows: true,
+        fluid: true,
+        dots: true
+    });
+    //  Find any element starting with a # in the URL
+    //  And listen to any click events it fires
+    $('a[href^="#"]').click(function() {
+        //  Find the target element
+        var target = $($(this).attr('href'));
+
+        //  And get its position
+        var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
+
+        //  jQuery will return false if there's no element
+        //  and your code will throw errors if it tries to do .offset().left;
+        if(pos) {
+            //  Scroll the page
+            $('html, body').animate({
+                scrollTop: pos.top,
+                scrollLeft: pos.left
+            }, 1000);
+        }
+
+        //  Don't let them visit the url, we'll scroll you there
+        return false;
+    });
+
+
+</script>
+<!-- 自定义JS文件 -->
+<script language = "JavaScript" src="../js/teacher.js"></script>
+</html>

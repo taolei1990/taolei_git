@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+    <meta charset="UTF-8">
+    <title>个人工作室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 主要css文件（一般用于自定义样式） -->
+    <link rel="stylesheet" href="../css/teacher.css">
+    <!-- html5shiv用于兼容ie9以下浏览器对H5标签识别 -->
+    <!-- respond用于兼容ie9以下浏览器屏幕自适应-->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--右边漂浮导航-->
+<ul  class="right-jxy">
+    <li><i class="iconfont-syw">&#xe64c;</i></li>
+    <li><i class="iconfont-syw">&#xe646;</i></li>
+    <li><i class="iconfont-syw">&#xe64d;</i></li>
+    <li><i class="iconfont-syw">&#xe64f;</i></li>
+    <li class="app-down">
+        <i class="iconfont-syw">&#xe645;</i>
+        <div >
+            <img src="../images/ewm-1.png" >
+        </div>
+    </li>
+    <li id="gotoTop"  onclick="pageScroll()"><i class="iconfont-syw">&#xe64b;</i></li>
+</ul>
+<!--导航-->
+<div class="syw-studio">
+    <div class="w1200">
+        <a href="../index.html" class="logo2"><img src="../images/logo.png"> </a>
+        <ul>
+            <li><a href="#" >首页</a></li>
+            <li><a href="#" class="bt-on">政策资讯</a></li>
+            <li><a href="#">研培项目</a></li>
+            <li><a href="#">教学心得</a></li>
+            <li><a href="#">学科资源</a></li>
+            <li><a href="#">研修部落</a></li>
+            <li><a href="#">星光大道</a></li>
+        </ul>
+        <div class="syw-grzl">
+            <!--登录注册按钮-->
+            <!-- <a class="syw-dl">登录</a>
+                 <a class="syw-zc">注册</a>  -->
+            <a style="border-left: none"><img src="../images/grgzs-tx.png"> <em>X名字X名字X名字</em></a>
+            <a><i class="iconfont-syw">&#xe672;</i> 我的空间</a>
+            <a><i class="iconfont-syw">&#xe622;</i> 消息<span>99+</span></a>
+            <a><i class="iconfont-syw">&#xe62e;</i> 退出</a>
+            <a><i class="iconfont-syw">&#xe687;</i> 设置</a>
+        </div>
+    </div>
+</div>
+<!--搜索-->
+<form >
+    <div class="syw-seek">
+        <input type="text" name="firstname" placeholder="请输入搜索内容..." >
+        <span>搜索</span>
+        <a>标签1</a>
+        <a>标签2</a>
+        <a>标签3</a>
+        <a>标签1</a>
+        <a>标签2</a>
+        <a>标签3</a>
+        <a>标签1</a>
+        <a>标签2</a>
+        <a>标签3</a>
+        <a>标签1</a>
+        <a>标签2</a>
+        <a>标签3</a>
+    </div>
+</form>
+
+   <!--面包导航内容-->
+   <div class="w1200 ">
+    <div class="syw-dahnangxq ">
+    <p class="mbxdh"> <i class="iconfont-syw"> &#xe651;</i><a>首页</a> / <a>政策资讯</a></p>
+    <ul>
+        <li>
+            <div class="dangh-m">
+                <b>学段:</b>
+            </div>
+            <div class="dangh-x">
+            <a class="bt-on">全部</a>
+            <a>小学</a>
+            <a>初中</a>
+            <a>高中</a>
+           </div>
+        </li>
+        <li>
+            <div class="dangh-m"><b>学科:</b></div>
+            <div class="dangh-x">
+                <a class="bt-on">全部</a>
+            <a>语文</a>
+            <a>数学</a>
+            <a>英语</a>
+            <a>体育</a>
+            <a>品生/品社</a>
+            <a>英语</a>
+            <a>体育</a>
+            <a>品生/品社</a>
+            <a>科学</a>
+            <a>音乐</a>
+            <a>全部</a>
+            <a>语文</a>
+            <a>数学</a>
+            <a>英语</a>
+            <a>体育</a>
+            <a>品生/品社</a>
+            <a>科学</a>
+            <a>音乐</a></div>
+           </li>
+        <li>
+            <div class="dangh-m">
+
+            <b>分类:</b>
+            </div>
+            <div class="dangh-x">
+            <a class="bt-on">全部</a>
+            <a>教案</a>
+            <a>学案</a>
+            <a>课件</a>
+            <a>习题</a>
+            <a>试卷</a>
+            <a>课例</a>
+            <a>教学反思</a>
+        </div></li>
+    </ul>
+    <div class="list-article">
+        <b>已选择:</b>
+        <div class="list-article-xz">
+            <span>内容</span>
+            <span>内容</span>
+            <span>内容</span>
+            <span>内容</span>
+        </div>
+    </div>
+</div>
+</div>
+    <!--iframe加载进来的网页-->
+    <iframe id="frame_content" src="活动列表分页.html" name="ifm" scrolling="no" frameborder="0" width="100%" onload="this.height=100"></iframe>
+    <!--iframe自适应高度-->
+    <script type="text/javascript">
+
+        function reinitIframe(){
+
+            var iframe = document.getElementById("frame_content");
+
+            try{
+
+                var bHeight = iframe.contentWindow.document.body.scrollHeight;
+
+                var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+
+                var height = Math.max(bHeight, dHeight);
+
+                iframe.height =  height;
+
+            }catch (ex){}
+
+        }
+
+        window.setInterval("reinitIframe()", 200);
+
+    </script>
+<!--翻页-->
+<div class="page-index">
+    <ul >
+        <li><a class="bt-on">1</a></li>
+        <li><a>2</a></li>
+        <li><a>3</a></li>
+        <li><a>4</a></li>
+        <li><a>·····</a></li>
+        <li><span>共16页</span></s></li>
+        <li><input name="" type="text" class="input-paging"></li>
+        <li><a>go</a></li>
+    </ul>
+</div>
+<!--页脚-->
+<div class="syw-yj">
+    <div class="w1200">
+        <div class="syw-gywm">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">联系我们</a>
+            <a href="#" style="border-right: none">帮助中心</a>
+        </div>
+        <div class="syw-gzwm">
+            <a><img src="../images/ewm-1.png">
+                <p>扫一扫 关注微博</p>
+                <span>(微博号:syw123)</span>
+            </a>
+            <a><img src="../images/ewm-1.png">
+                <p>扫一扫 关注微信</p>
+                <span>(微信号:syw123)</span>
+            </a>
+        </div>
+    </div>
+    <p>Copyright © 2015 yun100.com All Rights Reserved <a href="#">| 京ICP备 1304664 |</a><img src="../images/pic1.gif"></p>
+</div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/unslider.min.js"></script>
+<script type="text/javascript">
+    if(window .chrome) {
+        $('.banner li').css('background-size', '100% 100%');
+    }
+    $('.banner').unslider({
+        arrows: true,
+        fluid: true,
+        dots: true
+    });
+    //  Find any element starting with a # in the URL
+    //  And listen to any click events it fires
+    $('a[href^="#"]').click(function() {
+        //  Find the target element
+        var target = $($(this).attr('href'));
+
+        //  And get its position
+        var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
+
+        //  jQuery will return false if there's no element
+        //  and your code will throw errors if it tries to do .offset().left;
+        if(pos) {
+            //  Scroll the page
+            $('html, body').animate({
+                scrollTop: pos.top,
+                scrollLeft: pos.left
+            }, 1000);
+        }
+
+        //  Don't let them visit the url, we'll scroll you there
+        return false;
+    });
+
+
+</script>
+<!-- 自定义JS文件 -->
+<script language = "JavaScript" src="../js/teacher.js"></script>
+</html>
