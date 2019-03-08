@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery实现可拖动的浮动层(版本2) - 柯乐义</title>
+    <script type="text/javascript" src="http://www.keleyi.com/keleyi/pmedia/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+        .box{ position:absolute; top:200px; left:400px; width:200px; height:200px; background:#8a9bca; cursor:move;}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $(".box").mousedown(function (e) {
+                iDiffX = e.pageX - $(this).offset().left;
+                iDiffY = e.pageY - $(this).offset().top;
+                $(document).mousemove(function (e) {
+                    $(".box").css({ "left": (e.pageX - iDiffX), "top": (e.pageY - iDiffY) });
+                });
+            });
+            $(".box").mouseup(function () {
+                $(document).unbind("mousemove");
+            });
+        });
+    </script>
+</head>
+<body style="width:100%;margin: 0;padding: 0;">
+<div>欢迎光临！</div>
+<div class="box" id="Drigging">光标移动到层上，<br />按住鼠标就可以拖动该层。<br /><br /><br /><br />柯乐义</div>
+<div>www.keleyi.com</div>
+</body>
+</html>
