@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.tl-baoce {
+				display: flex;
+				justify-content: space-between;
+				width: 600px;
+				margin: 10px auto;
+			}
+
+			.tl-baoce button {
+				padding: 10px;
+				width: 45%;
+				border: none;
+				cursor: pointer;
+			}
+
+			.myCanvas {
+				width: 600px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="myCanvas">
+			<h4>个姓签名</h4>
+			<canvas id="myCanvas" width="600" height="600" style="border:1px solid #c3c3c3;">
+				您的浏览器不支持 HTML5 canvas 标签。
+			</canvas>
+		</div>
+		<div class="tl-baoce">
+			<button style="color: #fff;background-color: coral;" onclick="Download()">保存</button>
+			<button style="color: #fff;background-color: cadetblue;" onclick="destruction()">重写</button></div>
+		<script>
+			// signature.js
+			const canvas = document.getElementById('myCanvas')
+			const ctx = canvas.getContext('2d')
+			// 为 canvas 设置宽高，这个 800*400 的区域就是签名区域
+			canvas.width = 600
+			canvas.height = 600
+			// 为 canvas 添加事件
+			canvas.onmousedown = mouseDown
+			canvas.onmouseup = mouseUp
+			canvas.onmousemove = mouseMove
+			canvas.onmouseout = mouseOut
+			// 用一个变量判断当前是否可以绘制签名
+			let canDraw = false
+			// 用一个常量记录 canvas 当前的布局信息
+			const canvasRect = canvas.getBoundingClientRect()
+			/*保存*/
+			function Download() {
+				var a = document.createElement("a");
+				a.href = canvas.toDataURL();
+				a.download = name;
+				a.click();
+			}
+			/*从写*/
+			function destruction() {
+				ctx.clearRect(0,0, 600, 600)
+                
+			}
+
+			function mouseDown(e) {
+				// 调用事件的 preventDefault() 方法可以阻止默认事件的触发
+				// 绘制签名可以不用这个方法
+				// e.preventDefault()
+
+				// 鼠标按下可以开始绘制签名
+				canDraw = true
+
+				ctx.beginPath()
+				// 设置签名的线条宽度为 10
+				ctx.lineWidth = 0.5
+				// 设置签名的颜色为蓝色
+				ctx.strokeStyle = '#fd2313'
+				// 设置签名线条的起始位置和线条拐角位置为圆形
+				ctx.lineCap = ctx.lineJoin = 'round'
+				// 获取鼠标位置相对于 canvas 上为位置
+				// 由于 e 上的鼠标位置信息是相对于整个窗口的，所以要在 canvas 上绘制出正确的路径，需要将鼠标的位置转换成它在 canvas 上的位置信息
+				const position = getMouse2CanvasPosition({
+					x: e.clientX,
+					y: e.clientY
+				})
+				// 将鼠标移动到开始位置
+				ctx.moveTo(position.x, position.y)
+			}
+
+			function mouseUp(e) {
+				// 鼠标松开停止绘制签名
+				canDraw = false
+				ctx.closePath()
+			}
+
+			function mouseOut(e) {
+				canDraw = false
+				ctx.closePath()
+			}
+
+			function mouseMove(e) {
+				// 如果当前不能绘制签名则直接返回
+				if (!canDraw) return
+
+				// 开始绘制签名
+				// 获取鼠标移动后相对于 canvas 的位置
+				const position = getMouse2CanvasPosition({
+					x: e.clientX,
+					y: e.clientY
+				})
+				// 将位置移动到目标位置
+				ctx.lineTo(position.x, position.y)
+				// 绘制线条
+				ctx.stroke()
+			}
+
+			// 用来计算鼠标在 canvas 上绘制的点的位置
+			function getMouse2CanvasPosition(position) {
+				return {
+					x: position.x - canvasRect.x,
+					y: position.y - canvasRect.y
+				}
+			}
+		</script>
+
+	</body>
+</html>
